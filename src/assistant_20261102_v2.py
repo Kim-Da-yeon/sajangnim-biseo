@@ -122,15 +122,14 @@ def money_read(text):
 
 
 def law_for(p):
-    # 저장된 개정 항목 중 가게 정보에 닿는 것만 고른다.
+    # 저장된 개정 항목 중 가게 정보로 해당이 확인되는 것만 고른다. 모르면 보여주지 않는다.
     out = []
     for it in ITEMS["changes"]:
         need = it.get("when")
-        if need == "lease" and not p.get("_lease"):
-            continue
-        if need == "solo" and p.get("employees") not in (0, None):
-            continue
-        out.append(it)
+        if need == "lease" and p.get("_lease"):
+            out.append(it)
+        elif need == "solo" and p.get("employees") == 0:
+            out.append(it)
     return out
 
 
