@@ -1177,3 +1177,5 @@
 {"t": "2026-11-02 22:34:48", "role": "안내작성", "input": 1222, "output": 272, "cache_read": 0, "cache_write": 0, "usd": 0.01033}
 {"t": "2026-11-02 22:34:53", "role": "임대차문서해석", "input": 1019, "output": 361, "cache_read": 0, "cache_write": 0, "usd": 0.0113}
 {"t": "2026-11-02 22:34:55", "role": "법령안내", "input": 2429, "output": 215, "cache_read": 0, "cache_write": 0, "usd": 0.01402}
+{"t": "2026-11-02 22:57:03", "role": "임대차문서해석", "input": 1019, "output": 361, "cache_read": 0, "cache_write": 0, "usd": 0.0113}
+{"t": "2026-11-02 22:57:07", "role": "법령안내", "input": 2429, "output": 204, "cache_read": 0, "cache_write": 0, "usd": 0.0138}

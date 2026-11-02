@@ -42,7 +42,7 @@
 
 ## 실행
 
-경로가 `~/sosang_agent`로 고정되어 있습니다.
+경로가 `~/sosang_agent`로 고정되어 있습니다. 새로 받아 실행해 화면, 공고 판정, 예시 계약서, 법령 변경 표시까지 확인했습니다. LLM 기능은 키가 필요합니다.
 
 ```bash
 git clone https://github.com/Kim-Da-yeon/sosang-agent.git ~/sosang_agent
