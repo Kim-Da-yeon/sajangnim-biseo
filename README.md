@@ -35,6 +35,7 @@
 | LLM 직접 응답 | 27/30 | 0 |
 
 - 공고 상태 일치와 잘못된 일치 모두 LLM 직접 응답이 더 좋습니다.
+- 측정 후 일치 재확인을 추가했습니다. 저장 응답으로 계산하면 25/30, 잘못된 일치 0건이지만 사후 계산입니다.
 - 재검증 루프의 개선 효과는 관찰되지 않았습니다.
 - 라벨은 AI 초안과 Codex 감수 단계이고, 일부 조항만 참가자가 확인했으며 전문가 검증은 받지 않았습니다. 표본이 작아 공고 전반의 정확도가 아닙니다.
 
@@ -42,14 +43,14 @@
 
 ## 실행
 
-경로가 `~/sosang_agent`로 고정되어 있습니다. 새로 받아 실행해 화면, 공고 판정, 예시 계약서, 법령 변경 표시까지 확인했습니다. LLM 기능은 키가 필요합니다.
+새로 받아 실행해 화면, 공고 판정, 예시 계약서, 법령 변경 표시까지 확인했습니다. LLM 기능은 키가 필요합니다.
 
 ```bash
 git clone https://github.com/Kim-Da-yeon/sosang-agent.git ~/sosang_agent
 cd ~/sosang_agent
 pip install -r requirements.txt
 cp .env.example .env   # 키 입력. 질문 생성, 안내 카드, 설명 대조, 임대차, 법령에 사용
-python src/app_20261102_v5.py   # http://127.0.0.1:8000/?preset=shop
+python src/app_20261102_v6.py   # http://127.0.0.1:8000/?preset=shop
 ```
 
 확정된 조건은 `data/prepared/`와 `results/eval_v2_posthoc/`에 들어 있어 규칙 판정에는 API 호출이 없습니다.

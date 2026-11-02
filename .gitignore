@@ -14,3 +14,5 @@ docs/label_check_*.md
 submission/
 data/law/*.html
 docs/archive/report_draft_*.md
+deploy_vercel/
+.vercel/
