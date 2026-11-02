@@ -1,0 +1,413 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "「중소기업기본법」 제2조 및 시행령 제3조에 따른 중소기업이어야 함(중소기업 확인서로 증빙). 기존 사업 참여기업도 재신청 가능.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "제2조및시행령제3조에따른중소기업"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "exclusion",
+   "field": "startup_excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「중소기업창업 지원법」 제5조 및 시행령 제4조의 창업에서 제외되는 업종에 적용되는 기술로 판명되는 경우 제외(유흥·향락업, 숙박·음식업, 불건전 오락용품 제조업 등).",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "“창업에서 제외되는 업종”에"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세 및 지방세 체납 기업 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세 및 지방세 체납"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "휴·폐업 중인 기업 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "휴·폐업중인 기업"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "신청기업의 허위 서류제출 시 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "신청기업의 허위 서류제출"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "기타 정상인 금융거래가 어려운 경우 등 제외(기관 판단)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "정상인 금융거래가 어려운 경우"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "종전 기술보호 바우처 지원사업에 참여하여 중도포기한 기업 제외(기관 참여이력 확인)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "중도포기한 기업"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "별첨 수준진단 필수확인사항(신청 제외대상 확인)에 '1인기업 여부' 항목이 미해당으로 표시되어 있으나 본문 신청 제외 대상에는 명시되지 않음",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 6,
+    "quote": "1인기업 여부"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "신청 현황에 따라 조기 종료될 수 있으며 종료 시 별도 안내. 사업공고는 게시일부터 예산소진시까지로 표기.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-03-09",
+    "2026-03-30"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "‘26. 3. 9(월) ~ 3. 30(월)"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "「중소기업기본법」 제2조 및 시행령 제3조에 따른 중소기업이어야 함(중소기업 확인서로 증빙). 기존 사업 참여기업도 재신청 가능.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "제2조및시행령제3조에따른중소기업"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "exclusion",
+   "field": "startup_excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「중소기업창업 지원법」 제5조 및 시행령 제4조의 창업에서 제외되는 업종에 적용되는 기술로 판명되는 경우 제외(유흥·향락업, 숙박·음식업, 불건전 오락용품 제조업 등).",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "“창업에서 제외되는 업종”에"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세 및 지방세 체납 기업 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세 및 지방세 체납"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "휴·폐업 중인 기업 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "휴·폐업중인 기업"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "신청기업의 허위 서류제출 시 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "신청기업의 허위 서류제출"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "기타 정상인 금융거래가 어려운 경우 등 제외(기관 판단)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "정상인 금융거래가 어려운 경우"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "종전 기술보호 바우처 지원사업에 참여하여 중도포기한 기업 제외(기관 참여이력 확인)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "중도포기한 기업"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "별첨 수준진단 필수확인사항(신청 제외대상 확인)에 '1인기업 여부' 항목이 미해당으로 표시되어 있으나 본문 신청 제외 대상에는 명시되지 않음",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 6,
+    "quote": "1인기업 여부"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "신청 현황에 따라 조기 종료될 수 있으며 종료 시 별도 안내. 사업공고는 게시일부터 예산소진시까지로 표기.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-03-09",
+    "2026-03-30"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "‘26. 3. 9(월) ~ 3. 30(월)"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "모집규모 300개사 내외, 사업기간, 운영기관",
+  "바우처 한도·정부보조율(수준단계별, 7년 이내 창업기업 한도·보조율 상향)",
+  "지원내용(수준진단, 적격평가, 현장컨설팅, 수준확인, 바우처 지원 프로그램)",
+  "후속지원 및 선도기업 지정심의 절차",
+  "평가방법: 적격평가 점수 60점 미만 지원불가(본문) / 60점 이하 지원불가(별첨) 표기 상이, 고득점순 우선 지원",
+  "적격성 평가항목 및 배점",
+  "신청방법(기술보호울타리 홈페이지) 및 신청서류",
+  "유의사항: 중복수급 등 부정행위 시 환수·제재 및 향후 참여 제한, 2026년 협약 후 포기 시 2년간 지원불가",
+  "최종선정 기업만 서비스 이용 가능, 계열사·협력사·관계사 이용불가",
+  "참여신청서·추진계획서·정보동의서 서식",
+  "연계사업 우대가점 및 증빙서류",
+  "문의처"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 9,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "seconds": 49
+}

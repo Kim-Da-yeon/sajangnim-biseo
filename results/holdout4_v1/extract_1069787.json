@@ -1,0 +1,329 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "참고1 목록(백년가게 198개사, 백년소공인 173개사)에 포함된 업체만 재지정 신청 대상. 목록 대조로 판정하는 요건이지만 대응하는 입력 필드가 없어 unsupported로 둠(field=other는 profile 사용 불가).",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026년 9~12월 지정기간 만료예정 백년소상공인(참고1 목록 371개사)",
+   "evidence": {
+    "page": 1,
+    "quote": "대상자는 참고1 확인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "「소상공인기본법」 제2조제2항에 따라 규모의 확대 등으로 소상공인에 해당하지 아니하게 된 경우, 그 사유가 발생한 연도의 다음 연도부터 3년간 소상공인으로 보아 재지정 신청 가능(단, 소기업 외의 기업과 합병하거나 대통령령으로 정하는 사유로 소상공인에 해당하지 아니하게 된 경우는 제외)",
+   "note": "소·중기업으로 성장한 백년소상공인은 재지정 불가. 업체 규모를 제외한 재지정 요건 충족 시 '명예 백년소상공인'으로 지정될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "기준소상공인법적기준에충족하는사업자"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "신청일 기준 휴·폐업, 부도가 확인될 경우 평가대상에서 제외될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "신청일 기준 휴·폐업, 부도, 세금 체납 등이 확인될 경우 평가대상에서 제외될 수 있음"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "신청일 기준 세금 체납이 확인될 경우 평가대상에서 제외될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "신청일 기준 휴·폐업, 부도, 세금 체납 등이 확인될 경우 평가대상에서 제외될 수 있음"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "행정처분 이력이 확인되면 감점 또는 탈락사유로 반영될 수 있음(기관 판단)",
+   "applies_to": null,
+   "waives": [],
+   "value": "행정처분 이력 없음",
+   "evidence": {
+    "page": 2,
+    "quote": "행정처분이력이확인되는경우평가에서감점또는탈락사유로반영"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인24 온라인 신청, 마감시간(18:00 정각) 이후 추가접수 불가. 추진일정은 운영상황에 따라 변동될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-07-14",
+    "2026-07-29T18:00"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "‘26. 7. 14(화) ~ 7. 29(수), 18:00 까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "참고1 목록(백년가게 198개사, 백년소공인 173개사)에 포함된 업체만 재지정 신청 대상",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026년 9~12월 지정기간 만료예정 백년소상공인(참고1 목록 371개사)",
+   "evidence": {
+    "page": 1,
+    "quote": "지정만료백년소상공인371개사"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "「소상공인기본법」 제2조제2항에 따라 규모의 확대 등으로 소상공인에 해당하지 아니하게 된 경우 그 사유가 발생한 연도의 다음 연도부터 3년간 소상공인으로 보아 재지정 신청 가능(단, 소기업 외의 기업과 합병하거나 대통령령으로 정하는 사유로 소상공인에 해당하지 아니하게 된 경우는 제외)",
+   "note": "소·중기업으로 성장한 백년소상공인은 재지정 불가. 다만 업체 규모를 제외한 재지정 요건 충족 시 '명예 백년소상공인'으로 지정될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "기준소상공인법적기준에충족하는사업자"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "신청일 기준 휴·폐업, 부도가 확인될 경우 평가대상에서 제외될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "신청일 기준 휴·폐업, 부도, 세금 체납 등이 확인될 경우 평가대상에서 제외될 수 있음"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "신청일 기준 세금 체납이 확인될 경우 평가대상에서 제외될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "신청일 기준 휴·폐업, 부도, 세금 체납 등이 확인될 경우 평가대상에서 제외될 수 있음"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "행정처분 이력이 확인되면 감점 또는 탈락사유로 반영될 수 있음(기관 판단)",
+   "applies_to": null,
+   "waives": [],
+   "value": "행정처분 이력 없음",
+   "evidence": {
+    "page": 2,
+    "quote": "행정처분이력이확인되는경우평가에서감점또는탈락사유로반영"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인24 온라인 신청, 마감시간(18:00 정각) 이후 추가접수 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-07-14",
+    "2026-07-29T18:00"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "‘26. 7. 14(화) ~ 7. 29(수), 18:00 까지"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "명예 백년소상공인 지정(소·중기업으로 성장한 업체)",
+  "지정기간(지정일로부터 5년) 및 지원내용(홍보지원, 연계지원, 인증·현판 등)",
+  "평가절차(서류검토, 현장평가, 심의위원회) 및 추진일정",
+  "가점사항 및 인정기준(지정제도 인증, 정부포상, 숙련기술자, 지식재산권, 재해보험, 취약계층 일자리제공)",
+  "신청방법(소상공인24 회원가입, 대표자 명의 가입, 공동대표 주대표 가입 등)",
+  "역량기술서 미작성·파일 오류 시 평가 제외, 보완서류 5영업일 내 미제출 시 평가 제외",
+  "허위기재 시 지정취소 등 불이익",
+  "가업승계 등 사업자 정보 변동 시 추가 서류 제출",
+  "연락불능·현장평가 불참 시 평가 제외",
+  "제출서류 목록(필수서류, 법인 납세증명서, 승계 서류, 마이데이터 미동의 시 추가서류)",
+  "연계지원 사업별 우대 내용",
+  "문의처 및 서식"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 6,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c1",
+      "type": "wrong_logic",
+      "detail": "재지정 신청 대상은 공고가 참고1에 명시한 업체 목록(백년가게 198개사, 백년소공인 173개사)으로 확정되어 있다. 업체명과 만료월로 포함 여부를 판별할 수 있는 결정적 조건인데도 check가 'discretionary'(기관 재량)로 지정되어 있다. 공고 원문 어디에도 기관이 대상 여부를 재량으로 판단한다는 근거가 없다.",
+      "fix": "check를 목록 대조로 확인 가능한 값(예: 'profile' 또는 목록 대조 방식)으로 변경하고, 근거 문구로 '대상자는 참고1 확인'을 함께 인용한다.",
+      "source_quote": "본 공고는 2026. 9. 1 ~ 12. 31 중 지정기간 만료예정인 백년소상공인을 대상으로 재지정 신청을 안내하는 공고입니다.(대상자는 참고1 확인)"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c1: 재지정 신청 대상은 공고 참고1의 업체 목록(백년가게 198개사, 백년소공인 173개사)으로 확정되어 있으므로 check를 'discretionary'가 아닌 목록 대조로 판정 가능한 값(예: profile)으로 변경하고, 근거 문구에 '대상자는 참고1 확인'을 함께 인용할 것."
+   },
+   "result": {
+    "n_conditions": 6,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 2,
+ "seconds": 84
+}

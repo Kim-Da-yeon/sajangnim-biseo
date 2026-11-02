@@ -1,0 +1,422 @@
+{
+ "source_text": "holdout4_1066477",
+ "scope": "혁신바우처(지역제조) 컨소시엄 구성기업의 신청 대상과 신청 제외",
+ "conditions": [
+  {
+   "id": "A1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "중소기업기본법 제2조에 따른 소기업",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": "스타트업은 예비 창업자도 신청 가능(단, 선정 시 사업자등록 필수)",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "- 「중소기업기본법｣제2조에따른소기업"
+   }
+  },
+  {
+   "id": "A2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "스타트업 1개사와 제조 소기업 1개사로 시제품 제작 컨소시엄을 구성",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "- 시제품제작을위한컨소시엄*을구성한기업"
+   }
+  },
+  {
+   "id": "A3a",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "not_in",
+   "value": [
+    "서울특별시",
+    "인천광역시",
+    "경기도"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:비수도권",
+   "check": "profile",
+   "exception": "지역 이전 예정 기업은 선정 이후 7일 이내 사업장 이전 불이행 시 선정 취소",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "□신청대상: 비수도권동일(인접) 시‧도내에위치한스타트업과제조"
+   }
+  },
+  {
+   "id": "A4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "컨소시엄 구성기업이 모두 동일 시·도 또는 경계를 접한 시·도에 위치",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": "제주도는 비수도권 전체와 협업 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "- 컨소시엄구성기업이모두비수도권동일(또는인접*) 시·도에위치하는기업"
+   }
+  },
+  {
+   "id": "A5",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "별첨2 주된 업종별 평균매출액등 이하(C19·C24 140억원, C10·C11·C14·C15·C20·C21·C23·C25·C26·C28·C29·C30·C32 120억원, C12·C13·C16·C17·C18·C22·C27·C31·C33 80억원, C34 15억원)",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "제조 소기업",
+   "waives": [],
+   "evidence": {
+    "page": 8,
+    "quote": "제조 소기업 규모 기준*"
+   }
+  },
+  {
+   "id": "A6",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "between",
+   "value": [
+    "C10",
+    "C34"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "제조 소기업",
+   "waives": [],
+   "evidence": {
+    "page": 8,
+    "quote": "* 중소기업기본법 시행령 제8조①항 별표3 분류기호 “C”"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "회생인가를 받은 기업, 중진공 등으로부터 재창업자금을 지원받은 기업 등 정부·공공기관으로부터 재기지원 필요성을 인정받은 기업(인)은 참여 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 금융기관으로부터 불량거래처로 규제중인 기업"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 국세 및 지방세 체납 기업 또는 대표자"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 휴·폐업 기업"
+   }
+  },
+  {
+   "id": "X4",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 불건전 영상게임기 제조업, 도박게임장비 등 불건전 오락용품 제조업"
+   }
+  },
+  {
+   "id": "X5a",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "중소기업 혁신바우처 사업 운영기관으로 참여하는 기업이 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 중소기업 혁신바우처 사업 운영기관으로 참여하고 있는 기업 또는 그 특수관계 기업"
+   }
+  },
+  {
+   "id": "X5b",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "혁신바우처 운영기관의 특수관계 기업이 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 중소기업 혁신바우처 사업 운영기관으로 참여하고 있는 기업 또는 그 특수관계 기업"
+   }
+  },
+  {
+   "id": "X6",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "컨소시엄이 특수관계 기업으로 구성되지 않음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 특수관계 기업으로 컨소시엄이 구성된 경우"
+   }
+  },
+  {
+   "id": "X7",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 신청 프로그램의 내용이 동 사업 및 타부처 정부지원 사업을 통해 지원받은 내용과"
+   }
+  },
+  {
+   "id": "X8",
+   "kind": "exclusion",
+   "field": "selected_earlier_round",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 신청일 현재 ‘26년 동사업에 선정된 기업"
+   }
+  },
+  {
+   "id": "X9",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "혁신바우처 사업 총 지원 횟수 5회 미만",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 혁신바우처 사업을 총 5회 이상 지원받은 기업"
+   }
+  },
+  {
+   "id": "X10",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 대표자 또는 기업이 보조금법 위반 등으로 정부 지원사업에 참여제한 중인 경우"
+   }
+  },
+  {
+   "id": "X11",
+   "kind": "exclusion",
+   "field": "social_issue",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◈ 대표자 또는 기업이 그 밖에 사회적 물의를 일으켜 지원이 합당하지 않다고 인정"
+   }
+  },
+  {
+   "id": "X12",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "전년도 사업 선정 후 바우처 협약을 포기한 이력이 없음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "◈ 선정 후 바우처 협약* 포기 시 차년도 사업 신청 불가"
+   }
+  },
+  {
+   "id": "X13",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "전년도 사업 선정 후 서비스 계약 미완료로 차년도 신청 불가 처리되지 않음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "취소 및 차년도 신청 불가 처리될 수 있음"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-03-20T10:00",
+    "2026-04-03T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "□신청기간: ‘26. 3. 20.(금) 10시~ ‘26. 4. 3.(금) 18시"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "컨소시엄당 1억원, 프로그램별 한도, 매출액별 정부지원 비율, 지역별 추가 비율",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "구성기업 각각 신청, 공동인증서, 협업계획서와 증명 서류",
+   "reason": "자격이 아니라 신청 절차"
+  },
+  {
+   "text": "서면심사, 발표평가, 사업운영위원회",
+   "reason": "자격이 아니라 선정 평가"
+  },
+  {
+   "text": "별첨3 평균매출액 산정 방법",
+   "reason": "별도 조건이 아니라 A5 입력값의 계산 방법"
+  },
+  {
+   "text": "선정 후 30일 내 협약, 50일 내 서비스 계약, 7일 내 사업장 이전 이행",
+   "reason": "선정 후 의무"
+  }
+ ],
+ "notice_id": "1066477",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

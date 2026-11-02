@@ -1,0 +1,213 @@
+{
+ "source_text": "holdout4_1066053",
+ "scope": "기술보호 바우처 참여기업의 지원요건과 신청 제외",
+ "conditions": [
+  {
+   "id": "C1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "중소기업기본법 제2조 및 시행령 제3조에 따른 중소기업",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "◦「중소기업기본법」제2조및시행령제3조에따른중소기업"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "1인기업이 아님(별첨 적격평가 표의 기본검토 항목. 본문 제외 목록에는 없음)",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "1인기업 여부"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "startup_excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "1. 「중소기업창업 지원법」 제5조 및 동법 시행령 제4조의 “창업에서 제외되는 업종”에 "
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "2. 국세 및 지방세 체납 또는 휴·폐업중인 기업"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "2. 국세 및 지방세 체납 또는 휴·폐업중인 기업"
+   }
+  },
+  {
+   "id": "X4a",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "3. 신청기업의 허위 서류제출 또는 기타 정상인 금융거래가 어려운 경우 등"
+   }
+  },
+  {
+   "id": "X4b",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "정상적인 금융거래가 어려운 경우가 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "3. 신청기업의 허위 서류제출 또는 기타 정상인 금융거래가 어려운 경우 등"
+   }
+  },
+  {
+   "id": "X5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "종전 기술보호 바우처 지원사업 참여 후 중도포기한 이력이 없음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": "기존 사업 참여기업의 재신청은 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "4. 종전 기술보호 바우처 지원사업에 참여하여, 중도포기한 기업"
+   }
+  },
+  {
+   "id": "D1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "적격평가 점수 60점 이상(2인 평균)",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦(적격평가) 점수60점미만(2인평균)은지원불가"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-03-09",
+    "2026-03-30"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "신청 현황에 따라 조기 종료될 수 있음. 사업공고는 게시일부터 예산소진시까지로 적힘",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦(신청기간) ‘26. 3. 9(월) ~ 3. 30(월)"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "수준진단 점수별 바우처 한도, 정부보조율, 7년 이내 창업기업 상향",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "참여신청서, 추진계획서, 사업자등록증 등 제출 서류",
+   "reason": "자격이 아니라 신청 절차"
+  },
+  {
+   "text": "2026년 사업 협약 후 포기 시 2년간 지원 불가, 계열사·협력사 서비스 이용 불가, 부정행위 제재",
+   "reason": "선정 후 의무와 제재"
+  },
+  {
+   "text": "연계사업 우대가점과 증빙",
+   "reason": "자격이 아니라 연계사업 가점"
+  }
+ ],
+ "notice_id": "1066053",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

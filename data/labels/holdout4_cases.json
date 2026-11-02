@@ -1,0 +1,662 @@
+{
+ "status": "AI 초안, 참가자 확인 전",
+ "note": "프로필은 전부 가상. 공고마다 일치 2, 불일치 2, 확인 필요 2. PBLN127456은 원문에 본문이 없어 라벨과 사례를 만들지 않음. expected는 공고를 읽은 사람의 판단이며, 어휘로 못 담는 사실은 프로필 other에 글로 적고 unsupported 조건은 그 글로 판단함. '_exception' 키는 예외 해당 여부를 입력값으로 밝힌 것. as_of는 2026-11-02 또는 공고 기간 내 날짜. 1066477은 구성기업 한 곳의 입력이며 applicant_type으로 역할을 밝힘. 1069787은 참고1의 실제 업체명을 쓰지 않음. 코덱스 감수 후 IV2, TP5 수정.",
+ "cases": [
+  {
+   "id": "LG1",
+   "notice_id": "1068837",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "main_industry_ksic": "20423",
+    "industry_name": "화장품 제조업",
+    "employees": 12,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "gov_sanction": false,
+    "prior_similar_benefit": false,
+    "excluded_industry": false,
+    "multiple_business_applying": false,
+    "social_issue": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 저나 가족이 운영하는 다른 회사는 없고 사업자도 이곳 하나입니다. 수출바우처 수행기관으로 참여한 적이 없고 참여 제한을 받은 적도 없습니다. 수출 실적은 아직 없습니다. 중기부 수출바우처에 참여한 적이 없습니다. 산업부 수출바우처 협약은 2026년 1월 31일에 끝났습니다."
+   },
+   "expected": "일치",
+   "period_status": "일정 확인 필요",
+   "decisive": [],
+   "reason": "산업부 협약이 기준일 ’26.2.1 전날 종료. 수출액·매출액 기준은 미적용이라 수출 실적이 없어도 무관",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "LG2",
+   "notice_id": "1068837",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "main_industry_ksic": "20423",
+    "industry_name": "화장품 제조업",
+    "employees": 12,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": true,
+    "gov_sanction": false,
+    "prior_similar_benefit": false,
+    "excluded_industry": false,
+    "multiple_business_applying": false,
+    "social_issue": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 저나 가족이 운영하는 다른 회사는 없고 사업자도 이곳 하나입니다. 수출바우처 수행기관으로 참여한 적이 없고 참여 제한을 받은 적도 없습니다. 산업부 수출바우처에 선정된 적이 없습니다. 2025년 3월에 중기부 수출바우처에 선정되었고 협약액 대비 사용률은 정확히 70%였습니다. 채무불이행자로 등록되어 있지만 법원에서 개인회생 변제계획인가를 받았습니다.",
+    "debt_default_exception": true
+   },
+   "expected": "일치",
+   "period_status": "일정 확인 필요",
+   "decisive": [],
+   "reason": "사용률 70%는 참여제한 구간(70% 미만) 밖이고 감점 대상일 뿐. 채무불이행은 변제계획인가 단서에 해당",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "LG3",
+   "notice_id": "1068837",
+   "program": null,
+   "as_of": "2026-06-22",
+   "profile": {
+    "main_industry_ksic": "20423",
+    "industry_name": "화장품 제조업",
+    "employees": 12,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "gov_sanction": false,
+    "prior_similar_benefit": false,
+    "excluded_industry": false,
+    "multiple_business_applying": false,
+    "social_issue": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 저나 가족이 운영하는 다른 회사는 없고 사업자도 이곳 하나입니다. 수출바우처 수행기관으로 참여한 적이 없고 참여 제한을 받은 적도 없습니다. 산업부 수출바우처에 선정된 적이 없습니다. 중기부 수출바우처에 2024년 2월 1일 선정되었고 협약 시작일은 2024년 7월 1일입니다. 바우처 사용률은 69%였습니다."
+   },
+   "expected": "불일치",
+   "period_status": "일정 확인 필요",
+   "decisive": [
+    "X6a"
+   ],
+   "reason": "’24.2.1 당일 선정은 '이후'에 포함. 사용률 70% 미만이고 협약시작일부터 2년이 안 지남",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "LG4",
+   "notice_id": "1068837",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "main_industry_ksic": "46331",
+    "industry_name": "주류 도매업",
+    "employees": 12,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "gov_sanction": false,
+    "prior_similar_benefit": false,
+    "excluded_industry": true,
+    "multiple_business_applying": false,
+    "social_issue": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 저나 가족이 운영하는 다른 회사는 없고 사업자도 이곳 하나입니다. 수출바우처 수행기관으로 참여한 적이 없고 참여 제한을 받은 적도 없습니다. 중기부 수출바우처에 참여한 적이 없습니다. 산업부 수출바우처에도 선정된 적이 없습니다."
+   },
+   "expected": "불일치",
+   "period_status": "일정 확인 필요",
+   "decisive": [
+    "X11"
+   ],
+   "reason": "주류 도매업은 표에 中 표기 없이 지원제외 업종으로 적힘",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "LG5",
+   "notice_id": "1068837",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "industry_name": "시계 및 귀금속 제품 도매업",
+    "employees": 12,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "gov_sanction": false,
+    "prior_similar_benefit": false,
+    "multiple_business_applying": false,
+    "social_issue": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 저나 가족이 운영하는 다른 회사는 없고 사업자도 이곳 하나입니다. 수출바우처 수행기관으로 참여한 적이 없고 참여 제한을 받은 적도 없습니다. 중기부 수출바우처에 참여한 적이 없습니다. 산업부 수출바우처에도 선정된 적이 없습니다."
+   },
+   "expected": "확인 필요",
+   "period_status": "일정 확인 필요",
+   "decisive": [
+    "X11"
+   ],
+   "reason": "표의 '46~47 中 사치성 상품 중개업 및 도소매업'은 범위가 정해져 있지 않아 시계 도매업이 드는지 판단 불가",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "LG6",
+   "notice_id": "1068837",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "main_industry_ksic": "20423",
+    "industry_name": "화장품 제조업",
+    "employees": 12,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "gov_sanction": false,
+    "prior_similar_benefit": false,
+    "excluded_industry": false,
+    "multiple_business_applying": false,
+    "social_issue": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 사업자는 이곳 하나입니다. 수출바우처 수행기관으로 참여한 적이 없고 참여 제한을 받은 적도 없습니다. 수출바우처에 참여한 적은 없습니다. 제 동생이 다른 회사를 운영하는데 그 회사가 올해 수출바우처에 참여하는지는 모릅니다."
+   },
+   "expected": "확인 필요",
+   "period_status": "일정 확인 필요",
+   "decisive": [
+    "X8"
+   ],
+   "reason": "가족 운영 기업이 ’26년 참여기업인지 사장님이 확인할 수 없음",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "TP1",
+   "notice_id": "1066053",
+   "program": null,
+   "as_of": "2026-03-30",
+   "profile": {
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 8,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "startup_excluded_industry": false,
+    "misuse_history": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 은행 연체나 금융거래 문제는 없습니다. 2024년 기술보호 바우처에 참여해 끝까지 마쳤습니다."
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "신청기간 마지막 날. 기존 참여기업의 재신청은 가능하고 중도포기가 아님",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "TP2",
+   "notice_id": "1066053",
+   "program": null,
+   "as_of": "2026-03-09",
+   "profile": {
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 2,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "startup_excluded_industry": false,
+    "misuse_history": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 은행 연체나 금융거래 문제는 없습니다. 기술보호 바우처에 참여한 적이 없습니다."
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "신청기간 첫날. 상시근로자 2명으로 1인기업 아님",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "TP3",
+   "notice_id": "1066053",
+   "program": null,
+   "as_of": "2026-03-16",
+   "profile": {
+    "main_industry_ksic": "10712",
+    "industry_name": "빵류 제조업",
+    "employees": 8,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "startup_excluded_industry": true,
+    "misuse_history": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 은행 연체나 금융거래 문제는 없습니다. 기술보호 바우처에 참여한 적이 없습니다. 빵 공장이 본업이고 공장 옆에서 작은 카페도 함께 운영합니다."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "X1"
+   ],
+   "reason": "숙박·음식업을 부수적으로 겸해도 적힌 업종에 해당",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "TP4",
+   "notice_id": "1066053",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 8,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "startup_excluded_industry": false,
+    "misuse_history": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 은행 연체나 금융거래 문제는 없습니다. 2024년 기술보호 바우처에 참여했다가 중간에 포기했습니다."
+   },
+   "expected": "불일치",
+   "period_status": "마감",
+   "decisive": [
+    "X5"
+   ],
+   "reason": "종전 사업 중도포기. 기간도 3.30로 마감",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "TP5",
+   "notice_id": "1066053",
+   "program": null,
+   "as_of": "2026-03-16",
+   "profile": {
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 1,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "startup_excluded_industry": false,
+    "misuse_history": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 은행 연체나 금융거래 문제는 없습니다. 기술보호 바우처에 참여한 적이 없습니다. 직원 없이 저 혼자 운영합니다."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "C2"
+   ],
+   "reason": "별첨 신청 제외대상 확인 표에 1인기업 여부가 있고 1인기업에 해당",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "TP6",
+   "notice_id": "1066053",
+   "program": null,
+   "as_of": "2026-03-16",
+   "profile": {
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 8,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "startup_excluded_industry": false,
+    "misuse_history": false,
+    "other": "중소기업확인서가 있는 중소기업입니다. 기술보호 바우처에 참여한 적이 없습니다. 은행 대출 이자가 지금 석 달째 연체 중입니다."
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "X4b"
+   ],
+   "reason": "'정상인 금융거래가 어려운 경우'의 기준이 없어 연체의 해당 여부 판단 불가",
+   "flags": [
+    "기관 판단 표시",
+    "조기 마감 가능 표시"
+   ]
+  },
+  {
+   "id": "IV1",
+   "notice_id": "1066477",
+   "program": null,
+   "as_of": "2026-04-03",
+   "profile": {
+    "applicant_type": "제조 소기업",
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 15,
+    "revenue_3y_avg": 12000000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "excluded_industry": false,
+    "prior_similar_benefit": false,
+    "selected_earlier_round": false,
+    "gov_sanction": false,
+    "social_issue": false,
+    "site_region": "제주특별자치도 서귀포시",
+    "other": "대표자와 회사 모두 체납이 없습니다. 혁신바우처 운영기관이 아니고 운영기관과 관계도 없습니다. 올해 이 사업에 선정된 적이 없습니다. 작년에 선정 후 협약을 포기하거나 서비스 계약을 못 한 일도 없습니다. 소기업입니다. 강원특별자치도 춘천시의 스타트업 1곳과 저희 회사로 컨소시엄을 구성했고 서로 특수관계는 아닙니다. 혁신바우처는 지금까지 4회 지원받았습니다. 오늘 오후 3시에 신청합니다."
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "C25 평균매출 120억 정각은 이하에 포함. 4회는 5회 미만. 제주는 비수도권 전체와 협업 가능. 마감일 18시 전",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "IV2",
+   "notice_id": "1066477",
+   "program": null,
+   "as_of": "2026-03-20",
+   "profile": {
+    "applicant_type": "스타트업",
+    "tax_arrears": false,
+    "debt_default": false,
+    "excluded_industry": false,
+    "prior_similar_benefit": false,
+    "selected_earlier_round": false,
+    "gov_sanction": false,
+    "social_issue": false,
+    "site_region": "경기도 가평군",
+    "other": "대표자와 회사 모두 체납이 없습니다. 혁신바우처 운영기관이 아니고 운영기관과 관계도 없습니다. 올해 이 사업에 선정된 적이 없습니다. 작년에 선정 후 협약을 포기하거나 서비스 계약을 못 한 일도 없습니다. 저는 아직 사업자등록이 없는 예비 창업자이고 선정되면 바로 사업자등록을 합니다. 휴업이나 폐업 상태도 아닙니다. 강원특별자치도 춘천시의 제조 소기업 1곳과 컨소시엄을 구성했고 서로 특수관계는 아닙니다. 혁신바우처를 받은 적이 없습니다."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "가평군은 수도권이고 이전 계획이 없어 비수도권 요건 위반. 별첨5는 보조비율 표임",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "IV3",
+   "notice_id": "1066477",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "applicant_type": "제조 소기업",
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 15,
+    "revenue_3y_avg": 3000000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "excluded_industry": false,
+    "prior_similar_benefit": false,
+    "selected_earlier_round": false,
+    "gov_sanction": false,
+    "social_issue": false,
+    "site_region": "부산광역시 사상구",
+    "other": "대표자와 회사 모두 체납이 없습니다. 혁신바우처 운영기관이 아니고 운영기관과 관계도 없습니다. 올해 이 사업에 선정된 적이 없습니다. 작년에 선정 후 협약을 포기하거나 서비스 계약을 못 한 일도 없습니다. 소기업입니다. 경상남도 김해시의 스타트업 1곳과 저희 회사로 컨소시엄을 구성했고 서로 특수관계는 아닙니다. 혁신바우처는 지금까지 5회 지원받았습니다."
+   },
+   "expected": "불일치",
+   "period_status": "마감",
+   "decisive": [
+    "X9"
+   ],
+   "reason": "총 5회 이상 지원은 제외. 기간도 4.3로 마감",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "IV4",
+   "notice_id": "1066477",
+   "program": null,
+   "as_of": "2026-03-25",
+   "profile": {
+    "applicant_type": "제조 소기업",
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 15,
+    "revenue_3y_avg": 12050000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "excluded_industry": false,
+    "prior_similar_benefit": false,
+    "selected_earlier_round": false,
+    "gov_sanction": false,
+    "social_issue": false,
+    "site_region": "부산광역시 사상구",
+    "other": "대표자와 회사 모두 체납이 없습니다. 혁신바우처 운영기관이 아니고 운영기관과 관계도 없습니다. 올해 이 사업에 선정된 적이 없습니다. 작년에 선정 후 협약을 포기하거나 서비스 계약을 못 한 일도 없습니다. 경상남도 김해시의 스타트업 1곳과 저희 회사로 컨소시엄을 구성했고 서로 특수관계는 아닙니다. 혁신바우처는 받은 적이 없습니다."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "A5"
+   ],
+   "reason": "C25 기준 120억 이하를 초과",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "IV5",
+   "notice_id": "1066477",
+   "program": null,
+   "as_of": "2026-03-25",
+   "profile": {
+    "applicant_type": "제조 소기업",
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 15,
+    "revenue_3y_avg": 3000000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "excluded_industry": false,
+    "prior_similar_benefit": false,
+    "selected_earlier_round": false,
+    "gov_sanction": false,
+    "social_issue": false,
+    "site_region": "서울특별시 금천구",
+    "other": "대표자와 회사 모두 체납이 없습니다. 혁신바우처 운영기관이 아니고 운영기관과 관계도 없습니다. 올해 이 사업에 선정된 적이 없습니다. 작년에 선정 후 협약을 포기하거나 서비스 계약을 못 한 일도 없습니다. 소기업입니다. 대전광역시 유성구의 스타트업 1곳과 저희 회사로 컨소시엄을 구성했고 서로 특수관계는 아닙니다. 혁신바우처는 받은 적이 없습니다. 공장을 대전으로 옮길지 검토 중인데 시기는 아직 못 정했습니다."
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "A3a",
+    "A4"
+   ],
+   "reason": "현재 수도권이고 지역 이전 예정 기업 단서에 드는지 불명. 소재지가 정해져야 인접 여부도 정해짐",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "IV6",
+   "notice_id": "1066477",
+   "program": null,
+   "as_of": "2026-03-25",
+   "profile": {
+    "applicant_type": "제조 소기업",
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 15,
+    "revenue_3y_avg": 3000000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "excluded_industry": false,
+    "prior_similar_benefit": false,
+    "selected_earlier_round": false,
+    "gov_sanction": false,
+    "social_issue": false,
+    "site_region": "부산광역시 사상구",
+    "other": "대표자와 회사 모두 체납이 없습니다. 혁신바우처 운영기관이 아니고 운영기관과 관계도 없습니다. 올해 이 사업에 선정된 적이 없습니다. 작년에 선정 후 협약을 포기하거나 서비스 계약을 못 한 일도 없습니다. 소기업입니다. 경상남도 김해시의 스타트업 1곳과 저희 회사로 컨소시엄을 구성했습니다. 그 스타트업 대표가 제 사촌인데 특수관계에 해당하는지는 모릅니다. 혁신바우처는 받은 적이 없습니다."
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "X6"
+   ],
+   "reason": "이 공고에 특수관계 정의가 없어 사촌 운영 기업의 해당 여부 판단 불가",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN1",
+   "notice_id": "1069787",
+   "program": null,
+   "as_of": "2026-07-29",
+   "profile": {
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 3,
+    "revenue_3y_avg": 400000000,
+    "merchant_certificate": true,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "other": "백년가게 지정서의 만료일은 2026년 9월 1일이고 공고 참고1 명단에 저희 업체가 있습니다. 소상공인확인서가 있습니다. 오늘 오전에 신청합니다."
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "만료일 9.1은 대상 구간 첫날. 신청 마감일",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN2",
+   "notice_id": "1069787",
+   "program": null,
+   "as_of": "2026-07-14",
+   "profile": {
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 12,
+    "revenue_3y_avg": 3000000000,
+    "merchant_certificate": false,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "other": "백년소공인 지정서의 만료일은 2026년 11월 30일이고 공고 참고1 명단에 저희 업체가 있습니다. 2024년에 직원이 12명으로 늘어 소상공인 규모를 넘었습니다. 합병은 없었습니다."
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "2024년 사유면 2025~2027년 소상공인으로 봄. 신청 첫날",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN3",
+   "notice_id": "1069787",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 3,
+    "revenue_3y_avg": 400000000,
+    "merchant_certificate": true,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "other": "백년가게 지정서의 만료일은 2026년 8월 31일이고 공고 참고1 명단에 저희 업체가 없습니다. 소상공인확인서가 있습니다."
+   },
+   "expected": "불일치",
+   "period_status": "마감",
+   "decisive": [
+    "A3"
+   ],
+   "reason": "만료일이 대상 구간 시작 하루 전. 기간도 7.29로 마감",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN4",
+   "notice_id": "1069787",
+   "program": null,
+   "as_of": "2026-07-20",
+   "profile": {
+    "main_industry_ksic": "25112",
+    "industry_name": "금속 구조물 제조업",
+    "employees": 12,
+    "revenue_3y_avg": 3000000000,
+    "merchant_certificate": false,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "other": "백년소공인 지정서의 만료일은 2026년 10월이고 공고 참고1 명단에 저희 업체가 있습니다. 2022년에 직원이 12명으로 늘어 소상공인 규모를 넘었습니다. 합병은 없었습니다."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "A1",
+    "A2"
+   ],
+   "reason": "2022년 사유면 유예가 2023~2025년으로 끝나 2026년 신청일에 소상공인이 아님",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN5",
+   "notice_id": "1069787",
+   "program": null,
+   "as_of": "2026-07-20",
+   "profile": {
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 3,
+    "revenue_3y_avg": 400000000,
+    "merchant_certificate": true,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "other": "백년가게 지정서의 만료일은 2026년 12월 31일인데 공고 참고1 명단에서 저희 업체를 찾지 못했습니다. 소상공인확인서가 있습니다."
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "A3"
+   ],
+   "reason": "지정서 날짜는 본문 구간 안인데 참고1에 12월 만료 업체가 없어 근거가 충돌",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN6",
+   "notice_id": "1069787",
+   "program": null,
+   "as_of": "2026-07-20",
+   "profile": {
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "revenue_3y_avg": 400000000,
+    "merchant_certificate": false,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "other": "백년가게 지정서의 만료일은 2026년 11월이고 공고 참고1 명단에 저희 업체가 있습니다. 소상공인 규모는 잘 모르고 확인서는 없습니다."
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "A1"
+   ],
+   "reason": "상시근로자 수 값이 없어 소상공인 여부 판단 불가",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  }
+ ]
+}

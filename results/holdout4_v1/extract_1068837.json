@@ -1,0 +1,562 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "중소기업 해당 여부는 입력 필드로 판정할 수 없음. 중소기업확인서는 신청일 기준 유효서류만 인정",
+   "applies_to": null,
+   "waives": [],
+   "value": "중소기업기본법 제2조 및 시행령 제3조에 따른 중소기업",
+   "evidence": {
+    "page": 3,
+    "quote": "제2조및시행령제3조에따른중소기업"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업했거나 국세·지방세 체납중인 경우"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세·지방세 체납 기준. 국세 및 지방세 완납 증명서는 신청일 기준 유효서류만 인정",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업했거나 국세·지방세 체납중인 경우"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "신용회복위원회 프리워크아웃·개인워크아웃 제도에서 채무조정합의서를 체결한 경우, 법원 개인회생제도에서 변제계획인가를 받거나 파산면책 선고자, 회생인가를 받은 기업 등 정부·공공기관으로부터 재기지원 필요성을 인정받은 기업은 참여 가능",
+   "note": "민사집행법상 채무불이행자명부 등재 또는 전국은행연합회 등 신용정보 집중기관에 채무불이행자로 등록된 경우",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "민사집행법에 의하여 채무불이행자명부에 등재되거나"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "보조금법 위반 등 부정행위로 정부 지원사업 참여제한 중인 기업(4쪽의 '부정행위 등으로 사업 참여 제한 중인 기업' 포함)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "보조금법 위반 등 부정행위로 인해 정부 지원 사업에 참여제한 중인 기업"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "특정 수출서비스에 국한하여 지원하는 개별사업(지사화사업, OK FTA, 인증취득, 박람회 등)은 중복신청 가능(선정 이후 동일·유사 항목 중복정산 금지)",
+   "note": "기준일 2026-02-01. 산업부 수출바우처(수출지원기반활용사업), 지방정부(KOTRA 지역본부 연계 진행형 사업) 등에 참여기업으로 선정되어 협약이 종료되지 않은 기업",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "산업부 수출바우처에 참여기업으로 선정되어 협약이 종료되지 않는 기업"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최근 2년 중기부 수출바우처사업 참여 이력 기업 중 협약액 대비 사용률 70% 미만은 협약시작일로부터 2년간 참여제한. 70% 이상~85% 미만은 감점(조건 아님), 85% 이상 제재 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": "2024-02-01 이후 중기부 수출바우처사업 선정기업 중 바우처 사용률 70% 미만으로 협약시작일로부터 2년간 참여제한 대상 아님",
+   "evidence": {
+    "page": 3,
+    "quote": "협약시작일로부터 2년간 참여제한"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "수출바우처 사업 수행기관으로 참여 중이 아님",
+   "evidence": {
+    "page": 4,
+    "quote": "수출바우처 사업 수행기관으로 참여 중이거나 부정행위 등으로 사업 참여"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "판단기준은 수출지원기반활용사업 관리지침 제2조 제22호, 제23호(예: 대표자 동일, 대표자 가족 등이 운영하는 기업). 사실상 동일기업 의심 시 현장조사 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026년 참여기업과 특수관계에 있는 기업 아님",
+   "evidence": {
+    "page": 4,
+    "quote": "’26년 참여기업과 특수관계에 있는 기업"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "multiple_business_applying",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "동일 법인의 복수 사업자는 협약기간 내 동시 신청 및 선정 불가",
+   "applies_to": "동일 법인 복수 사업자",
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "동일 법인의 복수 사업자는 협약기간 내 동시 신청 및 선정 불가"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "social_issue",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "사회적 물의를 일으켜 지원이 적합하지 않다고 인정되는 경우"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "수출바우처사업 지원제외 업종: 33402 中 불건전 영상게임기 제조업, 33409 中 사행성·불건전 오락기구 제조업, 46102 中 담배 중개업, 46~47 中 도박기계·사행성·사치성 상품 중개 및 도소매업·주류·담배 소매업, 46331·46333 주류·담배 도매업, 5621 주점업, 58 中 불건전 게임소프트웨어 개발 및 공급업, 76390 中 사행성 오락기구 임대업, 9124 사행시설 관리 및 운영업. 한국표준산업분류 기준, 2개 이상 업종 영위 시 매출액 비중이 가장 큰 업종을 주업종으로 함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "사행산업 등 국민 정서상 지원이 부적절한 업종 영위 기업"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "공고일(2026-06-08)~예산 소진 시까지 회차별 상시 접수. 1차 6.8 13시~6.19 17시, 2차 6.22 13시~7.3 17시, 3차 7.6 13시~7.17 17시, 4차 7.20 13시~7.31 17시, 이후 2주 단위 운영. 일정 변경 가능, 예산 소진 시 조기마감",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-06-08T13:00",
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "공고일~ 예산소진시까지회차별접수"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "중소기업 해당 여부는 입력 필드로 판정할 수 없음. 중소기업확인서는 신청일 기준 유효서류만 인정",
+   "applies_to": null,
+   "waives": [],
+   "value": "중소기업기본법 제2조 및 시행령 제3조에 따른 중소기업",
+   "evidence": {
+    "page": 3,
+    "quote": "제2조및시행령제3조에따른중소기업"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업했거나 국세·지방세 체납중인 경우"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세·지방세 체납 기준. 국세 및 지방세 완납 증명서는 신청일 기준 유효서류만 인정",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업했거나 국세·지방세 체납중인 경우"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "신용회복위원회 프리워크아웃·개인워크아웃 제도에서 채무조정합의서를 체결한 경우, 법원 개인회생제도에서 변제계획인가를 받거나 파산면책 선고자, 회생인가를 받은 기업 등 정부·공공기관으로부터 재기지원 필요성을 인정받은 기업은 참여 가능",
+   "note": "민사집행법상 채무불이행자명부 등재 또는 전국은행연합회 등 신용정보 집중기관에 채무불이행자로 등록된 경우",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "민사집행법에 의하여 채무불이행자명부에 등재되거나"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "보조금법 위반 등 부정행위로 정부 지원사업 참여제한 중인 기업(4쪽의 '부정행위 등으로 사업 참여 제한 중인 기업' 포함)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "보조금법 위반 등 부정행위로 인해 정부 지원 사업에 참여제한 중인 기업"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "특정 수출서비스에 국한하여 지원하는 개별사업(지사화사업, OK FTA, 인증취득, 박람회 등)은 중복신청 가능(선정 이후 동일·유사 항목 중복정산 금지)",
+   "note": "기준일 2026-02-01. 산업부 수출바우처(수출지원기반활용사업), 지방정부(KOTRA 지역본부 연계 진행형 사업) 등에 참여기업으로 선정되어 협약이 종료되지 않은 기업",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "산업부 수출바우처에 참여기업으로 선정되어 협약이 종료되지 않는 기업"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최근 2년 중기부 수출바우처사업 참여 이력 기업 중 협약액 대비 사용률 70% 미만은 협약시작일로부터 2년간 참여제한. 70% 이상~85% 미만은 감점(조건 아님), 85% 이상 제재 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": "2024-02-01 이후 중기부 수출바우처사업 선정기업 중 바우처 사용률 70% 미만으로 협약시작일로부터 2년간 참여제한 대상 아님",
+   "evidence": {
+    "page": 3,
+    "quote": "협약시작일로부터 2년간 참여제한"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "수출바우처 사업 수행기관으로 참여 중이 아님",
+   "evidence": {
+    "page": 4,
+    "quote": "수출바우처 사업 수행기관으로 참여 중이거나 부정행위 등으로 사업 참여"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "판단기준은 수출지원기반활용사업 관리지침 제2조 제22호, 제23호(예: 대표자 동일, 대표자 가족 등이 운영하는 기업). 사실상 동일기업 의심 시 현장조사 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026년 참여기업과 특수관계에 있는 기업 아님",
+   "evidence": {
+    "page": 4,
+    "quote": "’26년 참여기업과 특수관계에 있는 기업"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "multiple_business_applying",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "동일 법인의 복수 사업자는 협약기간 내 동시 신청 및 선정 불가",
+   "applies_to": "동일 법인 복수 사업자",
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "동일 법인의 복수 사업자는 협약기간 내 동시 신청 및 선정 불가"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "social_issue",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "사회적 물의를 일으켜 지원이 적합하지 않다고 인정되는 경우"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "수출바우처사업 지원제외 업종: 33402 中 불건전 영상게임기 제조업, 33409 中 사행성·불건전 오락기구 제조업, 46102 中 담배 중개업, 46~47 中 도박기계·사행성·사치성 상품 중개 및 도소매업·주류·담배 소매업, 46331·46333 주류·담배 도매업, 5621 주점업, 58 中 불건전 게임소프트웨어 개발 및 공급업, 76390 中 사행성 오락기구 임대업, 9124 사행시설 관리 및 운영업. 한국표준산업분류 기준, 2개 이상 업종 영위 시 매출액 비중이 가장 큰 업종을 주업종으로 함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "사행산업 등 국민 정서상 지원이 부적절한 업종 영위 기업"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "공고일(2026-06-08)~예산 소진 시까지 회차별 상시 접수. 1차 6.8 13시~6.19 17시, 2차 6.22 13시~7.3 17시, 3차 7.6 13시~7.17 17시, 4차 7.20 13시~7.31 17시, 이후 2주 단위 운영. 일정 변경 가능, 예산 소진 시 조기마감",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-06-08T13:00",
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "공고일~ 예산소진시까지회차별접수"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "사업목적, 모집규모, 사용기간(2026.2.1~12.31)",
+  "공인인증서 사용 안내",
+  "지원내용·지원방식(지정수행기관 이용/사후정산) 및 지원한도(최대 15백만원, 정부 70%/자부담 30%)",
+  "바우처 사용률 70% 이상~85% 미만 기업 선정 시 5점 감점",
+  "필수 신청서류(사업신청서, 신용정보조회 동의서, 사업자등록증명원, 국세·지방세 완납증명서, 중소기업확인서) 및 제출 방법",
+  "세부 지원항목, 정산 가능/불가 항목, 최소 정산 신청금액 100만원",
+  "신청 및 지원절차, 전자협약, 바우처 발급",
+  "참여 유의사항(중복수급 제재, 본인 신청, 대필 처벌 등)",
+  "문의처"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 13,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "seconds": 62
+}
