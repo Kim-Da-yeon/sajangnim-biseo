@@ -1,12 +1,12 @@
 # 사장님 행정비서
 
-소상공인의 지원공고, 임대차 계약서, 법령을 원문 근거와 함께 정리해 주는 시제품입니다. 2026년 하반기 AI 경진대회 학생 부문 출품작입니다.
+소상공인 지원공고, 임대차 계약서, 법령을 확인하는 시제품입니다. 2026년 하반기 AI 경진대회 학생 부문 출품작입니다.
 
-정보 제공용입니다. 법률 해석과 자격 확정을 하지 않으며, 최종 자격과 법률 판단은 주관기관과 전문가에게 확인해야 합니다. 가상 프로필과 가상 계약서로만 시험했고 실제 사용자 테스트는 하지 않았습니다.
+법률 해석과 자격 확정은 하지 않습니다. 최종 자격은 주관기관에, 법률 문제는 전문가에게 확인하세요. 가상 데이터로만 시험했고 실제 사용자 테스트는 하지 않았습니다.
 
 ![시연 화면](results/screens/flow_evidence.png)
 
-[시연 영상 보기(104초, 무음)](docs/demo/demo_20261102.webm): 가상 데이터로 실제 화면을 조작한 녹화입니다.
+[시연 영상 보기(102초, 무음)](docs/demo/demo_20261102.webm): 가상 데이터로 실제 화면을 조작한 녹화입니다.
 
 ## 기능
 
@@ -49,7 +49,7 @@ git clone https://github.com/Kim-Da-yeon/sosang-agent.git ~/sosang_agent
 cd ~/sosang_agent
 pip install -r requirements.txt
 cp .env.example .env   # 키 입력. 질문 생성, 안내 카드, 설명 대조, 임대차, 법령에 사용
-python src/app_20261102_v4.py   # http://127.0.0.1:8000/?preset=shop
+python src/app_20261102_v5.py   # http://127.0.0.1:8000/?preset=shop
 ```
 
 확정된 조건은 `data/prepared/`와 `results/eval_v2_posthoc/`에 들어 있어 규칙 판정에는 API 호출이 없습니다.
