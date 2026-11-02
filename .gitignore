@@ -11,3 +11,4 @@ results/usage_until_eval_v1.jsonl
 # 제출 전 작업 문서
 docs/report_draft_*.md
 docs/label_check_*.md
+submission/

@@ -827,3 +827,13 @@
 {"t": "2026-11-02 20:10:16", "role": "진술대조", "input": 1421, "output": 230, "cache_read": 0, "cache_write": 0, "usd": 0.01028}
 {"t": "2026-11-02 20:10:17", "role": "진술대조", "input": 1928, "output": 199, "cache_read": 0, "cache_write": 0, "usd": 0.01169}
 {"t": "2026-11-02 20:11:10", "role": "프로필인터뷰", "input": 483, "output": 99, "cache_read": 0, "cache_write": 0, "usd": 0.00391}
+{"t": "2026-11-02 20:35:34", "role": "안내작성", "input": 1062, "output": 745, "cache_read": 0, "cache_write": 0, "usd": 0.01915}
+{"t": "2026-11-02 20:35:54", "role": "진술대조", "input": 1130, "output": 96, "cache_read": 0, "cache_write": 0, "usd": 0.00644}
+{"t": "2026-11-02 20:35:54", "role": "진술대조", "input": 1448, "output": 85, "cache_read": 0, "cache_write": 0, "usd": 0.00749}
+{"t": "2026-11-02 20:35:54", "role": "진술대조", "input": 1923, "output": 142, "cache_read": 0, "cache_write": 0, "usd": 0.01053}
+{"t": "2026-11-02 20:35:54", "role": "진술대조", "input": 1509, "output": 85, "cache_read": 0, "cache_write": 0, "usd": 0.00774}
+{"t": "2026-11-02 20:35:56", "role": "진술대조", "input": 1398, "output": 136, "cache_read": 0, "cache_write": 0, "usd": 0.00831}
+{"t": "2026-11-02 20:35:56", "role": "진술대조", "input": 1418, "output": 104, "cache_read": 0, "cache_write": 0, "usd": 0.00775}
+{"t": "2026-11-02 20:35:56", "role": "진술대조", "input": 1017, "output": 46, "cache_read": 0, "cache_write": 0, "usd": 0.00499}
+{"t": "2026-11-02 20:35:58", "role": "진술대조", "input": 1073, "output": 28, "cache_read": 0, "cache_write": 0, "usd": 0.00485}
+{"t": "2026-11-02 20:35:58", "role": "진술대조", "input": 1925, "output": 199, "cache_read": 0, "cache_write": 0, "usd": 0.01168}

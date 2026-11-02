@@ -6,6 +6,8 @@
 
 ![시연 화면](results/screens/flow_evidence.png)
 
+[시연 영상 보기(66초, 무음)](docs/demo/demo_20261102.webm): 가상 프로필로 실제 화면을 조작한 녹화입니다.
+
 ## 구조
 
 | 구성 | 역할 |
