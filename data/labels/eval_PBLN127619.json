@@ -83,8 +83,8 @@
    "unit": null,
    "basis": "not_stated",
    "group": "OR:소재지",
-   "check": "conflict",
-   "exception": "공고 내 표기 충돌. 사업장만 보은군이면 확인 필요",
+   "check": "profile",
+   "exception": null,
    "applies_to": "기존 기업",
    "waives": [],
    "evidence": {

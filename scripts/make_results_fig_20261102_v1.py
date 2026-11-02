@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager as fm
 
 R = os.path.expanduser("~/sosang_agent")
-s = json.load(open(f"{R}/results/holdout2_v1/results.json"))["summary"]["scores"]
+s = json.load(open(f"{R}/results/rescore_participant.json"))["h2"]  # 참가자 확인 정답으로 재채점한 값
 for f in fm.findSystemFonts():
     if "NanumGothic" in f or "Pretendard" in f or "NotoSansCJK" in f or "NotoSansKR" in f:
         fm.fontManager.addfont(f); plt.rcParams["font.family"] = fm.FontProperties(fname=f).get_name(); break

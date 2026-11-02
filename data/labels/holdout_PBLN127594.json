@@ -139,7 +139,7 @@
    "unit": null,
    "basis": "not_stated",
    "group": "AND",
-   "check": "discretionary",
+   "check": "unsupported",
    "exception": null,
    "applies_to": null,
    "waives": [],

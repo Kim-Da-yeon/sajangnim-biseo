@@ -1054,15 +1054,12 @@
     "registration_or_activity": true,
     "can_participate": true
    },
-   "expected": "확인 필요",
+   "expected": "일치",
    "period_status": "공고상 기간 내",
-   "decisive": [
-    "C1c"
-   ],
-   "reason": "사업장만 보은군, 공고 내 표기가 달라 판단 불가",
+   "decisive": [],
+   "reason": "참가자 확인: 사업장만 보은군이어도 소재지 요건 충족",
    "flags": [
-    "일정 표기 불일치 표시",
-    "근거 충돌 표시"
+    "일정 표기 불일치 표시"
    ]
   },
   {
