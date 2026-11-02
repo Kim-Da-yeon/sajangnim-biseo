@@ -1179,3 +1179,11 @@
 {"t": "2026-11-02 22:34:55", "role": "법령안내", "input": 2429, "output": 215, "cache_read": 0, "cache_write": 0, "usd": 0.01402}
 {"t": "2026-11-02 22:57:03", "role": "임대차문서해석", "input": 1019, "output": 361, "cache_read": 0, "cache_write": 0, "usd": 0.0113}
 {"t": "2026-11-02 22:57:07", "role": "법령안내", "input": 2429, "output": 204, "cache_read": 0, "cache_write": 0, "usd": 0.0138}
+{"t": "2026-11-02 23:00:19", "role": "안내작성", "input": 1222, "output": 274, "cache_read": 0, "cache_write": 0, "usd": 0.01037}
+{"t": "2026-11-02 23:00:32", "role": "조건판단", "input": 5669, "output": 119, "cache_read": 0, "cache_write": 0, "usd": 0.02506}
+{"t": "2026-11-02 23:00:33", "role": "조건판단", "input": 14154, "output": 245, "cache_read": 0, "cache_write": 0, "usd": 0.06152}
+{"t": "2026-11-02 23:00:38", "role": "조건판단", "input": 24046, "output": 938, "cache_read": 0, "cache_write": 0, "usd": 0.11494}
+{"t": "2026-11-02 23:00:41", "role": "조건판단", "input": 9570, "output": 721, "cache_read": 0, "cache_write": 0, "usd": 0.0527}
+{"t": "2026-11-02 23:00:45", "role": "조건판단", "input": 24341, "output": 1406, "cache_read": 0, "cache_write": 0, "usd": 0.12548}
+{"t": "2026-11-02 23:00:58", "role": "임대차문서해석", "input": 1019, "output": 376, "cache_read": 0, "cache_write": 0, "usd": 0.0116}
+{"t": "2026-11-02 23:01:14", "role": "법령안내", "input": 1901, "output": 273, "cache_read": 0, "cache_write": 0, "usd": 0.01306}
