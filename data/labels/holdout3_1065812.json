@@ -1,0 +1,276 @@
+{
+ "source_text": "holdout3_1065812",
+ "scope": "TOPS 1단계 신청 소상공인의 자격과 지원제외 대상",
+ "conditions": [
+  {
+   "id": "M1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "□ (신청 자격) 소상공인"
+   }
+  },
+  {
+   "id": "L1",
+   "kind": "eligibility",
+   "field": "merchant_certificate",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "• 중소기업확인서 내 ’소상공인‘으로 기재되어 있는 기업"
+   }
+  },
+  {
+   "id": "C3",
+   "kind": "eligibility",
+   "field": "support_field",
+   "op": "in",
+   "value": [
+    "식품",
+    "홈·리빙",
+    "패션",
+    "뷰티"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "* 식품 1,200개사, 홈·리빙 700개사, 패션 700개사, 뷰티 900개사"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "다단계판매 등록 영위, 부동산관리업(6821), 동일 장소 6개월 이상 중개·대리(68221)·분양 대행(68224), 공유오피스·공유주방(68112), 유사의료업(86902), 시각장애인 운영 안마원·안마시술소는 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "소상공인 정책자금 융자제외 대상 업종은 신청 불가"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "접수 마감일 기준 기업이 휴·폐업 또는 부도 상태인 경우"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 체납 또는 금융기관 등 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "X4",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 체납 또는 금융기관 등 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "X5",
+   "kind": "exclusion",
+   "field": "unfair_trade_1y",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "최근 1년 이내 공정거래법에 따른 불공정행위 위반 사실이 있는 경우"
+   }
+  },
+  {
+   "id": "X6",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "not_in",
+   "value": [
+    "해외 수입제품",
+    "대기업 제품"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "해외 수입제품, 대기업 제품"
+   }
+  },
+  {
+   "id": "X7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "2025년 TOPS 프로그램 2단계 이상 진출 이력 없음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "‘25년 TOPS 프로그램 2단계 이상 진출 소상공인은 신청 불가"
+   }
+  },
+  {
+   "id": "X8",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "value": "타사 브랜드 단순 유통·판매",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "** 타기업·소상공인의 브랜드 제품을 단순 유통·판매만 하는 경우는 지원 제외"
+   }
+  },
+  {
+   "id": "D1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "적격심사와 공동평가위원회 평가",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "- 수행기관별 상품기획전문가, 관련 분야 전문가가 참여하는 공동평가위원회를 통해 선정"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-02-26",
+    "2026-04-02T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "◦ (신청 기간) ’26년 2월 26일(목) ~ 4월 2일(목) 18시까지"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "컨설팅·판촉·홍보 지원, 상생성장지원자금, 소진공 사업 가점",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "2단계 진출의 자사 브랜드 보유",
+   "reason": "1단계 신청 요건이 아님('신청일 기준 자사 브랜드가 없어도 신청 가능'). 2단계 선발은 라벨 범위 밖"
+  },
+  {
+   "text": "판판대로 신청, 1개 플랫폼사 선택, 제출서류, 선정 시 AI 교육 필수",
+   "reason": "신청 절차와 선정 후 의무"
+  },
+  {
+   "text": "재해자금 융자허용 업종 표",
+   "reason": "재해자금 지원 범위이며 이 사업의 신청 자격 예외로 적혀 있지 않음"
+  }
+ ],
+ "notice_id": "1065812",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

@@ -1,0 +1,209 @@
+{
+ "source_text": "holdout3_PBLN127480",
+ "scope": "동해시 소상공인의 카드수수료 지원 요건과 제외 대상",
+ "conditions": [
+  {
+   "id": "M1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "▶ 「소상공인기본법」 및 「소상공인 보호 및 지원에 관한 법률」에 따른 소상공인"
+   }
+  },
+  {
+   "id": "R1",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "le",
+   "value": 300000000,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "2025년도 연매출액 3억원 이하 여부 확인"
+   }
+  },
+  {
+   "id": "S1",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "value": "동해시",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 현재 동해시에 사업장을"
+   }
+  },
+  {
+   "id": "A1",
+   "kind": "eligibility",
+   "field": "single_application",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "다수 사업체 대표",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "- 대표자 1인당 한 사업장만 신청 가능합니다."
+   }
+  },
+  {
+   "id": "A2",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "공동대표 사업장",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "- 공동대표일 경우 협의 후 위임대표가 한 사업장만 신청 가능합니다."
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "- 동일 사업 또는 유사한 목적의 사업으로 카드수수료 지원을 이미"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "site_region",
+   "op": "eq",
+   "value": "동해시",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "- 공고일 기준 사업장을 타 시・군・구로 이전한 업체"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "다단계판매 등록 영위, 부동산관리업(6821), 신청일 기준 동일 장소 6개월 이상 부동산 중개·대리업(68221)·분양 대행업(68224), 비거주용건물임대업(68112) 중 공유오피스·공유주방, 유사의료업(86902), 안마원(96122), 시각장애인 운영 안마원·안마시술소는 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "- 소상공인 정책자금 융자제외 대상 업종을 영위하는 업체 [붙임 1]"
+   }
+  },
+  {
+   "id": "X4",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "- 공고일 현재 휴업 또는 폐업 중인 업체"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-11-09",
+    "2026-11-13T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "예산 소진 시 조기 마감될 수 있음. 점심시간 12:00~13:00 제외",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "○ 신청기간 : 2026. 11. 9.(월) ~ 11. 13.(금) 18:00까지"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "2025년 카드매출액의 0.5%, 업체당 최대 20만원",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "지방세 납세증명서, 통장사본 등 제출서류와 계좌 명의 확인",
+   "reason": "서류 확인 항목으로 체납 제외 등 요건 문구가 없음"
+  },
+  {
+   "text": "기한 내 보완요청 미응답 시 제외, 허위 신청 환수",
+   "reason": "자격이 아니라 신청 절차와 사후 조치"
+  }
+ ],
+ "notice_id": "PBLN127480",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

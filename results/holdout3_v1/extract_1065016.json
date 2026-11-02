@@ -1,0 +1,1266 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "중소기업 해당 여부는 입력 필드로 대조할 수 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": "중소기업기본법 제2조제1호에 따른 중소기업의 대표자",
+   "evidence": {
+    "page": 1,
+    "quote": "제2조제1호에 따른 중소기업의 대표자"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "between",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:업력",
+   "check": "profile",
+   "exception": null,
+   "note": "도약기 기업: 모집공고일(2026-01-23) 기준 창업 3년 초과 7년 이내. 개인사업자는 사업자등록증 상 개업연월일, 법인사업자는 법인등기부등본 상 회사성립연월일 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2019-01-23",
+    "2023-01-22"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2019.1.23. ~ 2023.1.22. 기간내 창업한 기업"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "gt",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:업력",
+   "check": "conflict",
+   "exception": null,
+   "note": "유형별 지원내용 표 각주에는 도약기를 '업력 3년 초과 7년 미만'으로 표기하여 신청자격의 '7년 이내'(2019.1.23. 포함)와 상한 경계가 충돌",
+   "applies_to": null,
+   "waives": [],
+   "value": "2019-01-23",
+   "evidence": {
+    "page": 1,
+    "quote": "업력 3년 초과 7년 미만"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "between",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:업력",
+   "check": "profile",
+   "exception": null,
+   "note": "신산업 창업 분야 기업은 창업 후 10년 이내까지 신청 가능",
+   "applies_to": "신산업 창업 분야 기업",
+   "waives": [],
+   "value": [
+    "2016-01-23",
+    "2023-01-22"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "신산업분야는 2016.1.23. ~ 2023.1.22. 기간내 창업한 기업"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "support_field",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "신산업 창업 분야에 관한 규정(중소벤처기업부고시 제2024-2호) 제3조 제1항에 따른 신산업 창업 분야",
+   "applies_to": "신산업 창업 분야 기업",
+   "waives": [],
+   "value": "신산업 창업 분야",
+   "evidence": {
+    "page": 1,
+    "quote": "신산업 창업 분야에 해당하는 기업은 창업 후 10년 이내까지 신청 가능"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "prior_similar_benefit",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:업력",
+   "check": "discretionary",
+   "exception": null,
+   "note": "패스트트랙: 업력 미충족 기업 중 해당 사업 참여기업([붙임 5]상 초기창업패키지는 추경 포함). 참여기업의 대표자·기업명·아이템이 동일한 경우에만 신청 가능. 중단·포기·실패 기업 제외, 2025년 사업 참여 중 협약종료 전 중단·포기·실패 시 최종선정 제외. 창업진흥원 확인",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": [
+    "2023~2025년 초기창업패키지",
+    "2023~2025년 재도전성공패키지",
+    "2023~2024년 창업중심대학(초기 창업기업)"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "(패스트 트랙 기업) ’23∼’25년 초기창업패키지, ’23∼’25년 재도전성공패키지, ’23~’24년 창업중심대학(초기 창업기업) 참여기업 중 [붙임 5]의 자격 요건을 충족하는 자(기업)"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "ge",
+   "unit": "명",
+   "basis": "notice_date",
+   "group": "OR:패스트트랙필수",
+   "check": "profile",
+   "exception": null,
+   "note": "고용인원은 대표자 제외, 4대 보험 사업장 가입자명부 기준",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 기준 고용인원(대표자 제외) 10인 이상 기업"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:패스트트랙필수",
+   "check": "profile",
+   "exception": null,
+   "note": "2025년 결산 기준 연 매출액",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": 2000000000,
+   "evidence": {
+    "page": 1,
+    "quote": "연 매출액 20억원 이상 기업"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "ge",
+   "unit": "원",
+   "basis": "notice_date",
+   "group": "OR:패스트트랙필수",
+   "check": "unsupported",
+   "exception": null,
+   "note": "누적 투자유치액(투자계약서, 주주명부, 입금증 등으로 증빙)",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": 300000000,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 기준 누적 투자유치액 3억원 이상 기업"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "eligibility",
+   "field": "business_registration",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "개인·법인사업자 모두 사업 개시 및 사업자 등록 완료",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "사업 개시 및 사업자 등록을 완료하여야 함"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "eligibility",
+   "field": "all_reps_eligible",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "대표자 전원이 신청자격에 해당하고 신청 제외 대상에 해당하지 않아야 함",
+   "applies_to": "공동·각자대표 기업",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공동대표 또는 각자대표로 구성된 기업의 경우, 대표자 전원이 ‘신청자격’에 해당되고, ‘신청 제외 대상’에 해당되지 않아야 함"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "창업 제외 요건(★)을 시행령 제2조제2항에 따라 해소한 경우 창업기업으로 인정 가능; 포괄양수도 계약에 의한 법인전환은 개인사업자의 창업자 지위 승계",
+   "note": "동 사업에 신청하는 사업자 기준으로 이전에 개시한 사업자(개인·법인)와의 창업 여부 확인([붙임 4] 창업 여부 기준표)",
+   "applies_to": "다수 사업자 보유 기업",
+   "waives": [],
+   "value": "창업여부 기준표상 창업에 해당",
+   "evidence": {
+    "page": 1,
+    "quote": "창업여부 기준표에 따라 신청 자격 적합 여부 결정"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "eligibility",
+   "field": "head_office",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "중복 신청한 경우 본점 기준으로 요건 검토",
+   "applies_to": "본점·지점 보유 기업",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "본점 사업자로만 신청 가능"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "창업기업 확인서 서식 내 창업 기준 충족일이 모집공고일 이전(당일 포함). 서류평가 통과자 대상 창업기업확인서 등 증빙 확인",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026-01-23",
+   "evidence": {
+    "page": 1,
+    "quote": "창업 기준 충족일이 모집공고일 이전일 것"
+   }
+  },
+  {
+   "id": "e1",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "채무변제 완료 후 증빙이 가능한 자; 신용회복위원회 프리워크아웃·개인워크아웃 또는 새출발기금 제도를 통해 채무조정합의서를 체결한 자; 법원의 회생계획인가 또는 변제계획인가를 받은 자, 파산절차에서 면책결정이 확정된 자; 신용보증기금·기술보증기금의 재도전·재창업 재기지원보증 또는 중소벤처기업진흥공단·신용회복위원회의 재창업 자금지원을 받은 자 (사업 신청·접수 마감일 기준)",
+   "note": "법인의 경우 법인과 대표자 모두 해당하지 않아야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "금융기관 등으로부터 채무불이행으로 규제 중인 자(기업)"
+   }
+  },
+  {
+   "id": "e2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "국세징수법 제105조제1항에 따른 강제징수 유예 또는 지방세징수법 제105조제1항에 따른 체납처분 유예를 받은 자; 국세·지방세 등의 특수채무 변제 후 증빙이 가능한 자 (사업 신청·접수 마감일 기준)",
+   "note": "법인의 경우 법인과 대표자 모두 해당하지 않아야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세 또는 지방세 체납 중인 자(기업)"
+   }
+  },
+  {
+   "id": "e3",
+   "kind": "exclusion",
+   "field": "recoup_outstanding",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "사업 신청·접수 마감일까지 환수금등을 전액 반환 완료한 자; 환수금등에 대해 회생 또는 파산절차에서 법원의 면책결정을 받은 자; 환수금등에 대해 분할납부를 승인받아 정상납부 중인 자(분할상환금 1회 이상 미납 시 제외)",
+   "note": "창업진흥원으로부터 발생한 환수금등",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "환수금등의 반환이 종결되지 않은 자(기업)"
+   }
+  },
+  {
+   "id": "e4",
+   "kind": "exclusion",
+   "field": "startup_excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "중소기업창업 지원법 시행령 제4조 업종을 영위 중이거나 영위하고자 하는 자. [붙임 1]: 일반유흥주점업(56211), 무도유흥주점업(56212), 카지노 운영업(91242), 기타 사행시설 관리 및 운영업(91249) 등",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "창업에서 제외되는 업종"
+   }
+  },
+  {
+   "id": "e5",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "lt",
+   "unit": "회",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "[붙임 2-1] 중소벤처기업부 창업사업화 지원사업(예비창업패키지, 초기창업패키지, 창업도약패키지, 생애최초 청년창업('23,'24), 공공기술 창업사업화('23,'24), 사내벤처 육성 프로그램('24), 창업중심대학) 선정·협약 횟수. 중단처분·중도포기 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": 3,
+   "evidence": {
+    "page": 1,
+    "quote": "총 3회 이상 선정되어 협약을 체결했던 이력이 있는 자(기업)"
+   }
+  },
+  {
+   "id": "e6",
+   "kind": "exclusion",
+   "field": "prior_restart_program",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "글로벌기업 협업 프로그램('19~'20년 창구, '20년 마중, 정글, 엔업) 및 창업도약패키지 성장촉진 프로그램('17~'21년)만 지원받은 자는 신청 가능",
+   "note": "사업연도 불문 [붙임 2-2] 창업도약패키지 사업화지원(대기업 협업 프로그램 '21~'22년 포함), 창업중심대학(도약기 창업기업) 선정·협약 이력. 중단처분·중도포기 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "명시된 사업에 선정되어 협약을 체결했던 이력이 있는 자(기업)"
+   }
+  },
+  {
+   "id": "e7",
+   "kind": "exclusion",
+   "field": "current_startup_program",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "공고사업과 동일연도 창업사업화 지원사업이 아닌 경우 또는 지자체 지원사업은 협약 잔여기간과 관계없이 신청 가능; '26년도 이전 창업사업화 지원사업은 협약 잔여기간에 관계없이 신청 가능",
+   "note": "2026년 중소벤처기업부 및 타 중앙정부·공공기관의 창업사업화 지원사업([붙임 3]) 수행 중. 중단처분·중도포기 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "선정되어 사업을 수행 중인 자(기업)"
+   }
+  },
+  {
+   "id": "e8",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "중소벤처기업부 창업지원사업 참여 제한 제재",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "참여 제한으로 제재 중인 자"
+   }
+  },
+  {
+   "id": "e9",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "동 사업에 신청하는 사업자가 휴·폐업 중이면 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "신청일 기준 동 사업에 신청하는 사업자가 휴‧폐업 중인 자(기업)"
+   }
+  },
+  {
+   "id": "e10",
+   "kind": "exclusion",
+   "field": "bank_account_available",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "창업진흥원 지정 은행 계좌(사업비 계좌) 개설·거래 불가자(금융정보분석원 미신고 가상화폐 관련 업종 등) 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "개설 및 거래가 불가한 자(기업)"
+   }
+  },
+  {
+   "id": "e11",
+   "kind": "exclusion",
+   "field": "program_staff",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "2026년 동 사업 주관기관의 전담조직의 장, 전담/겸직인력으로 참여 중 또는 참여 예정",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "전담/겸직인력으로 참여 중 또는 참여 예정인 자(기업)"
+   }
+  },
+  {
+   "id": "e12",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "근로기준법에 따라 고용노동부가 공개하는 체불사업주 명단",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "체불사업주 명단에 포함된 자(기업)"
+   }
+  },
+  {
+   "id": "e13",
+   "kind": "exclusion",
+   "field": "subsidy_excluded",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "보조금 관리에 관한 법률 제31조의2(보조사업 수행 배제 등)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "수행대상에서 배제된 자(기업)"
+   }
+  },
+  {
+   "id": "e14",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "중소벤처기업부 장관이 참여를 제한할 정당한 사유가 있다고 인정하는 자",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "참여를 제한할 정당한 사유가 있다고 인정하는 자(기업)"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "K-Startup 누리집 온라인 접수, 16:00 정각 종료(마감시간까지 제출완료한 기업만 평가 참여)",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-23",
+    "2026-02-13T16:00"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2.13.(금) 16:00까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "중소기업 해당 여부는 입력 필드로 대조할 수 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": "중소기업기본법 제2조제1호에 따른 중소기업의 대표자",
+   "evidence": {
+    "page": 1,
+    "quote": "제2조제1호에 따른 중소기업의 대표자"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "between",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:업력",
+   "check": "profile",
+   "exception": null,
+   "note": "도약기 기업: 모집공고일(2026-01-23) 기준 창업 3년 초과 7년 이내. 개인사업자는 사업자등록증 상 개업연월일, 법인사업자는 법인등기부등본 상 회사성립연월일 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2019-01-23",
+    "2023-01-22"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2019.1.23. ~ 2023.1.22. 기간내 창업한 기업"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "gt",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:업력",
+   "check": "conflict",
+   "exception": null,
+   "note": "유형별 지원내용 표 각주에는 도약기를 '업력 3년 초과 7년 미만'으로 표기하여 신청자격의 '7년 이내'(2019.1.23. 포함)와 상한 경계가 충돌",
+   "applies_to": null,
+   "waives": [],
+   "value": "2019-01-23",
+   "evidence": {
+    "page": 1,
+    "quote": "업력 3년 초과 7년 미만"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "between",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:업력",
+   "check": "profile",
+   "exception": null,
+   "note": "신산업 창업 분야 기업은 창업 후 10년 이내까지 신청 가능",
+   "applies_to": "신산업 창업 분야 기업",
+   "waives": [],
+   "value": [
+    "2016-01-23",
+    "2023-01-22"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "신산업분야는 2016.1.23. ~ 2023.1.22. 기간내 창업한 기업"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "support_field",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "신산업 창업 분야에 관한 규정(중소벤처기업부고시 제2024-2호) 제3조 제1항에 따른 신산업 창업 분야",
+   "applies_to": "신산업 창업 분야 기업",
+   "waives": [],
+   "value": "신산업 창업 분야",
+   "evidence": {
+    "page": 1,
+    "quote": "신산업 창업 분야에 해당하는 기업은 창업 후 10년 이내까지 신청 가능"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "prior_similar_benefit",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:업력",
+   "check": "discretionary",
+   "exception": null,
+   "note": "패스트트랙: 업력 미충족 기업 중 해당 사업 참여기업. 참여기업의 대표자·기업명·아이템이 동일한 경우에만 신청 가능. 중단·포기·실패 기업 제외, 2025년 사업 참여 중 협약종료 전 중단·포기·실패 시 최종선정 제외. 창업진흥원 확인",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": [
+    "2023~2025년 초기창업패키지(추경 포함)",
+    "2023~2024년 창업중심대학(초기 창업기업)",
+    "2023~2025년 재도전성공패키지"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "[붙임 5]의 자격 요건을 충족하는 자(기업)"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "ge",
+   "unit": "명",
+   "basis": "notice_date",
+   "group": "OR:패스트트랙필수",
+   "check": "profile",
+   "exception": null,
+   "note": "고용인원은 대표자 제외, 4대 보험 사업장 가입자명부 기준",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 기준 고용인원(대표자 제외) 10인 이상 기업"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:패스트트랙필수",
+   "check": "profile",
+   "exception": null,
+   "note": "2025년 결산 기준 연 매출액",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": 2000000000,
+   "evidence": {
+    "page": 1,
+    "quote": "연 매출액 20억원 이상 기업"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "ge",
+   "unit": "원",
+   "basis": "notice_date",
+   "group": "OR:패스트트랙필수",
+   "check": "unsupported",
+   "exception": null,
+   "note": "누적 투자유치액(투자계약서, 주주명부, 입금증 등으로 증빙)",
+   "applies_to": "패스트트랙 기업",
+   "waives": [],
+   "value": 300000000,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 기준 누적 투자유치액 3억원 이상 기업"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "eligibility",
+   "field": "business_registration",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "개인·법인사업자 모두 사업 개시 및 사업자 등록 완료",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "사업 개시 및 사업자 등록을 완료하여야 함"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "eligibility",
+   "field": "all_reps_eligible",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "대표자 전원이 신청자격에 해당하고 신청 제외 대상에 해당하지 않아야 함",
+   "applies_to": "공동·각자대표 기업",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공동대표 또는 각자대표로 구성된 기업의 경우"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "창업 제외 요건(★)을 시행령 제2조제2항에 따라 해소한 경우 창업기업으로 인정 가능; 포괄양수도 계약에 의한 법인전환은 개인사업자의 창업자 지위 승계",
+   "note": "동 사업에 신청하는 사업자 기준으로 이전에 개시한 사업자(개인·법인)와의 창업 여부 확인([붙임 4] 창업 여부 기준표)",
+   "applies_to": "다수 사업자 보유 기업",
+   "waives": [],
+   "value": "창업여부 기준표상 창업에 해당",
+   "evidence": {
+    "page": 1,
+    "quote": "창업여부 기준표에 따라 신청 자격 적합 여부 결정"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "eligibility",
+   "field": "head_office",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "중복 신청한 경우 본점 기준으로 요건 검토",
+   "applies_to": "본점·지점 보유 기업",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "본점 사업자로만 신청 가능"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "창업기업 확인서 서식 내 창업 기준 충족일이 모집공고일 이전(당일 포함). 서류평가 통과자 대상 창업기업확인서 등 증빙 확인",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026-01-23",
+   "evidence": {
+    "page": 1,
+    "quote": "창업 기준 충족일이 모집공고일 이전일 것"
+   }
+  },
+  {
+   "id": "e1",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "채무변제 완료 후 증빙이 가능한 자; 신용회복위원회 프리워크아웃·개인워크아웃 또는 새출발기금 제도를 통해 채무조정합의서를 체결한 자; 법원의 회생계획인가 또는 변제계획인가를 받은 자, 파산절차에서 면책결정이 확정된 자; 신용보증기금·기술보증기금의 재도전·재창업 재기지원보증 또는 중소벤처기업진흥공단·신용회복위원회의 재창업 자금지원을 받은 자 (사업 신청·접수 마감일 기준)",
+   "note": "법인의 경우 법인과 대표자 모두 해당하지 않아야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "금융기관 등으로부터 채무불이행으로 규제 중인 자(기업)"
+   }
+  },
+  {
+   "id": "e2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "국세징수법 제105조제1항에 따른 강제징수 유예 또는 지방세징수법 제105조제1항에 따른 체납처분 유예를 받은 자; 국세·지방세 등의 특수채무 변제 후 증빙이 가능한 자 (사업 신청·접수 마감일 기준)",
+   "note": "법인의 경우 법인과 대표자 모두 해당하지 않아야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세 또는 지방세 체납 중인 자(기업)"
+   }
+  },
+  {
+   "id": "e3",
+   "kind": "exclusion",
+   "field": "recoup_outstanding",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "사업 신청·접수 마감일까지 환수금등을 전액 반환 완료한 자; 환수금등에 대해 회생 또는 파산절차에서 법원의 면책결정을 받은 자; 환수금등에 대해 분할납부를 승인받아 정상납부 중인 자(분할상환금 1회 이상 미납 시 제외)",
+   "note": "창업진흥원으로부터 발생한 환수금등",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "환수금등의 반환이 종결되지 않은 자(기업)"
+   }
+  },
+  {
+   "id": "e4",
+   "kind": "exclusion",
+   "field": "startup_excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "중소기업창업 지원법 시행령 제4조 업종을 영위 중이거나 영위하고자 하는 자. [붙임 1]: 일반유흥주점업(56211), 무도유흥주점업(56212), 카지노 운영업(91242), 기타 사행시설 관리 및 운영업(91249) 등",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "창업에서 제외되는 업종"
+   }
+  },
+  {
+   "id": "e5",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "lt",
+   "unit": "회",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "[붙임 2-1] 중소벤처기업부 창업사업화 지원사업(예비창업패키지, 초기창업패키지, 창업도약패키지, 생애최초 청년창업('23,'24), 공공기술 창업사업화('23,'24), 사내벤처 육성 프로그램('24), 창업중심대학) 선정·협약 횟수. 중단처분·중도포기 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": 3,
+   "evidence": {
+    "page": 1,
+    "quote": "총 3회 이상 선정되어 협약을 체결했던 이력이 있는 자(기업)"
+   }
+  },
+  {
+   "id": "e6",
+   "kind": "exclusion",
+   "field": "prior_restart_program",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "글로벌기업 협업 프로그램('19~'20년 창구, '20년 마중, 정글, 엔업) 및 창업도약패키지 성장촉진 프로그램('17~'21년)만 지원받은 자는 신청 가능",
+   "note": "사업연도 불문 [붙임 2-2] 창업도약패키지 사업화지원(대기업 협업 프로그램 '21~'22년 포함), 창업중심대학(도약기 창업기업) 선정·협약 이력. 중단처분·중도포기 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "명시된 사업에 선정되어 협약을 체결했던 이력이 있는 자(기업)"
+   }
+  },
+  {
+   "id": "e7",
+   "kind": "exclusion",
+   "field": "current_startup_program",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "공고사업과 동일연도 창업사업화 지원사업이 아닌 경우 또는 지자체 지원사업은 협약 잔여기간과 관계없이 신청 가능; '26년도 이전 창업사업화 지원사업은 협약 잔여기간에 관계없이 신청 가능",
+   "note": "2026년 중소벤처기업부 및 타 중앙정부·공공기관의 창업사업화 지원사업([붙임 3]) 수행 중. 중단처분·중도포기 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "선정되어 사업을 수행 중인 자(기업)"
+   }
+  },
+  {
+   "id": "e8",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "중소벤처기업부 창업지원사업 참여 제한 제재",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "참여 제한으로 제재 중인 자"
+   }
+  },
+  {
+   "id": "e9",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "동 사업에 신청하는 사업자가 휴·폐업 중이면 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "신청일 기준 동 사업에 신청하는 사업자가"
+   }
+  },
+  {
+   "id": "e10",
+   "kind": "exclusion",
+   "field": "bank_account_available",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "창업진흥원 지정 은행 계좌(사업비 계좌) 개설·거래 불가자(금융정보분석원 미신고 가상화폐 관련 업종 등) 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "개설 및 거래가 불가한 자(기업)"
+   }
+  },
+  {
+   "id": "e11",
+   "kind": "exclusion",
+   "field": "program_staff",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "2026년 동 사업 주관기관의 전담조직의 장, 전담/겸직인력으로 참여 중 또는 참여 예정",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "전담/겸직인력으로 참여 중 또는 참여 예정인 자(기업)"
+   }
+  },
+  {
+   "id": "e12",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "근로기준법에 따라 고용노동부가 공개하는 체불사업주 명단",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "체불사업주 명단에 포함된 자(기업)"
+   }
+  },
+  {
+   "id": "e13",
+   "kind": "exclusion",
+   "field": "subsidy_excluded",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "보조금 관리에 관한 법률 제31조의2(보조사업 수행 배제 등)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "수행대상에서 배제된 자(기업)"
+   }
+  },
+  {
+   "id": "e14",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "중소벤처기업부 장관이 참여를 제한할 정당한 사유가 있다고 인정하는 자",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "참여를 제한할 정당한 사유가 있다고 인정하는 자(기업)"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "K-Startup 누리집 온라인 접수, 16:00 정각 종료(마감시간까지 제출완료한 기업만 평가 참여)",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-23",
+    "2026-02-13T16:00"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2.13.(금) 16:00까지"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "K-Startup 회원가입·실명인증·기업인증 절차",
+  "제출서류(사업계획서, 신분 확인 서류, 사업자등록증명 등) 및 공공마이데이터 연동",
+  "본점 소재지 권역 내 주관기관 1개 선택 신청 방법",
+  "협약체결 확약서 제출 및 타 사업 선정 절차 제외",
+  "서류평가 가점·서류평가 면제·우선선정 대상",
+  "평가 절차·평가지표·60점 미만 제외·이의신청",
+  "사업화 자금 규모 및 지역별 자기부담사업비 비율([붙임 6])",
+  "선정 후 유의사항 및 선정자의 의무(사업비 계좌 거래, 대표자 변경 제재 등)",
+  "딥테크 특화형·투자연계형 유형 공고",
+  "3개 유형 중복 신청 가능하나 1개 유형만 수행 가능",
+  "국세청 AI 스타트업·중소기업 세정지원([붙임 7])",
+  "사업설명회 일정 및 문의처"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 29,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c6",
+      "type": "bad_evidence",
+      "detail": "c6의 value는 패스트트랙 대상 사업 목록(’23~’25년 초기창업패키지, ’23~’24년 창업중심대학(초기), ’23~’25년 재도전성공패키지)입니다. 그런데 인용된 근거는 '[붙임 5]의 자격 요건을 충족하는 자(기업)'뿐이어서 사업명과 연도 범위를 뒷받침하지 못합니다.",
+      "fix": "evidence.quote를 사업 목록과 연도가 명시된 원문 문구로 교체하세요.",
+      "source_quote": "(패스트 트랙 기업) ’23∼’25년 초기창업패키지, ’23∼’25년 재도전성공패키지, ’23~’24년 창업중심대학(초기 창업기업) 참여기업 중 [붙임 5]의 자격 요건을 충족하는 자(기업)"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c6: evidence.quote를 사업명과 연도가 명시된 원문 문구로 교체하라: \"(패스트 트랙 기업) ’23∼’25년 초기창업패키지, ’23∼’25년 재도전성공패키지, ’23~’24년 창업중심대학(초기 창업기업) 참여기업 중 [붙임 5]의 자격 요건을 충족하는 자(기업)\". value도 이 원문과 일치하는지 확인하라."
+   },
+   "result": {
+    "n_conditions": 29,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c11",
+      "type": "bad_evidence",
+      "detail": "근거 인용문이 적용 대상(공동·각자대표 기업)만 보여 줍니다. 조건의 핵심 내용인 '대표자 전원이 신청자격에 해당하고 신청 제외 대상에 해당하지 않아야 함'은 인용문에 없어 value=true를 뒷받침하지 못합니다.",
+      "fix": "evidence.quote를 '공동대표 또는 각자대표로 구성된 기업의 경우, 대표자 전원이 ‘신청자격’에 해당되고, ‘신청 제외 대상’에 해당되지 않아야 함'으로 확장",
+      "source_quote": "공동대표 또는 각자대표로 구성된 기업의 경우, 대표자 전원이 ‘신청자격’에 해당되고, ‘신청 제외 대상’에 해당되지 않아야 함"
+     },
+     {
+      "condition_id": "e9",
+      "type": "bad_evidence",
+      "detail": "근거 인용문이 '신청일 기준 동 사업에 신청하는 사업자가'에서 끊겨 있습니다. 제외 사유인 휴·폐업 여부가 인용문에 없어 value '정상'을 뒷받침하지 못합니다.",
+      "fix": "evidence.quote를 '신청일 기준 동 사업에 신청하는 사업자가 휴‧폐업 중인 자(기업)'로 확장",
+      "source_quote": "⑨ 신청일 기준 동 사업에 신청하는 사업자가 휴‧폐업 중인 자(기업)"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c11: evidence.quote를 '공동대표 또는 각자대표로 구성된 기업의 경우, 대표자 전원이 ‘신청자격’에 해당되고, ‘신청 제외 대상’에 해당되지 않아야 함'으로 확장하라. e9: evidence.quote를 '신청일 기준 동 사업에 신청하는 사업자가 휴‧폐업 중인 자(기업)'로 확장하라. c6은 직전 수정 상태를 유지하라."
+   },
+   "result": {
+    "n_conditions": 29,
+    "extract_round": 3
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 3,
+ "seconds": 265
+}

@@ -1,0 +1,1014 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "본인 또는 배우자의 출산일이 2026년 내여야 함(배우자 출산 포함). 출산일 입력 필드 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-01",
+    "2026-12-31"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "2026. 1. 1. ~ 12. 31.내에 출산한 소상공인 및 배우자"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「소상공인 보호 및 지원에 관한 법률」 제2조에 따른 소상공인",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "제2조에 따른 소상공인 사업자"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "사업장 주소가 경북",
+   "applies_to": null,
+   "waives": [],
+   "value": "경북",
+   "evidence": {
+    "page": 3,
+    "quote": "거주지 및 사업장 주소가 모두 경북에 두고 있을 것"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "거주지 주소가 경북. 거주지 입력 필드 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": "경북",
+   "evidence": {
+    "page": 3,
+    "quote": "거주지 및 사업장 주소가 모두 경북에 두고 있을 것"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청지역(참여 시·군). 거주지 기준인지 사업장 기준인지 원문에 명시 없음(지급 시 거주지 시·군 예산 사용 언급)",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "안동",
+    "구미",
+    "영천",
+    "경산",
+    "영양",
+    "영덕",
+    "성주",
+    "예천",
+    "울릉"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "안동, 구미, 영천, 경산, 영양, 영덕, 성주, 예천, 울릉"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "출산일 기준 1년 전부터 사업장을 운영하고 있어야 함. 출산일에 따라 기준일이 달라 고정값 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": "출산일 1년 전",
+   "evidence": {
+    "page": 3,
+    "quote": "출산일 기준 1년 전에 사업장을 운영하고 있어야 하며"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "연 매출액 12백만원 이상(부가가치세 과세표준증명원 또는 면세사업자 수입금액증명원으로 증빙)",
+   "applies_to": null,
+   "waives": [],
+   "value": 12000000,
+   "evidence": {
+    "page": 3,
+    "quote": "연 매출액이 12백만원이상일 것"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "bank_account_available",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "본인 및 법인명의 통장 입출금 거래가 가능해야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "본인 및 법인명의의 통장 입출금 거래가 불가능한 사업자"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "허위 또는 부정한 방법으로 신청한 사업자 및 최근 1년 이내 고용지원금 부정수급 발생 사업장 제외(두 원문 항목을 하나의 허위·부정 이력 판단으로 병합)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "허위 또는 부정한 방법으로 신청한 사업자"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세·지방세 체납 중인 사업자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세·지방세 체납 중인 사업자"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "휴업·폐업 중인 사업자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업 중인 사업자 및 무점포 사업자"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "무점포 사업자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업 중인 사업자 및 무점포 사업자"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "수혜기간 및 타 지원사업의 인건비 지원대상이 다른 경우 지원가능",
+   "note": "본인 또는 배우자가 출산 관련 경영지원 인건비를 지원받고 있는 경우 제외. 출산농가 영농도우미 지원사업, 고용보험 미적용자 출산급여 등은 동일 목적으로 지원불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "본인 또는 배우자가 출산과 관련하여 경영지원 인건비를 지원받고 있는 소상공인"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "exclusion",
+   "field": "multiple_business_applying",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "부부 각각 사업장이 있어도 중복지원 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "부부 각각의 사업장이 있을 경우 중복지원 불가"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "최근 1년 이내 임금체불사업장 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최근 1년 이내 중대재해발생업체 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최저임금법 위반 등 이에 준하는 사항이 있을 시 선정 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 5,
+    "quote": "최저임금법 위반 등 이에 준하는 사항이 있을 시 선정 제외"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "기타 위 제외사유에 준하는 사항 확인 시 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "기타 위에 준하는 사항이 확인되었을 경우"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "지원제외 대상 업종 중 신청건별로 해당 시·군과 협의하여 지원가능 여부 검토; 다단계판매(업)를 등록하여 영위하는 경우 신청가능; 부동산관리업(6821), 신청일 기준 동일장소 6개월 이상 지속 부동산 중개및 대리업(68221), 비주거용건물임대업(68112) 중 공유오피스·공유주방은 신청가능; 유사의료업(86902) 신청가능; 시각장애인이 운영하는 안마원 및 안마시술소 신청가능; 골프연습장(91136), 스크린골프연습장(91136) 지원가능",
+   "note": "붙임 지원제외 대상 업종(도박·사행성, 담배, 약국, 성인용품, 유흥주점, 금융·보험(64~66), 부동산업(68), 법무·회계, 수의업, 보건업(86) 등)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "지원제외 대상 업종 ※ 붙임 참조"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "대체인력 고용기간 요건: 선정통보 다음날 ~ 출산 후 12개월 전 사이에 연속 6개월 고용 가능해야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "선정통보 다음날부터 출산 후 12개월 전까지 연속된 6개월 기간 고용",
+   "evidence": {
+    "page": 4,
+    "quote": "출산 후 12개월 전까지 연속된 6개월기간 고용"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": "개월",
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "선정통보 후 2개월 내 대체인력 채용",
+   "applies_to": null,
+   "waives": [],
+   "value": 2,
+   "evidence": {
+    "page": 4,
+    "quote": "선정통보 후 2개월 내 채용"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "종료일은 예산소진시까지(조기마감). 접수순 지급으로 예산 부족 시 조기 중단될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-14",
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2026.10.14.(수) ~ 예산소진시까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "본인 또는 배우자의 출산일이 2026년 내여야 함(배우자 출산 포함). 출산일 입력 필드 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-01",
+    "2026-12-31"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "2026. 1. 1. ~ 12. 31.내에 출산한 소상공인 및 배우자"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「소상공인 보호 및 지원에 관한 법률」 제2조에 따른 소상공인",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "제2조에 따른 소상공인 사업자"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "사업장 주소가 경북",
+   "applies_to": null,
+   "waives": [],
+   "value": "경북",
+   "evidence": {
+    "page": 3,
+    "quote": "거주지 및 사업장 주소가 모두 경북에 두고 있을 것"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "거주지 주소가 경북. 거주지 입력 필드 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": "경북",
+   "evidence": {
+    "page": 3,
+    "quote": "거주지 및 사업장 주소가 모두 경북에 두고 있을 것"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청지역(참여 시·군). 거주지 기준인지 사업장 기준인지 원문에 명시 없음(지급 시 거주지 시·군 예산 사용 언급)",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "안동",
+    "구미",
+    "영천",
+    "경산",
+    "영양",
+    "영덕",
+    "성주",
+    "예천",
+    "울릉"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "안동, 구미, 영천, 경산, 영양, 영덕, 성주, 예천, 울릉"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "출산일 기준 1년 전부터 사업장을 운영하고 있어야 함. 출산일에 따라 기준일이 달라 고정값 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": "출산일 1년 전",
+   "evidence": {
+    "page": 3,
+    "quote": "출산일 기준 1년 전에 사업장을 운영하고 있어야 하며"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "연 매출액 12백만원 이상(부가가치세 과세표준증명원 또는 면세사업자 수입금액증명원으로 증빙)",
+   "applies_to": null,
+   "waives": [],
+   "value": 12000000,
+   "evidence": {
+    "page": 3,
+    "quote": "연 매출액이 12백만원이상일 것"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "bank_account_available",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "본인 및 법인명의 통장 입출금 거래가 가능해야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "본인 및 법인명의의 통장 입출금 거래가 불가능한 사업자"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "허위 또는 부정한 방법으로 신청한 사업자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "허위 또는 부정한 방법으로 신청한 사업자"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세·지방세 체납 중인 사업자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세·지방세 체납 중인 사업자"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "휴업·폐업 중인 사업자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업 중인 사업자 및 무점포 사업자"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "무점포 사업자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업 중인 사업자 및 무점포 사업자"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "수혜기간 및 타 지원사업의 인건비 지원대상이 다른 경우 지원가능",
+   "note": "본인 또는 배우자가 출산 관련 경영지원 인건비를 지원받고 있는 경우 제외. 출산농가 영농도우미 지원사업, 고용보험 미적용자 출산급여 등은 동일 목적으로 지원불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "본인 또는 배우자가 출산과 관련하여 경영지원 인건비를 지원받고 있는 소상공인"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "exclusion",
+   "field": "multiple_business_applying",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "부부 각각 사업장이 있어도 중복지원 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "부부 각각의 사업장이 있을 경우 중복지원 불가"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "최근 1년 이내 임금체불사업장 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최근 1년 이내 중대재해발생업체 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "최근 1년 이내 고용지원금 부정수급 발생 사업장 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최저임금법 위반 등 이에 준하는 사항이 있을 시 선정 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 5,
+    "quote": "최저임금법 위반 등 이에 준하는 사항이 있을 시 선정 제외"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "기타 위 제외사유에 준하는 사항 확인 시 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "기타 위에 준하는 사항이 확인되었을 경우"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "지원제외 대상 업종 중 신청건별로 해당 시·군과 협의하여 지원가능 여부 검토; 다단계판매(업)를 등록하여 영위하는 경우 신청가능; 부동산관리업(6821), 신청일 기준 동일장소 6개월 이상 지속 부동산 중개및 대리업(68221), 비주거용건물임대업(68112) 중 공유오피스·공유주방은 신청가능; 유사의료업(86902) 신청가능; 시각장애인이 운영하는 안마원 및 안마시술소 신청가능; 골프연습장(91136), 스크린골프연습장(91136) 지원가능",
+   "note": "붙임 지원제외 대상 업종(도박·사행성, 담배, 약국, 성인용품, 유흥주점, 금융·보험(64~66), 부동산업(68), 법무·회계, 수의업, 보건업(86) 등)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "지원제외 대상 업종 ※ 붙임 참조"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "대체인력 고용기간 요건: 선정통보 다음날 ~ 출산 후 12개월 전 사이에 연속 6개월 고용 가능해야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "선정통보 다음날부터 출산 후 12개월 전까지 연속된 6개월 기간 고용",
+   "evidence": {
+    "page": 4,
+    "quote": "출산 후 12개월 전까지 연속된 6개월기간 고용"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": "개월",
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "선정통보 후 2개월 내 대체인력 채용",
+   "applies_to": null,
+   "waives": [],
+   "value": 2,
+   "evidence": {
+    "page": 4,
+    "quote": "선정통보 후 2개월 내 채용"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "종료일은 예산소진시까지(조기마감). 접수순 지급으로 예산 부족 시 조기 중단될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-14",
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2026.10.14.(수) ~ 예산소진시까지"
+   }
+  }
+ ],
+ "unresolved": [
+  "c9 (wrong_logic): 원문에서 '허위 또는 부정한 방법으로 신청한 사업자'와 '최근 1년 이내 고용지원금 부정수급 발생 사업장'은 별개의 제외 항목인데, c9가 둘을 기간 제한 없이 하나로 합쳐 '최근 1년 이내' 한정이 사라졌고, 근거 문구도 허위 신청 부분만 인용함. c9는 허위 신청 제외로만 한정하고, 부정수급 제외는 1년 기간 한정과 원문 근거('최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장')를 갖춘 별도 조건으로 분리해야 함. 원인은 c17(중복)을 c9에 병합하라는 재추출 지시로 보임. 재추출 한도에 도달해 수정하지 못함."
+ ],
+ "out_of_scope": [
+  "신청방법(모이소앱 접수, 신청서 다운로드)",
+  "신청서류 및 청구서류",
+  "선정 방법(접수순 선정) 및 선정통보",
+  "지원금액 및 지급방법, 지급중단 사유",
+  "사업장 및 거주지 주소 사업기간 내 유지(선정 후 의무)",
+  "대체인력 근로계약·최저임금·4대보험 가입, 외국인 고용 요건, 근로조건, 다태아 1명 제한",
+  "현장점검",
+  "부정수급 환수 등 유의사항",
+  "앱 설치 방법",
+  "문의처 및 이의제기"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 23,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": [
+     {
+      "condition_id": "c17",
+      "message": "c9와 같은 조건 중복"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c17은 c9와 같은 조건이 중복된 것이다. 중복을 제거하고 하나로 통합하라. 나머지 조건은 그대로 유지하라."
+   },
+   "result": {
+    "n_conditions": 23,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": [
+     {
+      "condition_id": "c17",
+      "message": "c9와 같은 조건 중복"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "이전 재추출에서도 c17이 c9와 중복된 채로 남아 있다(조건 수 23 그대로). c17을 반드시 삭제하거나 c9에 병합하라. 다른 조건은 바꾸지 마라."
+   },
+   "result": {
+    "n_conditions": 22,
+    "extract_round": 3
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c9",
+      "type": "wrong_logic",
+      "detail": "'허위 또는 부정한 방법으로 신청한 사업자'와 '최근 1년 이내 고용지원금 부정수급 발생 사업장'은 원문에서 별개의 제외 항목입니다. c9는 두 항목을 기간 제한 없는 하나의 misuse_history 판단으로 합쳤습니다. 그 결과 부정수급 항목의 '최근 1년 이내' 기간 한정이 사라졌습니다. 또한 evidence는 허위 신청 문구만 인용하고 있어 부정수급 부분을 뒷받침하지 못합니다.",
+      "fix": "c9는 '허위 또는 부정한 방법으로 신청한 사업자' 제외로만 한정합니다. '최근 1년 이내 고용지원금 부정수급 발생 사업장' 제외는 c15·c16과 같이 별도 조건으로 분리하고, 1년 기간 한정과 해당 원문 근거를 기재합니다.",
+      "source_quote": "최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": [
+     "c9 (wrong_logic): 원문에서 '허위 또는 부정한 방법으로 신청한 사업자'와 '최근 1년 이내 고용지원금 부정수급 발생 사업장'은 별개의 제외 항목인데, c9가 둘을 기간 제한 없이 하나로 합쳐 '최근 1년 이내' 한정이 사라졌고, 근거 문구도 허위 신청 부분만 인용함. c9는 허위 신청 제외로만 한정하고, 부정수급 제외는 1년 기간 한정과 원문 근거('최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장')를 갖춘 별도 조건으로 분리해야 함. 원인은 c17(중복)을 c9에 병합하라는 재추출 지시로 보임. 재추출 한도에 도달해 수정하지 못함."
+    ]
+   }
+  }
+ ],
+ "rounds": 3,
+ "seconds": 178
+}

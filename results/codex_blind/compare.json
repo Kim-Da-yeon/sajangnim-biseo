@@ -1,0 +1,65 @@
+{
+ "scores": {
+  "A": {
+   "vs_label": 42,
+   "fm_label": 4,
+   "vs_codex": 40,
+   "fm_codex": 3,
+   "vs_agreed": 39,
+   "fm_agreed": 3,
+   "n_agreed": 49
+  },
+  "A1": {
+   "vs_label": 39,
+   "fm_label": 2,
+   "vs_codex": 35,
+   "fm_codex": 2,
+   "vs_agreed": 35,
+   "fm_agreed": 2,
+   "n_agreed": 49
+  },
+  "A0": {
+   "vs_label": 26,
+   "fm_label": 0,
+   "vs_codex": 22,
+   "fm_codex": 0,
+   "vs_agreed": 22,
+   "fm_agreed": 0,
+   "n_agreed": 49
+  },
+  "B": {
+   "vs_label": 25,
+   "fm_label": 0,
+   "vs_codex": 23,
+   "fm_codex": 0,
+   "vs_agreed": 22,
+   "fm_agreed": 0,
+   "n_agreed": 49
+  },
+  "C": {
+   "vs_label": 36,
+   "fm_label": 2,
+   "vs_codex": 32,
+   "fm_codex": 2,
+   "vs_agreed": 32,
+   "fm_agreed": 2,
+   "n_agreed": 49
+  },
+  "D": {
+   "vs_label": 47,
+   "fm_label": 0,
+   "vs_codex": 44,
+   "fm_codex": 0,
+   "vs_agreed": 43,
+   "fm_agreed": 0,
+   "n_agreed": 49
+  }
+ },
+ "disagree": [
+  "BN5",
+  "YC5",
+  "JE1",
+  "JE2",
+  "SP5"
+ ]
+}

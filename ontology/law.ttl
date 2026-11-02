@@ -1,0 +1,9 @@
+@prefix sa: <https://sosang.example/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# 임대차 기간 규칙과 지역별 보증금액. 값은 data/law의 조문을 옮긴 것이다.
+sa:Renewal a sa:LeaseWindow ; rdfs:label "계약갱신 요구 기간" ; sa:monthsBefore 6 ; sa:monthsBeforeEnd 1 ; sa:article "상가임대차법 제10조 제1항" .
+sa:Premium a sa:LeaseWindow ; rdfs:label "권리금 회수기회 보호 기간" ; sa:monthsBefore 6 ; sa:monthsBeforeEnd 0 ; sa:article "상가임대차법 제10조의4 제1항" .
+sa:Seoul a sa:RegionLimit ; rdfs:label "서울특별시 9억원" ; sa:amount 900000000 ; sa:keywords "서울" .
+sa:Busan a sa:RegionLimit ; rdfs:label "부산광역시 6억9천만원" ; sa:amount 690000000 ; sa:keywords "부산" .
+sa:Metro a sa:RegionLimit ; rdfs:label "광역시 등 5억4천만원" ; sa:amount 540000000 ; sa:keywords "대구|광주광역시|대전|울산|세종|파주|화성|안산|용인|김포" .
+sa:Other a sa:RegionLimit ; rdfs:label "그 밖의 지역 3억7천만원" ; sa:amount 370000000 ; sa:keywords "포항|보은|정읍|제주|강원|전라|충청|경상|전북|전남|충북|충남|경북|경남" .

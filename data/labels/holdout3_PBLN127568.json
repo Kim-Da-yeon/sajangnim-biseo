@@ -1,0 +1,252 @@
+{
+ "source_text": "holdout3_PBLN127568",
+ "scope": "광주·전남·제주 소상공인의 현장 라이브커머스 신청 자격과 제외 품목",
+ "conditions": [
+  {
+   "id": "M1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦(대상) 소비재 완제품을 취급하는 소상공인"
+   }
+  },
+  {
+   "id": "L4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "소비재 완제품 취급",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦(대상) 소비재 완제품을 취급하는 소상공인"
+   }
+  },
+  {
+   "id": "L3",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "in",
+   "value": [
+    "광주광역시",
+    "전라남도",
+    "제주특별자치도"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦(자격) 사업자등록증 소재지가 광주·전남·제주지역인 소상공인"
+   }
+  },
+  {
+   "id": "L1",
+   "kind": "eligibility",
+   "field": "merchant_certificate",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "* 소상공인확인서 발급 必"
+   }
+  },
+  {
+   "id": "L5",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "소상공인확인서 유효기간 2026.4.1.~2027.3.31.",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "* 유효기간 2026.4.1 ~ 2027.3.31. 확인서만 인정"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦국세·지방세를 체납 중인 경우"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "not_in",
+   "value": [
+    "대기업 프랜차이즈 제품",
+    "중견기업 프랜차이즈 제품"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "∘ 대기업 및 중견기업 프랜차이즈 제품"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "not_in",
+   "value": [
+    "수입제품",
+    "대기업 유통판매 업체 제품"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "∘ 수입제품 또는 대기업 유통판매 업체 제품"
+   }
+  },
+  {
+   "id": "X4",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "∘ 소상공인 정책자금 지원 제외 업종"
+   }
+  },
+  {
+   "id": "X5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "건강기능식품·관리식품 등이 아닌 제품",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "∘ 건강기능식품 및 관리식품 등"
+   }
+  },
+  {
+   "id": "D1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "평가위원회의 우수성·적합성·경쟁력 평가",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "위원회를 개최하여 우수성, 적합성, 경쟁력 등을 기준으로 선정"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-10-29",
+    "2026-11-05T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦(모집기간) ’26. 10. 29.(목) ~ ‘26. 11. 5.(목) 18:00까지"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "촬영 스튜디오·쇼호스트·방송 송출",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "통신판매업 신고증, 납세증명서 등 제출서류",
+   "reason": "제출서류 목록에만 있고 요건 문구가 없음. 신고증 필수 여부는 참가자 확인 항목"
+  },
+  {
+   "text": "교환·환불 직접 대응, 매출 등 정보제공 협조",
+   "reason": "선정 후 의무"
+  }
+ ],
+ "notice_id": "PBLN127568",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

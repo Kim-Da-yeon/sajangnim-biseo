@@ -12,3 +12,4 @@ results/usage_until_eval_v1.jsonl
 docs/report_draft_*.md
 docs/label_check_*.md
 submission/
+data/law/*.html

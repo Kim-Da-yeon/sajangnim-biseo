@@ -1,0 +1,481 @@
+{
+ "source_text": "holdout3_PBLN127233",
+ "scope": "경북 출산 소상공인의 신청 자격, 지원제외 대상, 대체인력 고용 기간 요건",
+ "conditions": [
+  {
+   "id": "B1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "2026.1.1.~12.31. 본인 또는 배우자 출산",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "□(자격) 2026. 1. 1. ~ 12. 31.내에 출산한 소상공인 및 배우자 중"
+   }
+  },
+  {
+   "id": "M1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "①소상공인(「소상공인 보호 및 지원에 관한 법률」제2조에 따른 소상공인 사업자)"
+   }
+  },
+  {
+   "id": "G1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "거주지 주소 경북",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "②거주지 및 사업장 주소가 모두 경북에 두고 있을 것"
+   }
+  },
+  {
+   "id": "G2",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "value": "경상북도",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "②거주지 및 사업장 주소가 모두 경북에 두고 있을 것"
+   }
+  },
+  {
+   "id": "N1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "신청지역(안동·구미·영천·경산·영양·영덕·성주·예천·울릉) 소재. 거주지·사업장 중 어느 기준인지 미기재",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "○안동, 구미, 영천, 경산, 영양, 영덕, 성주, 예천, 울릉"
+   }
+  },
+  {
+   "id": "Y1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "출산일 1년 전 시점에 사업장 운영",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "③출산일 기준 1년 전에 사업장을 운영하고 있어야 하며 연 매출액이 12백만원이상일 것"
+   }
+  },
+  {
+   "id": "R2",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "ge",
+   "value": 12000000,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "③출산일 기준 1년 전에 사업장을 운영하고 있어야 하며 연 매출액이 12백만원이상일 것"
+   }
+  },
+  {
+   "id": "K1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "사업기간 내 사업장·거주지 주소 유지",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "④사업장 및 거주지 주소는 사업기간 내 유지"
+   }
+  },
+  {
+   "id": "H1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "선정 통보 다음날부터 출산 후 12개월 전까지 연속 6개월 대체인력 고용 가능",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "12개월 전까지 연속된 6개월기간 고용"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "본인 또는 법인 명의 통장 입출금 거래 가능",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 본인 및 법인명의의 통장 입출금 거래가 불가능한 사업자"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 허위 또는 부정한 방법으로 신청한 사업자"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 국세·지방세 체납 중인 사업자"
+   }
+  },
+  {
+   "id": "X4",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 휴·폐업 중인 사업자 및 무점포 사업자"
+   }
+  },
+  {
+   "id": "X5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "점포 있음(무점포 사업자 아님)",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 휴·폐업 중인 사업자 및 무점포 사업자"
+   }
+  },
+  {
+   "id": "X6",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "수혜기간 및 타 지원사업의 인건비 지원대상이 다른 경우 지원 가능(5쪽)",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 본인 또는 배우자가 출산과 관련하여 경영지원 인건비를 지원받고 있는 소상공인"
+   }
+  },
+  {
+   "id": "X7",
+   "kind": "exclusion",
+   "field": "multiple_business_applying",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 부부 각각의 사업장이 있을 경우 중복지원 불가"
+   }
+  },
+  {
+   "id": "X8",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "최근 1년 이내 임금체불 사업장 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "X9",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "최근 1년 이내 중대재해 발생 업체 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "X10",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "최근 1년 이내 고용지원금 부정수급 사업장 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 최근 1년 이내 임금체불사업장, 중대재해발생업체, 고용지원금 부정수급 발생 사업장"
+   }
+  },
+  {
+   "id": "X12",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "최근 1년 이내 최저임금법 위반 없음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 5,
+    "quote": "부정수급, 최저임금법 위반 등 이에 준하는 사항이 있을 시 선정 제외"
+   }
+  },
+  {
+   "id": "X11",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "부동산관리업(6821), 동일 장소 6개월 이상 중개·대리업(68221), 공유오피스·공유주방(68112), 유사의료업(86902), 골프연습장·스크린골프연습장(91136), 시각장애인 운영 안마원·안마시술소는 가능. 그 밖의 제외 업종도 신청건별 시·군 협의로 지원 가능 여부 검토 / 다단계판매는 등록하여 영위하면 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 지원제외 대상 업종 ※ 붙임 참조"
+   }
+  },
+  {
+   "id": "D1",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "해당 사항 없음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 기타 위에 준하는 사항이 확인되었을 경우"
+   }
+  },
+  {
+   "id": "D2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "제외 업종의 신청건별 시·군 협의 결과",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [
+    "X11"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "* 지원제외 대상 업종 중 신청건별로 해당 시·군과 협의하여 지원가능 여부 검토"
+   }
+  },
+  {
+   "id": "D3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "자격심사 결과(접수순서, 적격여부, 예산범위)",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "자격심사(접수순서, 적격여부, 예산범위 등)"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-10-14",
+    null
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "예산 소진 시 조기 마감. 확정 종료일 없음. 선정 후에도 예산 소진 시 지급 제한 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "○2026.10.14.(수) ~ 예산소진시까지* 예산소진시조기마감"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "월 최대 2백만원, 연속 6개월 인건비",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "대체인력 근로계약·최저임금 준수·4대보험, 선정 통보 후 2개월 내 채용, 다태아도 1명",
+   "reason": "선정 후 대체인력 고용 의무. 신청 시점에 대조할 값이 없음"
+  },
+  {
+   "text": "신청서, 증빙서류, 앱 접수, 지원금 청구, 현장점검, 심의위원회 지급중단",
+   "reason": "신청 절차와 선정 후 사후 관리"
+  }
+ ],
+ "notice_id": "PBLN127233",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}
