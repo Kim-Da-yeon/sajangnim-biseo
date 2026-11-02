@@ -1,0 +1,473 @@
+{
+ "source_text": "1067425_재도전추경",
+ "scope": "예비재창업자, 재창업기업 신청 자격",
+ "out_of_scope": [
+  {
+   "text": "본점 소재지 권역 주관기관 선택",
+   "reason": "자격이 아니라 신청 절차"
+  }
+ ],
+ "conditions": [
+  {
+   "id": "A1",
+   "kind": "eligibility",
+   "field": "closure_date",
+   "op": "le",
+   "value": "2026-04-16",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "예비재창업자",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "사업 공고 직전일까지 중소기업을 폐업한 자"
+   }
+  },
+  {
+   "id": "A2",
+   "kind": "eligibility",
+   "field": "business_registration",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:등록",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "예비재창업자",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "공고일 기준 신청자 명의의 사업자등록 및 법인 등기가 없는 자"
+   }
+  },
+  {
+   "id": "A2b",
+   "kind": "eligibility",
+   "field": "rental_only_no_staff_individual",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:등록",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "예비재창업자",
+   "waives": [
+    "A2"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "종업원을 고용하지 않고, 부동산 임대업만"
+   }
+  },
+  {
+   "id": "A3",
+   "kind": "eligibility",
+   "field": "can_restart_by_deadline",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "예비재창업자",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "재창업(사업자등록 또는 법인설립등기)이 가능한 자"
+   }
+  },
+  {
+   "id": "B1",
+   "kind": "eligibility",
+   "field": "closure_before_restart",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "재창업기업",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "선(先) 폐업 후(後) 중소기업 설립"
+   }
+  },
+  {
+   "id": "B4",
+   "kind": "eligibility",
+   "field": "conversion_only",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "재창업기업",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "“포괄양도양수”를 통한 “개인→법인 전환”은 폐업 및 재창업으로 인정하지 않음"
+   }
+  },
+  {
+   "id": "B5",
+   "kind": "eligibility",
+   "field": "registration_completed",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "재창업기업",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "법인사업자는 사업자등록까지 완료"
+   }
+  },
+  {
+   "id": "B6",
+   "kind": "eligibility",
+   "field": "all_reps_eligible",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "재창업기업",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "대표자 전원이"
+   }
+  },
+  {
+   "id": "B2",
+   "kind": "eligibility",
+   "field": "restart_date",
+   "op": "ge",
+   "value": "2019-04-17",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "재창업기업",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "’19.4.17. 이후 재창업한 기업"
+   }
+  },
+  {
+   "id": "B3",
+   "kind": "eligibility",
+   "field": "head_office",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "재창업기업",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "지원대상은 본점(사) 기준"
+   }
+  },
+  {
+   "id": "E1",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "채무변제 증빙, 채무조정 합의, 회생·변제계획 인가, 면책 확정, 재기지원보증 등",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "채무불이행으로 규제 중인"
+   }
+  },
+  {
+   "id": "E2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "강제징수·체납처분 유예, 특수채무 변제 증빙",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "국세 또는 지방세 체납 중인"
+   }
+  },
+  {
+   "id": "E3",
+   "kind": "exclusion",
+   "field": "recoup_outstanding",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "전액 반환, 면책, 분할납부 정상 이행",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "환수금등의 반환이 종결되지 않은"
+   }
+  },
+  {
+   "id": "E4",
+   "kind": "exclusion",
+   "field": "startup_excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "창업에서 제외되는 업종"
+   }
+  },
+  {
+   "id": "E5",
+   "kind": "exclusion",
+   "field": "prior_restart_program",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "[붙임2]에 명시된 사업에 선정되어 협약을 체결했던 이력"
+   }
+  },
+  {
+   "id": "E6",
+   "kind": "exclusion",
+   "field": "current_startup_program",
+   "op": "eq",
+   "value": false,
+   "unit": "2026년 중앙정부·공공기관",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "창업사업화 지원사업"
+   }
+  },
+  {
+   "id": "E7",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "창업지원사업에 참여 제한으로 제재 중인"
+   }
+  },
+  {
+   "id": "E8",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "재창업기업",
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "동 사업에 신청하는 사업자가 휴‧폐업 중인"
+   }
+  },
+  {
+   "id": "E9",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "성실경영평가 통과 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "성실경영평가"
+   }
+  },
+  {
+   "id": "E10",
+   "kind": "exclusion",
+   "field": "bank_account_available",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "사업비 계좌"
+   }
+  },
+  {
+   "id": "E11",
+   "kind": "exclusion",
+   "field": "program_staff",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "전담/겸직인력으로 참여 중"
+   }
+  },
+  {
+   "id": "E12",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "체불사업주 명단에 포함된 자"
+   }
+  },
+  {
+   "id": "E13",
+   "kind": "exclusion",
+   "field": "subsidy_excluded",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "보조사업 수행 배제"
+   }
+  },
+  {
+   "id": "E14",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "장관 인정 제한 사유 해당 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "참여를 제한할 정당한 사유"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-04-17",
+    "2026-05-07T16:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "’26. 4. 17.(금) ~ ’26.5. 7.(목), 16:00"
+   }
+  }
+ ],
+ "notice_id": "1067425",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

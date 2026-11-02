@@ -1,0 +1,342 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "gt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "'25년 연매출액 기준. '24년 이전 개업은 국세청 신고 1년 매출액, '25년 개업은 개업 이후 월평균 매출액×12",
+   "applies_to": null,
+   "waives": [],
+   "value": 0,
+   "evidence": {
+    "page": 1,
+    "quote": "0원초과1억400만원미만"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "lt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "'25년 연매출액 기준. '24년 이전 개업은 국세청 신고 1년 매출액, '25년 개업은 개업 이후 월평균 매출액×12",
+   "applies_to": null,
+   "waives": [],
+   "value": 104000000,
+   "evidence": {
+    "page": 1,
+    "quote": "0원초과1억400만원미만"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "②영업중인소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "국세청 신고 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 2,
+    "quote": "신청일기준휴‧폐업이아닌소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "사업자등록증상 개업연월일 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": "2025-12-31",
+   "evidence": {
+    "page": 2,
+    "quote": "2025년12월31일이전(사업자등록증상개업연월일기준)"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "붙임1 단서 업종(부동산관리업, 유사의료업, 시각장애인 안마원 등)은 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인정책자금융자제외업종*이아닌모든업종"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "single_application",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "1인이 다수 사업체 대표인 경우 요건 적합한 1곳만",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "1곳만신청가능"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "공동대표 운영 사업체에 한함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "공동대표가운영하는사업체는주대표1인만신청가능"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "gt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "'25년 연매출액 기준. '24년 이전 개업은 국세청 신고 1년 매출액, '25년 개업은 개업 이후 월평균 매출액×12",
+   "applies_to": null,
+   "waives": [],
+   "value": 0,
+   "evidence": {
+    "page": 1,
+    "quote": "0원초과1억400만원미만"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "lt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "'25년 연매출액 기준. '24년 이전 개업은 국세청 신고 1년 매출액, '25년 개업은 개업 이후 월평균 매출액×12",
+   "applies_to": null,
+   "waives": [],
+   "value": 104000000,
+   "evidence": {
+    "page": 1,
+    "quote": "0원초과1억400만원미만"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "②영업중인소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "국세청 신고 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 2,
+    "quote": "신청일기준휴‧폐업이아닌소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "사업자등록증상 개업연월일 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": "2025-12-31",
+   "evidence": {
+    "page": 2,
+    "quote": "2025년12월31일이전(사업자등록증상개업연월일기준)"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "붙임1 단서 업종(부동산관리업, 유사의료업, 시각장애인 안마원 등)은 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인정책자금융자제외업종*이아닌모든업종"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "single_application",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "1인이 다수 사업체 대표인 경우 요건 적합한 1곳만",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "1곳만신청가능"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "공동대표 운영 사업체에 한함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "공동대표가운영하는사업체는주대표1인만신청가능"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "시행 목적 및 참여카드사",
+  "지원 금액(1개사당 25만원, 화재공제료 차감) 및 바우처 사용처",
+  "지원 방식(카드 등록·발급, 사용방법, 사용기한 2026-12-31)",
+  "신청·접수기간(2026-02-09 09:00 ~ 2026-12-18 18:00 잠정, 예산 소진 시 조기 마감) 및 2부제 운영",
+  "신청방법, 대상자 선정 절차, 통지",
+  "신청 문의처",
+  "유의사항(환수, 의견제출 기한, 카드 관련 주의)",
+  "붙임2 지역본부 및 센터 목록",
+  "면세사업자 매출 및 업종 검증 제출서류"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 8,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": []
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "seconds": 33
+}

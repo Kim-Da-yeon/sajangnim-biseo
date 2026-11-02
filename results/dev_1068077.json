@@ -1,0 +1,562 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "「소상공인기본법」제2조에따른소상공인으로"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 2,
+    "quote": "정상적으로영업중인소상공인또는로컬창업가"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "공동대표 운영 사업체에만 해당",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "주대표1인만신청가능"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "참고1 단서로 신청 가능: 「방문판매등에관한법률」상 다단계판매(업)를 등록하여 영위하는 경우, 부동산관리업(6821), 신청일 기준 동일 장소에서 6개월 이상 사업을 지속 중인 부동산 중개·대리업(68221) 및 부동산 분양 대행업(68224), 비주거용건물임대업(68112) 중 공유오피스·공유주방을 영위하는 경우, 유사의료업(86902), 시각장애인이 운영하는 안마원 및 안마시술소(개설신고증명서 및 임대차계약서 또는 등기사항전부증명서 징구)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인 정책자금 지원제외 업종을 영위하는 경우"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "신청마감일까지 채무조정합의서 체결, 변제계획인가, 파산면책 선고, 회생인가 시 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "금융기관 등으로부터 채무불이행으로 규제 중이거나"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "법인은 대표자 포함; 신청마감일까지 강제징수·체납처분 유예 또는 특수채무 변제 증빙 시 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "국세 또는 지방세 체납으로 규제중인 경우"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "정부지원사업 참여 제한 등 제재 조치를 받고 있는 경우"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "business_registration",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "신청일 현재 사업자등록이 되어 있지 않거나"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "기업 대표자, 과제책임자, 공동책임자 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "고용노동부가 공개하는 체불사업주 명단에 포함된 경우"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "사회적기업 인증기업, 협동조합 등 참고2 열거 법인은 지원 대상 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": "비영리 개인사업자·법인·단체·조합 아님",
+   "evidence": {
+    "page": 2,
+    "quote": "비영리 개인사업자·법인, 단체 또는 조합"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "장관이 인정한 참여제한 사유 없음",
+   "evidence": {
+    "page": 2,
+    "quote": "기타 중소벤처기업부 장관이 참여제한의 사유가 있다고 인정하는 경우"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "참고4 동시수행 제한 정부지원사업 참여 중 아님",
+   "evidence": {
+    "page": 4,
+    "quote": "동시수행은불가(참고4)"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-05-18",
+    "2026-06-08T17:00"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "’26. 5. 18.(월) ~ 6. 8.(월) 17:00까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "「소상공인기본법」제2조에따른소상공인으로"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 2,
+    "quote": "정상적으로영업중인소상공인또는로컬창업가"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "공동대표 운영 사업체에만 해당",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "주대표1인만신청가능"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "참고1 단서 업종(등록 다단계판매, 부동산관리업, 유사의료업, 시각장애인 안마원 등)은 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인 정책자금 지원제외 업종을 영위하는 경우"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "신청마감일까지 채무조정합의서 체결, 변제계획인가, 파산면책, 회생인가 시 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "금융기관 등으로부터 채무불이행으로 규제 중이거나"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "법인은 대표자 포함; 신청마감일까지 강제징수·체납처분 유예 또는 특수채무 변제 증빙 시 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "국세 또는 지방세 체납으로 규제중인 경우"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "정부지원사업 참여 제한 등 제재 조치를 받고 있는 경우"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "business_registration",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "신청일 현재 사업자등록이 되어 있지 않거나"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "기업 대표자, 과제책임자, 공동책임자 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "고용노동부가 공개하는 체불사업주 명단에 포함된 경우"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "사회적기업 인증기업, 협동조합 등 참고2 열거 법인은 지원 대상 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": "비영리 개인사업자·법인·단체·조합 아님",
+   "evidence": {
+    "page": 2,
+    "quote": "비영리 개인사업자·법인, 단체 또는 조합"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "장관이 인정한 참여제한 사유 없음",
+   "evidence": {
+    "page": 2,
+    "quote": "기타 중소벤처기업부 장관이 참여제한의 사유가 있다고 인정하는 경우"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "참고4 동시수행 제한 정부지원사업 참여 중 아님",
+   "evidence": {
+    "page": 4,
+    "quote": "동시수행은불가(참고4)"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-05-18",
+    "2026-06-08T17:00"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "’26. 5. 18.(월) ~ 6. 8.(월) 17:00까지"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "유형② 민간기관 협업 신청 및 유형③ 지역특화기관 공동신청 요건",
+  "지원내용·지원금액·사업비 구성(정부지원금 90% 이내, 기업부담금 10% 이상)",
+  "제출서류 및 마이데이터 연동 안내",
+  "서류평가 가점(참고3)",
+  "선정절차 및 평가항목, 추천 시 서면평가 면제",
+  "발표평가 시 주대표 참석 의무",
+  "사업비 지급 시 지급보증보험증권 제출 및 E-나라도움 집행 등 선정 후 의무",
+  "보조금 부정수급 제재 등 유의사항",
+  "제3자 부당개입 주의 안내",
+  "자영업자 고용보험 및 보험료 지원사업 안내",
+  "소상공인 확인 세부 기준(매출액·상시근로자 산정방법)은 small_merchant 판단 근거로 참조"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 13,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c4",
+      "type": "wrong_value",
+      "detail": "참고1의 부동산업(68) 단서 중 일부는 조건부로만 신청이 가능하다. 부동산 중개·대리업(68221)과 부동산 분양 대행업(68224)은 '신청일 기준 동일 장소에서 6개월 이상 사업을 지속 중'인 경우에만, 비주거용건물임대업(68112)은 '공유오피스, 공유주방을 영위하는 경우'에만 허용된다. 그런데 c4의 exception은 '부동산관리업 … 등'으로 뭉뚱그려, 이 조건부 단서가 무조건 허용처럼 읽힐 수 있다. 시각장애인 안마원·안마시술소의 개설신고증명서 요건도 함께 빠져 있다.",
+      "fix": "exception을 다음과 같이 명시한다: '등록 다단계판매업, 부동산관리업(6821), 신청일 기준 동일 장소 6개월 이상 영위 중인 부동산 중개·대리업(68221)·분양대행업(68224), 공유오피스·공유주방 영위 비주거용건물임대업(68112), 유사의료업(86902), 시각장애인이 운영하는 안마원·안마시술소는 신청 가능'"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c4의 exception을 조건부 단서까지 명시하라: 등록 다단계판매업, 부동산관리업(6821), 신청일 기준 동일 장소 6개월 이상 영위 중인 부동산 중개·대리업(68221)·분양대행업(68224), 공유오피스·공유주방 영위 비주거용건물임대업(68112), 유사의료업(86902), 시각장애인이 운영하는 안마원·안마시술소(개설신고증명서 요건 포함)는 신청 가능. 원문 근거 문구를 그대로 인용할 것."
+   },
+   "result": {
+    "n_conditions": 13,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": []
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 2
+}

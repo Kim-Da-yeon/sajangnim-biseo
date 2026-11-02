@@ -1,0 +1,357 @@
+{
+ "source_text": "holdout_PBLN127590",
+ "scope": "경북 소재 소상공인 신청 요건과 지원 제외",
+ "conditions": [
+  {
+   "id": "A1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "공고일 기준 소상공인기본법 제조의 소상공인으로 경상북도에"
+   }
+  },
+  {
+   "id": "A2",
+   "kind": "eligibility",
+   "field": "hq_region",
+   "op": "eq",
+   "value": "경상북도",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "요건을 충족하는 경상북도 소재 소상공인본점 기준"
+   }
+  },
+  {
+   "id": "A3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "디지털커머스 성과 창출 사례 보유 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "디지털커머스 성과 창출 사례 보유 기업전략스토리 등"
+   }
+  },
+  {
+   "id": "B1",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "ge",
+   "value": 100000000,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "년 매출액 억 원 이상"
+   }
+  },
+  {
+   "id": "B2a",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "온라인 매출 비중 30% 이상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:온라인매출",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "이상 또는 온라인 매출액 천만원 이상"
+   },
+   "note": "2025년 기준"
+  },
+  {
+   "id": "B2b",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "온라인 매출액 5천만원 이상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:온라인매출",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "이상 또는 온라인 매출액 천만원 이상"
+   },
+   "note": "2025년 기준"
+  },
+  {
+   "id": "G1",
+   "kind": "eligibility",
+   "field": "revenue_change_rate",
+   "op": "gt",
+   "value": 0,
+   "unit": "비율",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "전년 대비 매출액 증가"
+   },
+   "note": "2024년 대비 2025년"
+  },
+  {
+   "id": "G2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "전년도 영업이익 흑자",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "전년도 영업이익 흑자"
+   }
+  },
+  {
+   "id": "L1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "지역자원 활용도",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "지역자원 활용도지역에 존재하는 유무형의 인적물적 자원"
+   }
+  },
+  {
+   "id": "L2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "지역경제·지역사회에 미치는 영향력",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "지역경제지역사회에 미치는 영향력"
+   }
+  },
+  {
+   "id": "E1",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "신청마감일 기준 기업의 부도휴ㆍ폐업 중인 경우"
+   }
+  },
+  {
+   "id": "E2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "국세지방세 체납금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "E3",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "국세지방세 체납금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "E4",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "프랜차이즈 가맹점·직영점 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "프랜차이즈 가맹점ㆍ직영점대기업 및 그 출자업체유관기관정부 및 공공기관"
+   }
+  },
+  {
+   "id": "E5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "대기업 및 그 출자업체 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "프랜차이즈 가맹점ㆍ직영점대기업 및 그 출자업체유관기관정부 및 공공기관"
+   }
+  },
+  {
+   "id": "E6",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "유관기관(정부 및 공공기관) 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "프랜차이즈 가맹점ㆍ직영점대기업 및 그 출자업체유관기관정부 및 공공기관"
+   }
+  },
+  {
+   "id": "E7",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "소상공인 정책자금 융자 제외 업종유흥ㆍ사행성 등을 영위하는 경우"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-10-27",
+    "2026-11-03T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "공고일로부터 년 월 일화 까지 2026 11 03 ( ) 18:00"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "우대사항(매출 3억원 이상·상근근로자 1명 이상, 영업이익 30% 증가)",
+   "reason": "자격이 아니라 가점"
+  },
+  {
+   "text": "활동기간 종료일까지 경북 내 사업자등록 유지",
+   "reason": "선정 후 의무"
+  },
+  {
+   "text": "제출 서류(중소기업확인서, 4대보험 명부 등)",
+   "reason": "자격이 아니라 제출 절차"
+  }
+ ],
+ "notice_id": "PBLN127590",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

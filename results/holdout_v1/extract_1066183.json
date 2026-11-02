@@ -1,0 +1,963 @@
+{
+ "conditions": [
+  {
+   "id": "period",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "연장 공고로 마감이 2026-03-10에서 2026-03-27로 변경됨. 마감시간 18:00 정각 이후 추가접수 불가.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-02-05",
+    "2026-03-27T18:00"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2026. 2. 5.(목) ~ 2026. 3. 27.(금), 18:00까지"
+   }
+  },
+  {
+   "id": "g_small_merchant",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상인 기준은 참고2~3 참조",
+   "applies_to": "백년가게",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "제조업을제외한업력30년이상의소상공인"
+   }
+  },
+  {
+   "id": "g_not_mfg",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "제조업 제외. 둘 이상 업종 영위 시 평균매출액 비중이 가장 큰 업종이 주된 업종",
+   "applies_to": "백년가게",
+   "waives": [],
+   "value": [
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29",
+    "C30",
+    "C31",
+    "C32",
+    "C33",
+    "C34"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "제조업을제외한업력30년이상의소상공인"
+   }
+  },
+  {
+   "id": "g_tenure",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "업력 30년 이상. 사업자등록증 개업연월일 또는 법인등기부 설립등기일부터 모집공고일 전일까지 영업기간으로 산정, 휴·폐업 기간 제외. 모집공고일은 최초 공고·신청 시작일 2026-02-05로 보고 계산함(연장공고일 2026-03-11 기준이면 1996-03-10). 재창업 시 동일업종·연속성 사업장 업력 및 상속·증여 승계 시 피상속인 업력 합산 가능(동일성 인정 시, 선정평가위원회 최종 판정).",
+   "applies_to": "백년가게",
+   "waives": [],
+   "value": "1996-02-04",
+   "evidence": {
+    "page": 2,
+    "quote": "모집공고일전일까지의영업기간*으로산정"
+   }
+  },
+  {
+   "id": "s_small_craft",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "숙련기술기반의 소공인(제조업)",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "업력15년이상의숙련기술기반의소공인(제조업)"
+   }
+  },
+  {
+   "id": "s_employees",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "lt",
+   "unit": "명",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "상시근로자 수",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 2,
+    "quote": "상시근로자10인미만의제조업을주된사업"
+   }
+  },
+  {
+   "id": "s_mfg",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "제조업을 주된 사업으로 영위. 둘 이상 업종 영위 시 평균매출액 비중이 가장 큰 업종",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": [
+    "C10",
+    "C34"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "상시근로자10인미만의제조업을주된사업"
+   }
+  },
+  {
+   "id": "s_tenure",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "업력 15년 이상. 사업자등록증 개업연월일 또는 법인등기부 설립등기일부터 모집공고일 전일까지 영업기간으로 산정, 휴·폐업 기간 제외. 모집공고일은 최초 공고·신청 시작일 2026-02-05로 보고 계산함(연장공고일 2026-03-11 기준이면 2011-03-10). 재창업·사업승계 업력 합산 가능(선정평가위원회 최종 판정).",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": "2011-02-04",
+   "evidence": {
+    "page": 2,
+    "quote": "위하는업력15년이상의제조업체"
+   }
+  },
+  {
+   "id": "c_continuous",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "천재지변, 감염병 등 불가피한 사유로 영업의 일시적 중단이 있는 경우",
+   "note": "주된 업종 변동 없이 계속 사업 유지, 영업 중단 없어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "주된업종의변동없이계속사업을유지하여야함"
+   }
+  },
+  {
+   "id": "c_joint_rep",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "공동대표인 경우에만 해당",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공동대표의 경우 주 대표자가 신청"
+   }
+  },
+  {
+   "id": "x_industry",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인 정책자금 융자제외 대상 업종(참고2)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "소상공인정책자금 지원제외 업종을 영위하고 있는 경우"
+   }
+  },
+  {
+   "id": "x_status",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "신청일 기준 기업의 부도, 휴·폐업 중인 경우"
+   }
+  },
+  {
+   "id": "x_tax",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세·지방세 체납",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "x_debt",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "x_admin",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 과징금, 영업정지, 품목제조정지, 형사처벌 등 영업 관련 행정처분 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "과징금, 영업정지, 품목제조정지, 형사처벌"
+   }
+  },
+  {
+   "id": "x_accident",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 산업재해 명단공표 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "산업재해 명단공표, 임금체불, 불공정행위"
+   }
+  },
+  {
+   "id": "x_wage",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "명단공표 여부와 무관하게 신청일 기준 3년('23~25년) 이내 임금체불 이력이 있으면 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "산업재해 명단공표, 임금체불, 불공정행위"
+   }
+  },
+  {
+   "id": "x_unfair",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 불공정행위 이력(1년 기준 필드와 기간 상이)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "산업재해 명단공표, 임금체불, 불공정행위"
+   }
+  },
+  {
+   "id": "x_habitual",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 고액 상습체납 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "고액 상습체납 이력이 있는 경우"
+   }
+  },
+  {
+   "id": "x_franchise",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "프랜차이즈 가맹점 및 대리점 제외. 프랜차이즈 본사는 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "프랜차이즈 가맹점 및 대리점"
+   }
+  },
+  {
+   "id": "x_dup",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "백년가게와 백년소공인 분야 중복 신청 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "백년가게와백년소공인간중복신청불가"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "period",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "연장 공고로 마감이 2026-03-10에서 2026-03-27로 변경됨. 마감시간 18:00 정각 이후 추가접수 불가.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-02-05",
+    "2026-03-27T18:00"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2026. 2. 5.(목) ~ 2026. 3. 27.(금), 18:00까지"
+   }
+  },
+  {
+   "id": "g_small_merchant",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상인 기준은 참고2~3 참조",
+   "applies_to": "백년가게",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "제조업을제외한업력30년이상의소상공인"
+   }
+  },
+  {
+   "id": "g_not_mfg",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "제조업 제외. 둘 이상 업종 영위 시 평균매출액 비중이 가장 큰 업종이 주된 업종",
+   "applies_to": "백년가게",
+   "waives": [],
+   "value": [
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29",
+    "C30",
+    "C31",
+    "C32",
+    "C33",
+    "C34"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "제조업을제외한업력30년이상의소상공인"
+   }
+  },
+  {
+   "id": "g_tenure",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "업력 30년 이상. 사업자등록증 개업연월일 또는 법인등기부 설립등기일부터 모집공고일 전일까지 영업기간으로 산정, 휴·폐업 기간 제외. 모집공고일은 최초 공고·신청 시작일 2026-02-05로 보고 계산함(연장공고일 2026-03-11 기준이면 1996-03-10). 재창업 시 동일업종·연속성 사업장 업력 및 상속·증여 승계 시 피상속인 업력 합산 가능(동일성 인정 시, 선정평가위원회 최종 판정).",
+   "applies_to": "백년가게",
+   "waives": [],
+   "value": "1996-02-04",
+   "evidence": {
+    "page": 2,
+    "quote": "모집공고일전일까지의영업기간*으로산정"
+   }
+  },
+  {
+   "id": "s_small_craft",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "숙련기술기반의 소공인(제조업)",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "업력15년이상의숙련기술기반의소공인(제조업)"
+   }
+  },
+  {
+   "id": "s_employees",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "lt",
+   "unit": "명",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "상시근로자 수",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 2,
+    "quote": "상시근로자10인미만의제조업을주된사업"
+   }
+  },
+  {
+   "id": "s_mfg",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "제조업을 주된 사업으로 영위. 둘 이상 업종 영위 시 평균매출액 비중이 가장 큰 업종",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": [
+    "C10",
+    "C34"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "상시근로자10인미만의제조업을주된사업"
+   }
+  },
+  {
+   "id": "s_tenure",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "업력 15년 이상. 사업자등록증 개업연월일 또는 법인등기부 설립등기일부터 모집공고일 전일까지 영업기간으로 산정, 휴·폐업 기간 제외. 모집공고일은 최초 공고·신청 시작일 2026-02-05로 보고 계산함(연장공고일 2026-03-11 기준이면 2011-03-10). 재창업·사업승계 업력 합산 가능(선정평가위원회 최종 판정).",
+   "applies_to": "백년소공인",
+   "waives": [],
+   "value": "2011-02-04",
+   "evidence": {
+    "page": 2,
+    "quote": "위하는업력15년이상의제조업체"
+   }
+  },
+  {
+   "id": "c_continuous",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "천재지변, 감염병 등 불가피한 사유로 영업의 일시적 중단이 있는 경우",
+   "note": "주된 업종 변동 없이 계속 사업 유지, 영업 중단 없어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "주된업종의변동없이계속사업을유지하여야함"
+   }
+  },
+  {
+   "id": "c_joint_rep",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "공동대표인 경우에만 해당",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공동대표의 경우 주 대표자가 신청"
+   }
+  },
+  {
+   "id": "x_industry",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인 정책자금 융자제외 대상 업종(참고2)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "소상공인정책자금 지원제외 업종을 영위하고 있는 경우"
+   }
+  },
+  {
+   "id": "x_status",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "신청일 기준 기업의 부도, 휴·폐업 중인 경우"
+   }
+  },
+  {
+   "id": "x_tax",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세·지방세 체납",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "x_debt",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "x_admin",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 과징금, 영업정지, 품목제조정지, 형사처벌 등 영업 관련 행정처분 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "과징금, 영업정지, 품목제조정지, 형사처벌"
+   }
+  },
+  {
+   "id": "x_accident",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 산업재해 명단공표 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "산업재해 명단공표, 임금체불, 불공정행위"
+   }
+  },
+  {
+   "id": "x_wage",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 임금체불 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "산업재해 명단공표, 임금체불, 불공정행위"
+   }
+  },
+  {
+   "id": "x_unfair",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 불공정행위 이력(1년 기준 필드와 기간 상이)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "산업재해 명단공표, 임금체불, 불공정행위"
+   }
+  },
+  {
+   "id": "x_habitual",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청일 기준 3년('23~25년) 이내 고액 상습체납 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "고액 상습체납 이력이 있는 경우"
+   }
+  },
+  {
+   "id": "x_franchise",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "프랜차이즈 가맹점 및 대리점 제외. 프랜차이즈 본사는 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "프랜차이즈 가맹점 및 대리점"
+   }
+  },
+  {
+   "id": "x_dup",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "백년가게와 백년소공인 분야 중복 신청 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "백년가게와백년소공인간중복신청불가"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "소상공인24 회원가입·신청 절차 및 마이데이터 동의",
+  "제출서류(납세증명서, 승계서류, 마이데이터 미동의 시 추가서류 등)",
+  "지원내용(지정, 인증현판, 홍보, 연계지원 사업)",
+  "평가절차·평가지표·가점사항 및 인정기준",
+  "선정 후 허위 기재 시 지정 취소 등 불이익",
+  "서류 보완 요청 및 미제출 시 불이익",
+  "현장평가 불참 시 평가 제외",
+  "문의처 및 지역센터 연락처",
+  "서식(신청서, 역량기술서, 기술·비법전수 확약서)",
+  "참고3 업종별 소기업 규모 기준표 및 참고4 업종구분 방법 세부"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 21,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "x_wage",
+      "type": "wrong_logic",
+      "detail": "원문의 제외 사유는 신청일 기준 3년('23~25년) 이내 '임금체불 이력' 전체입니다. 그런데 조건은 명단공표 여부를 뜻하는 것으로 보이는 wage_arrears_listed 필드로 profile 판정을 합니다. 명단공표 대상이 아닌 임금체불 이력은 걸러지지 않고, 필드의 기간 기준이 3년('23~25년)과 같은지도 확인되지 않습니다. 같은 구간의 x_unfair는 필드 기간이 다르다는 점을 인정해 unsupported로 두었는데, 이 조건만 profile로 단정했습니다.",
+      "fix": "field를 other로 바꾸고 check를 unsupported(또는 declared)로 조정하십시오. note에는 '명단공표 여부와 무관하게 신청일 기준 3년('23~25년) 이내 임금체불 이력이 있으면 제외'라고 명시하십시오. 또는 3년 이내 임금체불 이력 전반을 판정할 수 있는 필드로 교체하십시오.",
+      "source_quote": "신청일 기준 3년(‘23~25년) 이내 산업재해 명단공표, 임금체불, 불공정행위, 고액 상습체납 이력이 있는 경우"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "x_wage: 원문 \"신청일 기준 3년('23~25년) 이내 ... 임금체불 ... 이력이 있는 경우\"는 명단공표 여부와 무관한 임금체불 이력 전체를 대상으로 함. wage_arrears_listed 필드로 profile 판정하지 말고 field=other, check=unsupported(또는 declared)로 바꾸고 note에 '명단공표 여부와 무관하게 신청일 기준 3년('23~25년) 이내 임금체불 이력이 있으면 제외'를 명시할 것."
+   },
+   "result": {
+    "n_conditions": 21,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 2,
+ "seconds": 152
+}

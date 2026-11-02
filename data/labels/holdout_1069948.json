@@ -1,0 +1,485 @@
+{
+ "source_text": "holdout_1069948",
+ "scope": "공동장비 유형 신청 자격과 신청 제외. 신청 주체(협동조합·자율상권조합)와 성장단계별 요건 포함",
+ "conditions": [
+  {
+   "id": "T1",
+   "kind": "eligibility",
+   "field": "support_field",
+   "op": "eq",
+   "value": "공동장비",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "‘공동일반’ 유형 신청은 1차 공고 시 마감되었으며, 본 공고는 ‘공동장비’ 유형에 한정하여 신청이"
+   }
+  },
+  {
+   "id": "T2",
+   "kind": "eligibility",
+   "field": "registration_completed",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 5,
+    "quote": "* 신청일 기준 법인 설립이 완료된 조합 및 연합회에 한함"
+   }
+  },
+  {
+   "id": "A1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "전체 조합원 5인 이상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "협동조합(연합회)",
+   "waives": [],
+   "evidence": {
+    "page": 5,
+    "quote": "설립된 전체 조합원이"
+   }
+  },
+  {
+   "id": "A2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "조합원(회원) 50% 이상이 소상공인",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "협동조합(연합회)",
+   "waives": [],
+   "evidence": {
+    "page": 5,
+    "quote": "5인 이상이고, 조합원(회원) 50% 이상이 소상공인*으로 구성된 협동"
+   }
+  },
+  {
+   "id": "A3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "협동조합기본법: 수익사업 영위. 중소기업협동조합법: 정관에 이익 배당 사항 표기 및 수익사업 영위",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "협동조합(연합회)",
+   "waives": [],
+   "evidence": {
+    "page": 5,
+    "quote": "1) 협동조합기본법 : 영리 또는 수익사업을 하는 협동조합(연합회)"
+   }
+  },
+  {
+   "id": "A4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "지역상권법에 근거해 설립, 수익사업 영위",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "자율상권조합",
+   "waives": [],
+   "evidence": {
+    "page": 5,
+    "quote": "3) 지역상권 상생 및 활성화에 관한 법률 : 수익사업을 영위하는 자율상권조합"
+   }
+  },
+  {
+   "id": "S1",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "between",
+   "value": [
+    10000000,
+    499999999
+   ],
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:성장단계",
+   "check": "profile",
+   "exception": "’25년 매출액이 없어도 ‘25년~’26년 설립 조합은 성장단계 신청 가능",
+   "applies_to": "성장단계",
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "①‘25년 매출액 1천만원 이상~5억원 미만"
+   }
+  },
+  {
+   "id": "S1b",
+   "kind": "eligibility",
+   "field": "revenue_change_rate",
+   "op": "between",
+   "value": [
+    0.05,
+    0.199999
+   ],
+   "unit": "비율",
+   "basis": "not_stated",
+   "group": "OR:성장단계",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "성장단계",
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "②’24년대비‘25년매출액증가율5% 이상~20% 미만"
+   }
+  },
+  {
+   "id": "D1",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "ge",
+   "value": 500000000,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:도약단계",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "도약단계",
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "① ‘25년 매출액 5억원 이상"
+   }
+  },
+  {
+   "id": "D2",
+   "kind": "eligibility",
+   "field": "revenue_change_rate",
+   "op": "ge",
+   "value": 0.2,
+   "unit": "비율",
+   "basis": "not_stated",
+   "group": "OR:도약단계",
+   "check": "profile",
+   "exception": "단, ②의 경우 ’24년 매출액 1천만원 이상",
+   "applies_to": "도약단계",
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "② ’24년 대비 ‘25년 매출액 증가율 20% 이상"
+   }
+  },
+  {
+   "id": "I1",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "ge",
+   "value": 1000000000,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:혁신성장단계",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "혁신성장단계",
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "① ‘25년 매출액 10억원 이상"
+   }
+  },
+  {
+   "id": "I2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "조합원 출자금 1억원 이상(등기부등본 기준), 단 ’25년 매출액 1천만원 이상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:혁신성장단계",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "혁신성장단계",
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "② 조합원 출자금 규모 1억원 이상(등기부등본 기준)"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "’20~’25년 협업활성화 공동사업 5회 지원 이력 없음",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "①‘20년부터 ’25년까지 소상공인 협업활성화 공동사업을 5회 지원받은 조합(연합회)"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "subsidy_excluded",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "② 보조금 관리에 관한 법률, 국가를 당사자로 하는 계약에 관한 법률, 국고보조금"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "③ 중소벤처기업부 및 소상공인시장진흥공단 사업에 참여제한으로 제재 중인 경우"
+   }
+  },
+  {
+   "id": "X4",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "④ 협동조합(연합회) 및 조합 이사장(연합회장)의 국세 및 지방세 체납사실이 있는 경우"
+   }
+  },
+  {
+   "id": "X5a",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "⑤ 휴‧폐업중인 협동조합(연합회) 또는 조합원(회원)의 50% 이상이 휴‧폐업중인 협동조합(연합회)"
+   }
+  },
+  {
+   "id": "X5b",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "조합원(회원) 50% 이상 휴·폐업 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "⑤ 휴‧폐업중인 협동조합(연합회) 또는 조합원(회원)의 50% 이상이 휴‧폐업중인 협동조합(연합회)"
+   }
+  },
+  {
+   "id": "X6",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "협동조합(연합회)",
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "⑥ 소상공인정책자금 지원제외 업종*(“참고4”)을 영위하고 있는 협동조합(연합회) 및"
+   }
+  },
+  {
+   "id": "X6b",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "자율상권조합은 임대업을 영위해도 신청 가능",
+   "applies_to": "자율상권조합",
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "** 자율상권조합의 경우, 조합 및 조합원이 임대업을 영위하는 경우에도 신청 가능"
+   }
+  },
+  {
+   "id": "X6c",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "조합원(회원)의 주된 사업이 지원제외 업종 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": "자율상권조합은 조합원이 임대업을 영위해도 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "* 주된 사업(연매출액 비중이 가장 큰 사업) 기준"
+   }
+  },
+  {
+   "id": "X7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "대기업·대기업 프랜차이즈 가맹점 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "⑦ 대기업 및 대기업 프랜차이즈 가맹점"
+   }
+  },
+  {
+   "id": "X8",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "장관·이사장이 인정하는 참여 제한 사유 해당 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 10,
+    "quote": "⑧ 기타 중소벤처기업부 장관 또는 소상공인시장진흥공단 이사장이 참여를 제한할"
+   }
+  },
+  {
+   "id": "X9",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "활성화 판로지원사업(’26. 3. 24 공고)에 선정된 경우 신청 불가"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-07-21",
+    "2026-08-04T16:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "’26. 7. 21.(화) ~ ‘26. 8. 4.(화), 16:00까지"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "공동일반 유형",
+   "reason": "1차 공고로 마감, 본 공고는 공동장비만 신청 가능"
+  },
+  {
+   "text": "품목별 장비 요건(구매단가 3백만원 이상, 신청 불가 장비, 설치 장소)",
+   "reason": "조합 자격이 아니라 지원 대상 장비 요건"
+  },
+  {
+   "text": "선정 우대와 가점",
+   "reason": "자격이 아니라 선정 평가"
+  }
+ ],
+ "notice_id": "1069948",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

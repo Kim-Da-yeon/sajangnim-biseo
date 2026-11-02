@@ -1,0 +1,16 @@
+@prefix sa: <https://sosang.example/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+sa:ConditionShape a sh:NodeShape ; sh:targetClass sa:Condition ;
+  sh:property [ sh:path sa:field ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:message "조건에 대상 항목이 없습니다" ] ;
+  sh:property [ sh:path sa:op ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("eq" "ne" "lt" "le" "gt" "ge" "in" "not_in" "between" "derived") ; sh:message "허용되지 않은 연산자입니다" ] ;
+  sh:property [ sh:path sa:kind ; sh:minCount 1 ; sh:in ("eligibility" "exclusion" "period") ; sh:message "조건 종류가 잘못됐습니다" ] ;
+  sh:property [ sh:path sa:check ; sh:minCount 1 ; sh:in ("profile" "declared" "discretionary" "unsupported" "conflict") ; sh:message "확인 방식이 잘못됐습니다" ] ;
+  sh:property [ sh:path sa:supportedBy ; sh:minCount 1 ; sh:class sa:Evidence ; sh:message "근거 없는 조건은 판정에 쓸 수 없습니다" ] .
+sa:EvidenceShape a sh:NodeShape ; sh:targetClass sa:Evidence ;
+  sh:property [ sh:path sa:quote ; sh:minCount 1 ; sh:minLength 2 ; sh:message "근거 문구가 없습니다" ] ;
+  sh:property [ sh:path sa:page ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:message "근거 쪽 번호가 없습니다" ] .
+sa:SizeRuleShape a sh:NodeShape ; sh:targetClass sa:SizeRule ;
+  sh:property [ sh:path sa:source ; sh:minCount 1 ; sh:message "규모 기준에 출처가 없습니다" ] ;
+  sh:property [ sh:path sa:maxRevenue ; sh:minCount 1 ; sh:datatype xsd:integer ] .

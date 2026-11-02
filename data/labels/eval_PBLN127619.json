@@ -1,0 +1,322 @@
+{
+ "source_text": "PBLN127619_보은군소공인",
+ "scope": "신청 자격",
+ "conditions": [
+  {
+   "id": "X1",
+   "kind": "eligibility",
+   "field": "registration_or_activity",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "정상적으로 사업자등록 또는 관련 활동 경력"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "eligibility",
+   "field": "can_participate",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "성실히 참여 가능한 자"
+   }
+  },
+  {
+   "id": "C1a",
+   "kind": "eligibility",
+   "field": "hq_region",
+   "op": "eq",
+   "value": "보은군",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:소재지",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "본사, 공장 중 1개 이상 보은군 소재"
+   }
+  },
+  {
+   "id": "C1b",
+   "kind": "eligibility",
+   "field": "factory_region",
+   "op": "eq",
+   "value": "보은군",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:소재지",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "본사, 공장 중 1개 이상 보은군 소재"
+   }
+  },
+  {
+   "id": "C1c",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "value": "보은군",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:소재지",
+   "check": "conflict",
+   "exception": "공고 내 표기 충돌. 사업장만 보은군이면 확인 필요",
+   "applies_to": "기존 기업",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내에 본사, 공장 또는 사업장"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "eq",
+   "value": "C10",
+   "unit": "KSIC 중분류",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "식료품 제조업(C10)을 영위하는 기업"
+   }
+  },
+  {
+   "id": "C3",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "상시근로자10인 미만의 소공인"
+   }
+  },
+  {
+   "id": "S1",
+   "kind": "eligibility",
+   "field": "preparing_food_startup_in_region",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "예비창업자",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내 식품 제조 분야 창업을 준비하는 청년 및 예비창업자"
+   }
+  },
+  {
+   "id": "S2",
+   "kind": "eligibility",
+   "field": "can_start_within_3m",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "예비창업자",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "선정 이후 3개월 이내 창업"
+   }
+  },
+  {
+   "id": "E1",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "휴업 또는 폐업 중인 기업"
+   }
+  },
+  {
+   "id": "E2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 또는4대보험료 체납"
+   }
+  },
+  {
+   "id": "E3",
+   "kind": "exclusion",
+   "field": "social_insurance_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 또는4대보험료 체납"
+   }
+  },
+  {
+   "id": "E4",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "지원사업 참여 제한 중인"
+   }
+  },
+  {
+   "id": "E5",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "value": false,
+   "unit": "금년도",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "금년도 유사 사업을 통하여 지원받은 기업"
+   }
+  },
+  {
+   "id": "E6",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "채무불이행·회생 등으로 사업수행이 어려운지",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "정상적인 사업수행이 어렵다고 판단"
+   }
+  },
+  {
+   "id": "E7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "사업 목적 부합 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "운영기관이 사업 목적에 부합하지 않는다고 판단"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-10-22",
+    "2026-11-05T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "절차 표 모집공고 기간은 '10. 22.~10. 5.', 접수 기간 표기의 10월 22일 요일은 '화'로 다름",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "오후 18:00 마감"
+   }
+  }
+ ],
+ "out_of_scope": [],
+ "notice_id": "PBLN127619",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

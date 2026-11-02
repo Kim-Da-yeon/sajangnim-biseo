@@ -1,0 +1,178 @@
+{
+ "source_text": "1065100_경영안정바우처",
+ "scope": "지원 요건",
+ "conditions": [
+  {
+   "id": "C1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "영업중인소상공인"
+   }
+  },
+  {
+   "id": "R1",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "gt",
+   "value": 0,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "연매출액0원초과1억400만원미만"
+   }
+  },
+  {
+   "id": "R2",
+   "kind": "eligibility",
+   "field": "annualized_revenue",
+   "op": "lt",
+   "value": 104000000,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "연매출액0원초과1억400만원미만"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "value": "2025-12-31",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "2025년12월31일이전"
+   }
+  },
+  {
+   "id": "C3",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "신청일기준휴‧폐업이아닌소상공인"
+   }
+  },
+  {
+   "id": "C4",
+   "kind": "eligibility",
+   "field": "single_application",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "1곳만신청가능"
+   }
+  },
+  {
+   "id": "C5",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "공동대표가 아니면 통과",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "공동대표가운영하는사업체는주대표1인만신청가능"
+   }
+  },
+  {
+   "id": "E1",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인정책자금융자제외업종"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-02-09T09:00",
+    "2026-12-18T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "종료일 잠정, 예산 소진 시 조기 마감 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "2월9일(월) 09시~ (잠정) 12월18일(금) 18시까지"
+   }
+  }
+ ],
+ "out_of_scope": [],
+ "notice_id": "1065100",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

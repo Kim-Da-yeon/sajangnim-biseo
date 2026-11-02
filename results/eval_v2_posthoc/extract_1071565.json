@@ -1,0 +1,578 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「소상공인기본법」 제2조 및 같은 법 시행령 제3조의 소상공인. 일반경영안정자금은 업력 무관",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "｢소상공인기본법｣제2조및같은법시행령제3조의소상공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "일반경영안정자금: 융자 제외업종인 부동산업 중 비주거용 건물 임대업(68112)은 '착한 임대인'에 한해 허용",
+   "note": "주된 사업의 업종 기준, 별표1 융자제외 대상 업종. 별표1 내 신청 가능 단서(등록 다단계판매업, 부동산관리업(6821), 동일장소 6개월 이상 부동산 중개·대리업(68221)·분양대행업(68224), 공유오피스·공유주방 비주거용건물임대업, 유사의료업(86902), 시각장애인 운영 안마원·안마시술소)는 별표 정의에 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "⑥정책자금융자제외업종(별표1(24쪽))을영위하는소상공인"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "압류·매각의 유예 등을 받은 경우의 융자대상 포함 단서는 직접대출에 한함(대리대출에는 적용 안 됨)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "①세금을체납중인소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "credit_info_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "한국신용정보원 일반신용정보관리규약에 따른 신용도판단정보, 공공정보 등 등록",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "등록되어있는소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "허위 또는 부정한 방법으로 융자 신청하거나 대출자금을 융자 목적 외 용도로 사용",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "③기타허위또는부정한방법으로융자를신청하거나"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "social_issue",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "④임직원의자금횡령등사회적물의를일으킨소상공인"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "재해를 직접원인으로 휴업 중인 소상공인은 가동 중인 소상공인으로 간주하여 융자대상에 포함",
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "⑤휴․폐업중인소상공인"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "policy_loan_count_5y",
+   "op": "lt",
+   "unit": "회",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "시설자금 또는 직접대출 성실상환 소상공인의 경우 3회 이상 지원받은 기업이더라도 1회 추가 지원 가능",
+   "note": "특별경영안정자금(청년고용연계자금, 신용취약소상공인자금, 재도전특별자금, 긴급경영안정자금, 장애인기업지원자금, 대환대출)은 횟수에 미포함. 직접대출 성실상환: 대출신청일 기준 최근 3년 이내 연속 10일 이상 연체이력 없이 원금분할상환 중이거나 완제",
+   "applies_to": null,
+   "waives": [],
+   "value": 3,
+   "evidence": {
+    "page": 4,
+    "quote": "⑦최근5년이내소상공인정책자금3회* 이상지원받은소상공인,"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "eligibility",
+   "field": "revenue_change_rate",
+   "op": "le",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "profile",
+   "exception": null,
+   "note": "직전매출과 직전전매출(연도, 반기, 분기, 월별) 비교로 매출 15% 이상 감소",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": -0.15,
+   "evidence": {
+    "page": 8,
+    "quote": "비교를통해매출15% 이상감소한소상공인"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "eligibility",
+   "field": "special_zone",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "profile",
+   "exception": null,
+   "note": "매출감소 확인 예외 ①②③④⑥: 해당 지역에 소재한 소상공인",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": [
+    "고용위기지역",
+    "산업위기대응특별지역",
+    "중소기업 특별지원지역",
+    "상권활성화구역",
+    "자율상권구역",
+    "산업위기선제대응지역",
+    "고용위기선제대응지역"
+   ],
+   "evidence": {
+    "page": 8,
+    "quote": "① 고용위기지역 또는 산업위기대응특별지역에 소재한 소상공인"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "eligibility",
+   "field": "air_crash_victim_cert",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "declared",
+   "exception": null,
+   "note": "매출감소 확인 예외 ⑤",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 8,
+    "quote": "⑤ 12·29여객기참사 피해자 확인서를 발급받은 소상공인"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "discretionary",
+   "exception": null,
+   "note": "매출감소 확인 예외 ⑦",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": "중소벤처기업부장관이 지원이 필요하다고 인정하는 사유",
+   "evidence": {
+    "page": 8,
+    "quote": "⑦ 기타 중소벤처기업부장관이 지원이 필요하다고 인정하는 사유"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "대리대출 접수개시 1월 5일(직접대출 1월 12일). 마감일 미기재. 공고일은 2026-10-01(변경 공고)",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-05",
+    null
+   ],
+   "evidence": {
+    "page": 5,
+    "quote": "◦대리대출은1월5일, 직접대출은1월12일접수개시"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「소상공인기본법」 제2조 및 같은 법 시행령 제3조의 소상공인. 일반경영안정자금은 업력 무관",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "｢소상공인기본법｣제2조및같은법시행령제3조의소상공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "일반경영안정자금: 융자 제외업종인 부동산업 중 비주거용 건물 임대업(68112)은 '착한 임대인'에 한해 허용",
+   "note": "주된 사업의 업종 기준, 별표1 융자제외 대상 업종. 별표1 내 신청 가능 단서(등록 다단계판매업, 부동산관리업(6821), 동일장소 6개월 이상 부동산 중개·대리업(68221)·분양대행업(68224), 공유오피스·공유주방 비주거용건물임대업, 유사의료업(86902), 시각장애인 운영 안마원·안마시술소)는 별표 정의에 포함",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "⑥정책자금융자제외업종(별표1(24쪽))을영위하는소상공인"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "압류·매각의 유예 등을 받은 경우의 융자대상 포함 단서는 직접대출에 한함(대리대출에는 적용 안 됨)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "①세금을체납중인소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "credit_info_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "한국신용정보원 일반신용정보관리규약에 따른 신용도판단정보, 공공정보 등 등록",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "등록되어있는소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "허위 또는 부정한 방법으로 융자 신청하거나 대출자금을 융자 목적 외 용도로 사용",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "③기타허위또는부정한방법으로융자를신청하거나"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "social_issue",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 4,
+    "quote": "④임직원의자금횡령등사회적물의를일으킨소상공인"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "재해를 직접원인으로 휴업 중인 소상공인은 가동 중인 소상공인으로 간주하여 융자대상에 포함",
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "⑤휴․폐업중인소상공인"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "policy_loan_count_5y",
+   "op": "lt",
+   "unit": "회",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "시설자금 또는 직접대출 성실상환 소상공인의 경우 3회 이상 지원받은 기업이더라도 1회 추가 지원 가능",
+   "note": "특별경영안정자금(청년고용연계자금, 신용취약소상공인자금, 재도전특별자금, 긴급경영안정자금, 장애인기업지원자금, 대환대출)은 횟수에 미포함. 직접대출 성실상환: 대출신청일 기준 최근 3년 이내 연속 10일 이상 연체이력 없이 원금분할상환 중이거나 완제",
+   "applies_to": null,
+   "waives": [],
+   "value": 3,
+   "evidence": {
+    "page": 4,
+    "quote": "⑦최근5년이내소상공인정책자금3회* 이상지원받은소상공인,"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "eligibility",
+   "field": "revenue_change_rate",
+   "op": "le",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "profile",
+   "exception": null,
+   "note": "직전매출과 직전전매출(연도, 반기, 분기, 월별) 비교로 매출 15% 이상 감소",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": -0.15,
+   "evidence": {
+    "page": 8,
+    "quote": "비교를통해매출15% 이상감소한소상공인"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "eligibility",
+   "field": "special_zone",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "profile",
+   "exception": null,
+   "note": "매출감소 확인 예외 ①②③④⑥: 해당 지역에 소재한 소상공인",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": [
+    "고용위기지역",
+    "산업위기대응특별지역",
+    "중소기업 특별지원지역",
+    "상권활성화구역",
+    "자율상권구역",
+    "산업위기선제대응지역",
+    "고용위기선제대응지역"
+   ],
+   "evidence": {
+    "page": 8,
+    "quote": "① 고용위기지역 또는 산업위기대응특별지역에 소재한 소상공인"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "eligibility",
+   "field": "air_crash_victim_cert",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "declared",
+   "exception": null,
+   "note": "매출감소 확인 예외 ⑤",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 8,
+    "quote": "⑤ 12·29여객기참사 피해자 확인서를 발급받은 소상공인"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "discretionary",
+   "exception": null,
+   "note": "매출감소 확인 예외 ⑦",
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "value": "중소벤처기업부장관이 지원이 필요하다고 인정하는 사유",
+   "evidence": {
+    "page": 8,
+    "quote": "⑦ 기타 중소벤처기업부장관이 지원이 필요하다고 인정하는 사유"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "대리대출 접수개시 1월 5일(직접대출 1월 12일). 마감일 미기재. 공고일은 2026-10-01(변경 공고)",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-05",
+    null
+   ],
+   "evidence": {
+    "page": 5,
+    "quote": "◦대리대출은1월5일, 직접대출은1월12일접수개시"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "직접대출 전용 조건: 압류·매각 유예 등 체납자 직접대출 포함 단서, 동일연도 동일자금 부결·승인 후 6개월 미경과 제한(직접대출 한정), 일시적 경영애로 직접대출 지원 요건(연매출 1억 4백만원 미만, 업력 7년 미만)",
+  "긴급경영안정자금 재해 유형 및 재해자금 융자허용 업종, 거제·통영 특별재난지역 특별지원",
+  "홈플러스 피해 소상공인 유형",
+  "특별경영안정자금 중 신용취약소상공인자금, 대환대출, 재도전특별자금, 장애인기업지원자금, 청년고용연계자금",
+  "성장기반자금(소공인특화자금, 혁신성장촉진자금, 민간투자연계형 매칭융자, 상생성장지원자금)",
+  "융자한도, 대출금리, 대출기간, 융자방식, 우대금리 제도",
+  "융자절차, 접수처, 문의처, 사후관리, 지역센터 및 신용보증재단 연락처(별표2, 별표3)",
+  "세부운용은 중소벤처기업부 및 소진공 신청안내자료를 따른다는 안내",
+  "제3자 부당개입 주의 안내문"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 13,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "seconds": 67
+}

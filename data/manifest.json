@@ -1,0 +1,272 @@
+{
+ "collected_on": "2026-11-02",
+ "source": "중소벤처기업부 사업공고 게시판, 기업마당",
+ "notices": [
+  {
+   "id": "1071619",
+   "dir": "1071619_클린3차",
+   "title": "2026년 소공인 클린제조환경조성 사업 3차 모집 공고",
+   "notice_no": "제2026-580호",
+   "split": "dev",
+   "period": [
+    "2026-10-06",
+    "2026-10-20"
+   ],
+   "scope": "소공인 개별 신청 공통 자격",
+   "role": "정정 쌍의 원공고",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1071619&parentSeq=1071619",
+   "files": [
+    {
+     "path": "raw/1071619_클린3차/2026년_소공인_클린제조환경조성_사업_3차_모집_공고.pdf",
+     "sha256": "e5620d492ab82df8e6610ff9116904865020dc3e3efa4f55ff47e616b0816708"
+    }
+   ],
+   "text": "text/1071619_클린3차.txt"
+  },
+  {
+   "id": "1071870",
+   "dir": "1071870_클린3차연장",
+   "title": "2026년 소공인 클린제조환경조성 사업 3차 모집 공고(연장)",
+   "notice_no": "제2026-598호",
+   "split": "dev",
+   "period": [
+    "2026-10-06",
+    "2026-10-30"
+   ],
+   "scope": "신청기간 변경만",
+   "role": "정정 쌍(실제 마감 변경)",
+   "supersedes": "1071619",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1071870&parentSeq=1071870",
+   "files": [
+    {
+     "path": "raw/1071870_클린3차연장/2026년_소공인_클린제조환경조성_사업_3차_모집_공고(연장).pdf",
+     "sha256": "437980a19112f611e9784087f2904120bc111f02250a9f28de6bf101db8a5d1b"
+    }
+   ],
+   "text": "text/1071870_클린3차연장.txt"
+  },
+  {
+   "id": "1068077",
+   "dir": "1068077_생활문화참여",
+   "title": "2026년 소상공인 생활문화 혁신지원 참여 소상공인 모집 공고",
+   "notice_no": "제2026-325호",
+   "split": "dev",
+   "period": [
+    "2026-05-18",
+    "2026-06-08"
+   ],
+   "scope": "유형① 단독 신청",
+   "role": "제외 조건·예외 다수",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1068077&parentSeq=1068077",
+   "files": [
+    {
+     "path": "raw/1068077_생활문화참여/260508_★(공고_제2026-325호)_2026년_소상공인_생활문화_혁신지원_참여소상공인_모집_공고.pdf",
+     "sha256": "e80e18244f7363422afd922e0585fd1783ca4a73006076ca51e55791e95241fe"
+    }
+   ],
+   "text": "text/1068077_생활문화참여.txt"
+  },
+  {
+   "id": "1068107",
+   "dir": "1068107_브랜드점프업",
+   "title": "2026년 브랜드 소상공인 점프업 소상공인 모집 공고",
+   "notice_no": "제2026-321호",
+   "split": "eval",
+   "period": [
+    "2026-05-11",
+    "2026-05-29"
+   ],
+   "scope": "소상공인 신청 자격",
+   "role": "제외 업종을 다른 사업 기준으로 참조",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1068107&parentSeq=1068107",
+   "files": [
+    {
+     "path": "raw/1068107_브랜드점프업/2026년_브랜드_소상공인_점프업_소상공인_모집_공고(최종본).pdf",
+     "sha256": "de94a86eb1ef3d30c673cadc3e179fed8a433c9ba03936dabb13f9cf7a8969c6"
+    }
+   ],
+   "text": "text/1068107_브랜드점프업.txt"
+  },
+  {
+   "id": "1069018",
+   "dir": "1069018_판로추가",
+   "title": "2026년 소공인 판로개척지원사업 추가 모집 공고",
+   "notice_no": "제2026-397호",
+   "split": "eval",
+   "period": [
+    "2026-06-15",
+    "2026-06-19"
+   ],
+   "scope": "소공인 신청 자격",
+   "role": "업종·분야·신생업체 조건",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1069018&parentSeq=1069018",
+   "files": [
+    {
+     "path": "raw/1069018_판로추가/2026년_소공인_판로개척지원사업_추가_모집_공고.pdf",
+     "sha256": "8651a53f1261195572f52b0b5c2d464d8a0ba5ce514df1135a6eb64395376f3f"
+    }
+   ],
+   "text": "text/1069018_판로추가.txt"
+  },
+  {
+   "id": "1069002",
+   "dir": "1069002_스마트추가",
+   "title": "2026년 소공인 스마트제조지원사업 추가 모집 공고",
+   "notice_no": "제2026-396호",
+   "split": "eval",
+   "period": [
+    "2026-06-15",
+    "2026-07-03"
+   ],
+   "scope": "개별형",
+   "role": "매출 OR 조건(직전년도 또는 3개년 평균)",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1069002&parentSeq=1069002",
+   "files": [
+    {
+     "path": "raw/1069002_스마트추가/2026년_소공인_스마트제조지원사업_추가_모집_공고.pdf",
+     "sha256": "2737f92506b9432ae10b202069d3d4fe46ead17f68052b11afac96f7530c14ad"
+    },
+    {
+     "path": "raw/1069002_스마트추가/2026년_소공인_스마트제조지원사업_추가_모집_공고_별첨자료.pdf",
+     "sha256": "713e43ae75ac4cc00b1bca721c3652c0b538d0ae5cb493a4b664f768bff4f179"
+    }
+   ],
+   "text": "text/1069002_스마트추가.txt"
+  },
+  {
+   "id": "1071565",
+   "dir": "1071565_정책자금변경5",
+   "title": "2026년 소상공인 정책자금 융자사업 공고(변경 5차)",
+   "notice_no": "제2026-576호",
+   "split": "eval",
+   "period": null,
+   "scope": "일반경영안정자금, 긴급경영안정자금(일시적 경영애로)",
+   "role": "매출 15% 감소 및 예외 조건",
+   "supersedes": "1070197",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1071565&parentSeq=1071565",
+   "files": [
+    {
+     "path": "raw/1071565_정책자금변경5/2026년_소상공인_정책자금_융자사업_공고5차_변경_최종.pdf",
+     "sha256": "4ca8e2000d7fc80898265e2ac44094327a62762c941114c21123ba4d37681a04"
+    }
+   ],
+   "text": "text/1071565_정책자금변경5.txt"
+  },
+  {
+   "id": "1064384",
+   "dir": "1064384_고용보험료",
+   "title": "2026년 소상공인 고용보험료 지원사업 공고",
+   "notice_no": "제2025-660호",
+   "split": "dev",
+   "period": [
+    "2026-01-01",
+    null
+   ],
+   "period_note": "예산 소진 시까지",
+   "scope": "사업주 지원 대상",
+   "role": "업종별 소상공인 기준 원문, 오늘 기준 시연용",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1064384&parentSeq=1064384",
+   "files": [
+    {
+     "path": "raw/1064384_고용보험료/고용보험료_1.pdf",
+     "sha256": "bdbc5a439537fb61d2fe69d179eb373e547b6ed4a186160917237e6128276a14"
+    }
+   ],
+   "text": "text/1064384_고용보험료.txt"
+  },
+  {
+   "id": "1065100",
+   "dir": "1065100_경영안정바우처",
+   "title": "소상공인 경영안정 바우처 지원사업 시행 공고",
+   "notice_no": "제2026-37호",
+   "split": "eval",
+   "period": [
+    "2026-02-09",
+    "2026-12-18"
+   ],
+   "period_note": "종료일 잠정, 예산 소진 시 조기 마감 가능",
+   "scope": "지원 요건",
+   "role": "매출 연 환산 계산, 오늘 기준 시연용",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1065100&parentSeq=1065100",
+   "files": [
+    {
+     "path": "raw/1065100_경영안정바우처/경영안정바우처_0.pdf",
+     "sha256": "048f108b43d20f5547574199d76d6dc8b8cb390d9f8431dbada94a7c592f35d2"
+    }
+   ],
+   "text": "text/1065100_경영안정바우처.txt"
+  },
+  {
+   "id": "PBLN127619",
+   "dir": "PBLN127619_보은군소공인",
+   "title": "2026년 보은 식품제조 소공인특화지원센터 기업지원 사업 참여기업 추가 모집공고",
+   "notice_no": "제2026-00호(원문 표기)",
+   "split": "eval",
+   "period": [
+    "2026-10-22",
+    "2026-11-05"
+   ],
+   "scope": "신청 자격",
+   "role": "지자체 연계 공고, 일정 표기 불일치 포함, 오늘 기준 시연용",
+   "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127619",
+   "files": [
+    {
+     "path": "raw/PBLN127619_보은군소공인/보은군_0.hwpx",
+     "sha256": "0189911a087593a45bfac4ea7081a4aef673b59dbd2498b674864c987f972175"
+    }
+   ],
+   "text": "text/PBLN127619_보은군소공인.txt"
+  },
+  {
+   "id": "1067425",
+   "dir": "1067425_재도전추경",
+   "title": "2026년 재도전성공패키지(추경) 모집공고",
+   "notice_no": "원문 확인",
+   "split": "eval",
+   "period": [
+    "2026-04-17",
+    "2026-05-07"
+   ],
+   "scope": "예비재창업자, 재창업기업 신청 자격",
+   "role": "폐업 이력·재창업 업력 조건",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1067425&parentSeq=1067425",
+   "files": [
+    {
+     "path": "raw/1067425_재도전추경/f0.pdf",
+     "sha256": "a40aa3926da6b5f28d3ea7adf63e33032e9798a1455915ac591bdd8db8be6b7e"
+    }
+   ],
+   "text": "text/1067425_재도전추경.txt"
+  },
+  {
+   "id": "1070197",
+   "dir": "1070197_정책자금변경4",
+   "title": "2026년 소상공인 정책자금 융자사업 공고(변경 4차)",
+   "notice_no": "제2026-478호",
+   "split": "eval",
+   "period": null,
+   "scope": "변경 범위 비교 전용",
+   "role": "정정 쌍(자격 조건 변경 없음)",
+   "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1070197&parentSeq=1070197",
+   "files": [
+    {
+     "path": "raw/1070197_정책자금변경4/2026년_소상공인_정책자금_융자사업_공고_변경4차_1.pdf",
+     "sha256": "ea97b43a1b9fc591d4cf84a415e8cf478129204062b9f87f194bc40cad6e1393"
+    }
+   ],
+   "text": "text/1070197_정책자금변경4.txt"
+  }
+ ],
+ "excluded": [
+  {
+   "id": "1069948",
+   "title": "2026년 소상공인 협업활성화 공동사업 2차 공고",
+   "reason": "협동조합·연합회 대상이라 개별 사업체 프로필과 맞지 않음"
+  },
+  {
+   "id": "1069787",
+   "title": "2026년 백년소상공인 모집(재지정) 공고",
+   "reason": "기존 지정 업체 재지정 성격이 강해 일반 사업체 판정 사례를 만들기 어려움"
+  }
+ ]
+}

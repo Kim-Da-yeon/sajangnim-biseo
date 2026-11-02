@@ -1,0 +1,335 @@
+{
+ "source_text": "holdout2_1066504",
+ "scope": "개인사업자 소상공인의 지원 요건과 제한사항(1단계 보증 신청 기준)",
+ "conditions": [
+  {
+   "id": "N0",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "①(신용점수) NCB 595점~ 964점인소상공인"
+   }
+  },
+  {
+   "id": "N1a",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "NCB 신용점수 595점 이상 964점 이하",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:신용점수",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "①(신용점수) NCB 595점~ 964점인소상공인"
+   }
+  },
+  {
+   "id": "N1b",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "’25.1 이후 특별재해(붙임2) 피해 소상공인으로 NCB 595점 이상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:신용점수",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "* ‘25.1 이후 특별재해(붙임2)로 피해를 입은 소상공인은 NCB 595점 이상이면 신청 가능"
+   }
+  },
+  {
+   "id": "B1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "접수일 기준 업력 6개월 이상",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "②(업    력) 접수일기준업력6개월이상인소상공인"
+   }
+  },
+  {
+   "id": "R1a",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "최근 2개월 매출 200만원 이상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:매출액",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "③(매 출 액) 최근2개월동안200만원이상또는당기부가가치세"
+   }
+  },
+  {
+   "id": "R1b",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "당기 부가가치세 신고매출액 1,200만원 이상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:매출액",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "신고매출액이1,200만원이상인소상공인"
+   }
+  },
+  {
+   "id": "T1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "개인사업자",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "④(사 업 자) 개인사업자"
+   }
+  },
+  {
+   "id": "T2",
+   "kind": "eligibility",
+   "field": "single_application",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "다수 사업체 대표",
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "- 1인이다수사업체의대표인경우1곳만신청가능하며공동대표가"
+   }
+  },
+  {
+   "id": "T3",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "공동대표 사업체",
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "운영하는사업체는주대표1인만신청가능"
+   }
+  },
+  {
+   "id": "G1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "본 보증과 재단 기보증, 신·기보 보증금액을 합쳐 8억원 이내",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 7,
+    "quote": "보증금액을포함하여8억원이내여야하며, 별도한도사정은생략"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "◦휴·폐업중인소상공인"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "붙임3의 '중' 표기는 일부 업종만 제한. 등록 다단계판매, 손해사정·보험대리·핀테크 지원, 부동산 관련 서비스업과 임대차계약 없는 공간대여+부가 서비스는 제외",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "◦보증제한업종에해당하는소상공인(붙임3 참조)"
+   }
+  },
+  {
+   "id": "X3",
+   "kind": "exclusion",
+   "field": "credit_info_listed",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "◦연체* 등신용도판단정보를보유한소상공인"
+   }
+  },
+  {
+   "id": "X4",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "◦국세나지방세를체납중인소상공인"
+   }
+  },
+  {
+   "id": "D1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "보증심사·카드심사 결과",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 7,
+    "quote": "1. 보증심사및카드심사결과에따라카드발급이제한될수있습니다."
+   }
+  },
+  {
+   "id": "D2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "사업자등록일자와 개업연월일이 다른 경우의 별도 심사 결과",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 7,
+    "quote": "사업자등록일자와개업연월일간의차이가있을경우별도의심사가"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-03-23",
+    null
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "한도 소진 시 종료. 확정 종료일이 없어 조기 마감 가능. 경기지역은 4월 10일(잠정)부터 대면 신청",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 6,
+    "quote": "‘26. 3. 23 ~ 한도 소진 시"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "카드 한도·연회비·캐시백·보증료",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "보증 승인 후 한 달 이내 카드 신청, 앱·대면 접수 경로와 제출 서류",
+   "reason": "자격이 아니라 신청 절차"
+  },
+  {
+   "text": "카드심사의 연체·특수채권 보유 심사",
+   "reason": "2단계 카드 심사 항목으로 기준값이 없음. 심사 결과는 D1에 표시"
+  }
+ ],
+ "notice_id": "1066504",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

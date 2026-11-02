@@ -1,0 +1,441 @@
+{
+ "conditions": [
+  {
+   "id": "c_period",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "접수기간과 신청기간 표기가 2026. 11. 2.(월) ~ 11. 20.(금)으로 동일함. 마감 시각은 적혀 있지 않음.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-11-02",
+    "2026-11-20"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "접수기간 : 2026. 11. 2.(월) ~ 11. 20.(금)"
+   }
+  },
+  {
+   "id": "c_small_merchant",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「소상공인 보호 및 지원에 관한 법률」의 소상공인을 말함. 「중소기업기본법」 제2조 제2항에 따른 소기업 중 상시 근로자가 10명 미만이고 업종별 기준에 해당하는 자.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "매출액 3억 원 이하 소상공인 중"
+   }
+  },
+  {
+   "id": "c_revenue",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "le",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "전년도는 2025년임.",
+   "applies_to": null,
+   "waives": [],
+   "value": 300000000,
+   "evidence": {
+    "page": 1,
+    "quote": "전년도(2025년) 매출액 3억 원 이하"
+   }
+  },
+  {
+   "id": "c_not_applied_1st",
+   "kind": "exclusion",
+   "field": "applied_earlier_round",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "2026년 7월 1차 신청을 하지 않은 업체가 대상임. 1차에서 이미 지급받은 업체도 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "2026년도 7월(1차신청) 미신청 업채"
+   }
+  },
+  {
+   "id": "c_region",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "전년도(2025년)와 당해 연도(2026년) 모두 정읍시 내에서 사업을 영위해야 함. 공고일 기준으로 타 시도로 이전했으면 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": "정읍시",
+   "evidence": {
+    "page": 1,
+    "quote": "정읍시 내에서 사업 영위하는 소상공인"
+   }
+  },
+  {
+   "id": "c_status",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "공고일 기준으로 폐업한 경우 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 기준 폐업, 타 시도 이전 등으로 요건을 만족하지 못할 시 지원대상에서 제외"
+   }
+  },
+  {
+   "id": "c_multi_biz",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": "개 사업체",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "1인이 여러 사업체를 소유한 경우 1인당 인정되는 사업체 수의 상한.",
+   "applies_to": "다수 사업체 소유자",
+   "waives": [],
+   "value": 2,
+   "evidence": {
+    "page": 1,
+    "quote": "1인이 다수 사업체 소유 시 1인당 2개 사업체까지 인정"
+   }
+  },
+  {
+   "id": "c_new_open",
+   "kind": "exclusion",
+   "field": "founded_date",
+   "op": "lt",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "2026년에 새로 개업한 사업자는 지급에서 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026-01-01",
+   "evidence": {
+    "page": 1,
+    "quote": "2026년 신규 개업자, 국세청 매출자료 미확인자 지급제외"
+   }
+  },
+  {
+   "id": "c_nts_data",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "국세청 매출자료가 확인되어야 함. 확인되지 않는 경우 지급에서 제외됨. 금액은 국세청 홈택스 카드매출액을 기준으로 함.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "국세청 매출자료 미확인자 지급제외"
+   }
+  },
+  {
+   "id": "c_industry",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "다단계판매자가 다단계판매(업)를 등록하여 영위하는 경우 신청 가능. 부동산관리업(6821) 신청 가능. 신청일 기준 동일 장소에서 6개월 이상 사업을 지속 중인 부동산 중개 및 대리업(68221) 신청 가능. 비주거용건물임대업 중 공유오피스·공유주방은 신청 가능. 유사의료업(86902) 신청 가능. 시각장애인이 운영하는 안마원 및 안마시술소 신청 가능.",
+   "note": "지역신용보증재단법의 보증·재보증 제한업종과 2026년 소상공인 정책자금 지원제외 대상(붙임)을 참고함. 도박, 성인용품 판매점 등이 해당됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "제외업종 : 도박 및 성인용품 판매점 등"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c_period",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "접수기간과 신청기간 표기가 2026. 11. 2.(월) ~ 11. 20.(금)으로 동일함. 마감 시각은 적혀 있지 않음.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-11-02",
+    "2026-11-20"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "접수기간 : 2026. 11. 2.(월) ~ 11. 20.(금)"
+   }
+  },
+  {
+   "id": "c_small_merchant",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「소상공인 보호 및 지원에 관한 법률」의 소상공인을 말함. 「중소기업기본법」 제2조 제2항에 따른 소기업 중 상시 근로자가 10명 미만이고 업종별 기준에 해당하는 자.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "매출액 3억 원 이하 소상공인 중"
+   }
+  },
+  {
+   "id": "c_revenue",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "le",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "전년도는 2025년임.",
+   "applies_to": null,
+   "waives": [],
+   "value": 300000000,
+   "evidence": {
+    "page": 1,
+    "quote": "전년도(2025년) 매출액 3억 원 이하"
+   }
+  },
+  {
+   "id": "c_not_applied_1st",
+   "kind": "exclusion",
+   "field": "applied_earlier_round",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "2026년 7월 1차 신청을 하지 않은 업체가 대상임. 1차에서 이미 지급받은 업체도 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "2026년도 7월(1차신청) 미신청 업채"
+   }
+  },
+  {
+   "id": "c_region",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "전년도(2025년)와 당해 연도(2026년) 모두 정읍시 내에서 사업을 영위해야 함. 공고일 기준으로 타 시도로 이전했으면 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": "정읍시",
+   "evidence": {
+    "page": 1,
+    "quote": "정읍시 내에서 사업 영위하는 소상공인"
+   }
+  },
+  {
+   "id": "c_status",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "공고일 기준으로 폐업한 경우 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 기준 폐업, 타 시도 이전 등으로 요건을 만족하지 못할 시 지원대상에서 제외"
+   }
+  },
+  {
+   "id": "c_multi_biz",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": "개 사업체",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "1인이 여러 사업체를 소유한 경우 1인당 인정되는 사업체 수의 상한.",
+   "applies_to": "다수 사업체 소유자",
+   "waives": [],
+   "value": 2,
+   "evidence": {
+    "page": 1,
+    "quote": "1인이 다수 사업체 소유 시 1인당 2개 사업체까지 인정"
+   }
+  },
+  {
+   "id": "c_new_open",
+   "kind": "exclusion",
+   "field": "founded_date",
+   "op": "lt",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "2026년에 새로 개업한 사업자는 지급에서 제외됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": "2026-01-01",
+   "evidence": {
+    "page": 1,
+    "quote": "2026년 신규 개업자, 국세청 매출자료 미확인자 지급제외"
+   }
+  },
+  {
+   "id": "c_nts_data",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "국세청 매출자료가 확인되어야 함. 확인되지 않는 경우 지급에서 제외됨. 금액은 국세청 홈택스 카드매출액을 기준으로 함.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "국세청 매출자료 미확인자 지급제외"
+   }
+  },
+  {
+   "id": "c_industry",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "다단계판매자가 다단계판매(업)를 등록하여 영위하는 경우 신청 가능. 부동산관리업(6821) 신청 가능. 신청일 기준 동일 장소에서 6개월 이상 사업을 지속 중인 부동산 중개 및 대리업(68221) 신청 가능. 비주거용건물임대업 중 공유오피스·공유주방은 신청 가능. 유사의료업(86902) 신청 가능. 시각장애인이 운영하는 안마원 및 안마시술소 신청 가능.",
+   "note": "지역신용보증재단법의 보증·재보증 제한업종과 2026년 소상공인 정책자금 지원제외 대상(붙임)을 참고함. 도박, 성인용품 판매점 등이 해당됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "제외업종 : 도박 및 성인용품 판매점 등"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "지원내용: 전년도(2025년) 카드 매출액의 0.4%(최대 30만원)",
+  "신청방법: 사업장 소재지 읍·면·동 행정복지센터에 대표자가 방문 신청, 대리인 신청 시 위임장 제출",
+  "신청서류: 신청서, 개인정보 동의서, 위임장·신분증, 행정정보공동이용 확인",
+  "카드매출액이 총매출액보다 높을 경우 과세표준증명원 첨부",
+  "지급시기: 2026년 12월 예정",
+  "문의처",
+  "재해중소기업 지원지침에 따른 재해자금 예외 업종(본 사업 지원과 무관)",
+  "공동대표·미성년자 등 이해당사자 간 분쟁 자체 해결 조항"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 10,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "seconds": 54
+}

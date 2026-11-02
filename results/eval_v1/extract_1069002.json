@@ -1,0 +1,721 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "『도시형소공인지원에관한특별법』에따른소공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "support_field",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "공정기술형",
+    "생활문화형"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "각분야별요건을충족해야함"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:field_mfg",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "공정기술형: 주조·금형·가공·용접 등 공정기술 기반 중간재 또는 완제품 제조",
+   "evidence": {
+    "page": 2,
+    "quote": "주조·금형·가공·용접등공정기술을기반으로중간재"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:field_mfg",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "생활문화형: K-소비재 4대 중점분야(패션, 뷰티, 식품, 리빙) 관련 제품 제조",
+   "evidence": {
+    "page": 3,
+    "quote": "K-소비재4대중점분야(패션, 뷰티, 식품, 리빙) 관련"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "lt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:revenue",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": 200000000,
+   "evidence": {
+    "page": 2,
+    "quote": "직전년도(’25년) 매출액2억원미만"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "revenue_3y_avg",
+   "op": "lt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:revenue",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": 200000000,
+   "evidence": {
+    "page": 2,
+    "quote": "연평균매출액2억원미만소공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "applied_earlier_round",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "신청한 소공인은 본 모집공고에 중복신청이 불가합니다"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "multiple_business_applying",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "1개 사업체에 한하여 신청 가능(중복신청 불가)"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "유형별중복신청불가"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 7,
+    "quote": "업체의 부도, 휴·폐업 중인 경우"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "정부사업 참여제한(부정수급 등) 또는 동사업 제재(참여제한) 중인 경우"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "prior_smart_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "‘24년~ ‘25년 소상공인시장진흥공단 스마트제조지원사업 수혜업체"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "중소벤처기업부 소관 스마트화지원사업 및 유사사업 수혜 업체로 선정·참여(지원) 중인 업체"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "도박·향락 등 불건전 업종"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "exclusion",
+   "field": "founded_date",
+   "op": "lt",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "2026-01-01",
+   "evidence": {
+    "page": 7,
+    "quote": "2026.1.1. 이후 창업한 업체"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-06-15",
+    "2026-07-03T18:00"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "2026년6월15일(월) ~ 7월3일(금) 18:00"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "『도시형소공인지원에관한특별법』에따른소공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "support_field",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "공정기술형",
+    "생활문화형"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "각분야별요건을충족해야함"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "lt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:revenue",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": 200000000,
+   "evidence": {
+    "page": 2,
+    "quote": "직전년도(’25년) 매출액2억원미만"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "revenue_3y_avg",
+   "op": "lt",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:revenue",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": 200000000,
+   "evidence": {
+    "page": 2,
+    "quote": "연평균매출액2억원미만소공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "applied_earlier_round",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "신청한 소공인은 본 모집공고에 중복신청이 불가합니다"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "multiple_business_applying",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "1개 사업체에 한하여 신청 가능(중복신청 불가)"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "유형별중복신청불가"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 7,
+    "quote": "업체의 부도, 휴·폐업 중인 경우"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "정부사업 참여제한(부정수급 등) 또는 동사업 제재(참여제한) 중인 경우"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "prior_smart_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "2024~2025년 수혜업체 대상",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "소상공인시장진흥공단 스마트제조지원사업 수혜업체"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "선정·참여(지원) 중인 업체 대상",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "중소벤처기업부 소관 스마트화지원사업 및 유사사업 수혜 업체로 선정·"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 7,
+    "quote": "도박·향락 등 불건전 업종"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "exclusion",
+   "field": "founded_date",
+   "op": "lt",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "2026-01-01",
+   "evidence": {
+    "page": 7,
+    "quote": "2026.1.1. 이후 창업한 업체"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-06-15",
+    "2026-07-03T18:00"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "2026년6월15일(월) ~ 7월3일(금) 18:00"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "클러스터형 운영기관 및 클러스터형 소공인 신청조건·신청제한·선정절차",
+  "지원내용·지원금액(국비 60%, 자부담 40%) 및 지원불가 품목",
+  "가점 항목(백년소공인, 스마트역량강화교육 수료, 집적지구, 풍수해보험, 여성기업, 장애인기업)",
+  "신청방법(소상공인24 회원가입·온라인 신청) 및 제출서류",
+  "선정절차(자격확인→서류평가→현장평가) 및 지역별 선정 규모, 패스트트랙 서류평가 면제",
+  "선정 후 의무사항(인증현판, 5년 장비 보유, 현장교육, 이행보증보험, e-나라도움, 실태점검 등)",
+  "공급기업 매칭 및 역할, 기타 유의사항, 문의처"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 16,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c12",
+      "type": "bad_evidence",
+      "detail": "원문은 '‘24년~ ‘25년 소상공인시장진흥공단 스마트제조지원사업 수혜업체'로 기간을 한정한다. 인용문에는 이 기간이 빠져 있어 조건이 모든 과거 수혜업체를 제외하는 것처럼 읽힌다. 기간 한정은 exception 필드에만 들어 있어 근거와 맞지 않는다.",
+      "fix": "인용문을 '‘24년~ ‘25년 소상공인시장진흥공단 스마트제조지원사업 수혜업체'로 바꾸고, 기간 한정(2024~2025년 수혜)은 예외가 아닌 조건 자체의 범위로 표시한다."
+     },
+     {
+      "condition_id": "c13",
+      "type": "bad_evidence",
+      "detail": "인용문이 '선정·'에서 끊겨 있다. 원문의 핵심 한정어인 '참여(지원) 중인 업체'가 근거에 포함되지 않는다. 현재 선정·참여 중인 경우에만 제외된다는 점이 근거로 뒷받침되지 않는다.",
+      "fix": "인용문을 '중소벤처기업부 소관 스마트화지원사업 및 유사사업 수혜 업체로 선정·참여(지원) 중인 업체'로 바꾸고, '현재 선정·참여 중' 한정을 조건 범위로 반영한다."
+     },
+     {
+      "condition_id": null,
+      "type": "missing_condition",
+      "detail": "개별형은 분야별 요건을 충족해야 한다. 공정기술형은 '주조·금형·가공·용접등공정기술을기반으로중간재또는완제품을제조하는소공인'이어야 한다. 생활문화형은 'K-소비재4대중점분야(패션, 뷰티, 식품, 리빙) 관련제품을제조하는소공인'이어야 한다. c2는 분야 선택만 다루고, 분야별 제조 품목·공정 요건은 조건으로 추출되지 않았다.",
+      "fix": "분야별 제조 요건 조건을 추가한다. 공정기술형은 공정기술 기반 중간재·완제품 제조, 생활문화형은 패션·뷰티·식품·리빙 관련 제품 제조로 하고, 각각 해당 분야 선택 시에만 적용되도록 applies_to를 지정한다."
+     }
+    ]
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "범위: 개별형 소공인 신청 자격만(클러스터형 제외). 수정 사항: (1) c12 인용문을 '‘24년~ ‘25년 소상공인시장진흥공단 스마트제조지원사업 수혜업체'로 바꾸고, 2024~2025년 수혜 한정을 exception이 아니라 조건 범위로 표시. (2) c13 인용문을 '중소벤처기업부 소관 스마트화지원사업 및 유사사업 수혜 업체로 선정·참여(지원) 중인 업체'로 완전하게 쓰고, '현재 선정·참여 중' 한정을 조건 범위에 반영. (3) 분야별 제조 요건 조건 추가: 공정기술형은 '주조·금형·가공·용접등공정기술을기반으로중간재또는완제품을제조하는소공인', 생활문화형은 'K-소비재4대중점분야(패션, 뷰티, 식품, 리빙) 관련제품을제조하는소공인'. 각각 해당 분야를 선택한 경우에만 적용되도록 applies_to 지정. 근거는 원문 그대로 인용."
+   },
+   "result": {
+    "n_conditions": 18,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": []
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 2,
+ "seconds": 110
+}

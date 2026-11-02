@@ -1,0 +1,216 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인기본법 시행령 제3조 기준: 상시근로자 5명 미만(광업·제조업·건설업·운수업은 10명 미만), 업종별 연간매출액 기준(숙박·음식점업, 수리·기타 개인서비스업 10억원 이하, 도소매업 50억원 이하, 농·임·어업, 광업, 건설업, 운수업 80억원 이하, 제조업(식료품, 의복, 가구, 전기장비) 120억원 이하 등). 사업주가 대상.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "지원대상: ‘자영업자고용보험’에가입한소상공인(사업주)"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "'자영업자 고용보험'에 가입한 사업주여야 함. 신규 가입자는 근로복지공단에 가입과 지원을 함께 신청 가능하며, 가입·납부 여부는 소진공과 근로복지공단이 확인.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "‘자영업자고용보험’에가입한소상공인(사업주)"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "공동사업자인 경우 공동사업자 중 1인만 지원.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공동사업자인 경우 1인만 지원"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "종료일 미표기: 예산 소진 시까지 접수(조기 마감 가능).",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-01",
+    null
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "신청기간: ‘26. 1. 1. ~ 예산소진시까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인기본법 시행령 제3조 기준: 상시근로자 5명 미만(광업·제조업·건설업·운수업은 10명 미만), 업종별 연간매출액 기준(숙박·음식점업, 수리·기타 개인서비스업 10억원 이하, 도소매업 50억원 이하, 농·임·어업, 광업, 건설업, 운수업 80억원 이하, 제조업(식료품, 의복, 가구, 전기장비) 120억원 이하 등). 사업주가 대상.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "지원대상: ‘자영업자고용보험’에가입한소상공인(사업주)"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "'자영업자 고용보험'에 가입한 사업주여야 함. 신규 가입자는 근로복지공단에 가입과 지원을 함께 신청 가능하며, 가입·납부 여부는 소진공과 근로복지공단이 확인.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "‘자영업자고용보험’에가입한소상공인(사업주)"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "공동사업자인 경우 공동사업자 중 1인만 지원.",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공동사업자인 경우 1인만 지원"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "종료일 미표기: 예산 소진 시까지 접수(조기 마감 가능).",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-01-01",
+    null
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "신청기간: ‘26. 1. 1. ~ 예산소진시까지"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "지원내용: 납부 보험료의 50~80%를 최대 5년(60개월) 환급, 신청일(월) 이전 보험료 소급 지원 불가",
+  "가입 등급별 보험료 지원금액 표",
+  "수행기관 및 지원절차(납부 확인 후 약 2개월 후 환급)",
+  "사업자등록증 내용 변경 시 재신청 필수",
+  "신청 및 증빙서류 내용이 사실과 다를 경우 지원 중단",
+  "자영업자 고용보험 가입 소상공인 우대사항(정책자금 금리 감면, 희망리턴패키지 가점)",
+  "공공마이데이터 동의 여부에 따른 제출서류 및 발급기간",
+  "신규 가입자·기존 가입자 신청방법 및 문의처",
+  "붙임3 자영업자 고용보험 제도 소개(50인 미만 근로자 사용 사업주 가입대상, 만65세 이상 실업급여 가입 불가, 실업급여 지급 내용)"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 4,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "title": "2026년 소상공인 고용보험료 지원사업 공고",
+ "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1064384&parentSeq=1064384",
+ "source": "mss"
+}

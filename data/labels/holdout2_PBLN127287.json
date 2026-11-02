@@ -1,0 +1,170 @@
+{
+ "source_text": "holdout2_PBLN127287",
+ "scope": "포항시 관내 소상공인의 신청 자격과 신청 불가 업종·광고",
+ "conditions": [
+  {
+   "id": "C1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "2. 신청자격 : 포항시 관내에서 사업장을 운영 중인 소상공인"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "value": "포항시",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "2. 신청자격 : 포항시 관내에서 사업장을 운영 중인 소상공인"
+   }
+  },
+  {
+   "id": "C3",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "value": "정상",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "2. 신청자격 : 포항시 관내에서 사업장을 운영 중인 소상공인"
+   }
+  },
+  {
+   "id": "X1",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "주류·담배(전자담배 포함) 제조·판매업체 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "※ 주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가"
+   }
+  },
+  {
+   "id": "X2",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "주류·담배 관련 광고 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "※ 주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가"
+   }
+  },
+  {
+   "id": "D1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "광고 내용의 적합성과 송출 가능 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "○ 광고 내용의 적합성 및 광고 송출 가능 여부"
+   }
+  },
+  {
+   "id": "D2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "접수 순서와 광고매체 운영 여건의 종합 고려",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "○ 접수 순서 및 광고매체 운영 여건 등을 종합적으로 고려"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-10-14",
+    "2026-11-30"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "선착순 접수, 최대 20개 업체 정도라 조기 마감 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "가. 접수기간 : 2026. 10. 14.(수) ~ 11. 30.(월)"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "광고 매체·형태·기간(2026-12-31까지)과 송출 순서",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "온라인 신청서, 접수확인 전화, 상호·사진·로고 자료",
+   "reason": "자격이 아니라 신청 절차"
+  },
+  {
+   "text": "사실과 다른 신청의 선정 취소",
+   "reason": "선정 후 조치"
+  }
+ ],
+ "notice_id": "PBLN127287",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

@@ -1,0 +1,469 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "「소상공인기본법」제2조에따른소상공인으로신청일"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 3,
+    "quote": "①정상영업중이며"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "own_brand",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "②자사브랜드를보유한소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "붙임 단서 업종(부동산관리업, 유사의료업, 등록 다단계판매, 시각장애인 안마원 등)은 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "소상공인 정책자금 융자제외 대상 업종은 신청 불가"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "접수 마감일 기준 기업이 휴·폐업 또는 부도 상태인 경우"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "금융기관 등 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "unfair_trade_1y",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 공정거래법에 따른 불공정행위 위반 사실이 있는 경우"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "해외 수입제품",
+    "대기업 제품"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "해외 수입제품, 대기업 제품"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "타사 브랜드 제품 단순 유통·판매",
+   "evidence": {
+    "page": 4,
+    "quote": "타기업·소상공인의 브랜드 제품을 단순 유통·판매만 하는 경우는 지원 제외"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-05-11",
+    "2026-05-29T18:00"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "’26년5월11일(월) ~ 5월29일(금) 18시까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "「소상공인기본법」제2조에따른소상공인으로신청일"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 3,
+    "quote": "①정상영업중이며"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "own_brand",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "②자사브랜드를보유한소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "붙임 단서 업종(부동산관리업, 유사의료업, 등록 다단계판매, 시각장애인 안마원 등)은 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "소상공인 정책자금 융자제외 대상 업종은 신청 불가"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "접수 마감일 기준 기업이 휴·폐업 또는 부도 상태인 경우"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "금융기관 등 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "unfair_trade_1y",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 공정거래법에 따른 불공정행위 위반 사실이 있는 경우"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "해외 수입제품",
+    "대기업 제품"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "해외 수입제품, 대기업 제품"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "타사 브랜드 제품 단순 유통·판매",
+   "evidence": {
+    "page": 4,
+    "quote": "타기업·소상공인의 브랜드 제품을 단순 유통·판매만 하는 경우는 지원 제외"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-05-11",
+    "2026-05-29T18:00"
+   ],
+   "evidence": {
+    "page": 4,
+    "quote": "’26년5월11일(월) ~ 5월29일(금) 18시까지"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "사업 목적·모집규모(30개사 내외)·자부담 300만원",
+  "단계별 세부 지원내용",
+  "판판대로 회원가입 및 신청 절차",
+  "제출서류(사업자등록증, 소상공인확인서, 납세증명서, 선택서류 등)",
+  "서류평가·발표평가 방법 및 주대표자 참석 필수",
+  "가점(2025년 TOPS 2·3단계 진출, 강한 소상공인 파이널오디션 진출)",
+  "재해피해 소상공인 재해자금 융자허용 업종 예외",
+  "문의처 및 제3자 부당개입 주의 안내"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 11,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": []
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "seconds": 33
+}

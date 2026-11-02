@@ -1,0 +1,237 @@
+@prefix sa: <https://sosang.example/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sa:Business a rdfs:Class . sa:Industry a rdfs:Class . sa:Notice a rdfs:Class . sa:Condition a rdfs:Class . sa:Evidence a rdfs:Class . sa:SizeRule a rdfs:Class . sa:ExclusionEntry a rdfs:Class . sa:ExclusionException a rdfs:Class .
+
+sa:ind_A a sa:Industry ; sa:code "A" .
+sa:ind_01 a sa:Industry ; sa:code "01" ; sa:broader sa:ind_A .
+sa:ind_02 a sa:Industry ; sa:code "02" ; sa:broader sa:ind_A .
+sa:ind_03 a sa:Industry ; sa:code "03" ; sa:broader sa:ind_A .
+sa:ind_B a sa:Industry ; sa:code "B" .
+sa:ind_05 a sa:Industry ; sa:code "05" ; sa:broader sa:ind_B .
+sa:ind_06 a sa:Industry ; sa:code "06" ; sa:broader sa:ind_B .
+sa:ind_07 a sa:Industry ; sa:code "07" ; sa:broader sa:ind_B .
+sa:ind_08 a sa:Industry ; sa:code "08" ; sa:broader sa:ind_B .
+sa:ind_C a sa:Industry ; sa:code "C" .
+sa:ind_10 a sa:Industry ; sa:code "10" ; sa:broader sa:ind_C .
+sa:ind_11 a sa:Industry ; sa:code "11" ; sa:broader sa:ind_C .
+sa:ind_12 a sa:Industry ; sa:code "12" ; sa:broader sa:ind_C .
+sa:ind_13 a sa:Industry ; sa:code "13" ; sa:broader sa:ind_C .
+sa:ind_14 a sa:Industry ; sa:code "14" ; sa:broader sa:ind_C .
+sa:ind_15 a sa:Industry ; sa:code "15" ; sa:broader sa:ind_C .
+sa:ind_16 a sa:Industry ; sa:code "16" ; sa:broader sa:ind_C .
+sa:ind_17 a sa:Industry ; sa:code "17" ; sa:broader sa:ind_C .
+sa:ind_18 a sa:Industry ; sa:code "18" ; sa:broader sa:ind_C .
+sa:ind_19 a sa:Industry ; sa:code "19" ; sa:broader sa:ind_C .
+sa:ind_20 a sa:Industry ; sa:code "20" ; sa:broader sa:ind_C .
+sa:ind_21 a sa:Industry ; sa:code "21" ; sa:broader sa:ind_C .
+sa:ind_22 a sa:Industry ; sa:code "22" ; sa:broader sa:ind_C .
+sa:ind_23 a sa:Industry ; sa:code "23" ; sa:broader sa:ind_C .
+sa:ind_24 a sa:Industry ; sa:code "24" ; sa:broader sa:ind_C .
+sa:ind_25 a sa:Industry ; sa:code "25" ; sa:broader sa:ind_C .
+sa:ind_26 a sa:Industry ; sa:code "26" ; sa:broader sa:ind_C .
+sa:ind_27 a sa:Industry ; sa:code "27" ; sa:broader sa:ind_C .
+sa:ind_28 a sa:Industry ; sa:code "28" ; sa:broader sa:ind_C .
+sa:ind_29 a sa:Industry ; sa:code "29" ; sa:broader sa:ind_C .
+sa:ind_30 a sa:Industry ; sa:code "30" ; sa:broader sa:ind_C .
+sa:ind_31 a sa:Industry ; sa:code "31" ; sa:broader sa:ind_C .
+sa:ind_32 a sa:Industry ; sa:code "32" ; sa:broader sa:ind_C .
+sa:ind_33 a sa:Industry ; sa:code "33" ; sa:broader sa:ind_C .
+sa:ind_34 a sa:Industry ; sa:code "34" ; sa:broader sa:ind_C .
+sa:ind_D a sa:Industry ; sa:code "D" .
+sa:ind_35 a sa:Industry ; sa:code "35" ; sa:broader sa:ind_D .
+sa:ind_E a sa:Industry ; sa:code "E" .
+sa:ind_36 a sa:Industry ; sa:code "36" ; sa:broader sa:ind_E .
+sa:ind_37 a sa:Industry ; sa:code "37" ; sa:broader sa:ind_E .
+sa:ind_38 a sa:Industry ; sa:code "38" ; sa:broader sa:ind_E .
+sa:ind_39 a sa:Industry ; sa:code "39" ; sa:broader sa:ind_E .
+sa:ind_F a sa:Industry ; sa:code "F" .
+sa:ind_41 a sa:Industry ; sa:code "41" ; sa:broader sa:ind_F .
+sa:ind_42 a sa:Industry ; sa:code "42" ; sa:broader sa:ind_F .
+sa:ind_G a sa:Industry ; sa:code "G" .
+sa:ind_45 a sa:Industry ; sa:code "45" ; sa:broader sa:ind_G .
+sa:ind_46 a sa:Industry ; sa:code "46" ; sa:broader sa:ind_G .
+sa:ind_47 a sa:Industry ; sa:code "47" ; sa:broader sa:ind_G .
+sa:ind_H a sa:Industry ; sa:code "H" .
+sa:ind_49 a sa:Industry ; sa:code "49" ; sa:broader sa:ind_H .
+sa:ind_50 a sa:Industry ; sa:code "50" ; sa:broader sa:ind_H .
+sa:ind_51 a sa:Industry ; sa:code "51" ; sa:broader sa:ind_H .
+sa:ind_52 a sa:Industry ; sa:code "52" ; sa:broader sa:ind_H .
+sa:ind_I a sa:Industry ; sa:code "I" .
+sa:ind_55 a sa:Industry ; sa:code "55" ; sa:broader sa:ind_I .
+sa:ind_56 a sa:Industry ; sa:code "56" ; sa:broader sa:ind_I .
+sa:ind_J a sa:Industry ; sa:code "J" .
+sa:ind_58 a sa:Industry ; sa:code "58" ; sa:broader sa:ind_J .
+sa:ind_59 a sa:Industry ; sa:code "59" ; sa:broader sa:ind_J .
+sa:ind_60 a sa:Industry ; sa:code "60" ; sa:broader sa:ind_J .
+sa:ind_61 a sa:Industry ; sa:code "61" ; sa:broader sa:ind_J .
+sa:ind_62 a sa:Industry ; sa:code "62" ; sa:broader sa:ind_J .
+sa:ind_63 a sa:Industry ; sa:code "63" ; sa:broader sa:ind_J .
+sa:ind_K a sa:Industry ; sa:code "K" .
+sa:ind_64 a sa:Industry ; sa:code "64" ; sa:broader sa:ind_K .
+sa:ind_65 a sa:Industry ; sa:code "65" ; sa:broader sa:ind_K .
+sa:ind_66 a sa:Industry ; sa:code "66" ; sa:broader sa:ind_K .
+sa:ind_L a sa:Industry ; sa:code "L" .
+sa:ind_68 a sa:Industry ; sa:code "68" ; sa:broader sa:ind_L .
+sa:ind_M a sa:Industry ; sa:code "M" .
+sa:ind_70 a sa:Industry ; sa:code "70" ; sa:broader sa:ind_M .
+sa:ind_71 a sa:Industry ; sa:code "71" ; sa:broader sa:ind_M .
+sa:ind_72 a sa:Industry ; sa:code "72" ; sa:broader sa:ind_M .
+sa:ind_73 a sa:Industry ; sa:code "73" ; sa:broader sa:ind_M .
+sa:ind_N a sa:Industry ; sa:code "N" .
+sa:ind_74 a sa:Industry ; sa:code "74" ; sa:broader sa:ind_N .
+sa:ind_75 a sa:Industry ; sa:code "75" ; sa:broader sa:ind_N .
+sa:ind_76 a sa:Industry ; sa:code "76" ; sa:broader sa:ind_N .
+sa:ind_O a sa:Industry ; sa:code "O" .
+sa:ind_84 a sa:Industry ; sa:code "84" ; sa:broader sa:ind_O .
+sa:ind_P a sa:Industry ; sa:code "P" .
+sa:ind_85 a sa:Industry ; sa:code "85" ; sa:broader sa:ind_P .
+sa:ind_Q a sa:Industry ; sa:code "Q" .
+sa:ind_86 a sa:Industry ; sa:code "86" ; sa:broader sa:ind_Q .
+sa:ind_87 a sa:Industry ; sa:code "87" ; sa:broader sa:ind_Q .
+sa:ind_R a sa:Industry ; sa:code "R" .
+sa:ind_90 a sa:Industry ; sa:code "90" ; sa:broader sa:ind_R .
+sa:ind_91 a sa:Industry ; sa:code "91" ; sa:broader sa:ind_R .
+sa:ind_S a sa:Industry ; sa:code "S" .
+sa:ind_94 a sa:Industry ; sa:code "94" ; sa:broader sa:ind_S .
+sa:ind_95 a sa:Industry ; sa:code "95" ; sa:broader sa:ind_S .
+sa:ind_96 a sa:Industry ; sa:code "96" ; sa:broader sa:ind_S .
+sa:ind_T a sa:Industry ; sa:code "T" .
+sa:ind_97 a sa:Industry ; sa:code "97" ; sa:broader sa:ind_T .
+sa:ind_98 a sa:Industry ; sa:code "98" ; sa:broader sa:ind_T .
+sa:ind_U a sa:Industry ; sa:code "U" .
+sa:ind_99 a sa:Industry ; sa:code "99" ; sa:broader sa:ind_U .
+sa:src_LIVING a sa:Source ; rdfs:label "생활문화 공고 제2026-325호 붙임1" .
+sa:size_LIVING_C19 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C19" ; sa:maxRevenue 14000000000 .
+sa:size_LIVING_C24 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C24" ; sa:maxRevenue 14000000000 .
+sa:size_LIVING_C10 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C10" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C11 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C11" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C14 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C14" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C15 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C15" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C20 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C20" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C21 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C21" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C23 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C23" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C25 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C25" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C26 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C26" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C28 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C28" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C29 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C29" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C30 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C30" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_C32 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C32" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_D a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "D" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_E36 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "E36" ; sa:maxRevenue 12000000000 .
+sa:size_LIVING_H a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "H" ; sa:maxRevenue 10000000000 .
+sa:size_LIVING_K a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "K" ; sa:maxRevenue 10000000000 .
+sa:size_LIVING_A a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "A" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_B a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "B" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C12 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C12" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C13 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C13" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C16 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C16" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C17 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C17" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C18 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C18" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C22 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C22" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C27 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C27" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C31 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C31" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_C33 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C33" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_F a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "F" ; sa:maxRevenue 8000000000 .
+sa:size_LIVING_G a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "G" ; sa:maxRevenue 6000000000 .
+sa:size_LIVING_J a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "J" ; sa:maxRevenue 5000000000 .
+sa:size_LIVING_E a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "E" ; sa:maxRevenue 4000000000 .
+sa:size_LIVING_L a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "L" ; sa:maxRevenue 4000000000 .
+sa:size_LIVING_M a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "M" ; sa:maxRevenue 3000000000 .
+sa:size_LIVING_N a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "N" ; sa:maxRevenue 3000000000 .
+sa:size_LIVING_R a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "R" ; sa:maxRevenue 3000000000 .
+sa:size_LIVING_C34 a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "C34" ; sa:maxRevenue 1500000000 .
+sa:size_LIVING_I a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "I" ; sa:maxRevenue 1500000000 .
+sa:size_LIVING_P a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "P" ; sa:maxRevenue 1500000000 .
+sa:size_LIVING_Q a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "Q" ; sa:maxRevenue 1500000000 .
+sa:size_LIVING_S a sa:SizeRule ; sa:source sa:src_LIVING ; sa:code "S" ; sa:maxRevenue 1500000000 .
+sa:src_INSURANCE a sa:Source ; rdfs:label "고용보험료 공고 제2025-660호" .
+sa:size_INSURANCE_I a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "I" ; sa:maxRevenue 1000000000 .
+sa:size_INSURANCE_S a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "S" ; sa:maxRevenue 1000000000 .
+sa:size_INSURANCE_G a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "G" ; sa:maxRevenue 5000000000 .
+sa:size_INSURANCE_A a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "A" ; sa:maxRevenue 8000000000 .
+sa:size_INSURANCE_B a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "B" ; sa:maxRevenue 8000000000 .
+sa:size_INSURANCE_F a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "F" ; sa:maxRevenue 8000000000 .
+sa:size_INSURANCE_H a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "H" ; sa:maxRevenue 8000000000 .
+sa:size_INSURANCE_C10 a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "C10" ; sa:maxRevenue 12000000000 .
+sa:size_INSURANCE_C14 a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "C14" ; sa:maxRevenue 12000000000 .
+sa:size_INSURANCE_C32 a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "C32" ; sa:maxRevenue 12000000000 .
+sa:size_INSURANCE_C28 a sa:SizeRule ; sa:source sa:src_INSURANCE ; sa:code "C28" ; sa:maxRevenue 12000000000 .
+sa:src_MARKET a sa:Source ; rdfs:label "판로개척 공고 제2026-397호 참고4" .
+sa:size_MARKET_C10 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C10" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C11 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C11" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C14 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C14" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C15 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C15" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C19 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C19" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C20 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C20" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C21 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C21" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C23 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C23" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C24 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C24" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C25 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C25" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C26 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C26" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C28 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C28" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C29 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C29" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C30 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C30" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C32 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C32" ; sa:maxRevenue 12000000000 .
+sa:size_MARKET_C12 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C12" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C13 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C13" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C16 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C16" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C17 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C17" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C18 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C18" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C22 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C22" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C27 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C27" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C31 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C31" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C33 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C33" ; sa:maxRevenue 8000000000 .
+sa:size_MARKET_C34 a sa:SizeRule ; sa:source sa:src_MARKET ; sa:code "C34" ; sa:maxRevenue 1000000000 .
+sa:excl_0 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "33409" ; sa:partial true ; rdfs:label "도박기계 및 사행성, 불건전 오락기구 제조업" .
+sa:excl_1 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "46102" ; sa:partial true ; rdfs:label "담배 중개업" .
+sa:excl_2 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "46209" ; sa:partial true ; rdfs:label "잎담배 도매업" .
+sa:excl_3 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "46333" ; sa:partial false ; rdfs:label "담배 도매업" .
+sa:excl_4 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "46463" ; sa:partial true ; rdfs:label "도박기계 및 사행성, 불건전 오락기구 도매업" .
+sa:excl_5 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "47640" ; sa:partial true ; rdfs:label "도박기계 및 사행성, 불건전 오락기구 소매업" .
+sa:excl_6 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "47811" ; sa:partial true ; rdfs:label "약국, 한약국" .
+sa:excl_7 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "47859" ; sa:partial true ; rdfs:label "성인용품 판매점" .
+sa:excl_8 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "47911" ; sa:partial true ; rdfs:label "도박기계·성인용품 소매 및 중개" .
+sa:excl_9 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "47912" ; sa:partial true ; rdfs:label "도박기계·성인용품 소매 및 중개" .
+sa:excl_10 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "47993" ; sa:partial true ; rdfs:label "다단계 방문판매" .
+sa:excl_11 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "52991" ; sa:partial true ; rdfs:label "통관업" .
+sa:excl_12 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "56211" ; sa:partial false ; rdfs:label "일반유흥주점업" .
+sa:excl_13 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "56212" ; sa:partial false ; rdfs:label "무도유흥주점업" .
+sa:excl_14 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "5821" ; sa:partial true ; rdfs:label "도박 및 사행성, 불건전 게임 S/W" .
+sa:excl_15 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "63992" ; sa:partial false ; rdfs:label "가상자산 매매 및 중개업" .
+sa:excl_16 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "63999" ; sa:partial true ; rdfs:label "온라인게임 아이템 중개업" .
+sa:excl_17 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "64" ; sa:partial false ; rdfs:label "금융업" .
+sa:excl_18 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "65" ; sa:partial false ; rdfs:label "보험 및 연금업" .
+sa:excl_19 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "66" ; sa:partial false ; rdfs:label "금융 및 보험관련 서비스업" .
+sa:excl_20 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "68" ; sa:partial false ; rdfs:label "부동산업" .
+sa:excl_21 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "76390" ; sa:partial true ; rdfs:label "불건전 오락기구 임대업" .
+sa:excl_22 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "711" ; sa:partial false ; rdfs:label "법무 관련 서비스업" .
+sa:excl_23 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "712" ; sa:partial false ; rdfs:label "회계 및 세무 관련 서비스업" .
+sa:excl_24 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "731" ; sa:partial false ; rdfs:label "수의업" .
+sa:excl_25 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "73904" ; sa:partial true ; rdfs:label "감정평가업" .
+sa:excl_26 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "75330" ; sa:partial true ; rdfs:label "흥신소" .
+sa:excl_27 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "75993" ; sa:partial false ; rdfs:label "신용조사 및 추심대행업" .
+sa:excl_28 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "75999" ; sa:partial true ; rdfs:label "경품용 상품권 발행·판매" .
+sa:excl_29 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "86" ; sa:partial false ; rdfs:label "보건업" .
+sa:excl_30 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "91113" ; sa:partial false ; rdfs:label "경주장 및 동물 경기장 운영업" .
+sa:excl_31 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "91121" ; sa:partial false ; rdfs:label "골프장 운영업" .
+sa:excl_32 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "9122" ; sa:partial true ; rdfs:label "성인용게임장 등" .
+sa:excl_33 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "91242" ; sa:partial false ; rdfs:label "카지노 운영업" .
+sa:excl_34 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "91249" ; sa:partial false ; rdfs:label "기타 사행시설 관리 및 운영업" .
+sa:excl_35 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "91291" ; sa:partial false ; rdfs:label "무도장 운영업" .
+sa:excl_36 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "9612" ; sa:partial true ; rdfs:label "증기탕 및 안마시술소" .
+sa:excl_37 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "96992" ; sa:partial false ; rdfs:label "점술 및 유사서비스업" .
+sa:excl_38 a sa:ExclusionEntry ; sa:list sa:PolicyFundExclusion ; sa:code "96999" ; sa:partial true ; rdfs:label "휴게텔, 키스방, 대화방" .
+sa:exc_0 a sa:ExclusionException ; sa:code "6821" ; sa:kind "allow" ; rdfs:label "부동산관리업" .
+sa:exc_1 a sa:ExclusionException ; sa:code "68221" ; sa:kind "conditional" ; sa:field "same_site_6m" ; rdfs:label "동일 장소 6개월 이상 부동산 중개·대리업" .
+sa:exc_2 a sa:ExclusionException ; sa:code "68224" ; sa:kind "conditional" ; sa:field "same_site_6m" ; rdfs:label "동일 장소 6개월 이상 분양 대행업" .
+sa:exc_3 a sa:ExclusionException ; sa:code "68112" ; sa:kind "conditional" ; sa:field "shared_office" ; rdfs:label "공유오피스·공유주방 영위" .
+sa:exc_4 a sa:ExclusionException ; sa:code "68112" ; sa:kind "program:일반경영안정자금" ; sa:field "good_landlord" ; rdfs:label "일반경영안정자금 착한 임대인" .
+sa:exc_5 a sa:ExclusionException ; sa:code "86902" ; sa:kind "allow" ; rdfs:label "유사의료업" .
+sa:exc_6 a sa:ExclusionException ; sa:code "47993" ; sa:kind "conditional" ; sa:field "registered_mlm" ; rdfs:label "등록 다단계판매업" .
+sa:exc_7 a sa:ExclusionException ; sa:code "9612" ; sa:kind "conditional" ; sa:field "blind_massage" ; rdfs:label "시각장애인 운영 안마원·안마시술소" .
+sa:notice_1068107 a sa:Notice ; sa:usesExclusionList sa:PolicyFundExclusion .
+sa:notice_1068077 a sa:Notice ; sa:usesExclusionList sa:PolicyFundExclusion .
+sa:notice_1071565 a sa:Notice ; sa:usesExclusionList sa:PolicyFundExclusion .
+sa:notice_1065100 a sa:Notice ; sa:usesExclusionList sa:PolicyFundExclusion .

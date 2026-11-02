@@ -1,0 +1,261 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청 주체는 「지방자치법」 제2조제1항의 지방자치단체여야 함. 사업체 프로필 필드로 표현할 수 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": "지방자치단체(「지방자치법」 제2조제1항)",
+   "evidence": {
+    "page": 1,
+    "quote": "다음요건을모두충족하는지방자치단체(「지방자치법」"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "중소벤처기업부 '소공인 공동기반시설 구축사업('16~'21년 공고)' 또는 '소공인 복합지원센터 구축·운영사업('19년 이후 공고)' 중 어느 하나에 선정된 이력이 있어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "선정된이력이있을것"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "선정된 해당 사업(공동기반시설 또는 복합지원센터)의 구축을 공고일(2026-04-15) 기준으로 완료했어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일기준해당사업의구축을완료하였을것"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "추진절차 표에도 ('26.4.15~'26.4.30)로 같은 기간이 적혀 있음. 추진일정은 변동될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-04-15",
+    "2026-04-30T18:00"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "‘26. 4. 15(수) ~ 4. 30(목), 18:00까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "신청 주체가 「지방자치법」 제2조제1항의 지방자치단체여야 함. 사업체 프로필 필드로 표현 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": "지방자치단체(「지방자치법」 제2조제1항)",
+   "evidence": {
+    "page": 1,
+    "quote": "다음요건을모두충족하는지방자치단체(「지방자치법」"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:사업이력",
+   "check": "declared",
+   "exception": null,
+   "note": "중소벤처기업부 '소공인 공동기반시설 구축사업('16~'21년 공고)'에 선정된 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "‘소공인공동기반시설구축사업(’16~‘21년"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:사업이력",
+   "check": "declared",
+   "exception": null,
+   "note": "중소벤처기업부 '소공인 복합지원센터 구축·운영사업('19년 이후 공고)'에 선정된 이력",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "‘소공인복합지원센터구축·운영사업(’19년이후공고)’"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "선정된 해당 사업(공동기반시설 또는 복합지원센터)의 구축을 공고일(2026-04-15) 기준 완료하였을 것",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일기준해당사업의구축을완료하였을것"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "추진절차 표에도 ('26.4.15~'26.4.30)로 동일 표기. 추진일정은 변동될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-04-15",
+    "2026-04-30T18:00"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "‘26. 4. 15(수) ~ 4. 30(목), 18:00까지"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "지원규모(1개소, 지자체당 5.67억원 이내 국비)",
+  "사업기간(협약일~2026-12-31) 및 기간 내 고도화(구축) 필수 의무",
+  "지원방식(국비 50%, 지방비 50% 매칭) 및 신청 전 타당성 검토",
+  "지원내용(시설·장비 개·보수, 신규장비 도입 등)",
+  "신청서류(신청서·사업계획서, 지자체 출자 확약서) 및 신청방법(온나라전자문서·등기우편)",
+  "평가방법(적격심사, 현장평가, 발표평가, 최종선정)",
+  "평가항목 및 배점",
+  "가점(구축 완료 연도에 따라 최대 3점)",
+  "추진절차 및 일정",
+  "기타 유의사항(허위 서류 시 협약취소·환수, 보완요청, 소공인 수요자료 반영, 장비도입위원회 계획 반영)",
+  "문의처",
+  "신청서·사업계획서 서식"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 5,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": [
+     {
+      "condition_id": "c3",
+      "message": "c2와 같은 조건 중복"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c3가 c2와 같은 조건으로 중복된다. 중복을 제거하거나, 실제로 다른 조건이면 원문 근거로 구분해 다시 추출하라."
+   },
+   "result": {
+    "n_conditions": 4,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 2,
+ "seconds": 57
+}

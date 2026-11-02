@@ -1,0 +1,483 @@
+{
+ "source_text": "holdout_1066579",
+ "scope": "일반·여성·소셜벤처 분야 신청 자격, 자격 예외, 신청 제외",
+ "conditions": [
+  {
+   "id": "A1",
+   "kind": "eligibility",
+   "field": "business_registration",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "OR:사업자등록",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "◦신청자명의의사업자등록증을보유하고있지않으며, 법인의법률상"
+   },
+   "note": "고정 기준일 2026-01-22"
+  },
+  {
+   "id": "A1b",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "ge",
+   "value": "2026-01-23",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:사업자등록",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [
+    "A1"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "※ ’26.1.23. 이후 사업자등록 또는 법인등기를 완료한 경우 신청 가능"
+   }
+  },
+  {
+   "id": "A1c",
+   "kind": "eligibility",
+   "field": "rental_only_no_staff_individual",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "OR:사업자등록",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [
+    "A1"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "▖’26.1.22. 기준, 직원을 고용하지 않고, 부동산임대업만을 영위하는 개인사업자"
+   },
+   "note": "고정 기준일 2026-01-22"
+  },
+  {
+   "id": "A2",
+   "kind": "eligibility",
+   "field": "can_restart_by_deadline",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "부동산임대업 대표",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "▖다만, 협약 종료일 2개월 이전까지 이종업종의 제품·서비스를 영위하는 법인사업자로 창업"
+   }
+  },
+  {
+   "id": "A3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "법인의 법률상 대표권 없음(’26.1.23. 이후 등기 완료 제외)",
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "※ 법인등기부상 대표이사, 각자대표, 공동대표, 대표권 있는 사내이사인 경우 신청 불가"
+   },
+   "note": "고정 기준일 2026-01-22"
+  },
+  {
+   "id": "C1a",
+   "kind": "exclusion",
+   "field": "closure_date",
+   "op": "lt",
+   "value": "2026-01-28",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:폐업시점",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "폐업 이력자",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "②사업공고일기준최근1개월(’26.1.28.~2.27.) 내개인사업자폐업또는"
+   }
+  },
+  {
+   "id": "C1b",
+   "kind": "exclusion",
+   "field": "closure_date",
+   "op": "le",
+   "value": "2026-01-28",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "OR:폐업시점",
+   "check": "conflict",
+   "exception": null,
+   "applies_to": "폐업 이력자",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "- 다만, ‘26.1.28.(수) 이전의"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "이종업종 창업 예정, 또는 동종업종이면 폐업 후 3년(부도·파산 2년) 경과",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "폐업 이력자",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "❷동종업종창업예정인경우,"
+   }
+  },
+  {
+   "id": "T1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "기술창업을 영위하려는 자",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "※ 「중소기업창업 지원법」 제2조제4호·제9호에 따른 기술창업을 영위하고자 하는 자"
+   }
+  },
+  {
+   "id": "F1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "여성 예비창업자",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "여성",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "혁신적인 기술창업 아이디어를 보유한 여성 예비창업자에 한함"
+   }
+  },
+  {
+   "id": "F2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "사회문제 해결 목표의 소셜벤처 창업 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": "소셜벤처",
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "사회문제 해결을 목표로 혁신기술 또는 비즈니스 모델을 통해 수익을"
+   }
+  },
+  {
+   "id": "E1",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "채무변제 완료, 채무조정 합의, 회생·변제계획 인가, 면책 확정, 재기지원보증·재창업 자금지원(마감일 기준)",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "① 금융기관 등으로부터 채무불이행으로 규제 중인 자"
+   }
+  },
+  {
+   "id": "E2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "강제징수·체납처분 유예, 특수채무 변제 증빙(마감일 기준)",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "② 국세 또는 지방세 체납 중인 자"
+   }
+  },
+  {
+   "id": "E3",
+   "kind": "exclusion",
+   "field": "recoup_outstanding",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": "전액 반환, 면책 결정, 분할납부 정상 이행(마감일 기준)",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "③ 창업진흥원으로부터 발생한 환수금 등의 반환이 종결되지 않은 자"
+   }
+  },
+  {
+   "id": "E4",
+   "kind": "exclusion",
+   "field": "startup_excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "④ 「중소기업창업 지원법 시행령」 제4조에 따른 창업 제외 업종을 영위하고자 하는 자"
+   }
+  },
+  {
+   "id": "E5",
+   "kind": "exclusion",
+   "field": "prior_restart_program",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "’19년 이후 예비창업패키지 수혜자로 ‘최우수’ 평가를 받고 공고일 기준 만 39세 이하면 제외 / 글로벌기업 협업 프로그램, 창업도약패키지 성장촉진 프로그램만 지원받은 자는 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑤ 사업연도를 불문하고, [붙임2]에 명시된 사업에 선정되어 협약을 체결한 이력이 있는 자"
+   }
+  },
+  {
+   "id": "E6",
+   "kind": "exclusion",
+   "field": "current_startup_program",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "같은 연도 창업사업화 지원사업이 아닌 경우 신청 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑥ 2026년 중앙정부·공공기관 창업사업화 지원사업 수행 중인 자(기업), [붙임3] 참고"
+   }
+  },
+  {
+   "id": "E7",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑦ 창업지원사업 참여제한 제재 중인 자"
+   }
+  },
+  {
+   "id": "E8",
+   "kind": "exclusion",
+   "field": "bank_account_available",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑧ 창업진흥원이 지정한 은행 계좌(사업비 계좌) 개설 및 거래가 불가한 자"
+   }
+  },
+  {
+   "id": "E9",
+   "kind": "exclusion",
+   "field": "program_staff",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑨ 2026년 동 사업 주관기관의 전담조직의 장, 전담/겸직인력으로 참여 중 또는 참여 예"
+   }
+  },
+  {
+   "id": "E10",
+   "kind": "exclusion",
+   "field": "wage_arrears_listed",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑩ 「근로기준법」에 따른 고용노동부 체불사업주 명단 공개 대상자"
+   }
+  },
+  {
+   "id": "E11",
+   "kind": "exclusion",
+   "field": "subsidy_excluded",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑪ 「보조금 관리에 관한 법률」 제31조의2에 따른 수행배제 대상자"
+   }
+  },
+  {
+   "id": "E12",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "장관 인정 제한 사유 해당 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑫ 기타 중소벤처기업부 장관이 참여 제한할 사유가 있다고 인정하는 자"
+   }
+  },
+  {
+   "id": "E13",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "친족 합산 의결권 주식 50% 초과 과점 주주 아님",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "⑬ 친족과 합하여 의결권 있는 주식 50% 초과 보유한 과점 주주"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-03-06",
+    "2026-03-26T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "□ 접수 기간 : ’26. 3. 6.(금) ~ 3. 26.(목), 18:00까지"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "사내벤처 분야",
+   "reason": "별도 공고 예정"
+  },
+  {
+   "text": "서류평가 가점·면제·우선 선정",
+   "reason": "자격이 아니라 선정 평가"
+  },
+  {
+   "text": "신청자의 동 사업 평가위원 참여 불가",
+   "reason": "신청 자격 표 밖의 유의사항"
+  }
+ ],
+ "notice_id": "1066579",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

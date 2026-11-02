@@ -1,0 +1,116 @@
+{
+ "source_text": "holdout2_1067320",
+ "scope": "지방자치단체의 사업 이력·구축 현황 요건",
+ "conditions": [
+  {
+   "id": "A1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "지방자치단체(지방자치법 제2조제1항)",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "나. (지원대상) 다음요건을모두충족하는지방자치단체(「지방자치법」"
+   }
+  },
+  {
+   "id": "A2a",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "소공인 공동기반시설 구축사업(’16~’21년 공고) 선정 이력",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:사업이력",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "- (사업이력) 중소벤처기업부‘소공인공동기반시설구축사업(’16~‘21년"
+   }
+  },
+  {
+   "id": "A2b",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "소공인 복합지원센터 구축·운영사업(’19년 이후 공고) 선정 이력",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:사업이력",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "공고)’ 또는‘소공인복합지원센터구축·운영사업(’19년이후공고)’에"
+   }
+  },
+  {
+   "id": "A3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "공고일(2026-04-15) 기준 해당 사업 구축 완료",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "- (구축현황) 공고일기준해당사업의구축을완료하였을것"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-04-15",
+    "2026-04-30T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "가. 신청기간: ‘26. 4. 15(수) ~ 4. 30(목), 18:00까지"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "국비 50%·지방비 50% 매칭, 지자체 출자 확약서, 신청 전 타당성 검토",
+   "reason": "지원대상 요건 목록 밖의 지원 방식·제출 서류"
+  },
+  {
+   "text": "현장·발표 평가 항목과 구축 연도 가점",
+   "reason": "자격이 아니라 선정 평가"
+  },
+  {
+   "text": "사업기간 내 고도화 완료, 소공인 수요 자료·장비 도입 위원회 계획 반영",
+   "reason": "선정 후 의무와 사업계획서 작성 사항"
+  }
+ ],
+ "notice_id": "1067320",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

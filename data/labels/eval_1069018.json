@@ -1,0 +1,276 @@
+{
+ "source_text": "1069018_판로추가",
+ "scope": "소공인 신청 자격",
+ "conditions": [
+  {
+   "id": "C1",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "판로개척및육성지원을희망하는소공인"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "between",
+   "value": [
+    "C10",
+    "C34"
+   ],
+   "unit": "KSIC 중분류",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "업종 코드 : ‘C10~C34’에 해당"
+   }
+  },
+  {
+   "id": "C3",
+   "kind": "eligibility",
+   "field": "merchant_certificate",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "소상공인확인서 보유 必"
+   }
+  },
+  {
+   "id": "C4",
+   "kind": "eligibility",
+   "field": "registration_includes_mfg",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "사업자등록증 상 ‘제조’ 포함"
+   }
+  },
+  {
+   "id": "C5",
+   "kind": "eligibility",
+   "field": "mfg_revenue",
+   "op": "gt",
+   "value": 0,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "제조매출액 보유 必"
+   }
+  },
+  {
+   "id": "C6",
+   "kind": "eligibility",
+   "field": "support_field",
+   "op": "in",
+   "value": [
+    "패션",
+    "뷰티",
+    "푸드"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "지원분야관련판로개척"
+   }
+  },
+  {
+   "id": "C7",
+   "kind": "eligibility",
+   "field": "domestic_site",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "대한민국 관할구역에 소재한 기업"
+   }
+  },
+  {
+   "id": "E1",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "업체의 부도, 휴·폐업 중인 경우"
+   }
+  },
+  {
+   "id": "E2",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "E3",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "금융기관 등의 채무불이행"
+   }
+  },
+  {
+   "id": "E4",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "정부사업 참여제한(부정수급 등)"
+   }
+  },
+  {
+   "id": "E5",
+   "kind": "exclusion",
+   "field": "tops_selected_2026",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "‘26년 TOPS 선정 업체"
+   }
+  },
+  {
+   "id": "E6",
+   "kind": "exclusion",
+   "field": "founded_date",
+   "op": "lt",
+   "value": "2026-06-15",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "사업 공고일(‘26.6.15) 이후 창업한 업체"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-06-15",
+    "2026-06-19T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "’26. 6. 15.(월) ~ 6. 19.(금) 18:00까지"
+   }
+  }
+ ],
+ "out_of_scope": [],
+ "notice_id": "1069018",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

@@ -1,0 +1,222 @@
+{
+ "source_text": "holdout_PBLN127594",
+ "scope": "미신청 소상공인 지원대상과 지급·업종 제외",
+ "conditions": [
+  {
+   "id": "C1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "전년도(2025년) 매출액 3억 원 이하 소상공인 중"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "eligibility",
+   "field": "revenue_prev_year",
+   "op": "le",
+   "value": 300000000,
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "'국세청 홈택스 카드매출액 기준'이 3억 판정 기준인지 지원금 산정 기준인지 불명",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "전년도(2025년) 매출액 3억 원 이하 소상공인 중"
+   }
+  },
+  {
+   "id": "C3",
+   "kind": "eligibility",
+   "field": "applied_earlier_round",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "2026년도 7월(1차신청) 미신청 업채"
+   }
+  },
+  {
+   "id": "C4",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "※ 2026년 정읍시 소상공인 카드수수료 지원사업 1차 기지급업체 제외"
+   }
+  },
+  {
+   "id": "C5",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "value": "정읍시",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "○ 전년도(2025년) 및 당해 연도(2026년) 정읍시 내에서 사업 영위하는 소상공인"
+   }
+  },
+  {
+   "id": "C6",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "(공고일 기준 폐업, 타 시도 이전 등으로 요건을 만족하지 못할 시 지원대상에서 제외)"
+   }
+  },
+  {
+   "id": "C7",
+   "kind": "exclusion",
+   "field": "founded_date",
+   "op": "le",
+   "value": "2025-12-31",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "※ 2026년 신규 개업자, 국세청 매출자료 미확인자 지급제외"
+   }
+  },
+  {
+   "id": "C8",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "value": "국세청 매출자료 확인 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "※ 2026년 신규 개업자, 국세청 매출자료 미확인자 지급제외"
+   }
+  },
+  {
+   "id": "C9",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "○ 제외업종 : 도박 및 성인용품 판매점 등"
+   }
+  },
+  {
+   "id": "J1",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "1인당 2개 사업체 이내",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "applies_to": "다수 사업체 소유자",
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "○ 1인이 다수 사업체 소유 시 1인당 2개 사업체까지 인정"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-11-02",
+    "2026-11-20"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 1,
+    "quote": "□ 접수기간 : 2026. 11. 2.(월) ~ 11. 20.(금)"
+   }
+  }
+ ],
+ "out_of_scope": [
+  {
+   "text": "지원금 산정(카드 매출액 0.4%, 최대 30만원)",
+   "reason": "자격이 아니라 지원 내용"
+  },
+  {
+   "text": "대리인 신청 서류, 읍·면·동 방문 신청",
+   "reason": "자격이 아니라 신청 절차"
+  }
+ ],
+ "notice_id": "PBLN127594",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

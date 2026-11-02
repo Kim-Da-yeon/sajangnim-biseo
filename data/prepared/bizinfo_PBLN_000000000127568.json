@@ -1,0 +1,489 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소비재 완제품을 취급하는 소상공인 대상",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "(대상) 소비재 완제품을 취급하는 소상공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "merchant_certificate",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "제출서류상 유효기간 2026.4.1~2027.3.31 확인서만 인정, 중소기업현황정보시스템 발급",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인확인서 발급 必"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "취급 제품이 소비재 완제품이어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "소비재 완제품 취급",
+   "evidence": {
+    "page": 2,
+    "quote": "소비재 완제품을 취급하는 소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "사업자등록증상 소재지 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "광주",
+    "전남",
+    "제주"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "사업자등록증 소재지가 광주·전남·제주지역인 소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "국세·지방세 체납 중인 경우 신청 제한",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "국세·지방세를 체납 중인 경우"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "취급불가 품목",
+   "applies_to": null,
+   "waives": [],
+   "value": "대기업 및 중견기업 프랜차이즈 제품",
+   "evidence": {
+    "page": 2,
+    "quote": "대기업 및 중견기업 프랜차이즈 제품"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "취급불가 품목",
+   "applies_to": null,
+   "waives": [],
+   "value": "수입제품",
+   "evidence": {
+    "page": 2,
+    "quote": "수입제품 또는 대기업 유통판매 업체 제품"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "취급불가 품목",
+   "applies_to": null,
+   "waives": [],
+   "value": "대기업 유통판매 업체 제품",
+   "evidence": {
+    "page": 2,
+    "quote": "수입제품 또는 대기업 유통판매 업체 제품"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인 정책자금 지원 제외 업종",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인 정책자금 지원 제외 업종"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "취급불가 품목: 건강기능식품 및 관리식품 등",
+   "applies_to": null,
+   "waives": [],
+   "value": "건강기능식품 및 관리식품 등",
+   "evidence": {
+    "page": 2,
+    "quote": "건강기능식품 및 관리식품 등"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "이메일 제출. 모집 절차 표에도 10.29.~11.5.로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-29",
+    "2026-11-05T18:00"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "’26. 10. 29.(목) ~ ‘26. 11. 5.(목) 18:00까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소비재 완제품을 취급하는 소상공인 대상",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "(대상) 소비재 완제품을 취급하는 소상공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "merchant_certificate",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "제출서류상 유효기간 2026.4.1~2027.3.31 확인서만 인정, 중소기업현황정보시스템 발급",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인확인서 발급 必"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "취급 제품이 소비재 완제품이어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "소비재 완제품 취급",
+   "evidence": {
+    "page": 2,
+    "quote": "소비재 완제품을 취급하는 소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "사업자등록증상 소재지 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "광주",
+    "전남",
+    "제주"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "사업자등록증 소재지가 광주·전남·제주지역인 소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "국세·지방세 체납 중인 경우 신청 제한",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "국세·지방세를 체납 중인 경우"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "취급불가 품목",
+   "applies_to": null,
+   "waives": [],
+   "value": "대기업 및 중견기업 프랜차이즈 제품",
+   "evidence": {
+    "page": 2,
+    "quote": "대기업 및 중견기업 프랜차이즈 제품"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "취급불가 품목",
+   "applies_to": null,
+   "waives": [],
+   "value": "수입제품",
+   "evidence": {
+    "page": 2,
+    "quote": "수입제품 또는 대기업 유통판매 업체 제품"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "취급불가 품목",
+   "applies_to": null,
+   "waives": [],
+   "value": "대기업 유통판매 업체 제품",
+   "evidence": {
+    "page": 2,
+    "quote": "수입제품 또는 대기업 유통판매 업체 제품"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "소상공인 정책자금 지원 제외 업종",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인 정책자금 지원 제외 업종"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "ne",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "취급불가 품목: 건강기능식품 및 관리식품 등",
+   "applies_to": null,
+   "waives": [],
+   "value": "건강기능식품 및 관리식품 등",
+   "evidence": {
+    "page": 2,
+    "quote": "건강기능식품 및 관리식품 등"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "이메일 제출. 모집 절차 표에도 10.29.~11.5.로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-29",
+    "2026-11-05T18:00"
+   ],
+   "evidence": {
+    "page": 2,
+    "quote": "’26. 10. 29.(목) ~ ‘26. 11. 5.(목) 18:00까지"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "지원 개요 및 지원 내용(촬영 스튜디오·장비, 쇼호스트, 방송 송출 30분 내외)",
+  "라이브커머스 기간 및 장소(11.12.~11.15., 양동전통시장·소담스퀘어)",
+  "모집 규모 8개사 내외",
+  "제출방법(이메일) 및 제출서류 목록(신청서, 상품기술서, 개인정보 동의서, 사업자등록증, 소상공인확인서, 납세증명서, 통신판매업 신고증)",
+  "선정 절차 및 평가위원회 평가 기준(우수성, 적합성, 경쟁력)",
+  "유의사항(교환·환불 직접 대응, 성과 정보 제공 협조, 추가 제품 사전협의, 운영방식 변경 가능)",
+  "문의처",
+  "신청서·상품기술서·개인정보 동의서 양식(동의서 내 '전북' 표기 포함)"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 11,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 1,
+ "title": "[전남광주ㆍ제주] 2026년 10월 동행축제 우수 소상공인 제품 현장 라이브커머스 참가기업 추가모집 공고",
+ "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127568",
+ "source": "bizinfo"
+}

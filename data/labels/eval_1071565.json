@@ -1,0 +1,268 @@
+{
+ "source_text": "1071565_정책자금변경5",
+ "scope": "일반경영안정자금, 긴급경영안정자금(일시적 경영애로), 대리대출 한정",
+ "out_of_scope": [
+  {
+   "text": "직접대출 전용 조건(동일 자금 재신청 6개월, 연매출·업력 요건)",
+   "reason": "대리대출로 범위 한정"
+  },
+  {
+   "text": "재해 소상공인, 홈플러스 피해 소상공인 유형",
+   "reason": "일시적 경영애로 유형으로 범위 한정"
+  }
+ ],
+ "conditions": [
+  {
+   "id": "C1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 2,
+    "quote": "소상공인기본법｣제2조및같은법시행령제3조의소상공인"
+   }
+  },
+  {
+   "id": "L1",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "압류·매각의 유예 등을 받은 소상공인은 직접대출에 한해 포함",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "세금을체납중인소상공인"
+   }
+  },
+  {
+   "id": "L2",
+   "kind": "exclusion",
+   "field": "credit_info_listed",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "“신용도판단정보”"
+   }
+  },
+  {
+   "id": "L3",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "허위또는부정한방법"
+   }
+  },
+  {
+   "id": "L4",
+   "kind": "exclusion",
+   "field": "social_issue",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "사회적물의"
+   }
+  },
+  {
+   "id": "L5",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "재해를 직접 원인으로 휴업 중이면 가동 중으로 간주",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "휴․폐업중인소상공인"
+   }
+  },
+  {
+   "id": "L6",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "일반경영안정자금은 68112 착한 임대인에 한해 허용. 별표1은 68112 중 공유오피스·공유주방을 별도 기재",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "정책자금융자제외업종"
+   }
+  },
+  {
+   "id": "L7",
+   "kind": "exclusion",
+   "field": "policy_loan_count_5y",
+   "op": "lt",
+   "value": 3,
+   "unit": "회",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "특별경영안정자금 제외. 시설자금 또는 직접대출 성실상환자 1회 추가 가능",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "최근5년이내소상공인정책자금3회"
+   }
+  },
+  {
+   "id": "U1",
+   "kind": "eligibility",
+   "field": "revenue_change_rate",
+   "op": "le",
+   "value": -0.15,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "evidence": {
+    "page": 8,
+    "quote": "매출15% 이상감소한소상공인"
+   }
+  },
+  {
+   "id": "U2",
+   "kind": "eligibility",
+   "field": "special_zone",
+   "op": "in",
+   "value": [
+    "고용위기지역",
+    "산업위기대응특별지역",
+    "중소기업 특별지원지역",
+    "상권활성화구역",
+    "자율상권구역",
+    "산업위기선제대응지역",
+    "고용위기선제대응지역"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [
+    "U1"
+   ],
+   "evidence": {
+    "page": 8,
+    "quote": "매출감소확인예외"
+   }
+  },
+  {
+   "id": "U3",
+   "kind": "eligibility",
+   "field": "air_crash_victim_cert",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:경영애로",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [
+    "U1"
+   ],
+   "evidence": {
+    "page": 8,
+    "quote": "12·29여객기참사 피해자 확인서"
+   }
+  },
+  {
+   "id": "U4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "value": "장관 인정 사유 해당 여부",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": "긴급경영안정자금(일시적 경영애로)",
+   "waives": [],
+   "evidence": {
+    "page": 8,
+    "quote": "기타 중소벤처기업부장관이 지원이 필요하다고 인정하는 사유"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "ge",
+   "value": "2026-01-05",
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": "개시일만 표기, 종료일 미표기",
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 5,
+    "quote": "대리대출은1월5일"
+   }
+  }
+ ],
+ "notice_id": "1071565",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

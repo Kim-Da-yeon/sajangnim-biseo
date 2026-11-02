@@ -1,0 +1,690 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "지원대상은 소상공인(개인사업자)",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "2026년 소상공인(개인사업자) 비즈플러스카드 지원사업"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "between",
+   "unit": "점",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "'25.1 이후 특별재해(붙임2 2025년 특별재난지역)로 피해를 입은 소상공인은 NCB 595점 이상이면 신청 가능(상한 없음)",
+   "note": "NCB 신용점수 요건. 보증심사에서 신용점수 심사",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    595,
+    964
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "①(신용점수) NCB 595점~ 964점인소상공인"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "ge",
+   "unit": "개월",
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "접수일 기준 업력(개업일로부터 경과 기간) 6개월 이상. 개업일은 국세청 사업자등록증의 개업연월일 기준이며, 사업자등록일자와 개업연월일이 다르면 별도 심사가 진행될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": 6,
+   "evidence": {
+    "page": 3,
+    "quote": "접수일기준업력6개월이상인소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:매출액",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최근 2개월 동안의 매출액. 국세청 과세정보 등으로 기관이 확인하며 별도 제출서류 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": 2000000,
+   "evidence": {
+    "page": 3,
+    "quote": "최근2개월동안200만원이상"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:매출액",
+   "check": "discretionary",
+   "exception": null,
+   "note": "당기 부가가치세 신고매출액. 국세청 부가가치세 신고매출액 기준으로 기관이 확인",
+   "applies_to": null,
+   "waives": [],
+   "value": 12000000,
+   "evidence": {
+    "page": 3,
+    "quote": "신고매출액이1,200만원이상인소상공인"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "사업자 형태가 개인사업자여야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "개인사업자",
+   "evidence": {
+    "page": 3,
+    "quote": "④(사 업 자) 개인사업자"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "single_application",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "1인이 다수 사업체의 대표인 경우 1곳만 신청 가능",
+   "applies_to": "다수 사업체 대표",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "1인이다수사업체의대표인경우1곳만신청가능"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "공동대표가 운영하는 사업체는 주대표 1인만 신청 가능",
+   "applies_to": "공동대표 사업체",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "운영하는사업체는주대표1인만신청가능"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업중인소상공인"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "47993 중 다단계 방문판매라도 「방문판매등에관한법률」 제2조 제6호의 다단계판매자가 다단계판매(업)을 등록하여 영위하는 경우는 신청 가능; 66 금융 및 보험 관련 서비스업 중 손해사정업(66201), 보험대리 및 중개업(66202), 그 외 기타금융지원서비스업(66199) 중 핀테크 관련 사업은 제한에서 제외; 68 부동산업 중 부동산 관련 서비스업(682) 및 비주거용건물임대업(68112) 중 임대차계약 없이 공간을 대여하고 공간 임대 외 재화·용역을 추가 제공하는 경우는 제한에서 제외",
+   "note": "비즈플러스카드 보증 제한 업종(붙임3): 도박·사행성·불건전 오락기구 제조·유통·임대, 담배중개·도매, 성인용품 판매, 유흥주점, 가상자산 매매·중개, 금융·보험업, 부동산업, 기획부동산, 흥신소, 신용조사·추심, 경품용 상품권, 경주장, 골프장, 성인게임장, 카지노, 무도장, 증기탕·안마시술소, 점집, 휴게텔 등",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "보증제한업종에해당하는소상공인(붙임3 참조)"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "credit_info_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "연체 등 신용도판단정보 보유 여부는 신용정보회사 정보조회내역으로 확인(가계여신: NICE신용평가정보, 기업여신: 한국기업데이터)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "연체* 등신용도판단정보를보유한소상공인"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세 또는 지방세 체납 중인 경우 지원 제한",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세나지방세를체납중인소상공인"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "본 보증건(기업당 900만원), 재단 기보증, 신·기보 보증금액을 합산하여 8억원 이내",
+   "applies_to": null,
+   "waives": [],
+   "value": 800000000,
+   "evidence": {
+    "page": 7,
+    "quote": "보증금액을포함하여8억원이내여야하며"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "1단계 보증신청은 2026-03-23부터 한도 소진 시까지(조기 마감 가능, 종료일 미정). 서울·경기·세종은 보증드림 앱 제외, 경기지역은 4월 10일(잠정)부터 재단 영업점 대면 신청 가능하고 Easy One 앱은 4월 말 이용 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-03-23",
+    null
+   ],
+   "evidence": {
+    "page": 6,
+    "quote": "‘26. 3. 23 ~ 한도 소진 시"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "지원대상은 소상공인(개인사업자)",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "2026년 소상공인(개인사업자) 비즈플러스카드 지원사업"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "between",
+   "unit": "점",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "'25.1 이후 특별재해(붙임2 2025년 특별재난지역)로 피해를 입은 소상공인은 NCB 595점 이상이면 신청 가능(상한 없음)",
+   "note": "NCB 신용점수 요건. 보증심사에서 신용점수 심사",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    595,
+    964
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "①(신용점수) NCB 595점~ 964점인소상공인"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "founded_date",
+   "op": "le",
+   "unit": "개월",
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "접수일 기준 업력 6개월 이상. 개업일은 국세청 사업자등록증의 개업연월일 기준이며, 사업자등록일자와 개업연월일이 다르면 별도 심사 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    null,
+    null
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "접수일기준업력6개월이상인소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:매출액",
+   "check": "discretionary",
+   "exception": null,
+   "note": "최근 2개월 동안의 매출액. 국세청 과세정보 등으로 기관이 확인하며 별도 제출서류 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": 2000000,
+   "evidence": {
+    "page": 3,
+    "quote": "최근2개월동안200만원이상"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "ge",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "OR:매출액",
+   "check": "discretionary",
+   "exception": null,
+   "note": "당기 부가가치세 신고매출액. 국세청 부가가치세 신고매출액 기준으로 기관이 확인",
+   "applies_to": null,
+   "waives": [],
+   "value": 12000000,
+   "evidence": {
+    "page": 3,
+    "quote": "신고매출액이1,200만원이상인소상공인"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "사업자 형태가 개인사업자여야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "개인사업자",
+   "evidence": {
+    "page": 3,
+    "quote": "④(사 업 자) 개인사업자"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "single_application",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "1인이 다수 사업체의 대표인 경우 1곳만 신청 가능",
+   "applies_to": "다수 사업체 대표",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "1인이다수사업체의대표인경우1곳만신청가능"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "joint_rep_main",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "공동대표가 운영하는 사업체는 주대표 1인만 신청 가능",
+   "applies_to": "공동대표 사업체",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "운영하는사업체는주대표1인만신청가능"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": null,
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "휴·폐업중인소상공인"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "47993 중 다단계 방문판매라도 「방문판매등에관한법률」 제2조 제6호의 다단계판매자가 다단계판매(업)을 등록하여 영위하는 경우는 신청 가능; 66 금융 및 보험 관련 서비스업 중 손해사정업(66201), 보험대리 및 중개업(66202), 그 외 기타금융지원서비스업(66199) 중 핀테크 관련 사업은 제한에서 제외; 68 부동산업 중 부동산 관련 서비스업(682) 및 비주거용건물임대업(68112) 중 임대차계약 없이 공간을 대여하고 공간 임대 외 재화·용역을 추가 제공하는 경우는 제한에서 제외",
+   "note": "비즈플러스카드 보증 제한 업종(붙임3): 도박·사행성·불건전 오락기구 제조·유통·임대, 담배중개·도매, 성인용품 판매, 유흥주점, 가상자산 매매·중개, 금융·보험업, 부동산업, 기획부동산, 흥신소, 신용조사·추심, 경품용 상품권, 경주장, 골프장, 성인게임장, 카지노, 무도장, 증기탕·안마시술소, 점집, 휴게텔 등",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "보증제한업종에해당하는소상공인(붙임3 참조)"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "credit_info_listed",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "연체 등 신용도판단정보 보유 여부는 신용정보회사 정보조회내역으로 확인(가계여신: NICE신용평가정보, 기업여신: 한국기업데이터)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "연체* 등신용도판단정보를보유한소상공인"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "국세 또는 지방세 체납 중인 경우 지원 제한",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세나지방세를체납중인소상공인"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "le",
+   "unit": "원",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "본 보증건(기업당 900만원), 재단 기보증, 신·기보 보증금액을 합산하여 8억원 이내",
+   "applies_to": null,
+   "waives": [],
+   "value": 800000000,
+   "evidence": {
+    "page": 7,
+    "quote": "보증금액을포함하여8억원이내여야하며"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "1단계 보증신청은 2026-03-23부터 한도 소진 시까지(조기 마감 가능, 종료일 미정). 서울·경기·세종은 보증드림 앱 제외, 경기지역은 4월 10일(잠정)부터 재단 영업점 대면 신청 가능하고 Easy One 앱은 4월 말 이용 가능",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-03-23",
+    null
+   ],
+   "evidence": {
+    "page": 6,
+    "quote": "‘26. 3. 23 ~ 한도 소진 시"
+   }
+  }
+ ],
+ "unresolved": [],
+ "out_of_scope": [
+  "2단계 IBK기업은행 카드 발급신청 절차·기간(보증 승인 후 한 달 이내, 대면 3.24~, 비대면 4.15~) 및 카드심사(연체·특수채권 보유 등)",
+  "카드 사용처(붙임1), 카드한도 1,000만원, 연회비 면제·무이자할부·캐시백 등 카드혜택, 사용기간",
+  "보증비율 90%, 보증료율 연 0.8% 및 '25년 신청자 보증료 면제",
+  "신청 방법(보증드림·Easy One 앱, 대면 접수 예외 대상), 신청 경로, 제출서류(임대차계약서, 사업장 사진, 신분증 등)",
+  "보증심사 결과통지 및 전자약정 체결 절차",
+  "유의사항: 연체 시 카드 사용 중지, 휴·폐업 시 카드 사용정지, 서류 미반환 등 선정 후 사항",
+  "신청 문의처 연락처",
+  "주요 수정사항 비교표"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 14,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": [
+     {
+      "condition_id": "c3",
+      "message": "값이 비어 있음. 값을 쓰거나 check=unsupported로 내릴 것"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c3",
+      "type": "wrong_value",
+      "detail": "업력 요건은 접수일 기준 6개월 이상인데, 조건 값이 [null, null]로 비어 있어 기준 수치 6개월이 반영되지 않았다. 단위('개월')와 연산자(le)만 있고 값이 없어 판정할 수 없다.",
+      "fix": "value를 6(개월)으로 지정하라. 표현 방식은 둘 중 하나로 맞춘다: 업력 기준이면 op 'ge'에 값 6, 개업일 기준이면 '개업연월일 ≤ 접수일 − 6개월'.",
+      "source_quote": "②(업    력) 접수일기준업력6개월이상인소상공인"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c3(업력): 원문 \"접수일기준업력6개월이상인소상공인\"에 따라 값을 6(개월), 연산자를 ge로 지정하라. 현재 값이 비어 있고 연산자 le는 잘못됨."
+   },
+   "result": {
+    "n_conditions": 14,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": [
+     {
+      "condition_id": "c3",
+      "message": "값이 비어 있음. 값을 쓰거나 check=unsupported로 내릴 것"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c3",
+      "type": "wrong_value",
+      "detail": "업력 요건의 값이 [null, null]로 비어 있습니다. 원문은 접수일 기준 업력 6개월 이상을 요구하는데, 기준값 6개월이 빠져 있어 단위 '개월'과 연산자 le만으로는 조건을 판정할 수 없습니다.",
+      "fix": "value를 6으로 지정합니다(unit '개월', basis application_date). 이렇게 하면 '개업일이 접수일로부터 6개월 전 당일 이전'으로 판정할 수 있습니다. 업력 필드로 표현할 경우에는 op를 ge, value를 6으로 둡니다.",
+      "source_quote": "②(업    력) 접수일기준업력6개월이상인소상공인"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c3가 여전히 값 [null, null]이다. 반드시 value=6, unit='개월', op='ge', basis=application_date로 채워라. 근거: \"접수일기준업력6개월이상인소상공인\"."
+   },
+   "result": {
+    "n_conditions": 14,
+    "extract_round": 3
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": []
+   }
+  }
+ ],
+ "rounds": 3,
+ "seconds": 161
+}

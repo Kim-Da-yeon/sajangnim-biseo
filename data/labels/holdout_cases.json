@@ -1,0 +1,863 @@
+{
+ "status": "AI 초안, 참가자 확인 전",
+ "note": "프로필은 전부 가상. 공고마다 일치 2, 불일치 2, 확인 필요 2로 구성해 조정 없음. expected는 공고를 읽은 사람의 판단이며, 어휘로 못 담는 사실은 프로필 other에 글로 적고 unsupported 조건은 그 글로 판단함. '_exception' 키는 예외 미해당을 입력값으로 밝힌 것. as_of는 2026-11-02 또는 공고 기간 내 날짜. 코덱스 감수 후 BN5 수정.",
+ "cases": [
+  {
+   "id": "BN1",
+   "notice_id": "1066183",
+   "program": "백년가게",
+   "as_of": "2026-03-20",
+   "profile": {
+    "tax_arrears": false,
+    "debt_default": false,
+    "business_status": "정상",
+    "joint_rep_main": true,
+    "other": "최근 3년 행정처분·산업재해 명단공표·임금체불·불공정행위·고액 상습체납 이력 없음. 프랜차이즈 가맹점·대리점 아님. 주된 업종 변동과 영업 중단 없음. 백년가게·백년소공인 중복 신청 아님.",
+    "founded_date": "1990-04-01",
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 3,
+    "revenue_3y_avg": 500000000
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "개업 36년, 음식점 3명. 기준일은 옛 마감 3.10 뒤지만 연장된 기간 안",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN2",
+   "notice_id": "1066183",
+   "program": "백년소공인",
+   "as_of": "2026-03-27",
+   "profile": {
+    "tax_arrears": false,
+    "debt_default": false,
+    "business_status": "정상",
+    "joint_rep_main": true,
+    "other": "최근 3년 행정처분·산업재해 명단공표·임금체불·불공정행위·고액 상습체납 이력 없음. 프랜차이즈 가맹점·대리점 아님. 주된 업종 변동과 영업 중단 없음. 백년가게·백년소공인 중복 신청 아님.",
+    "founded_date": "2011-02-04",
+    "employees": 9,
+    "main_industry_ksic": "10712",
+    "industry_name": "떡류 제조업",
+    "revenue_3y_avg": 300000000
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "제조업 9명은 10인 미만, 2.4 기준으로도 업력 15년 정각. 마감 당일",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN3",
+   "notice_id": "1066183",
+   "program": "백년가게",
+   "as_of": "2026-03-20",
+   "profile": {
+    "tax_arrears": false,
+    "debt_default": false,
+    "business_status": "정상",
+    "joint_rep_main": true,
+    "other": "최근 3년 행정처분·산업재해 명단공표·임금체불·불공정행위·고액 상습체납 이력 없음. 프랜차이즈 가맹점·대리점 아님. 주된 업종 변동과 영업 중단 없음. 백년가게·백년소공인 중복 신청 아님.",
+    "founded_date": "1985-06-01",
+    "employees": 3,
+    "main_industry_ksic": "10712",
+    "industry_name": "떡류 제조업",
+    "revenue_3y_avg": 300000000
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "G2"
+   ],
+   "reason": "떡류 제조업은 제조업이라 백년가게 분야 제외",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN4",
+   "notice_id": "1066183",
+   "program": "백년소공인",
+   "as_of": "2026-03-20",
+   "profile": {
+    "tax_arrears": false,
+    "debt_default": false,
+    "business_status": "정상",
+    "joint_rep_main": true,
+    "other": "최근 3년 행정처분·산업재해 명단공표·임금체불·불공정행위·고액 상습체납 이력 없음. 프랜차이즈 가맹점·대리점 아님. 주된 업종 변동과 영업 중단 없음. 백년가게·백년소공인 중복 신청 아님.",
+    "founded_date": "2000-06-01",
+    "employees": 10,
+    "main_industry_ksic": "10712",
+    "industry_name": "떡류 제조업",
+    "revenue_3y_avg": 300000000
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "M3"
+   ],
+   "reason": "상시근로자 10명은 10인 미만 아님",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN5",
+   "notice_id": "1066183",
+   "program": "백년가게",
+   "as_of": "2026-11-02",
+   "profile": {
+    "tax_arrears": false,
+    "debt_default": false,
+    "business_status": "정상",
+    "joint_rep_main": true,
+    "other": "최근 3년 행정처분·산업재해 명단공표·임금체불·불공정행위·고액 상습체납 이력 없음. 프랜차이즈 가맹점·대리점 아님. 주된 업종 변동과 영업 중단 없음. 백년가게·백년소공인 중복 신청 아님.",
+    "founded_date": "1996-02-20",
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 3,
+    "revenue_3y_avg": 500000000
+   },
+   "expected": "불일치",
+   "period_status": "마감",
+   "decisive": [
+    "G3a"
+   ],
+   "reason": "모집공고일 2.5 기준 업력 30년 미만. 연장은 신청 종료일만 변경. 기간은 마감",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "BN6",
+   "notice_id": "1066183",
+   "program": "백년소공인",
+   "as_of": "2026-03-20",
+   "profile": {
+    "tax_arrears": false,
+    "debt_default": false,
+    "business_status": "정상",
+    "joint_rep_main": true,
+    "other": "최근 3년 행정처분·산업재해 명단공표·임금체불·불공정행위·고액 상습체납 이력 없음. 프랜차이즈 가맹점·대리점 아님. 주된 업종 변동과 영업 중단 없음. 백년가게·백년소공인 중복 신청 아님. 부친이 1995년 개업한 공방을 상속받아 2018년 재개업, 기술 전수 확약서 준비 중.",
+    "founded_date": "2018-05-01",
+    "employees": 4,
+    "main_industry_ksic": "10712",
+    "industry_name": "떡류 제조업",
+    "revenue_3y_avg": 300000000
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "M4a"
+   ],
+   "reason": "자기 업력은 15년 미만. 승계 합산 인정 여부는 평가위원회 판정이라 예외 해당 여부 불명",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "CO1",
+   "notice_id": "1069948",
+   "program": "성장단계",
+   "as_of": "2026-07-28",
+   "profile": {
+    "applicant_type": "협동조합(연합회)",
+    "support_field": "공동장비",
+    "business_registration": true,
+    "subsidy_excluded": false,
+    "gov_sanction": false,
+    "tax_arrears": false,
+    "business_status": "정상",
+    "prior_similar_benefit": false,
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "other": "조합원 12명, 그중 소상공인 8명. 협동조합기본법에 따라 설립, 수익사업 영위. 공동사업 지원 이력 2회. 조합원 휴·폐업 없음. 조합원 주된 사업이 제외 업종 아님. 대기업·대기업 프랜차이즈 가맹점 아님. 1차 공고에 신청했으나 미선정.",
+    "revenue_prev_year": 499000000,
+    "applied_earlier_round": true
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "’25 매출 4.99억은 5억 미만. 1차 미선정은 '선정된 경우' 제외 아님",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "CO2",
+   "notice_id": "1069948",
+   "program": "도약단계",
+   "as_of": "2026-07-28",
+   "profile": {
+    "applicant_type": "자율상권조합",
+    "support_field": "공동장비",
+    "business_registration": true,
+    "subsidy_excluded": false,
+    "gov_sanction": false,
+    "tax_arrears": false,
+    "business_status": "정상",
+    "prior_similar_benefit": false,
+    "main_industry_ksic": "68112",
+    "industry_name": "비주거용 건물 임대업",
+    "other": "지역상권법에 근거해 설립한 자율상권조합, 임대 수익사업 영위. 공동사업 지원 이력 1회. 조합원 휴·폐업 없음. 조합원 주된 사업은 임대업 외 제외 업종 아님. 대기업·대기업 프랜차이즈 가맹점 아님.",
+    "revenue_prev_year": 600000000
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "매출 6억, 자율상권조합은 임대업 영위 시에도 신청 가능",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "CO3",
+   "notice_id": "1069948",
+   "program": "도약단계",
+   "as_of": "2026-07-28",
+   "profile": {
+    "applicant_type": "협동조합(연합회)",
+    "support_field": "공동장비",
+    "business_registration": true,
+    "subsidy_excluded": false,
+    "gov_sanction": false,
+    "tax_arrears": false,
+    "business_status": "정상",
+    "prior_similar_benefit": false,
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "other": "조합원 12명, 그중 소상공인 8명. 협동조합기본법에 따라 설립, 수익사업 영위. 공동사업 지원 이력 2회. 조합원 휴·폐업 없음. 조합원 주된 사업이 제외 업종 아님. 대기업·대기업 프랜차이즈 가맹점 아님.",
+    "revenue_prev_year": 9600000,
+    "revenue_compare_period": "2024년→2025년",
+    "revenue_before": 8000000,
+    "revenue_latest": 9600000
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "D1",
+    "D2"
+   ],
+   "reason": "증가율 20%지만 ’24 매출 800만원으로 '1천만원 이상' 단서 미충족, 매출도 5억 미만",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "CO4",
+   "notice_id": "1069948",
+   "program": "성장단계",
+   "as_of": "2026-07-28",
+   "profile": {
+    "applicant_type": "협동조합(연합회)",
+    "support_field": "공동장비",
+    "business_registration": true,
+    "subsidy_excluded": false,
+    "gov_sanction": false,
+    "tax_arrears": true,
+    "business_status": "정상",
+    "prior_similar_benefit": false,
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "other": "조합원 12명, 그중 소상공인 8명. 협동조합기본법에 따라 설립, 수익사업 영위. 공동사업 지원 이력 2회. 조합원 휴·폐업 없음. 조합원 주된 사업이 제외 업종 아님. 대기업·대기업 프랜차이즈 가맹점 아님. 조합 체납은 없으나 이사장 지방세 체납 있음.",
+    "revenue_prev_year": 200000000
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "X4"
+   ],
+   "reason": "제외 사유는 조합과 이사장 모두의 체납을 포함",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "CO5",
+   "notice_id": "1069948",
+   "program": "혁신성장단계",
+   "as_of": "2026-11-02",
+   "profile": {
+    "applicant_type": "협동조합(연합회)",
+    "support_field": "공동장비",
+    "business_registration": true,
+    "subsidy_excluded": false,
+    "gov_sanction": false,
+    "tax_arrears": false,
+    "business_status": "정상",
+    "prior_similar_benefit": false,
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "other": "조합원 12명, 그중 소상공인 8명. 협동조합기본법에 따라 설립, 수익사업 영위. 공동사업 지원 이력 2회. 조합원 휴·폐업 없음. 조합원 주된 사업이 제외 업종 아님. 대기업·대기업 프랜차이즈 가맹점 아님.",
+    "revenue_prev_year": 800000000
+   },
+   "expected": "확인 필요",
+   "period_status": "마감",
+   "decisive": [
+    "I2"
+   ],
+   "reason": "매출 8억은 10억 미만. 다른 경로인 출자금 규모 미입력. 기간은 마감",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "CO6",
+   "notice_id": "1069948",
+   "program": "성장단계",
+   "as_of": "2026-07-28",
+   "profile": {
+    "applicant_type": "협동조합(연합회)",
+    "support_field": "공동장비",
+    "business_registration": true,
+    "subsidy_excluded": false,
+    "gov_sanction": false,
+    "tax_arrears": false,
+    "business_status": "정상",
+    "prior_similar_benefit": false,
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "other": "조합원 12명, 그중 소상공인 8명. 협동조합기본법에 따라 설립, 수익사업 영위. 공동사업 지원 이력 2회. 조합원 휴·폐업 없음. 조합원 1명이 부동산 임대업과 음식점을 겸업, 매출 비중 미확인. 대기업·대기업 프랜차이즈 가맹점 아님.",
+    "revenue_prev_year": 200000000
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "X6c"
+   ],
+   "reason": "주된 사업 기준인데 매출 비중을 몰라 조합원의 제외 업종 해당 여부 불명",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "YC1",
+   "notice_id": "1066579",
+   "program": "일반",
+   "as_of": "2026-03-20",
+   "profile": {
+    "business_registration": false,
+    "debt_default": false,
+    "tax_arrears": false,
+    "recoup_outstanding": false,
+    "startup_excluded_industry": false,
+    "prior_restart_program": false,
+    "current_startup_program": false,
+    "gov_sanction": false,
+    "bank_account_available": true,
+    "program_staff": false,
+    "wage_arrears_listed": false,
+    "subsidy_excluded": false,
+    "other": "소프트웨어 기술창업 준비. 법인 대표권 없음. 과점 주주 아님. 이전 사업은 한식 음식점(56111), 창업 예정은 58222로 이종업종.",
+    "applicant_type": "폐업 이력자",
+    "closure_date": "2026-01-27"
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "1.27 폐업은 1.28 이전, 세세분류가 달라 이종업종",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "YC2",
+   "notice_id": "1066579",
+   "program": "여성",
+   "as_of": "2026-03-26",
+   "profile": {
+    "business_registration": true,
+    "debt_default": false,
+    "tax_arrears": false,
+    "recoup_outstanding": false,
+    "startup_excluded_industry": false,
+    "prior_restart_program": false,
+    "current_startup_program": false,
+    "gov_sanction": false,
+    "bank_account_available": true,
+    "program_staff": false,
+    "wage_arrears_listed": false,
+    "subsidy_excluded": false,
+    "other": "소프트웨어 기술창업 준비. 법인 대표권 없음. 과점 주주 아님. 여성 신청자.",
+    "founded_date": "2026-02-10"
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "1.23 이후 사업자등록은 신청 가능. 마감 당일",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "YC3",
+   "notice_id": "1066579",
+   "program": "일반",
+   "as_of": "2026-03-20",
+   "profile": {
+    "business_registration": true,
+    "debt_default": false,
+    "tax_arrears": false,
+    "recoup_outstanding": false,
+    "startup_excluded_industry": false,
+    "prior_restart_program": false,
+    "current_startup_program": false,
+    "gov_sanction": false,
+    "bank_account_available": true,
+    "program_staff": false,
+    "wage_arrears_listed": false,
+    "subsidy_excluded": false,
+    "other": "소프트웨어 기술창업 준비. 법인 대표권 없음. 과점 주주 아님.",
+    "founded_date": "2026-01-22",
+    "rental_only_no_staff_individual": false
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "A1",
+    "A1b",
+    "A1c"
+   ],
+   "reason": "기준일 1.22 당일 등록이라 1.23 이후 예외 아님",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "YC4",
+   "notice_id": "1066579",
+   "program": "일반",
+   "as_of": "2026-03-20",
+   "profile": {
+    "business_registration": false,
+    "debt_default": false,
+    "tax_arrears": false,
+    "recoup_outstanding": false,
+    "startup_excluded_industry": false,
+    "prior_restart_program": true,
+    "current_startup_program": false,
+    "gov_sanction": false,
+    "bank_account_available": true,
+    "program_staff": false,
+    "wage_arrears_listed": false,
+    "subsidy_excluded": false,
+    "other": "소프트웨어 기술창업 준비. 법인 대표권 없음. 과점 주주 아님. 2024년 청년창업사관학교 협약 후 중도 포기.",
+    "prior_restart_program_exception": false
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "E5"
+   ],
+   "reason": "붙임2 사업 협약 이력은 중도포기 포함, 최우수 예외 아님",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "YC5",
+   "notice_id": "1066579",
+   "program": "소셜벤처",
+   "as_of": "2026-03-20",
+   "profile": {
+    "business_registration": false,
+    "debt_default": false,
+    "tax_arrears": false,
+    "recoup_outstanding": false,
+    "startup_excluded_industry": false,
+    "prior_restart_program": false,
+    "current_startup_program": false,
+    "gov_sanction": false,
+    "bank_account_available": true,
+    "program_staff": false,
+    "wage_arrears_listed": false,
+    "subsidy_excluded": false,
+    "other": "소프트웨어 기술창업 준비. 법인 대표권 없음. 과점 주주 아님. 이전 사업은 한식 음식점(56111), 창업 예정은 58222로 이종업종.",
+    "applicant_type": "폐업 이력자",
+    "closure_date": "2026-01-28"
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "C1b"
+   ],
+   "reason": "1.28은 '1개월 내(1.28~2.27) 불가'와 '1.28 이전 가능'에 모두 해당",
+   "flags": [
+    "기관 판단 표시",
+    "근거 충돌 표시"
+   ]
+  },
+  {
+   "id": "YC6",
+   "notice_id": "1066579",
+   "program": "일반",
+   "as_of": "2026-11-02",
+   "profile": {
+    "business_registration": false,
+    "debt_default": true,
+    "tax_arrears": false,
+    "recoup_outstanding": false,
+    "startup_excluded_industry": false,
+    "prior_restart_program": false,
+    "current_startup_program": false,
+    "gov_sanction": false,
+    "bank_account_available": true,
+    "program_staff": false,
+    "wage_arrears_listed": false,
+    "subsidy_excluded": false,
+    "other": "소프트웨어 기술창업 준비. 법인 대표권 없음. 과점 주주 아님. 개인회생 신청 진행 중, 변제계획 인가 여부 모름."
+   },
+   "expected": "확인 필요",
+   "period_status": "마감",
+   "decisive": [
+    "E1"
+   ],
+   "reason": "채무불이행 있음, 인가 예외 해당 여부 불명. 기간은 마감",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "JE1",
+   "notice_id": "PBLN127594",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "site_region": "전북특별자치도 정읍시",
+    "business_status": "정상",
+    "applied_earlier_round": false,
+    "prior_similar_benefit": false,
+    "founded_date": "2018-03-02",
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 2,
+    "revenue_prev_year": 300000000,
+    "revenue_3y_avg": 300000000
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "매출 3억 정각은 '이하'. 접수 첫날",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "JE2",
+   "notice_id": "PBLN127594",
+   "program": null,
+   "as_of": "2026-11-20",
+   "profile": {
+    "site_region": "전북특별자치도 정읍시",
+    "business_status": "정상",
+    "applied_earlier_round": false,
+    "prior_similar_benefit": false,
+    "founded_date": "2025-12-31",
+    "main_industry_ksic": "47411",
+    "industry_name": "남자용 겉옷 소매업",
+    "employees": 4,
+    "revenue_prev_year": 20000000,
+    "revenue_3y_avg": 20000000
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "2025-12-31 개업은 2026년 신규 개업 아님. 접수 마지막 날",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "JE3",
+   "notice_id": "PBLN127594",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "site_region": "전북특별자치도 정읍시",
+    "business_status": "정상",
+    "applied_earlier_round": false,
+    "prior_similar_benefit": false,
+    "founded_date": "2018-03-02",
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 2,
+    "revenue_prev_year": 300000001,
+    "revenue_3y_avg": 300000001,
+    "revenue_prev_year_exception": false,
+    "other": "2025년 카드 매출액도 300,000,001원."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "C2"
+   ],
+   "reason": "총매출과 카드매출 모두 3억 초과라 어느 기준이든 위반",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "JE4",
+   "notice_id": "PBLN127594",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "site_region": "전북특별자치도 정읍시",
+    "business_status": "정상",
+    "applied_earlier_round": true,
+    "prior_similar_benefit": false,
+    "founded_date": "2018-03-02",
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 2,
+    "revenue_prev_year": 200000000,
+    "revenue_3y_avg": 200000000,
+    "other": "7월 1차에 신청했으나 서류 미비로 지급받지 못함."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "C3"
+   ],
+   "reason": "기지급 여부와 별개로 대상은 1차 미신청 업체",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "JE5",
+   "notice_id": "PBLN127594",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "site_region": "전북특별자치도 정읍시",
+    "business_status": "정상",
+    "applied_earlier_round": false,
+    "prior_similar_benefit": false,
+    "founded_date": "2018-03-02",
+    "main_industry_ksic": "56111",
+    "industry_name": "한식 일반 음식점업",
+    "employees": 2,
+    "revenue_prev_year": 340000000,
+    "revenue_3y_avg": 340000000,
+    "other": "2025년 카드 매출액 2억 6천만원."
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "C2"
+   ],
+   "reason": "총매출은 3억 초과, 카드매출은 이하. '카드매출액 기준'의 적용 대상이 불명",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "JE6",
+   "notice_id": "PBLN127594",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "site_region": "전북특별자치도 정읍시",
+    "business_status": "정상",
+    "applied_earlier_round": false,
+    "prior_similar_benefit": false,
+    "founded_date": "2018-03-02",
+    "main_industry_ksic": "46331",
+    "industry_name": "주류 도매업",
+    "employees": 4,
+    "revenue_prev_year": 200000000,
+    "revenue_3y_avg": 200000000
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "C9"
+   ],
+   "reason": "붙임의 보증 제한업종. 면허 보유 시 제외한다는 단서가 있는데 면허 미입력",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "SD1",
+   "notice_id": "PBLN127590",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "hq_region": "경상북도 구미시",
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "employees": 3,
+    "revenue_3y_avg": 200000000,
+    "revenue_prev_year": 200000000,
+    "revenue_compare_period": "2024년→2025년",
+    "revenue_before": 180000000,
+    "revenue_latest": 200000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "other": "온라인 매출 비중 25%, 온라인 매출액 5천만원. 2025년 영업이익 흑자 1,800만원. 프랜차이즈 가맹점·직영점 아님. 대기업·출자업체 아님. 유관기관·공공기관 아님."
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "비중은 30% 미만이지만 온라인 매출액 5천만원 이상으로 OR 충족",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "SD2",
+   "notice_id": "PBLN127590",
+   "program": null,
+   "as_of": "2026-11-03",
+   "profile": {
+    "hq_region": "경상북도 구미시",
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "employees": 3,
+    "revenue_3y_avg": 100000000,
+    "revenue_prev_year": 100000000,
+    "revenue_compare_period": "2024년→2025년",
+    "revenue_before": 90000000,
+    "revenue_latest": 100000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "other": "온라인 매출 비중 30%, 온라인 매출액 3천만원. 2025년 영업이익 흑자 1,800만원. 프랜차이즈 가맹점·직영점 아님. 대기업·출자업체 아님. 유관기관·공공기관 아님."
+   },
+   "expected": "일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [],
+   "reason": "매출 1억 정각과 온라인 비중 30% 정각은 모두 '이상'. 마감 당일",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "SD3",
+   "notice_id": "PBLN127590",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "hq_region": "서울특별시 성동구",
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "employees": 3,
+    "revenue_3y_avg": 200000000,
+    "revenue_prev_year": 200000000,
+    "revenue_compare_period": "2024년→2025년",
+    "revenue_before": 180000000,
+    "revenue_latest": 200000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "other": "온라인 매출 비중 40%, 온라인 매출액 8천만원. 2025년 영업이익 흑자 1,800만원. 프랜차이즈 가맹점·직영점 아님. 대기업·출자업체 아님. 유관기관·공공기관 아님.",
+    "site_region": "경상북도 구미시"
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "A2"
+   ],
+   "reason": "공장은 경북이지만 본점 기준 요건은 서울로 위반",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "SD4",
+   "notice_id": "PBLN127590",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "hq_region": "경상북도 구미시",
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "employees": 3,
+    "revenue_3y_avg": 200000000,
+    "revenue_prev_year": 200000000,
+    "revenue_compare_period": "2024년→2025년",
+    "revenue_before": 200000000,
+    "revenue_latest": 200000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "other": "온라인 매출 비중 40%, 온라인 매출액 8천만원. 2025년 영업이익 흑자 1,800만원. 프랜차이즈 가맹점·직영점 아님. 대기업·출자업체 아님. 유관기관·공공기관 아님."
+   },
+   "expected": "불일치",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "G1"
+   ],
+   "reason": "전년과 매출이 같아 '증가' 아님",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "SD5",
+   "notice_id": "PBLN127590",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "hq_region": "경상북도 구미시",
+    "main_industry_ksic": "10799",
+    "industry_name": "그 외 기타 식품 제조업",
+    "employees": 3,
+    "revenue_3y_avg": 150000000,
+    "revenue_prev_year": 150000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "other": "온라인 매출 비중 40%, 온라인 매출액 8천만원. 2025년 영업이익 흑자 1,800만원. 프랜차이즈 가맹점·직영점 아님. 대기업·출자업체 아님. 유관기관·공공기관 아님.",
+    "founded_date": "2025-03-10"
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "G1"
+   ],
+   "reason": "2025년 3월 개업이라 전년 대비 매출 증가를 판단할 비교값이 없음",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  },
+  {
+   "id": "SD6",
+   "notice_id": "PBLN127590",
+   "program": null,
+   "as_of": "2026-11-02",
+   "profile": {
+    "hq_region": "경상북도 구미시",
+    "main_industry_ksic": "47859",
+    "industry_name": "그 외 기타 분류 안된 상품 전문 소매업",
+    "employees": 3,
+    "revenue_3y_avg": 200000000,
+    "revenue_prev_year": 200000000,
+    "revenue_compare_period": "2024년→2025년",
+    "revenue_before": 180000000,
+    "revenue_latest": 200000000,
+    "business_status": "정상",
+    "tax_arrears": false,
+    "debt_default": false,
+    "other": "온라인 매출 비중 40%, 온라인 매출액 8천만원. 2025년 영업이익 흑자 1,800만원. 프랜차이즈 가맹점·직영점 아님. 대기업·출자업체 아님. 유관기관·공공기관 아님."
+   },
+   "expected": "확인 필요",
+   "period_status": "공고상 기간 내",
+   "decisive": [
+    "E7"
+   ],
+   "reason": "47859는 코드 중 성인용품 판매점만 제외. 세부 업종 미입력",
+   "flags": [
+    "기관 판단 표시"
+   ]
+  }
+ ]
+}

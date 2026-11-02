@@ -1,0 +1,362 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "지원대상과 신청자격 모두 '소상공인'으로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "포항시 관내에서 사업장을 운영 중인 소상공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "포항시 관내 사업장 소재",
+   "applies_to": null,
+   "waives": [],
+   "value": "포항시",
+   "evidence": {
+    "page": 1,
+    "quote": "포항시 관내에서 사업장을 운영 중인"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "사업장을 운영 중이어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "사업장을 운영 중인 소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "주류 및 담배(전자담배 포함) 제조·판매업체에 해당하지 않아야 통과(값 false). 업종코드로 정확히 대응되지 않아 전용 필드 없음",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "주류 및 담배(전자담배 포함) 관련 광고가 아니어야 통과(값 false). 광고 내용의 적합성은 기관이 서류심사로 판단",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "선착순 접수 후 서류심사, 최대 20개 업체 정도 모집이므로 조기 마감 가능성 있음. 마감 시각 미기재",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-14",
+    "2026-11-30"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "접수기간 : 2026. 10. 14.(수) ~ 11. 30.(월)"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "지원대상·신청자격 모두 '소상공인'으로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "포항시 관내에서 사업장을 운영 중인 소상공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "포항시 관내 사업장 소재",
+   "applies_to": null,
+   "waives": [],
+   "value": "포항시",
+   "evidence": {
+    "page": 1,
+    "quote": "포항시 관내에서 사업장을 운영 중인"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "사업장을 운영 중이어야 함",
+   "applies_to": null,
+   "waives": [],
+   "value": "정상",
+   "evidence": {
+    "page": 1,
+    "quote": "사업장을 운영 중인 소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "주류 및 담배(전자담배 포함) 제조·판매업체는 신청 불가. 업종코드로 정확히 대응되지 않아 구조화 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    null,
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "주류 및 담배(전자담배 포함) 관련 광고는 신청 불가. 광고 내용 적합성은 기관이 심사",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    null,
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "관련 광고는 신청 불가"
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "선착순 접수 후 서류심사, 최대 20개 업체 정도 모집이므로 조기 마감 가능성 있음. 마감 시각 미기재",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-14",
+    "2026-11-30"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "접수기간 : 2026. 10. 14.(수) ~ 11. 30.(월)"
+   }
+  }
+ ],
+ "unresolved": [
+  "c4·c5(주류·담배 업체/관련 광고 제외) 수정은 마지막 재추출에서 반영됐고 validate는 통과했으나, 재추출 한도 도달로 verify 재대조는 수행되지 않음"
+ ],
+ "out_of_scope": [
+  "지원규모(최대 20개 업체 정도) 및 지원내용(택시지붕 디지털 광고 무료 송출, 광고기간 2026. 12. 31.까지)",
+  "접수방법(온라인 신청서 제출 후 도시재생과 접수확인 전화) 및 신청서 링크·문의처",
+  "제출자료(온라인 신청서, 상호명·제품 사진·로고 등 광고 제작 자료)",
+  "선정방법(선착순 접수 후 서류심사) 및 선정기준(제출자료 적정 여부, 광고 내용 적합성·송출 가능 여부, 접수 순서 및 매체 운영 여건)",
+  "선정결과 전화 개별 통보",
+  "허위 기재 또는 자격 미부합 시 선정 취소, 광고 송출 순서·개시일 조정 및 송출기간 단축 가능 등 기타 참고사항"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 6,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": [
+     {
+      "condition_id": "c5",
+      "message": "값이 비어 있음. 값을 쓰거나 check=unsupported로 내릴 것"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c5: 값이 비어 있음. 원문 근거로 값을 채우거나, 근거가 없으면 check=unsupported로 표시할 것."
+   },
+   "result": {
+    "n_conditions": 6,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": [
+     {
+      "condition_id": "c5",
+      "message": "값이 비어 있음. 값을 쓰거나 check=unsupported로 내릴 것"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c5",
+      "type": "wrong_value",
+      "detail": "note에는 '해당 광고가 아니어야 통과(값 false)'라고 되어 있으나 value는 [null, null]이다. op eq에 맞지 않는 배열 값이고 note와도 어긋난다. 또한 evidence quote '관련 광고는 신청 불가'만으로는 어떤 광고인지(주류 및 담배) 드러나지 않는다.",
+      "fix": "value를 false로 바꾸고, evidence quote를 '주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가' 전체로 교체한다.",
+      "source_quote": "※ 주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가"
+     },
+     {
+      "condition_id": "c4",
+      "type": "wrong_value",
+      "detail": "제외 조건인데 op eq에 value가 [null, null]로 되어 있다. 단일값 비교 연산자에 범위형 null 배열을 넣어 무엇과 같아야 통과하는지 정의되지 않는다. 해당 업체가 아니어야 통과한다는 의미가 값에 반영되지 않았다.",
+      "fix": "value를 false(주류·담배 제조·판매업체 아님)로 지정한다. 구조화가 불가하다면 단일 null로 두고 check unsupported를 유지한다.",
+      "source_quote": "※ 주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c4: 제외 조건. op eq의 value [null, null]을 false(주류·담배(전자담배 포함) 제조·판매업체 아님)로 지정. 근거: '※ 주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가'.\nc5: value [null, null]을 false(주류·담배 관련 광고 아님)로 지정하고, evidence quote를 '주류 및 담배(전자담배 포함) 제조·판매업체와 관련 광고는 신청 불가' 전체로 교체."
+   },
+   "result": {
+    "n_conditions": 6,
+    "extract_round": 3
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": [
+     "c4·c5(주류·담배 업체/관련 광고 제외) 수정은 마지막 재추출에서 반영됐고 validate는 통과했으나, 재추출 한도 도달로 verify 재대조는 수행되지 않음"
+    ]
+   }
+  }
+ ],
+ "rounds": 3,
+ "seconds": 75
+}

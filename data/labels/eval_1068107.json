@@ -1,0 +1,200 @@
+{
+ "source_text": "1068107_브랜드점프업",
+ "scope": "소상공인 신청 자격",
+ "conditions": [
+  {
+   "id": "C1",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "value": true,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "「소상공인기본법」제2조에따른소상공인"
+   }
+  },
+  {
+   "id": "C2",
+   "kind": "eligibility",
+   "field": "business_status",
+   "op": "eq",
+   "value": "정상",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "정상영업중"
+   }
+  },
+  {
+   "id": "C3",
+   "kind": "eligibility",
+   "field": "own_brand",
+   "op": "eq",
+   "value": true,
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "자사브랜드를보유한소상공인"
+   }
+  },
+  {
+   "id": "E1",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "소상공인 정책자금 융자제외 대상 업종은 신청 불가"
+   }
+  },
+  {
+   "id": "E2",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "접수 마감일 기준 기업이 휴·폐업 또는 부도 상태인 경우"
+   }
+  },
+  {
+   "id": "E3",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "E4",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "value": false,
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "금융기관 등 채무불이행"
+   }
+  },
+  {
+   "id": "E5",
+   "kind": "exclusion",
+   "field": "unfair_trade_1y",
+   "op": "eq",
+   "value": false,
+   "unit": "최근 1년",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "최근 1년 이내 공정거래법에 따른 불공정행위 위반"
+   }
+  },
+  {
+   "id": "E6",
+   "kind": "exclusion",
+   "field": "product_origin",
+   "op": "not_in",
+   "value": [
+    "해외 수입",
+    "대기업"
+   ],
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 3,
+    "quote": "해외 수입제품, 대기업 제품"
+   }
+  },
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "value": [
+    "2026-05-11",
+    "2026-05-29T18:00"
+   ],
+   "unit": null,
+   "basis": "as_of_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "evidence": {
+    "page": 4,
+    "quote": "’26년5월11일(월) ~ 5월29일(금) 18시까지"
+   }
+  }
+ ],
+ "out_of_scope": [],
+ "notice_id": "1068107",
+ "labeler": "AI 초안",
+ "status": "참가자 확인 전"
+}

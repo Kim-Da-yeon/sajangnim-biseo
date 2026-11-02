@@ -1,0 +1,13 @@
+.env
+*.env
+__pycache__/
+# 원본 공고 파일과 추출 전문은 올리지 않는다(용량, 담당자 연락처). 수집 방법은 scripts 참고.
+data/raw/
+data/text/
+data/corpus/raw/
+data/corpus/text/
+*.log
+results/usage_until_eval_v1.jsonl
+# 제출 전 작업 문서
+docs/report_draft_*.md
+docs/label_check_*.md

@@ -1,0 +1,888 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "registration_or_activity",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 현재 정상적으로 사업자등록 또는 관련 활동 경력을 보유한 기업 또는 개인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "can_participate",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "성과조사에 성실히 참여 가능한 자"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "hq_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:region",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "충청북도 보은군",
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내에 본사, 공장 또는 사업장을 두고 실제 영업 중인 기업"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "factory_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:region",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "충청북도 보은군",
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내에 본사, 공장 또는 사업장을 두고 실제 영업 중인 기업"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:region",
+   "check": "conflict",
+   "exception": "사업개요에는 '본사, 공장 중 1개 이상 보은군 소재'로만 표기되어 사업장 단독 인정 여부가 충돌",
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "충청북도 보은군",
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내에 본사, 공장 또는 사업장을 두고 실제 영업 중인 기업"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "C10",
+   "evidence": {
+    "page": 1,
+    "quote": "한국표준산업분류상 식료품 제조업(C10)을 영위하는 기업"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "lt",
+   "unit": "명",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 1,
+    "quote": "상시근로자10인 미만의 소공인 기준에 해당하는 기업"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "상시근로자10인 미만의 소공인 기준에 해당하는 기업"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "제품·제조공정·포장·마케팅·판로개선 지원 필요",
+   "evidence": {
+    "page": 1,
+    "quote": "제품, 제조공정, 포장, 마케팅, 판로개선 지원이 필요한 기업"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "eligibility",
+   "field": "preparing_food_startup_in_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "예비창업자",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내 식품 제조 분야 창업을 준비하는 청년 및 예비창업자"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "eligibility",
+   "field": "can_start_within_3m",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "예비창업자",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "선정 이후 3개월 이내 창업을 해야 함"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "휴업 또는 폐업 중인 기업 또는 사업자"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 또는4대보험료 체납 중인 기업 또는 신청자"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "exclusion",
+   "field": "social_insurance_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 또는4대보험료 체납 중인 기업 또는 신청자"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "공공기관 지원사업 참여 제한 중인 기업 또는 신청자"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "동일하거나 유사한 내용으로 타 기관 지원을 받고 있거나 중복지원에 해당하는 경우"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "금년도 유사 사업을 통하여 지원받은 기업은 본 사업의 지원 대상에서 제외"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "제출서류 또는 신청내용이 허위로 확인된 경우"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "채무불이행·파산·회생절차 등으로 정상 사업수행이 곤란하다고 판단되지 않음",
+   "evidence": {
+    "page": 1,
+    "quote": "금융기관 채무불이행, 파산, 회생절차 등으로 정상적인 사업수행이 어렵다고 판단 되는 경우"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "사업기간 내 교육·컨설팅·결과물 제작·성과조사 참여가 어렵지 않음",
+   "evidence": {
+    "page": 1,
+    "quote": "사업기간 내 교육, 컨설팅, 결과물 제작, 성과조사 참여가 어려운 경우"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "운영기관이 사업 목적 부합으로 판단",
+   "evidence": {
+    "page": 1,
+    "quote": "기타 운영기관이 사업 목적에 부합하지 않는다고 판단하는 경우"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "registration_or_activity",
+   "op": "eq",
+   "unit": null,
+   "basis": "notice_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "공고일 현재 정상적으로 사업자등록 또는 관련 활동 경력을 보유한 기업 또는 개인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "can_participate",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "성과조사에 성실히 참여 가능한 자"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "hq_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:region",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "충청북도 보은군",
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내에 본사, 공장 또는 사업장을 두고 실제 영업 중인 기업"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "factory_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:region",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "충청북도 보은군",
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내에 본사, 공장 또는 사업장을 두고 실제 영업 중인 기업"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "site_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "OR:region",
+   "check": "conflict",
+   "exception": "사업개요에는 '본사, 공장 중 1개 이상 보은군 소재'로만 표기되어 사업장 단독 인정 여부가 충돌",
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "충청북도 보은군",
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내에 본사, 공장 또는 사업장을 두고 실제 영업 중인 기업"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "C10",
+   "evidence": {
+    "page": 1,
+    "quote": "한국표준산업분류상 식료품 제조업(C10)을 영위하는 기업"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "lt",
+   "unit": "명",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 1,
+    "quote": "상시근로자10인 미만의 소공인 기준에 해당하는 기업"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "상시근로자10인 미만의 소공인 기준에 해당하는 기업"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": "제품·제조공정·포장·마케팅·판로개선 지원 필요",
+   "evidence": {
+    "page": 1,
+    "quote": "제품, 제조공정, 포장, 마케팅, 판로개선 지원이 필요한 기업"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "eligibility",
+   "field": "preparing_food_startup_in_region",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "예비창업자",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "보은군 관내 식품 제조 분야 창업을 준비하는 청년 및 예비창업자"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "eligibility",
+   "field": "can_start_within_3m",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": "예비창업자",
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 1,
+    "quote": "선정 이후 3개월 이내 창업을 해야 함"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": "기존 기업",
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업"
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "휴업 또는 폐업 중인 기업 또는 사업자"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 또는4대보험료 체납 중인 기업 또는 신청자"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "exclusion",
+   "field": "social_insurance_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "국세·지방세 또는4대보험료 체납 중인 기업 또는 신청자"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "공공기관 지원사업 참여 제한 중인 기업 또는 신청자"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": "금년도 유사 사업으로 지원받은 기업도 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "동일하거나 유사한 내용으로 타 기관 지원을 받고 있거나 중복지원에 해당하는 경우"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "exclusion",
+   "field": "misuse_history",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "제출서류 또는 신청내용이 허위로 확인된 경우"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "정상적인 사업수행이 어렵다고 판단되는 경우",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "금융기관 채무불이행, 파산, 회생절차 등으로"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "파산·회생절차 진행으로 정상 사업수행 곤란하지 않음",
+   "evidence": {
+    "page": 1,
+    "quote": "금융기관 채무불이행, 파산, 회생절차 등으로"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "exclusion",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "applies_to": null,
+   "waives": [],
+   "value": "운영기관이 사업 목적 부합으로 판단",
+   "evidence": {
+    "page": 1,
+    "quote": "기타 운영기관이 사업 목적에 부합하지 않는다고 판단하는 경우"
+   }
+  }
+ ],
+ "unresolved": [
+  "c21(금년도 유사 사업 수혜 기업 제외): 원문은 금년도(2026년) 수혜만 제외하는데, 조건에는 기간 한정 없이 basis=not_stated로 되어 있어 과거 연도 수혜 기업까지 제외하는 것으로 읽힐 수 있고 c16과도 구분되지 않음. 2026년 당해연도 한정을 명시해야 함(재추출 한도 도달로 미반영)."
+ ],
+ "out_of_scope": [
+  "신청·접수 기간(2026-10-22 ~ 2026-11-05 18:00) 및 공고기간, 모집공고 일정 표기 오기(10.22~10.5)",
+  "접수방법(소상공인24 온라인 접수)",
+  "지원규모·유형별 지원금액 및 중복지원 시 최대 7,000천원 한도, 선금·잔금 지급, 부가세 미지원",
+  "지원 절차(사전검토, 선정평가, 결과통보, 협약체결 일정)",
+  "평가방법 및 평가표 배점",
+  "제출 서류 목록(납세증명서, 재무제표, 사업자등록증명원 업태 제조업, 소상공인 확인서, 건강보험 자격득실 등)",
+  "선정자 의무사항 및 사업수행·관리기준",
+  "유의사항(서류 미반환, 재공고, 변경 가능 등)",
+  "신청서·계획서·개인정보 동의서·서약서·중복지원 금지 확약서 서식",
+  "문의처"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 20,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c16",
+      "type": "wrong_logic",
+      "detail": "exception 필드에 '금년도 유사 사업으로 지원받은 기업도 제외'를 넣었다. 이것은 예외(면제)가 아니라 별도의 추가 제외 사유다. 원문 2항 각주 '* 금년도 유사 사업을 통하여 지원받은 기업은 본 사업의 지원 대상에서 제외'에 근거하며, 현재 구조대로면 제외 대상을 예외로 해석할 수 있다. c16의 근거 문구도 이 내용을 뒷받침하지 않는다.",
+      "fix": "c16의 exception을 null로 바꾼다. '금년도 유사 사업 수혜 이력 없음'(value=false, 기준: 금년도)을 별도 exclusion 조건으로 분리하고, 근거 문구는 '금년도 유사 사업을 통하여 지원받은 기업은 본 사업의 지원 대상에서 제외'로 한다."
+     },
+     {
+      "condition_id": "c18",
+      "type": "wrong_logic",
+      "detail": "원문은 '금융기관 채무불이행, 파산, 회생절차 등으로 정상적인 사업수행이 어렵다고 판단 되는 경우'다. '정상적인 사업수행이 어렵다고 판단'은 제외가 성립하는 요건(한정어)인데 exception(예외)으로 넣어 논리가 뒤집혔다. 근거 문구도 '등으로'에서 잘려 판단 요건이 빠져 있다.",
+      "fix": "exception을 null로 바꾼다. 조건 내용을 '채무불이행·파산·회생절차 등으로 정상 사업수행이 곤란하다고 판단되는 경우 제외'(check=discretionary)로 하고, 근거 문구는 문장 전체로 교체한다. c19와 중복되므로 하나로 통합한다."
+     },
+     {
+      "condition_id": "c19",
+      "type": "bad_evidence",
+      "detail": "value는 '파산·회생절차 진행으로 정상 사업수행 곤란하지 않음'인데, 인용한 '금융기관 채무불이행, 파산, 회생절차 등으로'에는 '정상적인 사업수행이 어렵다고 판단'이라는 핵심 부분이 없다. 또한 c18과 같은 원문 문장을 쪼갠 중복 조건이다.",
+      "fix": "근거 문구를 '금융기관 채무불이행, 파산, 회생절차 등으로 정상적인 사업수행이 어렵다고 판단 되는 경우'로 교체하고, c18과 하나의 조건으로 병합한다."
+     }
+    ]
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "1) c16: exception을 null로 바꾸고, '금년도 유사 사업 수혜 이력 없음'(value=false, 기준: 금년도)을 별도 exclusion 조건으로 분리. 근거 문구: '금년도 유사 사업을 통하여 지원받은 기업은 본 사업의 지원 대상에서 제외'. 2) c18·c19를 하나로 병합: '채무불이행·파산·회생절차 등으로 정상 사업수행이 곤란하다고 판단되는 경우 제외'(check=discretionary), exception=null. 근거 문구는 문장 전체 '금융기관 채무불이행, 파산, 회생절차 등으로 정상적인 사업수행이 어렵다고 판단 되는 경우'."
+   },
+   "result": {
+    "n_conditions": 20,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": null,
+      "type": "missing_condition",
+      "detail": "지원 제외 대상의 '사업기간 내 교육, 컨설팅, 결과물 제작, 성과조사 참여가 어려운 경우' 항목이 조건 목록에 없다. c2는 공통 신청자격의 '성과조사에 성실히 참여 가능한 자'만 근거로 삼아, 사업기간 내 결과물 제작 참여 가능 여부까지 포함하는 이 제외 사유를 담지 못한다.",
+      "fix": "kind=exclusion, field=other(또는 can_participate), op=eq, value='사업기간 내 교육·컨설팅·결과물 제작·성과조사 참여가 어렵지 않음', check=declared, applies_to=null, evidence quote='사업기간 내 교육, 컨설팅, 결과물 제작, 성과조사 참여가 어려운 경우' 조건을 추가한다."
+     }
+    ]
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "누락 조건 추가: kind=exclusion, field=other, op=eq, value='사업기간 내 교육·컨설팅·결과물 제작·성과조사 참여가 어렵지 않음', check=declared, applies_to=null, 근거 문구='사업기간 내 교육, 컨설팅, 결과물 제작, 성과조사 참여가 어려운 경우'. 이전 수정(c16 분리, c18·c19 병합)은 유지."
+   },
+   "result": {
+    "n_conditions": 21,
+    "extract_round": 3
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c21",
+      "type": "wrong_logic",
+      "detail": "원문은 '금년도 유사 사업을 통하여 지원받은 기업'만 제외한다. 즉 제외 범위가 2026년 당해연도 수혜로 한정된다. 그런데 조건은 basis가 not_stated이고 기간 한정 없이 prior_similar_benefit=false로만 되어 있다. 이대로면 c16과 구분되지 않고, 과거 연도 수혜 기업까지 제외하는 것으로 해석될 수 있다.",
+      "fix": "기간 범위를 '금년도(2026년) 내 유사 사업 수혜'로 명시한다. 예: exception 또는 value에 2026년 당해연도 한정을 기재하거나, 별도 field(prior_similar_benefit_this_year)로 분리한다."
+     }
+    ]
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": [
+     "c21(금년도 유사 사업 수혜 기업 제외): 원문은 금년도(2026년) 수혜만 제외하는데, 조건에는 기간 한정 없이 basis=not_stated로 되어 있어 과거 연도 수혜 기업까지 제외하는 것으로 읽힐 수 있고 c16과도 구분되지 않음. 2026년 당해연도 한정을 명시해야 함(재추출 한도 도달로 미반영)."
+    ]
+   }
+  }
+ ],
+ "rounds": 3,
+ "seconds": 184
+}

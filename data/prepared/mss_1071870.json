@@ -1,0 +1,695 @@
+{
+ "conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「도시형소공인 지원에 관한 특별법」 제2조에 의한 소공인(상시근로자 수 10인 미만의 제조업을 영위하는 소상공인)",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "｢도시형소공인지원에관한특별법｣제2조에의한소공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "한국표준산업분류 중분류 기준 제조업을 주된 사업으로 영위. 주된 업종은 연매출액 비중이 가장 큰 사업 기준(손익계산서상 제품매출 > 상품매출이면 제조업)",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "C10",
+    "C34"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "’제조업(업종코드 : C10~C34)‘을 주된 사업으로 영위중이어야 함"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "lt",
+   "unit": "명",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "주된 사업에 종사하는 상시근로자 기준. 산정 시 임원·일용근로자·3개월 이내 근로자·연구전담요원·월 소정근로시간 60시간 미만 단시간근로자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 3,
+    "quote": "상시근로자 수 10인 미만의 소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "소상공인에 해당하지 않게 된 경우 그 사유가 발생한 연도의 다음 연도부터 3년간은 소상공인으로 봄(소기업 외 기업과 합병하거나 소상공인기본법 시행령 제4조 제외사유 해당 시 제외)",
+   "note": "소상공인기본법 제2조(소기업 중 상시근로자 10명 미만). 소기업 평균매출액 기준(참고1): C19·C24는 140억원 이하, C10·C11·C14·C15·C20·C21·C23·C25·C26·C28·C29·C30·C32는 120억원 이하, C12·C13·C16·C17·C18·C22·C27·C31·C33은 80억원 이하, C34(산업용 기계 및 장비 수리업)는 15억원 이하. 매출액은 주업종 매출액이 아닌 전체 매출액이 주업종의 규모 기준을 충족하는지로 판단(손익계산서상 매출액, 평균매출액등 산출방법 적용)",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "상시근로자 수 10인 미만의 소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "registration_includes_mfg",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "제출서류 사업자등록증명원에 업태 제조업 필수로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 5,
+    "quote": "사업자등록증명원(업태 : 제조업 必)"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": "지원유형 '안전·환경 일반' 신청자에게는 적용되지 않음(지원유형 '고위험업종' 신청자에게만 적용)",
+   "note": "지원유형 '고위험업종' 선택 시에만 적용되는 요건(적용 유형 목록이 없어 applies_to는 null). 산재보험 가입코드는 공단에서 별도 확인, 불일치 시 탈락처리 될 수 있음. 신청완료 후 지원유형 변경 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": "고위험업종 산재보험 가입코드 일치(21809, 21846, 21831, 21856, 20209, 20903)",
+   "evidence": {
+    "page": 3,
+    "quote": "(고위험업종 유형) 고위험업종 산재보험 가입 코드와 일치 필요"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "표 제목은 신청마감일 기준이나 항목은 신청일 현재로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "신청일 현재 ｢기업의 부도, 휴·폐업｣ 중인 경우"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "신청마감일 기준(2026-10-30)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "신청마감일 기준(2026-10-30)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "부정수급 등으로 정부사업 참여제한 중인 경우 제외. 신청마감일 기준(2026-10-30)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "정부사업에 참여제한(부정수급 등) 중인 경우"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "당해 연도(2026년) 정부·지자체·타기관 유사사업 수혜 또는 동일 목적 유사품목(공사) 지원을 받고 있는 경우 제외. 중복수혜 금지 확약서 제출",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "당해 연도 유사사업 수혜자"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "도박·향락 등 불건전 업종, 국민 보건·건전 문화에 반하거나 사치·투기 조장 우려가 있다고 판단되는 제조업(판단은 기관 재량 포함)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "도박·향락 등 불건전 업종"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "selected_earlier_round",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "중기부 공고 제2026-314호·제2026-405호, 경북테크노파크 제2026-268호·제2026-319호(경상북도 소공인 클린제조환경조성 사업)에 선정 또는 선정예정인 소공인은 중복신청 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "선정(선정예정) 소공인은 본 모집공고에 중복신청이 불가합니다."
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "당초 2026-10-20 마감에서 2026-10-30으로 연장(변경사항). 마감시간 18:00 정각 이후 추가접수 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-06",
+    "2026-10-30T18:00"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "’26. 10. 6.(화) ~ ’26. 10. 30.(금), 18:00까지"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "c1",
+   "kind": "eligibility",
+   "field": "small_craft_business",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "「도시형소공인 지원에 관한 특별법」 제2조에 의한 소공인",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "｢도시형소공인지원에관한특별법｣제2조에의한소공인"
+   }
+  },
+  {
+   "id": "c2",
+   "kind": "eligibility",
+   "field": "main_industry_ksic",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "한국표준산업분류 중분류 기준 제조업을 주된 사업으로 영위. 주된 업종은 연매출액 비중이 가장 큰 사업 기준",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "C10",
+    "C34"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "’제조업(업종코드 : C10~C34)‘을 주된 사업으로 영위중이어야 함"
+   }
+  },
+  {
+   "id": "c3",
+   "kind": "eligibility",
+   "field": "employees",
+   "op": "lt",
+   "unit": "명",
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "상시근로자 산정 시 임원·일용근로자·3개월 이내 근로자·연구전담요원·월 60시간 미만 단시간근로자 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": 10,
+   "evidence": {
+    "page": 3,
+    "quote": "상시근로자 수 10인 미만의 소상공인"
+   }
+  },
+  {
+   "id": "c4",
+   "kind": "eligibility",
+   "field": "small_merchant",
+   "op": "derived",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": "소상공인에 해당하지 않게 된 경우 사유 발생 연도의 다음 연도부터 3년간은 소상공인으로 봄(시행령 제4조 제외사유 해당 시 제외)",
+   "note": "소상공인기본법 제2조. 소기업 매출액 기준(업종별 80억~140억원 이하 등, 참고1) 충족 필요",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 3,
+    "quote": "상시근로자 수 10인 미만의 소상공인"
+   }
+  },
+  {
+   "id": "c5",
+   "kind": "eligibility",
+   "field": "registration_includes_mfg",
+   "op": "eq",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "제출서류 사업자등록증명원에 업태 제조업 필수로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": true,
+   "evidence": {
+    "page": 5,
+    "quote": "사업자등록증명원(업태 : 제조업 必)"
+   }
+  },
+  {
+   "id": "c6",
+   "kind": "eligibility",
+   "field": "other",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "discretionary",
+   "exception": null,
+   "note": "지원유형 '고위험업종' 선택 시에만 적용. 산재보험 가입코드는 공단에서 별도 확인, 불일치 시 탈락처리 될 수 있음",
+   "applies_to": null,
+   "waives": [],
+   "value": "고위험업종 산재보험 가입코드 일치(21809, 21846, 21831, 21856, 20209, 20903)",
+   "evidence": {
+    "page": 3,
+    "quote": "(고위험업종 유형) 고위험업종 산재보험 가입 코드와 일치 필요"
+   }
+  },
+  {
+   "id": "c7",
+   "kind": "exclusion",
+   "field": "business_status",
+   "op": "not_in",
+   "unit": null,
+   "basis": "application_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "표 제목은 신청마감일 기준이나 항목은 신청일 현재로 표기",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "휴업",
+    "폐업",
+    "부도"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "신청일 현재 ｢기업의 부도, 휴·폐업｣ 중인 경우"
+   }
+  },
+  {
+   "id": "c8",
+   "kind": "exclusion",
+   "field": "tax_arrears",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "신청마감일 기준(2026-10-30)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "국세·지방세 체납"
+   }
+  },
+  {
+   "id": "c9",
+   "kind": "exclusion",
+   "field": "debt_default",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "신청마감일 기준(2026-10-30)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "금융기관 등의 채무불이행이 확인된 경우"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "exclusion",
+   "field": "gov_sanction",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "부정수급 등으로 정부사업 참여제한 중인 경우 제외",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "정부사업에 참여제한(부정수급 등) 중인 경우"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "exclusion",
+   "field": "prior_similar_benefit",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "declared",
+   "exception": null,
+   "note": "당해 연도(2026년) 정부·지자체·타기관 유사사업 수혜 또는 지원받고 있는 경우 제외. 중복수혜 금지 확약서 제출",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "당해 연도 유사사업 수혜자"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "exclusion",
+   "field": "excluded_industry",
+   "op": "eq",
+   "unit": null,
+   "basis": "deadline_date",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "도박·향락 등 불건전 업종, 국민 보건·건전 문화에 반하거나 사치·투기 조장 우려가 있다고 판단되는 제조업(판단은 기관 재량 포함)",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 3,
+    "quote": "도박·향락 등 불건전 업종"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "exclusion",
+   "field": "selected_earlier_round",
+   "op": "eq",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "중기부 공고 제2026-314호·제2026-405호, 경북테크노파크 제2026-268호·제2026-319호(경상북도 소공인 클린제조환경조성 사업)에 선정 또는 선정예정인 소공인은 중복신청 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": false,
+   "evidence": {
+    "page": 1,
+    "quote": "선정(선정예정) 소공인은 본 모집공고에 중복신청이 불가합니다."
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "profile",
+   "exception": null,
+   "note": "당초 2026-10-20 마감에서 2026-10-30으로 연장(변경사항). 마감시간 18:00 이후 추가접수 불가",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    "2026-10-06",
+    "2026-10-30T18:00"
+   ],
+   "evidence": {
+    "page": 3,
+    "quote": "’26. 10. 6.(화) ~ ’26. 10. 30.(금), 18:00까지"
+   }
+  }
+ ],
+ "unresolved": [
+  "c6(산재보험 고위험업종 가입코드 일치 요건): applies_to가 null로 남아 있어 전체 신청자 필수조건으로 잘못 판정될 위험이 있음. 원문상 '고위험업종' 유형 신청자에게만 적용되므로 applies_to=[\"고위험업종\"]으로 고치고 note의 '적용 유형 목록이 없어' 문구를 삭제해야 함. 2회차 재추출에서 지시했으나 3회차에서 되돌아갔고, 재추출 한도에 도달해 수동 수정이 필요함."
+ ],
+ "out_of_scope": [
+  "법인 대표자 직접 회원가입 및 신청, 공동대표는 주 대표자로 가입 등 신청 방법·절차(소상공인24 온라인 신청)",
+  "마이데이터 동의 및 제출서류 목록(신청서, 현장사진, 중복수혜 금지 확약서, 산출내역서·견적서, 재무제표, 납세증명서, 상시근로자 확인서류 등)",
+  "지원규모·지원한도·매칭비율(국비 70% 이내, 자부담 30% 이상) 및 지원유형 선택",
+  "단순 장비 교체·구매 및 자산성 품목 구입 불가 등 지원 품목 제한",
+  "기본심사(70점, 42점 미만 탈락)·현장평가(30점) 평가지표 및 선정 절차",
+  "가점 항목(집적지구 소공인, 풍수해보험 가입자, 안전사고 유경험업체, 백년소공인, 특별재난지역)",
+  "예비선정 후 원가계산, 사전진단, 4자계약 체결, 교육 이수, 정산·사후관리 협조 등 선정 후 의무",
+  "공급기업 POOL 선정, 특수관계 업체 선정 금지, 공급기업 참여 제한요건",
+  "브로커 부당개입 시 불이익, 허위기재 시 선정 취소 및 환수",
+  "지원금 정산서류 기준 및 폐기완료 확약서"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 14,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c6",
+      "type": "wrong_logic",
+      "detail": "c6의 산재보험 가입코드 일치 요건은 '고위험업종' 지원유형을 선택한 신청자에게만 적용됩니다. 그런데 applies_to가 null로 되어 있어 모든 신청자에게 적용되는 AND 필수조건처럼 읽힙니다. 이 상태로는 '안전·환경 일반' 유형 신청자도 고위험업종 코드가 없다는 이유로 탈락으로 판정될 수 있습니다.",
+      "fix": "applies_to를 지원유형 '고위험업종(안전환경 고위험업종)' 신청자로 한정해 지정하고, 일반 유형 신청자에게는 적용되지 않도록 수정합니다.",
+      "source_quote": "* (고위험업종 유형) 고위험업종 산재보험 가입 코드와 일치 필요(2p 지원내용 참조)"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c6(산재보험 고위험업종 가입코드 일치 요건)은 '고위험업종' 지원유형 신청자에게만 적용됨. 원문: \"* (고위험업종 유형) 고위험업종 산재보험 가입 코드와 일치 필요\". applies_to를 고위험업종 유형 신청자로 한정하고, 안전·환경 일반 유형 신청자에게는 적용되지 않도록 수정할 것."
+   },
+   "result": {
+    "n_conditions": 14,
+    "extract_round": 2
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c4",
+      "type": "wrong_value",
+      "detail": "note는 소기업 매출액 기준을 '업종별 80억~140억원 이하'로만 적었습니다. 그러나 참고1 표에는 C34(산업용 기계 및 장비 수리업)에 대해 '15억원 이하' 기준이 따로 표기되어 있어, 매출액 기준 범위가 원문과 맞지 않습니다.",
+      "fix": "note의 매출액 기준을 원문 표대로 업종별로 적어야 합니다. C19·C24는 140억원 이하, C10·C11·C14·C15·C20·C21·C23·C25·C26·C28·C29·C30·C32는 120억원 이하, C12·C13·C16·C17·C18·C22·C27·C31·C33은 80억원 이하, C34는 15억원 이하입니다. 매출액은 주업종 매출이 아닌 전체 매출액으로 판단한다는 점도 반영합니다.",
+      "source_quote": "C34\n산업용 기계 및 장비 수리업\n15억원 이하"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": "c6의 applies_to 한정(고위험업종 유형 신청자만)은 그대로 유지할 것. c4 note의 소기업 매출액 기준을 원문 참고1 표대로 업종별로 수정할 것: C19·C24는 140억원 이하, C10·C11·C14·C15·C20·C21·C23·C25·C26·C28·C29·C30·C32는 120억원 이하, C12·C13·C16·C17·C18·C22·C27·C31·C33은 80억원 이하, C34(산업용 기계 및 장비 수리업)는 15억원 이하. 원문 근거: \"C34 산업용 기계 및 장비 수리업 15억원 이하\". 매출액은 주업종 매출이 아닌 전체 매출액 기준이라는 원문 내용도 반영할 것."
+   },
+   "result": {
+    "n_conditions": 14,
+    "extract_round": 3
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [
+     {
+      "condition_id": "c6",
+      "type": "wrong_logic",
+      "detail": "공고에는 지원유형이 '안전·환경 일반'과 '고위험업종' 두 가지로 명시되어 있습니다. 따라서 산재보험 가입코드 일치 요건이 적용되는 유형을 특정할 수 있는데도 applies_to가 null로 되어 있습니다. note의 '적용 유형 목록이 없어'라는 설명도 원문과 맞지 않습니다. 이 상태로는 모든 신청자에게 적용되는 AND 조건으로 처리될 위험이 있습니다.",
+      "fix": "applies_to를 [\"고위험업종\"]으로 지정하고, note의 '적용 유형 목록이 없어 applies_to는 null' 문구를 삭제하세요.",
+      "source_quote": "바. 지원내용: 안전환경(일반), 안전환경(고위험업종) 중1개항목선택지원"
+     }
+    ],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": [
+     "c6(산재보험 고위험업종 가입코드 일치 요건): applies_to가 null로 남아 있어 전체 신청자 필수조건으로 잘못 판정될 위험이 있음. 원문상 '고위험업종' 유형 신청자에게만 적용되므로 applies_to=[\"고위험업종\"]으로 고치고 note의 '적용 유형 목록이 없어' 문구를 삭제해야 함. 2회차 재추출에서 지시했으나 3회차에서 되돌아갔고, 재추출 한도에 도달해 수동 수정이 필요함."
+    ]
+   }
+  }
+ ],
+ "rounds": 3,
+ "title": "2026년 소공인 클린제조환경조성사업 3차 모집 공고(연장)",
+ "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1071870&parentSeq=1071870",
+ "source": "mss"
+}

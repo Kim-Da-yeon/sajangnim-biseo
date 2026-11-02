@@ -1,0 +1,104 @@
+{
+ "conditions": [
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "제공된 원문(붙임1~3: 신청서, 개인정보 동의서, 위임장)에는 신청·접수 기간이 적혀 있지 않음. 서식의 작성일란에 '2026년 월 일'만 표기됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    null,
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2026년 안성시 소상공인 카드수수료 지원사업 신청서"
+   }
+  }
+ ],
+ "first_conditions": [
+  {
+   "id": "P1",
+   "kind": "period",
+   "field": "application_period",
+   "op": "between",
+   "unit": null,
+   "basis": "not_stated",
+   "group": "AND",
+   "check": "unsupported",
+   "exception": null,
+   "note": "제공된 원문(붙임1~3: 신청서, 개인정보 동의서, 위임장)에는 신청·접수 기간이 적혀 있지 않음. 서식의 작성일란에 '2026년 월 일'만 표기됨.",
+   "applies_to": null,
+   "waives": [],
+   "value": [
+    null,
+    null
+   ],
+   "evidence": {
+    "page": 1,
+    "quote": "2026년 안성시 소상공인 카드수수료 지원사업 신청서"
+   }
+  }
+ ],
+ "unresolved": [
+  "추출된 조건이 1건뿐임. 요청 범위(개별 사업체·개인 신청 시의 신청 자격, 제외 조건, 신청기간) 세 항목이 모두 들어갔는지는 확인하지 못함. 검사(validate·verify)에서 지적이 없어 재추출하지 않았으므로 빠진 항목이 있는지 원문과 대조해 확인해야 함."
+ ],
+ "out_of_scope": [
+  "제공된 원문은 붙임 서식(신청서, 개인정보 수집·이용 및 제공 동의서, 위임장)뿐이며 신청 자격·제외 조건 본문이 없음. 사업명 '안성시 소상공인 카드수수료 지원사업'만으로는 자격 요건을 추정하지 않음",
+  "신청서 기재 항목(상호, 사업자등록번호, 사업개시일, 업종, 상시근로자수, 사업장주소, 대표자 명의 입금계좌)",
+  "첨부서류: 필수 - 사업자등록증, 대표자 명의 통장사본, 개인(행정)정보 동의서, 본인 신분증 / 해당 시 - 공동대표·대리신청 위임장, 위임자 신분증 사본, 가족명의 계좌 수령 시 위임장·가족관계증명서·가족 명의 통장사본",
+  "허위 기재 시 지원금 지급취소·반환 및 「보조금 관리에 관한 법률」에 따른 처벌 확약, 지원금 수령 후 수정 신청 및 반환 불가 동의",
+  "개인정보 수집·이용·제공(안성시, 중부지방국세청(평택세무서))과 민감정보 처리 동의. 동의 거부 시 신청이 제한될 수 있음",
+  "위임 사유(공동대표, 미성년자, 가족 명의 계좌 수령, 대리 신청 등)와 위임장 작성 방법",
+  "이해 당사자 간 분쟁은 자체 해결하며 안성시에 이의제기 불가"
+ ],
+ "trace": [
+  {
+   "tool": "extract",
+   "input": {
+    "feedback": null
+   },
+   "result": {
+    "n_conditions": 1,
+    "extract_round": 1
+   }
+  },
+  {
+   "tool": "validate",
+   "input": {},
+   "result": {
+    "shacl_ok": true,
+    "shacl_errors": [],
+    "quote_errors": [],
+    "lint_errors": []
+   }
+  },
+  {
+   "tool": "verify",
+   "input": {},
+   "result": {
+    "issues": [],
+    "dropped_without_source": 0
+   }
+  },
+  {
+   "tool": "finalize",
+   "result": {
+    "unresolved": [
+     "추출된 조건이 1건뿐임. 요청 범위(개별 사업체·개인 신청 시의 신청 자격, 제외 조건, 신청기간) 세 항목이 모두 들어갔는지는 확인하지 못함. 검사(validate·verify)에서 지적이 없어 재추출하지 않았으므로 빠진 항목이 있는지 원문과 대조해 확인해야 함."
+    ]
+   }
+  }
+ ],
+ "rounds": 1,
+ "title": "[경기] 안성시 2026년 소상공인 카드수수료 지원 사업 변경 공고",
+ "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127499",
+ "source": "bizinfo"
+}
