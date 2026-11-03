@@ -24,7 +24,7 @@ from judge_20261102_v6 import OK, NO, ASK, ORG, judge
 app = FastAPI()
 
 
-LOGIN = """<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>사장님 행정비서</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f5f7;color:#1d1d1f;font:16px/1.5 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}form{width:min(340px,86vw)}h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:-.02em}p{color:#6e6e73;margin:0 0 18px;font-size:.94rem}input,button{width:100%;min-height:46px;border-radius:12px;border:0;font:inherit}input{background:#fff;padding:0 16px;margin-bottom:10px;box-sizing:border-box}button{background:#0066cc;color:#fff;font-weight:600;cursor:pointer}.e{color:#c9281d;font-size:.88rem}</style></head><body><form method="post" action="/login"><h1>사장님 행정비서</h1><p>심사용 시연입니다. 비밀번호를 넣어 주세요.</p>ERR<input name="password" type="password" autocomplete="current-password" autofocus aria-label="비밀번호"><button>들어가기</button></form></body></html>"""
+LOGIN = """<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>사장님 비서</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f5f7;color:#1d1d1f;font:16px/1.5 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}form{width:min(340px,86vw)}h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:-.02em}p{color:#6e6e73;margin:0 0 18px;font-size:.94rem}input,button{width:100%;min-height:46px;border-radius:12px;border:0;font:inherit}input{background:#fff;padding:0 16px;margin-bottom:10px;box-sizing:border-box}button{background:#0066cc;color:#fff;font-weight:600;cursor:pointer}.e{color:#c9281d;font-size:.88rem}</style></head><body><form method="post" action="/login"><h1>사장님 비서</h1><p>심사용 시연입니다. 비밀번호를 넣어 주세요.</p>ERR<input name="password" type="password" autocomplete="current-password" autofocus aria-label="비밀번호"><button>들어가기</button></form></body></html>"""
 
 
 @app.middleware("http")
@@ -213,7 +213,8 @@ def final(n, prog, p, as_of, story):
         try:
             RECHECK[key] = run_final(text, "개별 사업체가 신청하는 경우의 신청 자격과 제외 조건", full, as_of, n["conditions"], prog)
         except Exception:
-            RECHECK[key] = dict(status=ASK, reason="AI 확인을 마치지 못했습니다. 공고 원문을 확인하세요.", notice_quote="", ask=[])
+            # 일시적 실패를 저장하면 다시 눌러도 같은 실패가 나오므로 저장하지 않는다.
+            return dict(status=ASK, reason="AI 확인을 마치지 못했습니다. 다시 시도하거나 공고 원문을 확인하세요.", notice_quote="", ask=[])
     return RECHECK[key]
 
 
@@ -273,12 +274,13 @@ def api_judge(body: dict):
             ai = ai_answers(n, prog, {**p, "answers": base}, story, as_of) if body.get("use_ai") else ([], {})
             r = judge(n["conditions"], {**p, "answers": {**ai[1], **base}}, as_of, prog)
             # 최종 판단이 있으면 그 상태를 쓴다. 규칙 상태와 다르면 이유와 함께 표시한다.
-            re_reason, ai_ask, ai_quote, rule_status, ai_cause, ai_org, ai_gaps = None, [], None, r["status"], None, [], []
+            re_reason, ai_ask, ai_quote, rule_status, ai_cause, ai_org, ai_gaps, ai_contact = None, [], None, r["status"], None, [], [], ""
             if r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra):
                 chk = final(n, prog, answers_of(n, prog), as_of, story_of(n))
                 if chk:
                     r["status"], re_reason, ai_ask, ai_quote = chk["status"], chk["reason"], chk.get("ask", []), chk.get("notice_quote")
                     ai_cause, ai_org, ai_gaps = chk.get("cause"), chk.get("org_ask", []), chk.get("notice_gaps", [])
+                    ai_contact = chk.get("org_contact", "")
                     r["flags"].append("AI 최종 확인")
             by = {c["id"]: c for c in n["conditions"]}
             rows, asks = [], []
@@ -290,7 +292,7 @@ def api_judge(body: dict):
                     asks += need_fields(c, st, p, n["id"])
             pc = [c for c in n["conditions"] if c["kind"] == "period"]
             out.append(dict(id=n["id"], title=n["title"], program=prog, url=n["url"], status=r["status"], period=r["period_status"], flags=r["flags"], deciding=r["deciding"], conditions=rows,
-                            ask=[dict(field=f, label=label_of(f), kind=kind_of(f), options=options_of(f, n["conditions"])) for f in dict.fromkeys(asks)], period_value=pc[0]["value"] if pc else None, rounds=n["rounds"], money=MONEY.get(n["id"]), recheck=re_reason, ai_ask=ai_ask, ai_quote=ai_quote, rule_status=rule_status, ai_cause=ai_cause, ai_org=ai_org, ai_gaps=ai_gaps))
+                            ask=[dict(field=f, label=label_of(f), kind=kind_of(f), options=options_of(f, n["conditions"])) for f in dict.fromkeys(asks)], period_value=pc[0]["value"] if pc else None, rounds=n["rounds"], money=MONEY.get(n["id"]), recheck=re_reason, ai_ask=ai_ask, ai_quote=ai_quote, rule_status=rule_status, ai_cause=ai_cause, ai_org=ai_org, ai_gaps=ai_gaps, ai_contact=ai_contact))
     order = {OK: 0, ASK: 1, NO: 2}
     out.sort(key=lambda x: (x["period"] == "마감", order[x["status"]], x["title"]))
     return dict(results=out, as_of=as_of, story_used=bool(story))
@@ -322,7 +324,7 @@ def api_card(body: dict):
     # 화면에 최종 판단이 있으면 할 일도 같은 상태로 쓴다. 조건별 결과는 근거로만 남긴다.
     if body.get("final_status"):
         res["status"] = body["final_status"]
-        res["최종_판단"] = dict(상태=body["final_status"], 이유=body.get("final_reason"), 확인할_것=body.get("final_ask") or [], 안내="공고 상태는 이 최종 판단을 따른다. 조건별 결과와 다르면 최종 판단 기준으로 쓴다.")
+        res["최종_판단"] = dict(상태=body["final_status"], 이유=body.get("final_reason"), 확인할_것=body.get("final_ask") or [], 공고_부족한_점=body.get("final_gaps") or [], 운영기관_문의=body.get("final_org") or [], 문의처=body.get("final_contact") or "", 안내="공고 상태는 이 최종 판단을 따른다. 조건별 결과와 다르면 최종 판단 기준으로 쓴다. 공고_부족한_점이 있으면 todo에 무엇을 운영기관에 문의할지 쓰고 문의처가 있으면 함께 쓴다.")
     card, banned = run_card(n["title"], res, n["conditions"])
     return dict(card=card, banned=banned, money=MONEY.get(body["id"]))
 
@@ -339,7 +341,10 @@ def api_lease(body: dict):
             text = "".join(f"[[p{i + 1}]]\n{pg.get_text()}" for i, pg in enumerate(d))
     if not text.strip():
         return JSONResponse(dict(error="계약서 내용이 없습니다"), status_code=400)
-    return lease_read(text)
+    try:
+        return lease_read(text)
+    except Exception:
+        return JSONResponse(dict(error="계약서를 읽지 못했습니다. 다시 시도해 주세요."), status_code=503)
 
 
 @app.get("/api/lease/sample")

@@ -8,5 +8,7 @@
  "single_application": "대표님 이름으로 한 곳만 신청하시나요?",
  "joint_rep_main": "공동대표라면 주대표가 신청하시나요?",
  "credit_info_listed": "연체나 체납 기록이 신용정보에 올라가 있나요?",
- "social_issue": "직원이 회삿돈을 빼돌리는 등 문제가 된 적이 있나요?"
+ "social_issue": "직원이 회삿돈을 빼돌리는 등 문제가 된 적이 있나요?",
+ "merchant_certificate": "소상공인확인서를 갖고 계신가요?",
+ "product_origin": "파시는 제품을 직접 만드시나요?"
 }

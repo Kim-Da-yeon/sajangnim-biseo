@@ -10,7 +10,7 @@ const point=async(el)=>{await el.scrollIntoViewIfNeeded();const r=await el.bound
 const click=async(el)=>{await point(el);await el.click()};const idle=()=>p.waitForFunction(()=>!document.getElementById('go').disabled,null,{timeout:200000});
 const tab=async v=>{await click(await p.$(`#tabs button[data-v=${v}]`));await p.waitForTimeout(500)};
 await p.goto('http://127.0.0.1:8000/');await hud();
-await cap('사장님 행정비서 (가상 데이터로 시연)',4500);
+await cap('사장님 비서 (가상 데이터로 시연)',4500);
 await click(await p.$('#preset button[data-p=shop]'));await p.waitForSelector('.row');await idle();await p.waitForTimeout(800);
 await cap('가게 정보를 넣으면 공고를 일치, 확인 필요, 불일치로 나눕니다');
 const qs=await p.$$eval('#common .q',e=>e.map(x=>x.querySelector('.qt').textContent));const i=qs.findIndex(s=>/주류|담배|술/.test(s));const row=(await p.$$('#common .q'))[i];await point(row);
