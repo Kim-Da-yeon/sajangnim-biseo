@@ -8,7 +8,7 @@
 
 ![시연 화면](results/screens/flow_evidence.png)
 
-**배포 완료:** https://sosang-agent.vercel.app (브라우저당 AI 확인 5회, 공고 대조하기는 제한 없음)
+**배포 완료:** https://sajangnim-biseo.vercel.app (브라우저당 AI 확인 5회, 공고 대조하기는 제한 없음)
 
 [시연 영상 보기(90초, 무음)](docs/demo/demo_20261103.mp4): 가상 데이터로 실제 화면을 조작한 녹화입니다.
 
