@@ -17,7 +17,7 @@ import fitz
 import uvicorn
 
 sys.path.insert(0, os.path.dirname(__file__))
-from agents_20261103_v12 import FIELDS, R, run_card, run_match, run_final, run_questions, run_resolve
+from agents_20261103_v13 import FIELDS, R, run_card, run_match, run_final, run_questions, run_resolve
 from assistant_20261103_v6 import ITEMS, ics, law_answer, law_for, lease_read
 from judge_20261102_v6 import OK, NO, ASK, ORG, judge
 
@@ -80,7 +80,7 @@ TOKEN = hashlib.sha256(("sosang:" + PASSWORD).encode()).hexdigest()
 DAILY_LIMIT = int(os.environ.get("DAILY_LLM_LIMIT", "100"))
 TEST_LIMIT = int(os.environ.get("TEST_LIMIT_PER_PERSON", "5"))
 COUNTED_PATHS = {"/api/card", "/api/law", "/api/lease"}
-LIMIT_TEXT = f"AI 테스트 {TEST_LIMIT}회를 모두 사용했습니다. 규칙 대조는 계속 쓸 수 있습니다."
+LIMIT_TEXT = f"AI 확인 {TEST_LIMIT}회를 모두 사용했습니다. 공고 대조하기는 계속 쓸 수 있습니다."
 TEST_KEY = hashlib.sha256(("tests:" + os.environ.get("ANTHROPIC_API_KEY", "")).encode()).digest()
 
 

@@ -1782,3 +1782,8 @@
 {"t": "2026-11-03 14:13:39", "role": "임대차문서해석", "input": 1019, "output": 361, "cache_read": 0, "cache_write": 0, "usd": 0.0113}
 {"t": "2026-11-03 14:13:54", "role": "법령검색", "input": 1738, "output": 80, "cache_read": 0, "cache_write": 0, "usd": 0.00855}
 {"t": "2026-11-03 14:13:59", "role": "법령안내", "input": 2468, "output": 241, "cache_read": 0, "cache_write": 0, "usd": 0.01469}
+{"t": "2026-11-03 14:27:33", "role": "최종판단", "input": 7338, "output": 823, "cache_read": 0, "cache_write": 0, "usd": 0.04581}
+{"t": "2026-11-03 14:27:34", "role": "최종판단", "input": 7344, "output": 602, "cache_read": 0, "cache_write": 0, "usd": 0.04142}
+{"t": "2026-11-03 14:29:11", "role": "법령검색", "input": 1738, "output": 80, "cache_read": 0, "cache_write": 0, "usd": 0.00855}
+{"t": "2026-11-03 14:29:15", "role": "법령안내", "input": 2468, "output": 268, "cache_read": 0, "cache_write": 0, "usd": 0.01523}
+{"t": "2026-11-03 14:29:25", "role": "안내작성", "input": 3040, "output": 496, "cache_read": 0, "cache_write": 0, "usd": 0.02208}
