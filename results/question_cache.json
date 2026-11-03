@@ -12,5 +12,6 @@
  "merchant_certificate": "소상공인확인서를 갖고 계신가요?",
  "product_origin": "파시는 제품을 직접 만드시나요?",
  "own_brand": "사장님 회사 이름으로 된 브랜드가 있나요?",
- "unfair_trade_1y": "최근 1년 안에 불공정거래로 제재받은 적 있나요?"
+ "unfair_trade_1y": "최근 1년 안에 불공정거래로 제재받은 적 있나요?",
+ "policy_loan_count_5y": "최근 5년간 정부 지원 대출을 몇 번 받으셨나요?"
 }

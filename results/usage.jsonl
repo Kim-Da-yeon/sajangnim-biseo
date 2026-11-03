@@ -1755,3 +1755,5 @@
 {"t": "2026-11-03 13:56:52", "role": "최종판단", "input": 12739, "output": 1693, "cache_read": 0, "cache_write": 0, "usd": 0.08482}
 {"t": "2026-11-03 13:56:52", "role": "최종판단", "input": 12763, "output": 1753, "cache_read": 0, "cache_write": 0, "usd": 0.08611}
 {"t": "2026-11-03 13:56:58", "role": "최종판단", "input": 15075, "output": 2316, "cache_read": 0, "cache_write": 0, "usd": 0.10662}
+{"t": "2026-11-03 14:06:24", "role": "프로필인터뷰", "input": 451, "output": 60, "cache_read": 0, "cache_write": 0, "usd": 0.003}
+{"t": "2026-11-03 14:06:35", "role": "최종판단", "input": 7368, "output": 777, "cache_read": 0, "cache_write": 0, "usd": 0.04501}

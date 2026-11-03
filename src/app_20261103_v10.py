@@ -274,6 +274,10 @@ def api_judge(body: dict, request: Request):
                 body = {**body, "use_ai": False, "notice_answers": {}, "story": "", "ai_ids": []}
     p, as_of = fill({k: v for k, v in body["profile"].items() if v not in ("", None)}), body.get("as_of") or datetime.now().strftime("%F")
     story = (body.get("story") or "").strip()
+    # 빠른 대조는 규칙·온톨로지만 계산한다. 판단에 LLM을 호출하지 않는다.
+    rule_only = bool(body.get("rule_only"))
+    if rule_only:
+        story = ""
     # 가게 설명은 기간이 지나지 않은 공고에 한해 진술 대조 담당에게 보낸다. 같은 설명은 다시 호출하지 않는다.
     if story:
         open_ids = [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None]) if judge(n["conditions"], p, as_of, prog)["period_status"] != "마감"]
@@ -307,7 +311,7 @@ def api_judge(body: dict, request: Request):
         n_, prog_ = x
         full = answers_of(n_, prog_)
         r_ = judge(n_["conditions"], full, as_of, prog_)
-        if not limited and r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK or n_["id"] in extra or n_["id"] in only):
+        if not limited and not rule_only and r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK or n_["id"] in extra or n_["id"] in only):
             final(n_, prog_, full, as_of, story_of(n_))
     with ThreadPoolExecutor(8) as ex:
         list(ex.map(to_check, [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None])]))
@@ -322,7 +326,9 @@ def api_judge(body: dict, request: Request):
             re_reason, ai_ask, ai_quote, rule_status, ai_cause, ai_org, ai_gaps, ai_contact = None, [], None, r["status"], None, [], [], ""
             if limited and r["status"] == OK:
                 r["status"], re_reason = ASK, "규칙 대조는 일치이지만 " + LIMIT_TEXT.split(".")[0] + ". 공고 원문을 확인하세요."
-            if not limited and r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra or n["id"] in only):
+            if rule_only and r["status"] == OK:
+                r["flags"].append("AI 확인 전")
+            if not limited and not rule_only and r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra or n["id"] in only):
                 chk = final(n, prog, answers_of(n, prog), as_of, story_of(n))
                 if chk:
                     r["status"], re_reason, ai_ask, ai_quote = chk["status"], chk["reason"], chk.get("ask", []), chk.get("notice_quote")
