@@ -36,7 +36,7 @@ os.makedirs(f"{D}/api", exist_ok=True)
 open(f"{D}/api/index.py", "w").write("""import os, sys
 from urllib.parse import parse_qs, urlencode
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
-from app import app  # noqa: E402
+from service import app  # noqa: E402
 
 
 class RestorePath:
@@ -56,5 +56,7 @@ class RestorePath:
 app.add_middleware(RestorePath)
 """)
 open(f"{D}/requirements.txt", "w").write("anthropic==2.3.0\nfastapi==0.162.0\nuvicorn==0.54.0\nrdflib==7.6.0\nPyMuPDF\n")
+# Vercel이 src/app.py를 진입점으로 자동 인식해 api/index.py를 건너뛰므로 배포본에서는 이름을 바꾼다.
+os.rename(f"{D}/src/app.py", f"{D}/src/service.py")
 json.dump({"regions": ["icn1"], "rewrites": [{"source": "/(.*)", "destination": "/api/index?__path=/$1"}], "functions": {"api/index.py": {"includeFiles": "{src,web,ontology,data,results}/**", "maxDuration": 300}}}, open(f"{D}/vercel.json", "w"), indent=1)
 print("공고 원문", n, "건")
