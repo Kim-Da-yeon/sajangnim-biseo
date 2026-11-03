@@ -2074,3 +2074,4 @@
 {"t": "2026-11-03 15:18:23", "role": "안내작성", "input": 2270, "output": 310, "cache_read": 0, "cache_write": 0, "usd": 0.01528}
 {"t": "2026-11-03 15:18:27", "role": "문서해석", "input": 22449, "output": 3405, "cache_read": 0, "cache_write": 0, "usd": 0.1579}
 {"t": "2026-11-03 15:18:29", "role": "총괄", "input": 1126, "output": 25, "cache_read": 0, "cache_write": 0, "usd": 0.005}
+{"t": "2026-11-03 15:39:05", "role": "프로필인터뷰", "input": 505, "output": 74, "cache_read": 0, "cache_write": 0, "usd": 0.0035}

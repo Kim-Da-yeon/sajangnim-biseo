@@ -56,5 +56,5 @@ class RestorePath:
 app.add_middleware(RestorePath)
 """)
 open(f"{D}/requirements.txt", "w").write("anthropic==2.3.0\nfastapi==0.162.0\nuvicorn==0.54.0\nrdflib==7.6.0\nPyMuPDF\n")
-json.dump({"rewrites": [{"source": "/(.*)", "destination": "/api/index?__path=/$1"}], "functions": {"api/index.py": {"includeFiles": "{src,web,ontology,data,results}/**", "maxDuration": 300}}}, open(f"{D}/vercel.json", "w"), indent=1)
+json.dump({"regions": ["icn1"], "rewrites": [{"source": "/(.*)", "destination": "/api/index?__path=/$1"}], "functions": {"api/index.py": {"includeFiles": "{src,web,ontology,data,results}/**", "maxDuration": 300}}}, open(f"{D}/vercel.json", "w"), indent=1)
 print("공고 원문", n, "건")
