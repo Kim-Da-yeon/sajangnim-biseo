@@ -6,6 +6,8 @@
 
 ![시연 화면](results/screens/flow_evidence.png)
 
+**배포 완료:** https://sosang-agent.vercel.app (사람당 AI 테스트 5회, 규칙 대조는 제한 없음)
+
 [시연 영상 보기(126초, 무음)](docs/demo/demo_20261103.mp4): 가상 데이터로 실제 화면을 조작한 녹화입니다.
 
 ## 기능
