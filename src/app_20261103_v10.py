@@ -262,7 +262,7 @@ def api_judge(body: dict, request: Request):
     if ON_VERCEL:
         if request.state.tests >= TEST_LIMIT:
             limited = True
-            body = {**body, "use_ai": False, "notice_answers": {}, "story": ""}
+            body = {**body, "use_ai": False, "notice_answers": {}, "story": "", "ai_ids": []}
         elif body.get("use_ai") or body.get("count_test"):
             request.state.tests += 1
             today = datetime.now().strftime("%F")
@@ -271,7 +271,7 @@ def api_judge(body: dict, request: Request):
             USED["n"] += 1
             if USED["n"] > DAILY_LIMIT:
                 limited = True
-                body = {**body, "use_ai": False, "notice_answers": {}, "story": ""}
+                body = {**body, "use_ai": False, "notice_answers": {}, "story": "", "ai_ids": []}
     p, as_of = fill({k: v for k, v in body["profile"].items() if v not in ("", None)}), body.get("as_of") or datetime.now().strftime("%F")
     story = (body.get("story") or "").strip()
     # 가게 설명은 기간이 지나지 않은 공고에 한해 진술 대조 담당에게 보낸다. 같은 설명은 다시 호출하지 않는다.
@@ -285,9 +285,12 @@ def api_judge(body: dict, request: Request):
             mine_ = {k.split(":")[2]: v for k, v in p.items() if k.startswith(f"c:{x[0]['id']}:")}
             ai_answers(x[0], x[1], {**p, "answers": {**STORY.get((x[0]["id"], x[1], story), {}), **mine_}}, story, as_of)
         with ThreadPoolExecutor(6) as ex:
-            list(ex.map(warm, [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None])]))
+            # 마감 공고는 최종 판단을 하지 않으므로 조건 판단도 건너뛴다.
+            list(ex.map(warm, [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None]) if judge(n["conditions"], p, as_of, prog)["period_status"] != "마감"]))
     # 규칙이 일치로 낸 공고는 항상, 'AI 최종 확인'을 누르면 기간 내 모든 공고를 최종 판단한다. 호출을 한꺼번에 해 저장해 둔다.
     extra = body.get("notice_answers") or {}
+    # 질문에 답하면 그 질문과 관련된 공고만 다시 판단한다. 나머지는 화면에 있는 결과를 그대로 쓴다.
+    only = set(body.get("ai_ids") or [])
 
     def story_of(n_):
         # AI 질문에 대한 답은 해당 공고의 최종 판단에만 더한다.
@@ -304,7 +307,7 @@ def api_judge(body: dict, request: Request):
         n_, prog_ = x
         full = answers_of(n_, prog_)
         r_ = judge(n_["conditions"], full, as_of, prog_)
-        if not limited and r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK or n_["id"] in extra):
+        if not limited and r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK or n_["id"] in extra or n_["id"] in only):
             final(n_, prog_, full, as_of, story_of(n_))
     with ThreadPoolExecutor(8) as ex:
         list(ex.map(to_check, [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None])]))
@@ -319,7 +322,7 @@ def api_judge(body: dict, request: Request):
             re_reason, ai_ask, ai_quote, rule_status, ai_cause, ai_org, ai_gaps, ai_contact = None, [], None, r["status"], None, [], [], ""
             if limited and r["status"] == OK:
                 r["status"], re_reason = ASK, "규칙 대조는 일치이지만 " + LIMIT_TEXT.split(".")[0] + ". 공고 원문을 확인하세요."
-            if not limited and r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra):
+            if not limited and r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra or n["id"] in only):
                 chk = final(n, prog, answers_of(n, prog), as_of, story_of(n))
                 if chk:
                     r["status"], re_reason, ai_ask, ai_quote = chk["status"], chk["reason"], chk.get("ask", []), chk.get("notice_quote")
