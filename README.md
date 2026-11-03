@@ -71,8 +71,6 @@
 ## 사용 도구
 
 - Claude API(`claude-opus-5-5`): 시스템 내 에이전트
-- Claude Code: 코드 작성, 데이터 수집, 평가 실행 보조
-- Codex CLI: 기획 검토, 정답 라벨과 보고서 감수
 - rdflib, pySHACL, FastAPI, PyMuPDF, matplotlib
 - 데이터: 중소벤처기업부 사업공고, 기업마당 공개 공고, 국가법령정보센터 조문(2026-11-02 수집)
 
