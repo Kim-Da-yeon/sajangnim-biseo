@@ -78,7 +78,7 @@ def lease_read(text):
     if bad:
         v["quote_errors"] = bad
     lim, lab = region_limit(v.get("region"))
-    conv = (v["deposit"] or 0) + (v["rent"] or 0) * 100 if v.get("deposit") is not None else None
+    conv = v["deposit"] + v["rent"] * 100 if v.get("deposit") is not None and v.get("rent") is not None else None
     v.update(windows=lease_windows(v), converted=conv, limit=lim, limit_label=lab, over_limit=(conv > lim) if conv is not None and lim else None, facts=[ITEMS["articles"][k] for k in ("상가임대차법 제2조 제3항", "시행령 제4조")], maintenance=ITEMS["articles"]["상가임대차법 제19조의2 제1항"] if v.get("maintenance_paid_to_landlord") else None, note=LEGAL_NOTE)
     # 제11조는 제2조 제3항의 목록에 없어, 금액 기준 이내로 계산된 경우에만 5% 금액을 표시한다.
     within = v["over_limit"] is False

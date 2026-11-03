@@ -19,9 +19,15 @@ import uvicorn
 sys.path.insert(0, os.path.dirname(__file__))
 from agents_20261103_v13 import FIELDS, R, run_card, run_match, run_final, run_questions, run_resolve
 from assistant_20261103_v6 import ITEMS, ics, law_answer, law_for, lease_read
-from judge_20261102_v6 import OK, NO, ASK, ORG, judge
+from judge_20261103_v7 import OK, NO, ASK, ORG, judge
 
 app = FastAPI()
+
+
+@app.exception_handler(Exception)
+async def on_error(request: Request, exc: Exception):
+    # 이상한 입력에도 화면이 멈추지 않게 짧은 오류를 돌려준다.
+    return JSONResponse(dict(error="처리하지 못했습니다. 입력을 확인하고 다시 시도해 주세요."), status_code=400)
 
 
 LOGIN = """<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>사장님 비서</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f5f7;color:#1d1d1f;font:16px/1.5 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}form{width:min(340px,86vw)}h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:-.02em}p{color:#6e6e73;margin:0 0 18px;font-size:.94rem}input,button{width:100%;min-height:46px;border-radius:12px;border:0;font:inherit}input{background:#fff;padding:0 16px;margin-bottom:10px;box-sizing:border-box}button{background:#0066cc;color:#fff;font-weight:600;cursor:pointer}.e{color:#c9281d;font-size:.88rem}</style></head><body><form method="post" action="/login"><h1>사장님 비서</h1><p>심사용 시연입니다. 비밀번호를 넣어 주세요.</p>ERR<input name="password" type="password" autocomplete="current-password" autofocus aria-label="비밀번호"><button>들어가기</button></form></body></html>"""
@@ -79,6 +85,8 @@ ON_VERCEL = bool(os.environ.get("VERCEL"))
 TOKEN = hashlib.sha256(("sosang:" + PASSWORD).encode()).hexdigest()
 DAILY_LIMIT = int(os.environ.get("DAILY_LLM_LIMIT", "100"))
 TEST_LIMIT = int(os.environ.get("TEST_LIMIT_PER_PERSON", "5"))
+IP_LIMIT = int(os.environ.get("AI_LIMIT_PER_IP", "40"))  # 쿠키를 지워 횟수를 되돌리는 경우에 대비한 서버 인스턴스별 상한
+IP_USED = {}
 COUNTED_PATHS = {"/api/card", "/api/law", "/api/lease"}
 LIMIT_TEXT = f"AI 확인 {TEST_LIMIT}회를 모두 사용했습니다. 공고 대조하기는 계속 쓸 수 있습니다."
 TEST_KEY = hashlib.sha256(("tests:" + os.environ.get("ANTHROPIC_API_KEY", "")).encode()).digest()
@@ -200,8 +208,11 @@ def plain_why(c, st):
 def fill(p):
     # 입력 칸 하나로 받은 값을 조건 필드에 나눠 준다. 사업장이 한 곳인 가게를 기준으로 하며, 답변으로 덮어쓸 수 있다.
     p = dict(p)
+    # 신청 구분이 없으면 지역·업종 조건을 건너뛰는 일이 없도록 기존 기업으로 본다.
+    p.setdefault("applicant_type", "기존 기업")
     if p.get("site_region"):
         p.setdefault("hq_region", p["site_region"])
+        p.setdefault("factory_region", p["site_region"])
     if p.get("revenue_2025") is not None:
         p.setdefault("revenue_prev_year", p["revenue_2025"])
     return p
@@ -257,21 +268,25 @@ def story_answers(n, prog, p, story):
 
 @app.post("/api/judge")
 def api_judge(body: dict, request: Request):
-    # 횟수를 다 쓰면 AI 호출 없이 규칙 대조만 한다. 규칙의 일치는 AI 확인을 거치지 않았으므로 확인 필요로 낮춘다.
+    # AI를 부르는 요청은 화면 표시가 아니라 서버에서 판별한다. 요청이 없으면 규칙만 계산한다.
+    body = {**body, "profile": body.get("profile") or {}, "ai_ids": list(body.get("ai_ids") or [])[:6]}
+    wants_ai = bool(body.get("use_ai") or body.get("count_test") or body["ai_ids"] or body.get("notice_answers"))
     limited = False
-    if ON_VERCEL:
-        if request.state.tests >= TEST_LIMIT:
+    if not wants_ai:
+        body["rule_only"] = True
+    elif ON_VERCEL:
+        ip = (request.headers.get("x-forwarded-for") or "").split(",")[0].strip()
+        IP_USED[ip] = IP_USED.get(ip, 0) + 1
+        today = datetime.now().strftime("%F")
+        if USED["day"] != today:
+            USED.update(day=today, n=0)
+            IP_USED.clear()
+        USED["n"] += 1
+        if request.state.tests >= TEST_LIMIT or USED["n"] > DAILY_LIMIT or IP_USED.get(ip, 0) > IP_LIMIT:
             limited = True
             body = {**body, "use_ai": False, "notice_answers": {}, "story": "", "ai_ids": []}
         elif body.get("use_ai") or body.get("count_test"):
             request.state.tests += 1
-            today = datetime.now().strftime("%F")
-            if USED["day"] != today:
-                USED.update(day=today, n=0)
-            USED["n"] += 1
-            if USED["n"] > DAILY_LIMIT:
-                limited = True
-                body = {**body, "use_ai": False, "notice_answers": {}, "story": "", "ai_ids": []}
     p, as_of = fill({k: v for k, v in body["profile"].items() if v not in ("", None)}), body.get("as_of") or datetime.now().strftime("%F")
     story = (body.get("story") or "").strip()
     # 빠른 대조는 규칙·온톨로지만 계산한다. 판단에 LLM을 호출하지 않는다.
@@ -335,6 +350,10 @@ def api_judge(body: dict, request: Request):
                     ai_cause, ai_org, ai_gaps = chk.get("cause"), chk.get("org_ask", []), chk.get("notice_gaps", [])
                     ai_contact = chk.get("org_contact", "")
                     r["flags"].append("AI 최종 확인")
+            kinds = {c.get("applies_to") for c in n["conditions"] if c.get("applies_to") and c.get("applies_to") != prog and c.get("applies_to") not in (n["programs"] or [])}
+            if kinds and p.get("applicant_type") not in kinds and r["status"] == OK:
+                r["status"] = ASK
+                r["flags"].append("신청 구분 확인")
             by = {c["id"]: c for c in n["conditions"]}
             rows, asks = [], []
             ai_by = {k["id"]: k for k in ai[0]}
@@ -370,8 +389,10 @@ def api_questions(body: dict):
 
 @app.post("/api/card")
 def api_card(body: dict):
-    n = NOTICES[body["id"]]
-    p = fill(body["profile"])
+    n = NOTICES.get(body.get("id"))
+    if not n:
+        return JSONResponse(dict(error="공고를 찾지 못했습니다"), status_code=404)
+    p = fill(body.get("profile") or {})
     mine = {k.split(":")[2]: v for k, v in p.items() if k.startswith(f"c:{body['id']}:")}
     res = judge(n["conditions"], {**p, "answers": {**STORY.get((body["id"], body.get("program"), (body.get("story") or "").strip()), {}), **mine}}, body.get("as_of") or datetime.now().strftime("%F"), body.get("program"))
     # 화면에 최종 판단이 있으면 할 일도 같은 상태로 쓴다. 조건별 결과는 근거로만 남긴다.
@@ -387,11 +408,17 @@ def api_lease(body: dict):
     # 계약서 텍스트나 PDF에서 값을 옮겨 적고 조문 기간을 계산한다. 파일은 저장하지 않는다.
     text = body.get("text") or ""
     if body.get("pdf"):
-        raw = base64.b64decode(body["pdf"])
+        try:
+            raw = base64.b64decode(body["pdf"])
+        except Exception:
+            return JSONResponse(dict(error="PDF를 읽지 못했습니다"), status_code=400)
         if len(raw) > 10_000_000:
             return JSONResponse(dict(error="파일이 너무 큽니다"), status_code=413)
-        with fitz.open(stream=raw, filetype="pdf") as d:
-            text = "".join(f"[[p{i + 1}]]\n{pg.get_text()}" for i, pg in enumerate(d))
+        try:
+            with fitz.open(stream=raw, filetype="pdf") as d:
+                text = "".join(f"[[p{i + 1}]]\n{pg.get_text()}" for i, pg in enumerate(d))
+        except Exception:
+            return JSONResponse(dict(error="PDF를 읽지 못했습니다"), status_code=400)
     if not text.strip():
         return JSONResponse(dict(error="계약서 내용이 없습니다"), status_code=400)
     try:
@@ -407,7 +434,10 @@ def api_lease_sample():
 
 @app.post("/api/law")
 def api_law(body: dict):
-    return law_answer(body["question"][:500])
+    q = str(body.get("question") or "").strip()
+    if not q:
+        return JSONResponse(dict(error="질문을 입력해 주세요"), status_code=400)
+    return law_answer(q[:500])
 
 
 @app.post("/api/law/changes")
@@ -423,13 +453,15 @@ def api_calendar(body: dict):
 
 @app.get("/api/trace/{nid}")
 def api_trace(nid: str):
-    return NOTICES[nid]["trace"]
+    return NOTICES[nid]["trace"] if nid in NOTICES else []
 
 
 @app.get("/api/ics/{nid}")
 def api_ics(nid: str):
     # 공고에 표기된 마감일을 달력 파일로 내려준다. 종료일이 없으면 404.
-    n = NOTICES[nid]
+    n = NOTICES.get(nid)
+    if not n:
+        return JSONResponse(dict(error="공고를 찾지 못했습니다"), status_code=404)
     pc = [c for c in n["conditions"] if c["kind"] == "period" and isinstance(c["value"], list) and c["value"][1]]
     if not pc:
         return Response(status_code=404)

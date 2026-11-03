@@ -18,7 +18,7 @@ def put(rel, dest=None):
     shutil.copy(f"{R}/{rel}", dest)
 
 
-for f in ("src/judge_20261102_v6.py", "src/agents_20261103_v13.py", "src/assistant_20261103_v6.py", "src/app_20261103_v10.py", "web/index.html", "ontology/sosang.ttl", "ontology/shapes.ttl", "ontology/law.ttl", "data/prepared_money.json", "data/law/law_items.json", "data/samples/lease_sample_virtual.txt", "data/manifest.json", "results/question_cache.json"):
+for f in ("src/judge_20261103_v7.py", "src/agents_20261103_v13.py", "src/assistant_20261103_v6.py", "src/app_20261103_v10.py", "web/index.html", "ontology/sosang.ttl", "ontology/shapes.ttl", "ontology/law.ttl", "data/prepared_money.json", "data/law/law_items.json", "data/samples/lease_sample_virtual.txt", "data/manifest.json", "results/question_cache.json"):
     put(f)
 for f in glob.glob(f"{R}/data/prepared/*.json") + glob.glob(f"{R}/results/eval_v2_posthoc/extract_*.json") + glob.glob(f"{R}/data/labels/eval_[0-9P]*.json"):
     put(os.path.relpath(f, R))
