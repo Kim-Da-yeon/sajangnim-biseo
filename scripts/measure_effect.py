@@ -3,8 +3,8 @@
 import os,sys,glob,json,time,statistics as st
 os.environ['ANTHROPIC_API_KEY']='invalid-no-call'
 sys.path.insert(0,'/home/abcde/sosang_agent/src'); os.chdir('/home/abcde/sosang_agent')
-import app_20261103_v10 as a
-from judge_20261103_v7 import judge
+import app as a
+from judge import judge
 txt={}
 for f in glob.glob('data/text/*'):
     if os.path.isfile(f): txt[os.path.basename(f).split('_')[0]]=len(open(f,encoding='utf-8').read())

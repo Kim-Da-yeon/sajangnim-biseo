@@ -34,7 +34,7 @@
 | R10 | 기간: 시작 전 접수 전, 끝난 뒤 마감, 끝 없음은 일정 확인 필요. 마감일 당일은 기간 내 | `period_status` |
 | R11 | 연 환산 매출: 2024년 이전 개업은 신고 매출, 2025년 개업은 월평균×12 | `annualized_revenue` |
 
-코드 위치: `src/judge_20261102_v6.py`
+코드 위치: `src/measure/judge_round.py`
 
 ## 3. 온톨로지
 

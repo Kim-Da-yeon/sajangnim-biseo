@@ -11,7 +11,7 @@ from functools import lru_cache
 
 import rdflib
 
-R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SA = rdflib.Namespace("https://sosang.example/ontology#")
 OK, NO, ASK, ORG = "일치", "불일치", "확인 필요", "기관 판단"
 ONTO = rdflib.Graph().parse(f"{R}/ontology/sosang.ttl")

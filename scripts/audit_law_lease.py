@@ -6,7 +6,7 @@
 """
 import json, os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-from assistant_20261103_v6 import R, law_answer, lease_read
+from assistant import R, law_answer, lease_read
 
 # 조문: 갱신 요구 만료 6개월 전~1개월 전(제10조 제1항), 권리금 만료 6개월 전~종료(제10조의4 제1항), 보증금 구간(시행령 제2조 제1항)
 C = [("임대차 기간: 2025.03.01 ~ 2027.02.28\n보증금 30,000,000원 월세 1,500,000원\n소재지: 서울특별시 마포구 000", "2026-08-28", "2027-01-28", "2027-02-28", 900000000),
@@ -28,7 +28,7 @@ law = []
 for q in Q:
     a = law_answer(q)
     law.append(dict(q=q, answer=a["answer"], used=a["used"], out_of_scope=a["out_of_scope"], unknown=a["unknown_cites"]))
-json.dump(dict(lease=lease, law=law), open(f"{R}/results/audit_law_lease_20261103.json", "w"), ensure_ascii=False, indent=1)
+json.dump(dict(lease=lease, law=law), open(f"{R}/results/audit_law_lease.json", "w"), ensure_ascii=False, indent=1)
 for r in lease:
     print(r["text"][:26], r["renewal"], r["ok_renewal"], r["premium"], r["ok_premium"], r["limit_label"], r["want_limit"])
 for r in law:

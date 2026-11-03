@@ -6,7 +6,7 @@
 """
 import json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from assistant_20261103_v6 import R, law_answer, lease_read, search_articles
+from assistant import R, law_answer, lease_read, search_articles
 
 Q = [("임대료 인상 상한이 몇 퍼센트인가요?", "시행령 제4조"), ("재계약 요구는 언제까지 해야 하나요?", "제10조("), ("권리금 보호 기간이 언제부터인가요?", "제10조의4"), ("계약갱신은 최대 몇 년까지 되나요?", "제10조("),
      ("관리비 내역을 달라고 할 수 있나요?", "제19조의2"), ("월세가 몇 번 밀리면 해지될 수 있나요?", "제10조의8"), ("폐업하면 계약을 해지할 수 있나요?", "제11조의2"), ("분쟁이 생기면 어디에 조정을 신청하나요?", "제20조"),

@@ -7,7 +7,7 @@
 import json, os, sys
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-from agents_20261103_v12 import R, run_final
+from agents_round5 import R, run_final
 
 OUT, L = f"{R}/results/holdout4_v1", f"{R}/data/labels"
 cases = {c["id"]: c for c in json.load(open(f"{L}/holdout4_cases.json"))["cases"]}
@@ -47,7 +47,7 @@ def one(job):
 jobs = [(x[0], x[1], x[2], x[3], 0) for x in V] + [("원본_" + cid, cid, "", c["expected"], 0) for cid, c in cases.items()]
 with ThreadPoolExecutor(8) as ex:
     res = list(ex.map(one, jobs))
-json.dump(res, open(f"{R}/results/recheck_v12_20261103.json", "w"), ensure_ascii=False, indent=1)
+json.dump(res, open(f"{R}/results/recheck_rules.json", "w"), ensure_ascii=False, indent=1)
 base_ = [r for r in res if r["name"].startswith("원본_")]
 print("원본 24사례 일치", sum(r["status"] == r["want"] for r in base_), "틀린 일치", sum(r["want"] != "일치" and r["status"] == "일치" for r in base_))
 for r in res:

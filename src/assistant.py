@@ -9,7 +9,7 @@ from datetime import date, timedelta
 
 sys.path.insert(0, os.path.dirname(__file__))
 import rdflib
-from agents_20261103_v13 import BANNED, R, llm_json, norm
+from agents import BANNED, R, llm_json, norm
 
 SA = rdflib.Namespace("https://sosang.example/ontology#")
 LAW = rdflib.Graph().parse(f"{R}/ontology/law.ttl")

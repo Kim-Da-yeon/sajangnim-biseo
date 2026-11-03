@@ -3,7 +3,7 @@
 흐름: 확정된 공고 조건 로드 → 프로필로 공고별 판정(명확한 조건은 규칙, 요청 시 애매한 조건은 LLM) → 빠진 항목 질문 → 안내 카드 → 임대차 계약서 값 추출과 조문 기간 계산 → 법령 안내 → 통합 달력.
 목적: 판정은 즉시·재현 가능하게 규칙으로 하고, 대화와 설명에만 LLM을 쓰는 구조를 화면으로 보여준다.
 결과 해석: 화면의 결과는 공고 문구와의 대조이며 자격 확정이 아니다.
-실행: python src/app_20261103_v10.py → http://127.0.0.1:8000. 배포: scripts/build_vercel_20261103_v2.py
+실행: python src/app.py → http://127.0.0.1:8000. 배포: scripts/build_vercel.py
 """
 import base64, glob, hashlib, hmac, json, os, re, sys
 from concurrent.futures import ThreadPoolExecutor
@@ -17,9 +17,9 @@ import fitz
 import uvicorn
 
 sys.path.insert(0, os.path.dirname(__file__))
-from agents_20261103_v13 import FIELDS, R, run_card, run_match, run_final, run_questions, run_resolve
-from assistant_20261103_v6 import ITEMS, ics, law_answer, law_for, lease_read
-from judge_20261103_v7 import OK, NO, ASK, ORG, judge
+from agents import FIELDS, R, run_card, run_match, run_final, run_questions, run_resolve
+from assistant import ITEMS, ics, law_answer, law_for, lease_read
+from judge import OK, NO, ASK, ORG, judge
 
 app = FastAPI()
 

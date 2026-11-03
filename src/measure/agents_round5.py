@@ -10,9 +10,9 @@ import json, os, re, sys, time
 import anthropic
 
 sys.path.insert(0, os.path.dirname(__file__))
-from judge_20261102_v6 import judge, validate_graph, ASK, small_merchant, small_craft, excluded_industry
+from judge_round import judge, validate_graph, ASK, small_merchant, small_craft, excluded_industry
 
-R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # 로컬에서는 .env를 읽고, 배포 환경에서는 설정된 환경변수를 쓴다.
 if os.path.exists(f"{R}/.env"):
     for line in open(f"{R}/.env"):

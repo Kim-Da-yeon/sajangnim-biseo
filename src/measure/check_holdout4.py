@@ -6,7 +6,7 @@
 """
 import json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from judge_20261102_v6 import judge, validate_graph
+from judge_round import judge, validate_graph
 
 L = os.path.expanduser("~/sosang_agent/data/labels")
 cases = json.load(open(f"{L}/holdout4_cases.json"))["cases"]

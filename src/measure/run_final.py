@@ -3,13 +3,13 @@
 흐름: 저장된 조건·진술 대조·조건 판단을 불러옴 → 규칙 결과 계산 → 최종 판단 에이전트 실행(반복 가능) → 정답과 비교해 비교군 표 저장.
 목적: 공고 전체를 읽는 최종 판단이 틀린 일치와 오답을 얼마나 줄이는지 같은 사례로 잰다.
 결과 해석: 이미 오답을 본 공고에서는 사후 수치다. 코드 고정 뒤 처음 재는 공고에서만 주 수치로 쓴다. 정답은 AI 초안이다.
-사용법: python run_final_20261102_v1.py <결과폴더> <라벨접두어> <반복수>
+사용법: python run_final.py <결과폴더> <라벨접두어> <반복수>
 """
 import json, os, sys
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(__file__))
-from agents_20261102_v10 import R, run_final
-from judge_20261102_v6 import judge
+from agents_round4 import R, run_final
+from judge_round import judge
 
 OUT, PRE, REP = f"{R}/results/{sys.argv[1]}", sys.argv[2], int(sys.argv[3])
 L = f"{R}/data/labels"

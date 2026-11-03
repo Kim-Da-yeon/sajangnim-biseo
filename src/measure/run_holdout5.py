@@ -7,8 +7,8 @@
 import json, os, sys
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(__file__))
-from agents_20261103_v12 import R, prepare_notice, run_final, run_match, run_resolve
-from judge_20261102_v6 import judge
+from agents_round5 import R, prepare_notice, run_final, run_match, run_resolve
+from judge_round import judge
 
 OUT = f"{R}/results/holdout5_v1"
 os.makedirs(OUT, exist_ok=True)

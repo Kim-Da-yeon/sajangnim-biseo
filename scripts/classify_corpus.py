@@ -12,7 +12,7 @@ rows = json.load(open(f"{ROOT}/corpus.json"))
 have = {r["id"] for r in rows}
 
 # 수집 스크립트의 함수만 재사용하기 위해 본문 실행부를 잘라 불러온다.
-src = open(os.path.expanduser("~/sosang_agent/scripts/collect_corpus_20261102_v1.py")).read().split('os.makedirs(ROOT, exist_ok=True)\nrows =')[0]
+src = open(os.path.expanduser("~/sosang_agent/scripts/collect_corpus.py")).read().split('os.makedirs(ROOT, exist_ok=True)\nrows =')[0]
 ns = {}
 exec(src, ns)
 EXTRA = {"1064384": "2026년 소상공인 고용보험료 지원사업 공고", "1065015": "2026년 초기창업패키지(일반형) 창업기업 모집공고",

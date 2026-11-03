@@ -41,7 +41,7 @@
 | 법령 | 바뀐 규칙과 조문 안내. 개별 사건 판단은 상담처 안내 |
 | 행정 달력 | 일정 통합, 7일 내 일정 표시, 알림이 들어 있는 달력 파일 |
 
-규칙과 온톨로지 정리: [docs/rules_20261102.md](docs/rules_20261102.md)
+규칙과 온톨로지 정리: [docs/rules.md](docs/rules.md)
 
 ## 측정 결과
 
@@ -66,7 +66,7 @@
 - 같은 사례의 첫 측정에서 LLM 직접 응답은 20/24, 잘못된 일치 0건입니다.
 - 정답은 AI가 작성했고 전문가 검증은 받지 않았습니다. 표본이 작아 공고 전반의 정확도는 아닙니다.
 
-비교군별 결과와 측정 이력, 한계: [results/RESULTS_20261102.md](results/RESULTS_20261102.md), 사전 고정 기록: [docs/holdout4_preregistration_20261102.md](docs/holdout4_preregistration_20261102.md)
+비교군별 결과와 측정 이력, 한계: [results/RESULTS.md](results/RESULTS.md), 사전 고정 기록: [docs/holdout4_preregistration.md](docs/holdout4_preregistration.md)
 
 ## 사용 도구
 

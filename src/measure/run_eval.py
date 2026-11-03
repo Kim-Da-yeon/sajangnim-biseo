@@ -8,10 +8,10 @@
 import hashlib, json, os, re, sys, time
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(__file__))
-from agents_20261102_v10 import prepare_notice, llm_json, quote_check, run_match, run_resolve, R
-from judge_20261102_v6 import judge, OK, NO, ASK
+from agents_round4 import prepare_notice, llm_json, quote_check, run_match, run_resolve, R
+from judge_round import judge, OK, NO, ASK
 
-# 사용법: python run_eval_20261102_v5.py holdout4 (이후 run_final로 최종 판단 측정)
+# 사용법: python run_eval.py holdout4 (이후 run_final로 최종 판단 측정)
 # dev: 2차 새 공고로 조건 판단 추가 효과를 확인(사후 수치). holdout3: 코드 고정 후 또 다른 새 공고로 측정(주 수치).
 SET = sys.argv[1]
 OUT = f"{R}/results/" + {"dev": "holdout2_v2", "dev1": "holdout_v1_fix2", "holdout3": "holdout3_v1", "holdout4": "holdout4_v1"}[SET]
