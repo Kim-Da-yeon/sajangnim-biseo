@@ -60,7 +60,7 @@ main{display:grid;grid-template-columns:330px minmax(0,1fr);gap:32px;padding:20p
 <p class="foot" style="margin-bottom:0">AI가 설명을 공고 조건과 대조합니다. 업종 코드는 사업자등록증의 5자리 숫자입니다. 입력값은 저장하지 않습니다. 가게 이름과 주민번호는 넣지 마세요.</p>
 <button class="go" id="go" onclick="aiMap={};run(true)">공고 대조하기</button>
 <button class="go alt" id="aiGo" onclick="press()">AI 공고 대조</button>
-<p class="foot" style="margin:7px 16px 0">공고 대조하기는 조건표로 바로 계산합니다. AI 공고 대조는 AI가 공고 전체를 읽어 더 정확합니다. 같은 24사례에서 조건표만 쓰면 10건, AI 대조는 21건이 정답과 같았습니다. 1분 안팎 걸리며, 틀릴 수 있으니 기관에 확인하세요.</p><p class="foot" id="testsLeft" style="margin:4px 16px 0" aria-live="polite"></p>
+<p class="foot" style="margin:7px 16px 0">공고 대조하기는 조건표로 바로 계산합니다. AI 공고 대조는 AI가 공고 전체를 읽어 더 정확합니다. 먼저 질문에 답한 뒤 누르면 결과가 더 정확해집니다. 1분 안팎 걸리며, 틀릴 수 있으니 기관에 확인하세요.</p><p class="foot" id="testsLeft" style="margin:4px 16px 0" aria-live="polite"></p>
 </aside>
 <section id="out"><div id="common"></div><div id="list"><div class="empty"><b>가게 정보를 넣어 주세요</b>빠진 항목은 다시 묻습니다.</div></div><div id="closed"></div></section>
 </main></div>
