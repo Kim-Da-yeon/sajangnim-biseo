@@ -73,3 +73,9 @@ python src/app_20261103_v10.py   # http://127.0.0.1:8000/?preset=shop
 - Codex CLI: 기획 검토, 정답 라벨과 보고서 감수
 - rdflib, pySHACL, FastAPI, PyMuPDF, matplotlib
 - 데이터: 중소벤처기업부 사업공고, 기업마당 공개 공고, 국가법령정보센터 조문(2026-11-02 수집)
+
+## 팀원
+
+- [@Kim-Da-yeon](https://github.com/Kim-Da-yeon)
+- [@hjiyun](https://github.com/hjiyun)
+- [@seram1212](https://github.com/seram1212)
