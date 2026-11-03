@@ -1,0 +1,50 @@
+{
+ "n": 6,
+ "match": 6,
+ "false_match": 0,
+ "verified": 6,
+ "rows": [
+  {
+   "id": "N1",
+   "expected": "일치",
+   "status": "일치",
+   "rule": "일치",
+   "cause": "해당 없음"
+  },
+  {
+   "id": "N2",
+   "expected": "불일치",
+   "status": "불일치",
+   "rule": "불일치",
+   "cause": "해당 없음"
+  },
+  {
+   "id": "N3",
+   "expected": "확인 필요",
+   "status": "확인 필요",
+   "rule": "일치",
+   "cause": "입력 부족"
+  },
+  {
+   "id": "N4",
+   "expected": "일치",
+   "status": "일치",
+   "rule": "일치",
+   "cause": "해당 없음"
+  },
+  {
+   "id": "N5",
+   "expected": "불일치",
+   "status": "불일치",
+   "rule": "불일치",
+   "cause": "해당 없음"
+  },
+  {
+   "id": "N6",
+   "expected": "확인 필요",
+   "status": "확인 필요",
+   "rule": "확인 필요",
+   "cause": "입력 부족"
+  }
+ ]
+}
