@@ -3,7 +3,7 @@
 import os,sys,glob,json,time,statistics as st
 os.environ['ANTHROPIC_API_KEY']='invalid-no-call'
 sys.path.insert(0,'/home/abcde/sosang_agent/src'); os.chdir('/home/abcde/sosang_agent')
-import app_20261103_v9 as a
+import app_20261103_v10 as a
 from judge_20261102_v6 import judge
 txt={}
 for f in glob.glob('data/text/*'):

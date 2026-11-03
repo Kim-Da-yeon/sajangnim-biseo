@@ -9,7 +9,7 @@ from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(__file__))
 from assistant_20261102_v5 import money_read, R
 import importlib.util
-spec = importlib.util.spec_from_file_location("app4", f"{R}/src/app_20261103_v9.py")
+spec = importlib.util.spec_from_file_location("app4", f"{R}/src/app_20261103_v10.py")
 app4 = importlib.util.module_from_spec(spec); spec.loader.exec_module(app4)
 app4.load()
 OUT = f"{R}/data/prepared_money.json"

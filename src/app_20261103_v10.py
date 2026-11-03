@@ -3,7 +3,7 @@
 흐름: 확정된 공고 조건 로드 → 프로필로 공고별 판정(명확한 조건은 규칙, 요청 시 애매한 조건은 LLM) → 빠진 항목 질문 → 안내 카드 → 임대차 계약서 값 추출과 조문 기간 계산 → 법령 안내 → 통합 달력.
 목적: 판정은 즉시·재현 가능하게 규칙으로 하고, 대화와 설명에만 LLM을 쓰는 구조를 화면으로 보여준다.
 결과 해석: 화면의 결과는 공고 문구와의 대조이며 자격 확정이 아니다.
-실행: python src/app_20261103_v9.py → http://127.0.0.1:8000. 배포: scripts/build_vercel_20261103_v2.py
+실행: python src/app_20261103_v10.py → http://127.0.0.1:8000. 배포: scripts/build_vercel_20261103_v2.py
 """
 import base64, glob, hashlib, hmac, json, os, re, sys
 from concurrent.futures import ThreadPoolExecutor
@@ -17,8 +17,8 @@ import fitz
 import uvicorn
 
 sys.path.insert(0, os.path.dirname(__file__))
-from agents_20261102_v11 import FIELDS, R, run_card, run_match, run_final, run_questions, run_resolve
-from assistant_20261102_v5 import ITEMS, ics, law_answer, law_for, lease_read
+from agents_20261103_v12 import FIELDS, R, run_card, run_match, run_final, run_questions, run_resolve
+from assistant_20261103_v6 import ITEMS, ics, law_answer, law_for, lease_read
 from judge_20261102_v6 import OK, NO, ASK, ORG, judge
 
 app = FastAPI()
@@ -244,6 +244,12 @@ def api_judge(body: dict):
         with ThreadPoolExecutor(6) as ex:
             list(ex.map(warm, [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None])]))
     # 규칙이 일치로 낸 공고는 항상, 'AI 최종 확인'을 누르면 기간 내 모든 공고를 최종 판단한다. 호출을 한꺼번에 해 저장해 둔다.
+    extra = body.get("notice_answers") or {}
+
+    def story_of(n_):
+        # AI 질문에 대한 답은 해당 공고의 최종 판단에만 더한다.
+        return " ".join(x for x in [story, *extra.get(n_["id"], [])] if x)
+
     def answers_of(n_, prog_):
         mine_ = {k.split(":")[2]: v for k, v in p.items() if k.startswith(f"c:{n_['id']}:")}
         base_ = {**STORY.get((n_["id"], prog_, story), {}), **mine_}
@@ -255,8 +261,8 @@ def api_judge(body: dict):
         n_, prog_ = x
         full = answers_of(n_, prog_)
         r_ = judge(n_["conditions"], full, as_of, prog_)
-        if r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK):
-            final(n_, prog_, full, as_of, story)
+        if r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK or n_["id"] in extra):
+            final(n_, prog_, full, as_of, story_of(n_))
     with ThreadPoolExecutor(8) as ex:
         list(ex.map(to_check, [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None])]))
     out = []
@@ -267,11 +273,12 @@ def api_judge(body: dict):
             ai = ai_answers(n, prog, {**p, "answers": base}, story, as_of) if body.get("use_ai") else ([], {})
             r = judge(n["conditions"], {**p, "answers": {**ai[1], **base}}, as_of, prog)
             # 최종 판단이 있으면 그 상태를 쓴다. 규칙 상태와 다르면 이유와 함께 표시한다.
-            re_reason, ai_ask, ai_quote, rule_status = None, [], None, r["status"]
-            if r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK):
-                chk = final(n, prog, answers_of(n, prog), as_of, story)
+            re_reason, ai_ask, ai_quote, rule_status, ai_cause, ai_org, ai_gaps = None, [], None, r["status"], None, [], []
+            if r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra):
+                chk = final(n, prog, answers_of(n, prog), as_of, story_of(n))
                 if chk:
                     r["status"], re_reason, ai_ask, ai_quote = chk["status"], chk["reason"], chk.get("ask", []), chk.get("notice_quote")
+                    ai_cause, ai_org, ai_gaps = chk.get("cause"), chk.get("org_ask", []), chk.get("notice_gaps", [])
                     r["flags"].append("AI 최종 확인")
             by = {c["id"]: c for c in n["conditions"]}
             rows, asks = [], []
@@ -283,7 +290,7 @@ def api_judge(body: dict):
                     asks += need_fields(c, st, p, n["id"])
             pc = [c for c in n["conditions"] if c["kind"] == "period"]
             out.append(dict(id=n["id"], title=n["title"], program=prog, url=n["url"], status=r["status"], period=r["period_status"], flags=r["flags"], deciding=r["deciding"], conditions=rows,
-                            ask=[dict(field=f, label=label_of(f), kind=kind_of(f), options=options_of(f, n["conditions"])) for f in dict.fromkeys(asks)], period_value=pc[0]["value"] if pc else None, rounds=n["rounds"], money=MONEY.get(n["id"]), recheck=re_reason, ai_ask=ai_ask, ai_quote=ai_quote, rule_status=rule_status))
+                            ask=[dict(field=f, label=label_of(f), kind=kind_of(f), options=options_of(f, n["conditions"])) for f in dict.fromkeys(asks)], period_value=pc[0]["value"] if pc else None, rounds=n["rounds"], money=MONEY.get(n["id"]), recheck=re_reason, ai_ask=ai_ask, ai_quote=ai_quote, rule_status=rule_status, ai_cause=ai_cause, ai_org=ai_org, ai_gaps=ai_gaps))
     order = {OK: 0, ASK: 1, NO: 2}
     out.sort(key=lambda x: (x["period"] == "마감", order[x["status"]], x["title"]))
     return dict(results=out, as_of=as_of, story_used=bool(story))

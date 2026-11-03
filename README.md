@@ -59,7 +59,7 @@ git clone https://github.com/Kim-Da-yeon/sosang-agent.git ~/sosang_agent
 cd ~/sosang_agent
 pip install -r requirements.txt
 cp .env.example .env   # 키 입력. 질문 생성, 안내 카드, 설명 대조, 임대차, 법령에 사용
-python src/app_20261103_v9.py   # http://127.0.0.1:8000/?preset=shop
+python src/app_20261103_v10.py   # http://127.0.0.1:8000/?preset=shop
 ```
 
 확정된 조건은 `data/prepared/`와 `results/eval_v2_posthoc/`에 들어 있어 규칙 판정에는 API 호출이 없습니다.
