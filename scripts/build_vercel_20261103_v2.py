@@ -33,7 +33,28 @@ for f in glob.glob(f"{R}/data/labels/eval_[0-9P]*.json"):
     if os.path.exists(f"{R}/{p}"):
         put(p); n += 1
 os.makedirs(f"{D}/api", exist_ok=True)
-open(f"{D}/api/index.py", "w").write('import os, sys\nsys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))\nfrom app_20261103_v10 import app  # noqa: E402\n')
+open(f"{D}/api/index.py", "w").write("""import os, sys
+from urllib.parse import parse_qs, urlencode
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
+from app_20261103_v10 import app  # noqa: E402
+
+
+class RestorePath:
+    # Vercel 재작성 뒤에도 앱이 원래 주소를 보도록, vercel.json이 넘긴 __path로 주소를 되돌린다.
+    def __init__(self, inner):
+        self.inner = inner
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] == "http":
+            q = parse_qs(scope.get("query_string", b"").decode(), keep_blank_values=True)
+            if "__path" in q:
+                p = "/" + q.pop("__path")[0].lstrip("/")
+                scope = dict(scope, path=p, raw_path=p.encode(), query_string=urlencode(q, doseq=True).encode())
+        await self.inner(scope, receive, send)
+
+
+app.add_middleware(RestorePath)
+""")
 open(f"{D}/requirements.txt", "w").write("anthropic==2.3.0\nfastapi==0.162.0\nuvicorn==0.54.0\nrdflib==7.6.0\nPyMuPDF\n")
-json.dump({"rewrites": [{"source": "/(.*)", "destination": "/api/index"}], "functions": {"api/index.py": {"includeFiles": "{src,web,ontology,data,results}/**", "maxDuration": 300}}}, open(f"{D}/vercel.json", "w"), indent=1)
+json.dump({"rewrites": [{"source": "/(.*)", "destination": "/api/index?__path=/$1"}], "functions": {"api/index.py": {"includeFiles": "{src,web,ontology,data,results}/**", "maxDuration": 300}}}, open(f"{D}/vercel.json", "w"), indent=1)
 print("공고 원문", n, "건")

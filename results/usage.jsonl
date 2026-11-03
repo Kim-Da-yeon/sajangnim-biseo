@@ -1609,3 +1609,7 @@
 {"t": "2026-11-03 12:07:41", "role": "임대차문서해석", "input": 1019, "output": 361, "cache_read": 0, "cache_write": 0, "usd": 0.0113}
 {"t": "2026-11-03 12:07:54", "role": "법령검색", "input": 1738, "output": 80, "cache_read": 0, "cache_write": 0, "usd": 0.00855}
 {"t": "2026-11-03 12:07:59", "role": "법령안내", "input": 2468, "output": 288, "cache_read": 0, "cache_write": 0, "usd": 0.01563}
+{"t": "2026-11-03 12:56:19", "role": "법령검색", "input": 1739, "output": 91, "cache_read": 0, "cache_write": 0, "usd": 0.00878}
+{"t": "2026-11-03 12:56:23", "role": "법령안내", "input": 2724, "output": 236, "cache_read": 0, "cache_write": 0, "usd": 0.01562}
+{"t": "2026-11-03 12:56:25", "role": "법령검색", "input": 1739, "output": 91, "cache_read": 0, "cache_write": 0, "usd": 0.00878}
+{"t": "2026-11-03 12:56:29", "role": "법령안내", "input": 2724, "output": 276, "cache_read": 0, "cache_write": 0, "usd": 0.01642}

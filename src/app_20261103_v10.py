@@ -29,9 +29,9 @@ LOGIN = """<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name
 
 @app.middleware("http")
 async def gate(request: Request, call_next):
-    # 배포 환경에서는 비밀번호 없이 들어올 수 없다. 비밀번호가 설정되지 않았으면 전부 막는다.
-    if ON_VERCEL and request.url.path != "/login":
-        if not PASSWORD or not hmac.compare_digest(request.cookies.get("sosang", ""), TOKEN):
+    # 배포 환경에서 비밀번호를 설정하면 로그인을 요구한다. 설정하지 않으면 주소를 아는 사람은 들어올 수 있다.
+    if ON_VERCEL and PASSWORD and request.url.path != "/login":
+        if not hmac.compare_digest(request.cookies.get("sosang", ""), TOKEN):
             if request.url.path.startswith("/api/"):
                 return JSONResponse(dict(error="로그인이 필요합니다"), status_code=401)
             return HTMLResponse(LOGIN.replace("ERR", ""))
@@ -43,7 +43,18 @@ async def gate(request: Request, call_next):
         USED["n"] += 1
         if USED["n"] > DAILY_LIMIT:
             return JSONResponse(dict(error="오늘 사용 한도를 넘었습니다"), status_code=429)
-    return await call_next(request)
+    # 사람당 AI 테스트 횟수. 쿠키에 서명해 저장하므로 시크릿 창에서는 다시 시작된다. 실제 안전장치는 API 계정의 사용 한도다.
+    if not ON_VERCEL:
+        return await call_next(request)
+    request.state.tests = tests_used(request)
+    if request.url.path in COUNTED_PATHS:
+        if request.state.tests >= TEST_LIMIT:
+            return JSONResponse(dict(error=LIMIT_TEXT, limited=True), status_code=429, headers={"x-tests-left": "0"})
+        request.state.tests += 1
+    response = await call_next(request)
+    response.headers["x-tests-left"] = str(max(0, TEST_LIMIT - request.state.tests))
+    response.set_cookie("sosang_t", sign_tests(request.state.tests), httponly=True, secure=True, samesite="lax", max_age=86400 * 30)
+    return response
 
 
 @app.post("/login")
@@ -66,7 +77,23 @@ Q_CACHE_TMP = "/tmp/question_cache.json"  # 배포 환경은 저장소 폴더에
 PASSWORD = os.environ.get("SITE_PASSWORD", "")
 ON_VERCEL = bool(os.environ.get("VERCEL"))
 TOKEN = hashlib.sha256(("sosang:" + PASSWORD).encode()).hexdigest()
-DAILY_LIMIT = int(os.environ.get("DAILY_LLM_LIMIT", "300"))
+DAILY_LIMIT = int(os.environ.get("DAILY_LLM_LIMIT", "100"))
+TEST_LIMIT = int(os.environ.get("TEST_LIMIT_PER_PERSON", "5"))
+COUNTED_PATHS = {"/api/card", "/api/law", "/api/lease"}
+LIMIT_TEXT = f"AI 테스트 {TEST_LIMIT}회를 모두 사용했습니다. 규칙 대조는 계속 쓸 수 있습니다."
+TEST_KEY = hashlib.sha256(("tests:" + os.environ.get("ANTHROPIC_API_KEY", "")).encode()).digest()
+
+
+def sign_tests(n):
+    return f"{n}.{hmac.new(TEST_KEY, str(n).encode(), hashlib.sha256).hexdigest()[:24]}"
+
+
+def tests_used(request):
+    raw = request.cookies.get("sosang_t", "")
+    n = raw.split(".")[0]
+    return int(n) if n.isdigit() and hmac.compare_digest(raw, sign_tests(int(n))) else 0
+
+
 USED = dict(day="", n=0)
 LLM_PATHS = {"/api/card", "/api/law", "/api/lease", "/api/questions"}
 RECHECK = {}
@@ -229,7 +256,22 @@ def story_answers(n, prog, p, story):
 
 
 @app.post("/api/judge")
-def api_judge(body: dict):
+def api_judge(body: dict, request: Request):
+    # 횟수를 다 쓰면 AI 호출 없이 규칙 대조만 한다. 규칙의 일치는 AI 확인을 거치지 않았으므로 확인 필요로 낮춘다.
+    limited = False
+    if ON_VERCEL:
+        if request.state.tests >= TEST_LIMIT:
+            limited = True
+            body = {**body, "use_ai": False, "notice_answers": {}, "story": ""}
+        elif body.get("use_ai") or body.get("count_test"):
+            request.state.tests += 1
+            today = datetime.now().strftime("%F")
+            if USED["day"] != today:
+                USED.update(day=today, n=0)
+            USED["n"] += 1
+            if USED["n"] > DAILY_LIMIT:
+                limited = True
+                body = {**body, "use_ai": False, "notice_answers": {}, "story": ""}
     p, as_of = fill({k: v for k, v in body["profile"].items() if v not in ("", None)}), body.get("as_of") or datetime.now().strftime("%F")
     story = (body.get("story") or "").strip()
     # 가게 설명은 기간이 지나지 않은 공고에 한해 진술 대조 담당에게 보낸다. 같은 설명은 다시 호출하지 않는다.
@@ -262,7 +304,7 @@ def api_judge(body: dict):
         n_, prog_ = x
         full = answers_of(n_, prog_)
         r_ = judge(n_["conditions"], full, as_of, prog_)
-        if r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK or n_["id"] in extra):
+        if not limited and r_["period_status"] != "마감" and (body.get("use_ai") or r_["status"] == OK or n_["id"] in extra):
             final(n_, prog_, full, as_of, story_of(n_))
     with ThreadPoolExecutor(8) as ex:
         list(ex.map(to_check, [(n, prog) for n in NOTICES.values() for prog in (n["programs"] or [None])]))
@@ -275,7 +317,9 @@ def api_judge(body: dict):
             r = judge(n["conditions"], {**p, "answers": {**ai[1], **base}}, as_of, prog)
             # 최종 판단이 있으면 그 상태를 쓴다. 규칙 상태와 다르면 이유와 함께 표시한다.
             re_reason, ai_ask, ai_quote, rule_status, ai_cause, ai_org, ai_gaps, ai_contact = None, [], None, r["status"], None, [], [], ""
-            if r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra):
+            if limited and r["status"] == OK:
+                r["status"], re_reason = ASK, "규칙 대조는 일치이지만 " + LIMIT_TEXT.split(".")[0] + ". 공고 원문을 확인하세요."
+            if not limited and r["period_status"] != "마감" and (body.get("use_ai") or r["status"] == OK or n["id"] in extra):
                 chk = final(n, prog, answers_of(n, prog), as_of, story_of(n))
                 if chk:
                     r["status"], re_reason, ai_ask, ai_quote = chk["status"], chk["reason"], chk.get("ask", []), chk.get("notice_quote")
@@ -295,7 +339,7 @@ def api_judge(body: dict):
                             ask=[dict(field=f, label=label_of(f), kind=kind_of(f), options=options_of(f, n["conditions"])) for f in dict.fromkeys(asks)], period_value=pc[0]["value"] if pc else None, rounds=n["rounds"], money=MONEY.get(n["id"]), recheck=re_reason, ai_ask=ai_ask, ai_quote=ai_quote, rule_status=rule_status, ai_cause=ai_cause, ai_org=ai_org, ai_gaps=ai_gaps, ai_contact=ai_contact))
     order = {OK: 0, ASK: 1, NO: 2}
     out.sort(key=lambda x: (x["period"] == "마감", order[x["status"]], x["title"]))
-    return dict(results=out, as_of=as_of, story_used=bool(story))
+    return dict(results=out, as_of=as_of, story_used=bool(story), limited=limited, limit_text=LIMIT_TEXT if limited else None)
 
 
 @app.post("/api/questions")
